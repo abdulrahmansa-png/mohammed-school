@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="مدرسة محمد: دروس تفاعلية في الرياضيات والإنجليزي والعلوم للصف الثاني الابتدائي">
+<meta name="description" content="مدرسة محمد: دروس تفاعلية في الرياضيات والإنجليزي والعلوم ولغتي للصف الثاني الابتدائي">
 <meta name="theme-color" content="#F2862B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect x='2' y='2' width='30' height='30' rx='8' fill='%23F2862B' stroke='%2316264A' stroke-width='3'/%3E%3Cpath d='M12 9v16M22 9v16M9 17h16' stroke='%2316264A' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -12,7 +12,7 @@
 <title>مدرسة محمد</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Andika:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Noto+Naskh+Arabic:wght@500;700&family=Amiri:wght@700&family=Andika:wght@400;700&display=swap">
 <style>
 /* Layout: squared math-notebook page. Tens are always BLUE, ones always ORANGE, across every screen. */
 :root{
@@ -686,13 +686,109 @@ details.chap .lessons{margin-top:10px}
 .cyc{width:min(340px,100%)}
 @media (max-width:480px){.cst{min-width:56px;padding:2px 4px}.cst .ce{font-size:26px}.cst small{font-size:11px}.cmid{font-size:34px}}
 
+/* ===== لغتي ===== */
+.artx,.arpass,.arbig,.pcardx,.arv .prompt,.arv .opt,.arv .feedback,.arv .tslot,.arv .tile,.clue,.fcard,.duac,.inna,.qline,.anchor,.tword,.openbook{font-family:"Noto Naskh Arabic","Amiri","Tajawal",serif}
+.arv .prompt{font-size:24px;line-height:2}
+.arv .opt{font-size:22px;font-weight:700;line-height:1.9}
+.arv .tile{font-size:22px}
+.ar-hero{grid-template-columns:1fr minmax(170px,250px)} @media (max-width:620px){.ar-hero{grid-template-columns:1fr}}
+.openbook{display:flex;justify-content:center;perspective:600px;padding:10px}
+.openbook .pg{background:#FFFDF6;border:3px solid var(--ink);width:110px;height:130px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#16264A;box-shadow:3px 3px 0 var(--ink)}
+.openbook .pg.l{border-radius:14px 4px 4px 14px;transform:rotateY(14deg);animation:pagel 4s ease-in-out infinite}
+.openbook .pg.r{border-radius:4px 14px 14px 4px;transform:rotateY(-14deg);animation:pager 4s ease-in-out infinite}
+@keyframes pagel{50%{transform:rotateY(22deg)}} @keyframes pager{50%{transform:rotateY(-22deg)}}
+.arread{display:flex;flex-direction:column;gap:12px}
+.artop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.chunkdots{display:flex;gap:6px;align-items:center}
+.chunkdots i{width:30px;height:12px;border-radius:999px;background:var(--line);font-style:normal;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;transition:all .3s}
+.chunkdots i.cur{background:var(--c);transform:scaleY(1.3)} .chunkdots i.on{background:var(--leaf)}
+.chunkdots i.big{width:22px;height:22px;border-radius:50%;color:#fff;background:var(--muted)} .chunkdots i.big.cur{background:var(--violet)} .chunkdots i.big.on{background:var(--leaf)}
+.arpts{font-weight:800;font-size:18px;display:inline-flex;align-items:center;gap:4px} .arpts.bump{animation:bump .45s}
+.arpass{background:#FFFDF6;color:#1E2A44;border:3px solid var(--ink);border-radius:20px;padding:14px 18px;box-shadow:inset 0 0 0 6px #F6EFD9;max-height:56vh;overflow-y:auto}
+.arpass .sent{margin:0 0 6px;font-size:clamp(23px,5.6vw,30px);line-height:2.15;padding:2px 8px;border-radius:12px;transition:background .4s,opacity .4s}
+.arpass .sent.old{opacity:.55}
+.arpass .sent.now{background:#FFF1B8;animation:sentin .6s backwards}
+.arpass .sent.reading{background:#C8F0D8;box-shadow:0 0 0 3px var(--leaf)}
+.arpass .sent.ev{background:#FFD6DC;box-shadow:0 0 0 3px var(--berry);opacity:1;animation:evp 1s ease-in-out 3}
+@keyframes sentin{from{opacity:0;transform:translateY(10px)}}
+@keyframes evp{50%{box-shadow:0 0 0 7px var(--berry)}}
+.w{cursor:pointer;border-radius:6px;transition:background .2s} .w:hover{background:rgba(28,143,208,.15)} .w.said{background:#BDE3FF}
+.arctl{display:flex;flex-direction:column;align-items:center;gap:6px} .artip{margin:0;color:var(--muted);font-weight:700;text-align:center}
+.arq{border:3px solid var(--c);border-radius:20px;padding:12px;background:var(--card);display:flex;flex-direction:column;gap:8px}
+.qhead{display:flex;justify-content:space-between;align-items:center}
+.qtype{background:var(--c);color:#fff;border-radius:999px;padding:2px 14px;font-weight:800;font-size:15px} .qno{font-weight:800;color:var(--muted)}
+.timer{height:6px;background:var(--line);border-radius:999px;overflow:hidden} .timer i{display:block;height:100%;background:linear-gradient(90deg,var(--leaf),var(--sun));animation:tdown 15s linear forwards}
+@keyframes tdown{from{width:100%}to{width:0}}
+.arqq{font-size:24px;font-weight:700;text-align:center;line-height:2}
+.aropts{display:grid;grid-template-columns:1fr;gap:8px} @media (min-width:700px){.aropts{grid-template-columns:repeat(3,1fr)}}
+.aropts .opt{font-size:21px;line-height:1.9;min-height:60px}
+.armedal{font-size:90px;line-height:1;animation:spinin 1s ease-out}
+.pcardx{background:#FFFDF6;color:#1E2A44;border:2px solid var(--ink);border-radius:16px;padding:8px 14px;max-width:620px;margin:auto;text-align:start}
+.pcardx p{margin:0;font-size:22px;line-height:2}
+.arbig{font-size:clamp(26px,6.4vw,36px);line-height:2.2;margin:0;padding:6px 10px;border-radius:14px;background:#FFFDF6;color:#1E2A44;border:2px solid var(--line)} .arbig.reading{background:#C8F0D8}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.bookc{border:3px solid var(--ink);border-radius:8px 18px 18px 8px;border-inline-start:12px solid var(--c);background:var(--card);padding:10px;display:flex;flex-direction:column;align-items:center;gap:4px;box-shadow:4px 4px 0 var(--ink);transition:transform .2s}
+.bookc:hover{transform:translateY(-4px) rotate(-1deg)} .bookc .bic{font-size:40px} .bookc b{font-size:19px} .bookc small{color:var(--muted);font-weight:700}
+.ar-subj .sic{font-family:"Noto Naskh Arabic",serif}
+/* daily plan */
+.plan{margin-bottom:18px} .planh{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.missions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:8px}
+.mission{border:3px dashed var(--line);border-radius:18px;background:var(--soft);padding:10px 12px;display:flex;align-items:center;gap:10px;text-align:start}
+.mission .mi{font-size:30px;font-family:var(--f-display);font-weight:800;min-width:40px;text-align:center} .mission b{display:block;font-size:17px} .mission small{color:var(--muted);font-weight:700}
+.mission.done{border-style:solid;border-color:var(--leaf);background:var(--ok-bg)}
+/* games */
+.skyw{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;align-items:center;width:100%;max-width:640px}
+@media (max-width:520px){.skyw{grid-template-columns:1fr 1fr}.cloudw{grid-column:1/-1;grid-row:1}}
+.sky2{border:3px solid var(--ink);border-radius:20px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:150px;color:#16264A}
+.sky2 span{font-size:44px} .sky2.sun{background:linear-gradient(#FFE58A,#FFC531)} .sky2.moon{background:linear-gradient(#C5CAE9,#9FA8DA)}
+.sky2 .bk{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;font-style:normal} .sky2 .bk em{font-style:normal;font-family:"Noto Naskh Arabic",serif;background:rgba(255,255,255,.7);border-radius:8px;padding:0 6px;font-size:15px}
+.cloudw2{background:var(--card);border:3px solid var(--ink);border-radius:40px;padding:14px 18px;font-size:30px;text-align:center;box-shadow:4px 4px 0 var(--ink);animation:floaty 3s ease-in-out infinite}
+.tword{font-size:40px;font-weight:700} .blank{color:var(--berry);border-bottom:3px dashed var(--berry);padding:0 6px}
+.balloon{width:90px;height:110px;border-radius:50% 50% 46% 46%;border:3px solid var(--ink);font-size:44px;font-weight:800;color:#fff;position:relative;animation:floaty 2.6s ease-in-out infinite;font-family:"Noto Naskh Arabic",serif}
+.balloon::after{content:'';position:absolute;bottom:-22px;left:50%;width:2px;height:22px;background:var(--ink)}
+.balloon.b1{background:#E2475A} .balloon.b2{background:#1C8FD0;animation-delay:.6s} .balloon.popb{animation:stamp .5s}
+.duac{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:24px;font-weight:700;background:var(--soft);border-radius:18px;padding:10px 16px}
+.inna{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.innab{font-size:30px;font-weight:700;background:#FFFDF6;color:#1E2A44;border:3px solid var(--ink);border-radius:16px;padding:6px 16px} .innab.done{border-color:var(--leaf)} .innab u{text-decoration-color:var(--berry);text-decoration-thickness:3px}
+.innaplus{font-family:"Noto Naskh Arabic",serif;font-size:28px;font-weight:700;color:var(--berry);animation:pulsep 1.2s infinite}
+.mag{display:flex;flex-direction:column;align-items:center;gap:8px;min-height:150px}
+.mag .split{font-size:34px;font-weight:700} .mag .split.done{color:var(--leaf)}
+.mag .lets{display:flex;gap:16px;align-items:center;font-family:"Noto Naskh Arabic",serif;font-size:46px;font-weight:700}
+.mag .lets span{background:var(--soft);border:3px solid var(--ink);border-radius:16px;padding:0 14px;transition:transform .5s} .mag .l3{background:#FFF1B8!important;border-color:var(--sun)!important}
+.mag.join .l1{transform:translateX(-40px)} .mag.join .l2{transform:translateX(40px)} .mag.join .plus{opacity:0}
+.mic{display:flex;flex-direction:column;align-items:center;gap:8px}
+.anchor{font-size:24px;background:var(--soft);border-radius:16px;padding:6px 14px} .qline{font-size:28px;font-weight:700}
+.fireh{position:relative;width:100%;max-width:420px;height:150px;background:linear-gradient(#BFE6FF 0 70%,#B0BEC5 70%);border:3px solid var(--ink);border-radius:20px;overflow:hidden;transition:background 1s}
+.fireh .house{position:absolute;right:16%;bottom:16px;font-size:80px}.fireh .flame{position:absolute;right:24%;bottom:60px;font-size:34px;animation:pulsep .6s infinite}
+.fireh .smoke{position:absolute;right:20%;top:6px;font-size:30px;animation:evap2 2.4s linear infinite;opacity:.8} .fireh .s2{animation-delay:1.2s;right:30%}
+@keyframes evap2{from{transform:translateY(20px);opacity:.9}to{transform:translateY(-30px);opacity:0}}
+.fireh .truck{position:absolute;left:-90px;bottom:6px;font-size:54px;transition:left 2s ease-out} .fireh .truck.go{left:20%}
+.fireh.out .flame,.fireh.out .smoke{display:none}
+.phone{background:#16264A;border-radius:26px;padding:12px;width:220px;box-shadow:4px 4px 0 var(--ink)}
+.pscr{background:#E3F2FD;color:#16264A;border-radius:12px;font-size:30px;text-align:center;min-height:46px;letter-spacing:6px;direction:ltr}
+.pkeys{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px;direction:ltr}
+.pkeys button{border:0;border-radius:12px;background:#2C3E66;color:#fff;font-size:22px;font-family:var(--f-display);padding:8px 0} .pkeys button:active{background:var(--leaf)}
+.fcard{font-size:26px;font-weight:700;background:#FFFDF6;color:#1E2A44;border:3px solid var(--ink);border-radius:18px;padding:12px 18px;min-height:80px;display:flex;align-items:center;justify-content:center;max-width:520px}
+.tfz.mk{background:#37474F} .tfz.md{background:#2E7D32} .tfz .cn{font-style:normal;background:#fff;color:#16264A;border-radius:999px;padding:0 10px;font-weight:800}
+.flagbox{width:100%;max-width:340px}
+.journey{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center;max-width:700px}
+.jst{width:76px;min-height:76px;border:2px dashed var(--line);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:32px;padding:4px}
+.jst small{font-size:11px;font-weight:800;text-align:center;line-height:1.3;font-family:"Noto Naskh Arabic",serif} .jst.on{border:2px solid var(--leaf);background:var(--ok-bg)} .jarr{font-style:normal;color:var(--muted)}
+.clues{display:flex;flex-direction:column;gap:6px;width:100%;max-width:480px}
+.clue{background:#FFF1B8;color:#3A2A00;border-radius:14px;padding:6px 14px;font-size:22px;font-weight:700;text-align:start}
+.bin .bl{font-family:"Noto Naskh Arabic",serif} .bin .bi em{font-style:normal;font-family:"Noto Naskh Arabic",serif;font-size:14px}
+@media (prefers-reduced-motion: reduce){.openbook .pg,.cloudw2,.balloon,.timer i,.fireh *,.innaplus{animation:none!important}}
+
+@media (max-width:620px){.mgroups .medals{display:none}.mgroups{gap:6px}.mgroup small{display:inline-block;background:var(--soft);border:2px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--ink)}}
+.subjects{grid-template-columns:repeat(2,minmax(0,1fr))!important} @media (max-width:620px){.subjects{grid-template-columns:1fr!important}}
+
 /* ===== legend layer ===== */
 .wrap{position:relative;z-index:1}
 #confetti{z-index:60}
 .vin{animation:vin .38s cubic-bezier(.2,.8,.2,1)}
 @keyframes vin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;display:none}
-body[data-view="home"] .bgfx,body[data-view="math"] .bgfx,body[data-view="en"] .bgfx,body[data-view="pron"] .bgfx{display:block}
+body[data-view="home"] .bgfx,body[data-view="math"] .bgfx,body[data-view="en"] .bgfx,body[data-view="pron"] .bgfx,body[data-view="ar"] .bgfx{display:block}
 .bgfx span{position:absolute;font-family:var(--f-display);font-weight:800;opacity:.13;animation:drift var(--t) ease-in-out var(--d) infinite alternate}
 @keyframes drift{0%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(18px,-26px) rotate(6deg)}100%{transform:translate(-14px,10px) rotate(-3deg)}}
 .pill.xp{border-color:var(--sun);background:color-mix(in srgb,var(--sun) 18%,var(--card))}
@@ -3264,12 +3360,405 @@ function sciParentsHTML(){const cell=(id,lv)=>{const b=store.best[id+'-'+lv];ret
  <div class="tip">في العلوم: فعّل «اقرأ لي» أعلى الصفحة ليسمع محمد الشرح بصوت عربي. وفي تبويب «أجرّب» تجربة لكل درس، كثير منها يمكن تطبيقه في البيت (زراعة بذرة، كأسا التربة، ملاحظة الأزهار بالعدسة).</div></div>`;}
 
 /* =================================================================
+   لغتي — الصف الثاني، الفصل الدراسي الأول (تركيز على الفهم القرائي)
+   ================================================================= */
+const ARC='#D9467A';
+const AU={1:{t:'الوحدة الأولى',s:'أقاربي',c:'#1C8FD0',ic:'👨‍👩‍👧'},2:{t:'الوحدة الثانية',s:'أصدقائي وجيراني',c:'#14A3A0',ic:'🤝'},3:{t:'الوحدة الثالثة',s:'وطني السعودية',c:'#2E9E5B',ic:'🇸🇦'},4:{t:'الوحدة الرابعة',s:'محاصيل من بلادي',c:'#F2862B',ic:'🌾'}};
+const AUS=[1,2,3,4];
+const AL=[];
+const ALVN=[['سهل','أسئلة عن النص مع صورة الجملة، ومعاني الكلمات.'],['متوسط','فهم أعمق، وأضداد، وظواهر لغوية.'],['صعب','أستنتج وأرتّب الجمل وأكتب بالإملاء الصحيح.']];
+const HAR=/[ً-ْٰ]/g,bare=s=>String(s).replace(HAR,''),SUNL='تثدذرزسشصضطظلن';
+const AREX=new Set(['الذي','التي','الذين','الله','اللهم']);
+function arWords(L){const out=[];L.sents.forEach(s=>s.replace(/[،؛:.!؟?«»()"]/g,' ').split(/\s+/).forEach(w=>{if(w&&!out.includes(w))out.push(w);}));return out;}
+function speakAr(text){return new Promise(res=>{if(!voiceOK()){setTimeout(res,150);return;}let done=false;const fin=()=>{if(!done){done=true;res();}};try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(String(text).replace(/[«»]/g,''));u.lang='ar-SA';u.rate=.72;const v=speechSynthesis.getVoices().find(v=>/^ar/i.test(v.lang));if(v)u.voice=v;u.onend=fin;u.onerror=fin;setTimeout(fin,170*text.length+1500);speechSynthesis.speak(u);}catch(e){fin();}});}
+const wsp=s=>s.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+const arT=s=>`<span class="artx">${s}</span>`;
+
+/* ---------- the passages (retold in simple, fully vowelled Arabic) ---------- */
+AL.push({id:'a11',unit:1,code:'١-١',title:'صِلَةُ الرَّحِمِ',short:'صلة الرحم',color:'#1C8FD0',ic:'🚗',blurb:'فواز ونورة يتعلّمان معنى صلة الرحم.',
+ sents:['عَادَ فَوَّازٌ وَأُخْتُهُ نُورَةُ مِنَ الْمَدْرَسَةِ مَعَ أَبِيهِمَا فِي السَّيَّارَةِ.','وَفِي الطَّرِيقِ سَمِعُوا فِي الْإِذَاعَةِ حَدِيثًا شَرِيفًا يَأْمُرُ بِصِلَةِ الرَّحِمِ.',
+  'سَأَلَ فَوَّازٌ: مَا الرَّحِمُ يَا أَبِي؟','قَالَ الْأَبُ: الرَّحِمُ هُمُ الْأَقَارِبُ الَّذِينَ تَرْبِطُنَا بِهِمْ صِلَةُ قُرْبَى.',
+  'سَأَلَتْ نُورَةُ: وَكَيْفَ نَصِلُ أَرْحَامَنَا؟','قَالَ الْأَبُ: نَزُورُهُمْ، وَنَسْأَلُ عَنْهُمْ، وَنَتَفَقَّدُ أَحْوَالَهُمْ، وَنُسَاعِدُهُمْ عِنْدَ الْحَاجَةِ.',
+  'اقْتَرَحَ فَوَّازٌ أَنْ تَجْعَلَ الْأُسْرَةُ يَوْمًا فِي كُلِّ أُسْبُوعٍ لِزِيَارَةِ الْأَقَارِبِ.','فَرِحَ الْأَبُ وَقَالَ: بَارَكَ اللَّهُ فِيكَ يَا بُنَيَّ، وَقَالَتْ نُورَةُ: أَنَا مُشْتَاقَةٌ لِهَذَا الْيَوْمِ.'],
+ chunks:[[['مَعَ مَنْ عَادَ فَوَّازٌ وَنُورَةُ مِنَ الْمَدْرَسَةِ؟','مَعَ أَبِيهِمَا',['مَعَ جَدِّهِمَا','مَعَ الْمُعَلِّمِ'],0,'مَعَ مَنْ؟'],['أَيْنَ سَمِعُوا الْحَدِيثَ الشَّرِيفَ؟','فِي الْإِذَاعَةِ',['فِي الْمَسْجِدِ','فِي الْمَدْرَسَةِ'],1,'أَيْنَ؟']],
+  [['عَمَّ سَأَلَ فَوَّازٌ أَبَاهُ؟','عَنْ مَعْنَى الرَّحِمِ',['عَنْ مَوْعِدِ الْغَدَاءِ','عَنِ اسْمِ الْمَدْرَسَةِ'],2,'عَمَّ؟'],['مَنِ الْأَرْحَامُ؟','الْأَقَارِبُ',['الْجِيرَانُ فَقَطْ','الْمُعَلِّمُونَ'],3,'مَنْ؟']],
+  [['مَنْ سَأَلَ: كَيْفَ نَصِلُ أَرْحَامَنَا؟','نُورَةُ',['فَوَّازٌ','الْأَبُ'],4,'مَنْ؟'],['كَيْفَ نَصِلُ أَرْحَامَنَا؟','نَزُورُهُمْ وَنَسْأَلُ عَنْهُمْ',['نَبْتَعِدُ عَنْهُمْ','نَنْسَاهُمْ'],5,'كَيْفَ؟']],
+  [['مَا الْفِكْرَةُ الَّتِي اقْتَرَحَهَا فَوَّازٌ؟','يَوْمٌ كُلَّ أُسْبُوعٍ لِزِيَارَةِ الْأَقَارِبِ',['رِحْلَةٌ إِلَى الْبَحْرِ','شِرَاءُ لُعْبَةٍ جَدِيدَةٍ'],6,'مَاذَا؟'],['كَيْفَ قَابَلَ الْأَبُ فِكْرَةَ فَوَّازٍ؟','فَرِحَ وَدَعَا لَهُ',['غَضِبَ مِنْهُ','لَمْ يَهْتَمَّ'],7,'كَيْفَ؟']]],
+ big:[['مَاذَا تَعَلَّمْتَ مِنَ النَّصِّ؟','أَنْ أَزُورَ أَقَارِبِي وَأَسْأَلَ عَنْهُمْ',['أَنْ أَلْعَبَ وَحْدِي دَائِمًا','أَنْ أَسْتَمِعَ إِلَى الْإِذَاعَةِ فَقَطْ']],['مَا الْعُنْوَانُ الْمُنَاسِبُ لِلنَّصِّ أَيْضًا؟','زِيَارَةُ الْأَقَارِبِ',['رِحْلَةُ الصَّيْدِ','الْقِطَارُ الْجَدِيدُ']],['لِمَاذَا قَالَتْ نُورَةُ: أَنَا مُشْتَاقَةٌ؟','لِأَنَّهَا تُحِبُّ زِيَارَةَ أَقَارِبِهَا',['لِأَنَّهَا مَرِيضَةٌ','لِأَنَّهَا لَا تُحِبُّ الْمَدْرَسَةَ']]],
+ vocab:[['نَتَفَقَّدُ أَحْوَالَهُمْ','نَسْأَلُ عَنْهُمْ وَنَعْرِفُ حَالَهُمْ',['نَبْتَعِدُ عَنْهُمْ','نَنْسَاهُمْ']],['تَرْبِطُنَا بِهِمْ','تَصِلُنَا بِهِمْ',['تُبْعِدُنَا عَنْهُمْ','تُخِيفُنَا مِنْهُمْ']],['الرَّحِمُ','الْأَقَارِبُ',['الْأَصْدِقَاءُ','الْجِيرَانُ']],['مُشْتَاقَةٌ','تَتَمَنَّى أَنْ يَأْتِيَ الْيَوْمُ',['خَائِفَةٌ','غَاضِبَةٌ']],['اقْتَرَحَ','قَدَّمَ فِكْرَةً',['نَامَ','رَكَضَ']]],
+ opp:[['عَادَ','ذَهَبَ',['جَلَسَ','قَرَأَ']],['فَرِحَ','حَزِنَ',['ضَحِكَ','سَمِعَ']],['سَأَلَ','أَجَابَ',['قَالَ','عَادَ']]],
+ order:['أَنَا أُحِبُّ أُسْرَتِي','نَزُورُ أَقَارِبَنَا كُلَّ أُسْبُوعٍ','فَوَّازٌ يَعُودُ مِنَ الْمَدْرَسَةِ','الرَّحِمُ هُمُ الْأَقَارِبُ'],
+ madd:[['عَادَ','ا'],['نُورَةُ','و'],['أَبِيهِمَا','ي'],['قَالَ','ا'],['نَزُورُهُمْ','و'],['الطَّرِيقِ','ي']],
+ style:['dua','gender'],play:r=>arPlay(r,'a11')});
+
+AL.push({id:'a12',unit:1,code:'١-٢',title:'عُذْرًا يَا جَدِّي',short:'عذرًا يا جدي',color:'#1C8FD0',ic:'👴',blurb:'فواز يندم ويعتذر إلى جدّه.',
+ sents:['فِي حِصَّةِ الْقِرَاءَةِ، ذَهَبَ الْمُعَلِّمُ بِالتَّلَامِيذِ إِلَى مَكْتَبَةِ الْمَدْرَسَةِ لِيَقْرَؤُوا.','رَأَى الْمُعَلِّمُ فَوَّازًا يَجْلِسُ حَزِينًا وَحْدَهُ.',
+  'سَأَلَهُ الْمُعَلِّمُ: مَا بِكَ يَا بُنَيَّ؟','قَالَ فَوَّازٌ: أَنَا نَادِمٌ؛ طَلَبَ مِنِّي جَدِّي أَمْسِ أَنْ أُخَفِّضَ صَوْتَ التِّلْفَازِ، فَلَمْ أَفْعَلْ.',
+  'كُنْتُ مَشْغُولًا بِبَرْنَامَجِي الْمُفَضَّلِ، فَغَضِبَ جَدِّي مِنِّي.','قَالَ الْمُعَلِّمُ: لَقَدْ أَخْطَأْتَ يَا فَوَّازُ، فَاعْتَذِرْ إِلَى جَدِّكَ، وَاطْلُبْ مِنْهُ السَّمَاحَ.',
+  'قَالَ فَوَّازٌ: أَتَمَنَّى أَنْ يُسَامِحَنِي جَدِّي!','قَالَ الْمُعَلِّمُ: إِنَّ الْجَدَّ عَطُوفٌ حَنُونٌ، وَسَيُسَامِحُكَ، فَاحْرِصْ عَلَى طَاعَتِهِ دَائِمًا.'],
+ chunks:[[['إِلَى أَيْنَ ذَهَبَ الْمُعَلِّمُ بِالتَّلَامِيذِ؟','إِلَى مَكْتَبَةِ الْمَدْرَسَةِ',['إِلَى الْمَلْعَبِ','إِلَى الْحَدِيقَةِ'],0,'أَيْنَ؟'],['كَيْفَ كَانَ فَوَّازٌ يَجْلِسُ؟','حَزِينًا',['سَعِيدًا','نَائِمًا'],1,'كَيْفَ؟']],
+  [['مَاذَا طَلَبَ الْجَدُّ مِنْ فَوَّازٍ؟','أَنْ يُخَفِّضَ صَوْتَ التِّلْفَازِ',['أَنْ يَذْهَبَ إِلَى النَّوْمِ','أَنْ يُحْضِرَ الْمَاءَ'],3,'مَاذَا؟'],['لِمَاذَا كَانَ فَوَّازٌ حَزِينًا؟','لِأَنَّهُ لَمْ يُطِعْ جَدَّهُ',['لِأَنَّهُ مَرِيضٌ','لِأَنَّهُ فَقَدَ كِتَابَهُ'],3,'لِمَاذَا؟']],
+  [['لِمَاذَا لَمْ يَفْعَلْ فَوَّازٌ مَا طَلَبَهُ جَدُّهُ؟','كَانَ مَشْغُولًا بِبَرْنَامَجِهِ الْمُفَضَّلِ',['كَانَ نَائِمًا','كَانَ خَارِجَ الْبَيْتِ'],4,'لِمَاذَا؟'],['بِمَ نَصَحَ الْمُعَلِّمُ فَوَّازًا؟','أَنْ يَعْتَذِرَ إِلَى جَدِّهِ',['أَنْ يَنْسَى الْأَمْرَ','أَنْ يَغْضَبَ'],5,'بِمَ؟']],
+  [['مَاذَا تَمَنَّى فَوَّازٌ؟','أَنْ يُسَامِحَهُ جَدُّهُ',['أَنْ يَشْتَرِيَ تِلْفَازًا','أَنْ يَلْعَبَ'],6,'مَاذَا؟'],['مَا صِفَةُ الْجَدِّ كَمَا قَالَ الْمُعَلِّمُ؟','عَطُوفٌ حَنُونٌ',['قَاسٍ','غَاضِبٌ دَائِمًا'],7,'مَا؟']]],
+ big:[['مَا رَأْيُكَ فِي تَصَرُّفِ فَوَّازٍ مَعَ جَدِّهِ؟','خَطَأٌ، كَانَ عَلَيْهِ أَنْ يُطِيعَ جَدَّهُ',['صَحِيحٌ تَمَامًا','لَا يُهِمُّ']],['مَاذَا نَفْعَلُ إِذَا أَخْطَأْنَا فِي حَقِّ أَحَدٍ؟','نَعْتَذِرُ وَنَطْلُبُ السَّمَاحَ',['نَسْكُتُ','نَغْضَبُ مِنْهُ']],['مَا الصِّفَةُ الْمُشْتَرَكَةُ بَيْنَ الْأَبِ وَالْجَدِّ؟','الْعَطْفُ وَالْحَنَانُ',['الْغَضَبُ','الْكَسَلُ']]],
+ vocab:[['عَطُوفٌ','رَحِيمٌ',['شَدِيدٌ','بَعِيدٌ']],['تَعْتَذِرُ','تَطْلُبُ السَّمَاحَ',['تَطْلُبُ الشُّكْرَ','تَطْلُبُ الطَّعَامَ']],['نَادِمٌ','حَزِينٌ عَلَى خَطَئِهِ',['فَرْحَانُ','جَائِعٌ']],['أُخَفِّضَ','أُقَلِّلَ',['أَرْفَعَ','أَكْسِرَ']],['احْرِصْ','انْتَبِهْ وَحَافِظْ',['اتْرُكْ','انْسَ']]],
+ opp:[['طَاعَةٌ','عِصْيَانٌ',['مُوَافَقَةٌ','صِدْقٌ']],['حَزِينًا','سَعِيدًا',['بَاكِيًا','نَادِمًا']],['أَخْطَأْتَ','أَصَبْتَ',['نَدِمْتَ','قُلْتَ']],['غَضِبَ','رَضِيَ',['صَرَخَ','زَعِلَ']]],
+ order:['إِنَّ الْجَدَّ عَطُوفٌ','أَعْتَذِرُ إِلَى جَدِّي','ذَهَبَ التَّلَامِيذُ إِلَى الْمَكْتَبَةِ','أَحْرِصُ عَلَى طَاعَةِ جَدِّي'],
+ madd:[['رَأَى','ا'],['عَطُوفٌ','و'],['حَزِينًا','ي'],['الْقِرَاءَةِ','ا'],['حَنُونٌ','و'],['التَّلَامِيذِ','ي']],
+ style:['inna','gender2'],play:r=>arPlay(r,'a12')});
+
+AL.push({id:'a21',unit:2,code:'٢-١',title:'الصَّدِيقَانِ',short:'الصديقان',color:'#14A3A0',ic:'🚂',blurb:'قطار عمّار ينكسر، فماذا يفعل الصديقان؟',
+ sents:['دَعَا عَمَّارٌ صَدِيقَهُ خَالِدًا لِيَلْعَبَا مَعًا بِقِطَارِهِ الْجَدِيدِ.','طَلَبَ عَمَّارٌ مِنْ خَالِدٍ أَنْ يُمْسِكَ الْقِطَارَ حَتَّى يُرَكِّبَ الْقُضْبَانَ.',
+  'سَقَطَ الْقِطَارُ مِنْ يَدِ خَالِدٍ، فَتَكَسَّرَ وَتَفَكَّكَتْ أَجْزَاؤُهُ.','غَضِبَ عَمَّارٌ وَصَرَخَ: لِمَاذَا رَمَيْتَ لُعْبَتِي؟',
+  'قَالَ خَالِدٌ: سَقَطَ مِنْ يَدِي مِنْ غَيْرِ قَصْدٍ، وَأَرْجُو أَنْ تُسَامِحَنِي.','جَاءَتِ الْأُمُّ وَسَأَلَتْ عَمَّارًا عَنْ سَبَبِ صُرَاخِهِ، فَحَكَى لَهَا مَا حَدَثَ.',
+  'ابْتَسَمَتِ الْأُمُّ وَقَالَتْ: سَأَشْتَرِي لَكَ قِطَارًا جَدِيدًا، وَلَكِنْ مِنْ أَيْنَ آتِي لَكَ بِصَدِيقٍ مِثْلِ خَالِدٍ؟','نَدِمَ عَمَّارٌ عَلَى تَسَرُّعِهِ، وَاعْتَذَرَ إِلَى خَالِدٍ، وَعَادَ الصَّدِيقَانِ يَلْعَبَانِ مَعًا.'],
+ chunks:[[['لِمَاذَا دَعَا عَمَّارٌ صَدِيقَهُ خَالِدًا؟','لِيَلْعَبَا بِالْقِطَارِ الْجَدِيدِ',['لِيَأْكُلَا الطَّعَامَ','لِيَذْهَبَا إِلَى الْمَدْرَسَةِ'],0,'لِمَاذَا؟'],['مَاذَا طَلَبَ عَمَّارٌ مِنْ خَالِدٍ؟','أَنْ يُمْسِكَ الْقِطَارَ',['أَنْ يَكْسِرَ الْقِطَارَ','أَنْ يَعُودَ إِلَى بَيْتِهِ'],1,'مَاذَا؟']],
+  [['مَاذَا حَدَثَ لِلْقِطَارِ؟','سَقَطَ وَتَكَسَّرَ',['طَارَ فِي السَّمَاءِ','ضَاعَ'],2,'مَاذَا؟'],['مَاذَا فَعَلَ عَمَّارٌ؟','غَضِبَ وَصَرَخَ',['ضَحِكَ','نَامَ'],3,'مَاذَا؟']],
+  [['هَلْ تَعَمَّدَ خَالِدٌ إِسْقَاطَ الْقِطَارِ؟','لَا، سَقَطَ مِنْ غَيْرِ قَصْدٍ',['نَعَمْ، رَمَاهُ قَصْدًا','نَعَمْ، كَانَ غَاضِبًا'],4,'هَلْ؟'],['مَنْ سَأَلَ عَمَّارًا عَنْ سَبَبِ صُرَاخِهِ؟','الْأُمُّ',['الْأَبُ','خَالِدٌ'],5,'مَنْ؟']],
+  [['مَاذَا قَصَدَتِ الْأُمُّ بِكَلَامِهَا؟','الصَّدِيقُ أَغْلَى مِنَ اللُّعْبَةِ',['اللُّعْبَةُ أَغْلَى مِنَ الصَّدِيقِ','لَا تَلْعَبْ مَعَ أَحَدٍ'],6,'مَاذَا؟'],['مَاذَا فَعَلَ عَمَّارٌ فِي النِّهَايَةِ؟','اعْتَذَرَ إِلَى خَالِدٍ',['طَرَدَ خَالِدًا','بَكَى طَوِيلًا'],7,'مَاذَا؟']]],
+ big:[['لَوْ كُنْتَ مَكَانَ عَمَّارٍ، مَاذَا تَفْعَلُ؟','أَقْبَلُ اعْتِذَارَ صَدِيقِي',['أَغْضَبُ وَلَا أُكَلِّمُهُ','أَكْسِرُ لُعْبَتَهُ']],['مَا الْعُنْوَانُ الْمُنَاسِبُ لِلنَّصِّ أَيْضًا؟','الصَّدِيقُ أَغْلَى مِنَ اللُّعْبَةِ',['الْقِطَارُ السَّرِيعُ','يَوْمٌ فِي الْبَحْرِ']],['مَاذَا نَتَعَلَّمُ مِنَ النَّصِّ؟','لَا نَتَسَرَّعُ فِي الْغَضَبِ',['نَغْضَبُ بِسُرْعَةٍ','لَا نُشَارِكُ أَلْعَابَنَا']]],
+ vocab:[['نَدِمَ','أَسِفَ',['صَرَخَ','فَرِحَ']],['قَصْدٌ','تَعَمُّدٌ',['رَفْضٌ','نَوْمٌ']],['الْقُضْبَانُ','مَسَارُ الْقِطَارِ',['مَحَطَّةُ الْقِطَارِ','عَجَلَةُ الْقِطَارِ']],['تَسَرُّعِهِ','عَجَلَتِهِ فِي الْغَضَبِ',['هُدُوئِهِ','لَعِبِهِ']],['تَفَكَّكَتْ','انْفَصَلَتْ',['اجْتَمَعَتْ','لَمَعَتْ']]],
+ opp:[['الْجَدِيدُ','الْقَدِيمُ',['الْكَبِيرُ','الْجَمِيلُ']],['غَضِبَ','رَضِيَ',['صَرَخَ','نَدِمَ']],['ابْتَسَمَتْ','عَبَسَتْ',['ضَحِكَتْ','قَالَتْ']],['سَقَطَ','ارْتَفَعَ',['وَقَعَ','تَكَسَّرَ']]],
+ order:['دَعَا عَمَّارٌ صَدِيقَهُ','نَدِمَ عَمَّارٌ عَلَى تَسَرُّعِهِ','اعْتَذَرَ عَمَّارٌ إِلَى خَالِدٍ','يُسَاعِدُ الصَّدِيقُ صَدِيقَهُ'],
+ madd:[['دَعَا','ا'],['الْقُضْبَانَ','ا'],['الْجَدِيدِ','ي'],['يَدِي','ي'],['صُرَاخِهِ','ا'],['آتِي','ي']],
+ style:['ask','plural'],play:r=>arPlay(r,'a21')});
+
+AL.push({id:'a22',unit:2,code:'٢-٢',title:'الْجَارُ الصَّغِيرُ',short:'الجار الصغير',color:'#14A3A0',ic:'🚒',blurb:'فواز يبلّغ الدفاع المدني عن حريق.',
+ sents:['رَأَى فَوَّازٌ دُخَانًا كَثِيفًا يَخْرُجُ مِنْ بَيْتِ جَارِهِمْ.','أَسْرَعَ خَائِفًا إِلَى أُمِّهِ لِيُخْبِرَهَا بِمَا رَأَى.',
+  'قَالَتِ الْأُمُّ: هَيَّا يَا فَوَّازُ، اتَّصِلْ بِالدِّفَاعِ الْمَدَنِيِّ.','قَالَ فَوَّازٌ: لَا أَعْرِفُ الرَّقْمَ يَا أُمِّي، فَقَالَتْ: الرَّقْمُ هُوَ ٩٩٨.',
+  'اتَّصَلَ فَوَّازٌ، وَأَخْبَرَهُمْ عَنِ الْحَرِيقِ، وَوَصَفَ لَهُمْ مَكَانَ الْبَيْتِ.','جَاءَ رِجَالُ الْإِطْفَاءِ بِسُرْعَةٍ، فَأَخْمَدُوا الْحَرِيقَ.',
+  'عَادَ الْجَارُ وَأُسْرَتُهُ، فَشَكَرَ رِجَالَ الْإِطْفَاءِ عَلَى عَمَلِهِمْ.','قَالَ رَجُلُ الْإِطْفَاءِ: هَذَا وَاجِبُنَا، وَالشُّكْرُ لِجَارِكَ الصَّغِيرِ فَوَّازٍ، فَشَكَرَهُ الْجَارُ وَدَعَا لَهُ.'],
+ chunks:[[['مَاذَا رَأَى فَوَّازٌ؟','دُخَانًا كَثِيفًا',['مَطَرًا غَزِيرًا','طَائِرًا جَمِيلًا'],0,'مَاذَا؟'],['إِلَى مَنْ أَسْرَعَ فَوَّازٌ؟','إِلَى أُمِّهِ',['إِلَى صَدِيقِهِ','إِلَى الْمَدْرَسَةِ'],1,'إِلَى مَنْ؟']],
+  [['بِمَنْ طَلَبَتِ الْأُمُّ أَنْ يَتَّصِلَ فَوَّازٌ؟','بِالدِّفَاعِ الْمَدَنِيِّ',['بِأَبِيهِ','بِالْمَدْرَسَةِ'],2,'بِمَنْ؟'],['مَا رَقْمُ هَاتِفِ الدِّفَاعِ الْمَدَنِيِّ؟','٩٩٨',['٩٩٩','١٢٣'],3,'مَا؟']],
+  [['مَاذَا وَصَفَ فَوَّازٌ فِي الْهَاتِفِ؟','مَكَانَ الْبَيْتِ',['لَوْنَ السَّيَّارَةِ','اسْمَ مَدْرَسَتِهِ'],4,'مَاذَا؟'],['مَنِ الَّذِي أَخْمَدَ الْحَرِيقَ؟','رِجَالُ الْإِطْفَاءِ',['فَوَّازٌ','الْأُمُّ'],5,'مَنْ؟']],
+  [['لِمَاذَا شَكَرَ الْجَارُ فَوَّازًا؟','لِأَنَّهُ أَبْلَغَ عَنِ الْحَرِيقِ بِسُرْعَةٍ',['لِأَنَّهُ أَطْفَأَ النَّارَ وَحْدَهُ','لِأَنَّهُ لَعِبَ مَعَ ابْنِهِ'],7,'لِمَاذَا؟'],['مَاذَا قَالَ رَجُلُ الْإِطْفَاءِ عَنْ عَمَلِهِ؟','هَذَا وَاجِبُنَا',['هَذَا صَعْبٌ','نَحْنُ مُتْعَبُونَ'],7,'مَاذَا؟']]],
+ big:[['مَا الصِّفَةُ الَّتِي تُعْجِبُكَ فِي فَوَّازٍ؟','سُرْعَةُ التَّصَرُّفِ وَمُسَاعَدَةُ الْجَارِ',['الْخَوْفُ وَالْهُرُوبُ','الْكَسَلُ']],['مَاذَا تَفْعَلُ إِذَا رَأَيْتَ حَرِيقًا؟','أُخْبِرُ الْكِبَارَ وَأَتَّصِلُ بِالدِّفَاعِ الْمَدَنِيِّ',['أَقْتَرِبُ مِنَ النَّارِ','أَخْتَبِئُ وَلَا أُخْبِرُ أَحَدًا']],['مِنْ نَصَائِحِ تَجَنُّبِ الْحَرَائِقِ:','لَا أَلْعَبُ بِالْكِبْرِيتِ وَالنَّارِ',['أَلْعَبُ بِالْكَهْرَبَاءِ','أَتْرُكُ الْمَوْقِدَ مُشْتَعِلًا']]],
+ vocab:[['مَذْعُورًا','خَائِفًا',['مُطْمَئِنًّا','نَائِمًا']],['أَخْمَدُوا','أَطْفَؤُوا',['أَشْعَلُوا','بَنَوْا']],['كَثِيفًا','كَثِيرًا',['قَلِيلًا','بَعِيدًا']],['يَتَصَاعَدُ','يَرْتَفِعُ',['يَنْزِلُ','يَخْتَفِي']],['وَاجِبُنَا','عَمَلُنَا الَّذِي يَجِبُ عَلَيْنَا',['هَدِيَّتُنَا','لُعْبَتُنَا']]],
+ opp:[['كَثِيفًا','قَلِيلًا',['كَثِيرًا','أَسْوَدَ']],['خَائِفًا','مُطْمَئِنًّا',['مَذْعُورًا','سَرِيعًا']],['أَخْمَدُوا','أَشْعَلُوا',['أَطْفَؤُوا','شَكَرُوا']],['الصَّغِيرِ','الْكَبِيرِ',['الْجَمِيلِ','الْقَرِيبِ']]],
+ order:['اتَّصَلَ فَوَّازٌ بِالدِّفَاعِ الْمَدَنِيِّ','شَكَرَ الْجَارُ فَوَّازًا','رَأَى فَوَّازٌ دُخَانًا كَثِيفًا','أَخْمَدَ الرِّجَالُ الْحَرِيقَ'],
+ madd:[['دُخَانًا','ا'],['جَارِهِمْ','ا'],['الْحَرِيقِ','ي'],['هَيَّا','ا'],['أَخْمَدُوا','و'],['الصَّغِيرِ','ي']],
+ style:['ask2','single'],play:r=>arPlay(r,'a22')});
+
+AL.push({id:'a31',unit:3,code:'٣-١',title:'مَدِينَتَانِ مُقَدَّسَتَانِ',short:'مدينتان مقدستان',color:'#2E9E5B',ic:'🕋',blurb:'مكة المكرمة والمدينة المنورة.',
+ sents:['طَلَبَتِ الْمُعَلِّمَةُ مِنْ نُورَةَ أَنْ تَكْتُبَ مَوْضُوعًا لِصَحِيفَةِ الْحَائِطِ.','فَكَتَبَتْ نُورَةُ: فِي وَطَنِي مَدِينَتَانِ مُقَدَّسَتَانِ، هُمَا مَكَّةُ الْمُكَرَّمَةُ وَالْمَدِينَةُ الْمُنَوَّرَةُ.',
+  'فِي مَكَّةَ وُلِدَ الرَّسُولُ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ، وَمِنْهَا بَدَأَتِ الدَّعْوَةُ إِلَى الْإِسْلَامِ.','وَفِيهَا الْمَسْجِدُ الْحَرَامُ، وَالْكَعْبَةُ الْمُشَرَّفَةُ قِبْلَةُ الْمُسْلِمِينَ فِي صَلَاتِهِمْ.',
+  'وَفِي مَكَّةَ الْمَشَاعِرُ الْمُقَدَّسَةُ: عَرَفَاتٌ وَمِنًى وَمُزْدَلِفَةُ، يَفِدُ إِلَيْهَا الْحُجَّاجُ كُلَّ عَامٍ لِأَدَاءِ مَنَاسِكِ الْحَجِّ.','أَمَّا الْمَدِينَةُ الْمُنَوَّرَةُ فَهِيَ طَيْبَةُ الطَّيِّبَةُ، هَاجَرَ إِلَيْهَا الرَّسُولُ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ، وَبَنَى فِيهَا مَسْجِدَهُ.',
+  'وَمِنَ الْمَدِينَةِ انْتَشَرَ الْإِسْلَامُ فِي الْأَرْضِ بِالْعَدْلِ وَالْإِحْسَانِ وَحُسْنِ الْمُعَامَلَةِ.','نَحْمَدُ اللَّهَ الَّذِي جَعَلَ هَاتَيْنِ الْمَدِينَتَيْنِ فِي وَطَنِنَا الْغَالِي.'],
+ chunks:[[['مَاذَا طَلَبَتِ الْمُعَلِّمَةُ مِنْ نُورَةَ؟','أَنْ تَكْتُبَ مَوْضُوعًا لِصَحِيفَةِ الْحَائِطِ',['أَنْ تَرْسُمَ صُورَةً','أَنْ تَقْرَأَ قِصَّةً'],0,'مَاذَا؟'],['مَا الْمَدِينَتَانِ الْمُقَدَّسَتَانِ؟','مَكَّةُ الْمُكَرَّمَةُ وَالْمَدِينَةُ الْمُنَوَّرَةُ',['الرِّيَاضُ وَجُدَّةُ','الطَّائِفُ وَأَبْهَا'],1,'مَا؟']],
+  [['أَيْنَ وُلِدَ الرَّسُولُ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ؟','فِي مَكَّةَ الْمُكَرَّمَةِ',['فِي الْمَدِينَةِ الْمُنَوَّرَةِ','فِي الطَّائِفِ'],2,'أَيْنَ؟'],['مَا قِبْلَةُ الْمُسْلِمِينَ فِي صَلَاتِهِمْ؟','الْكَعْبَةُ الْمُشَرَّفَةُ',['جَبَلُ عَرَفَاتٍ','الْمَسْجِدُ النَّبَوِيُّ'],3,'مَا؟']],
+  [['لِمَاذَا يَفِدُ الْحُجَّاجُ إِلَى مَكَّةَ كُلَّ عَامٍ؟','لِأَدَاءِ مَنَاسِكِ الْحَجِّ',['لِلتِّجَارَةِ فَقَطْ','لِلسِّبَاحَةِ'],4,'لِمَاذَا؟'],['إِلَى أَيْنَ هَاجَرَ الرَّسُولُ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ؟','إِلَى الْمَدِينَةِ الْمُنَوَّرَةِ',['إِلَى مَكَّةَ','إِلَى الرِّيَاضِ'],5,'إِلَى أَيْنَ؟']],
+  [['كَيْفَ انْتَشَرَ الْإِسْلَامُ مِنَ الْمَدِينَةِ؟','بِالْعَدْلِ وَالْإِحْسَانِ وَحُسْنِ الْمُعَامَلَةِ',['بِالْقُوَّةِ وَالْغَضَبِ','بِالصُّدْفَةِ'],6,'كَيْفَ؟'],['عَلَى مَاذَا نَحْمَدُ اللَّهَ فِي آخِرِ النَّصِّ؟','عَلَى أَنَّ الْمَدِينَتَيْنِ فِي وَطَنِنَا',['عَلَى الْمَطَرِ','عَلَى الطَّعَامِ'],7,'عَلَى مَاذَا؟']]],
+ big:[['مَا اسْمٌ آخَرُ لِلْمَدِينَةِ الْمُنَوَّرَةِ؟','طَيْبَةُ',['مِنًى','عَرَفَاتٌ']],['مَا وَجْهُ الشَّبَهِ بَيْنَ مَكَّةَ وَالْمَدِينَةِ؟','كِلْتَاهُمَا مَدِينَةٌ مُقَدَّسَةٌ',['كِلْتَاهُمَا عَلَى الْبَحْرِ','كِلْتَاهُمَا فِي الصَّحْرَاءِ الْبَارِدَةِ']],['مَاذَا نَقُولُ لِمَنْ أَدَّى فَرِيضَةَ الْحَجِّ؟','حَجًّا مَبْرُورًا',['نَوْمًا هَنِيئًا','عِيدًا سَعِيدًا']]],
+ vocab:[['الْمُقَدَّسَةُ','الْمُطَهَّرَةُ',['الْوَاسِعَةُ','الْبَعِيدَةُ']],['مَنَاسِكُ الْحَجِّ','عِبَادَاتُ الْحَجِّ وَأَعْمَالُهُ',['أَوْقَاتُ الْحَجِّ','مَلَابِسُ الْحَجِّ']],['يَفِدُ','يَقْدَمُ وَيَأْتِي',['يُسْرِعُ','يَنَامُ']],['الْمَشَاعِرُ','أَمَاكِنُ الْحَجِّ',['أَوْقَاتُ الْحَجِّ','فَوَائِدُ الْحَجِّ']],['قِبْلَةُ الْمُسْلِمِينَ','الْجِهَةُ الَّتِي يُصَلُّونَ نَحْوَهَا',['مَدْرَسَتُهُمْ','سُوقُهُمْ']]],
+ opp:[['وُلِدَ','تُوُفِّيَ',['كَبِرَ','عَاشَ']],['الْعَدْلِ','الظُّلْمِ',['الْخَيْرِ','الْحَقِّ']],['انْتَشَرَ','انْحَسَرَ',['ظَهَرَ','كَثُرَ']]],
+ order:['الْكَعْبَةُ قِبْلَةُ الْمُسْلِمِينَ','هَاجَرَ الرَّسُولُ إِلَى الْمَدِينَةِ','يَفِدُ الْحُجَّاجُ إِلَى مَكَّةَ','فِي وَطَنِي مَدِينَتَانِ مُقَدَّسَتَانِ'],
+ madd:[['الْحَائِطِ','ا'],['الرَّسُولُ','و'],['الْإِسْلَامِ','ا'],['الْمُسْلِمِينَ','ي'],['هَاجَرَ','ا'],['عَرَفَاتٌ','ا']],
+ style:['dual','tanween'],play:r=>arPlay(r,'a31')});
+
+AL.push({id:'a32',unit:3,code:'٣-٢',title:'عَلَمُ بِلَادِي',short:'علم بلادي',color:'#2E9E5B',ic:'🇸🇦',blurb:'لون العلم، وكلمة التوحيد، والسيف.',
+ sents:['جَلَسَ طَارِقٌ وَنُورَةُ يَنْظُرَانِ إِلَى فَوَّازٍ، وَهُوَ يَرْسُمُ عَلَمَ الْمَمْلَكَةِ لِمَعْرِضِ الْيَوْمِ الْوَطَنِيِّ.','قَالَ طَارِقٌ: لِمَاذَا لَا تُلَوِّنُ الْعَلَمَ بِاللَّوْنِ الْأَصْفَرِ؟',
+  'قَالَ فَوَّازٌ: لَا أَسْتَطِيعُ أَنْ أُغَيِّرَ لَوْنَ الْعَلَمِ، فَعَلَمُ بِلَادِي لَوْنُهُ أَخْضَرُ.','ثُمَّ أَحْضَرَ صُوَرًا لِأَعْلَامِ دُوَلِ الْخَلِيجِ، وَطَلَبَ مِنْ طَارِقٍ أَنْ يُشِيرَ إِلَى عَلَمِ الْمَمْلَكَةِ، فَأَشَارَ إِلَيْهِ بِسُرْعَةٍ.',
+  'سَأَلَهُ فَوَّازٌ: كَيْفَ عَرَفْتَهُ يَا طَارِقُ؟ قَالَ: عَرَفْتُهُ بِلَوْنِهِ الْأَخْضَرِ.','قَالَتْ نُورَةُ: وَلَا تَنْسَ كَلِمَةَ التَّوْحِيدِ، وَالسَّيْفَ الَّذِي يَدُلُّ عَلَى الْعَدْلِ وَالْقُوَّةِ.',
+  'وَفِي الْيَوْمِ الْحَادِي عَشَرَ مِنْ شَهْرِ مَارِسَ نَحْتَفِلُ كُلَّ عَامٍ بِيَوْمِ الْعَلَمِ السُّعُودِيِّ.','ابْتَسَمَ طَارِقٌ وَقَالَ: أَنَا أُحِبُّ عَلَمَ بِلَادِي، وَأَعْتَزُّ بِهِ.'],
+ chunks:[[['مَاذَا كَانَ فَوَّازٌ يَرْسُمُ؟','عَلَمَ الْمَمْلَكَةِ',['شَجَرَةً','سَيَّارَةً'],0,'مَاذَا؟'],['بِأَيِّ لَوْنٍ أَرَادَ طَارِقٌ تَلْوِينَ الْعَلَمِ؟','الْأَصْفَرِ',['الْأَحْمَرِ','الْأَخْضَرِ'],1,'بِأَيِّ؟']],
+  [['مَا لَوْنُ عَلَمِ بِلَادِي؟','أَخْضَرُ',['أَصْفَرُ','أَزْرَقُ'],2,'مَا؟'],['مَاذَا أَحْضَرَ فَوَّازٌ؟','صُوَرًا لِأَعْلَامِ دُوَلِ الْخَلِيجِ',['أَقْلَامًا مُلَوَّنَةً','كِتَابًا'],3,'مَاذَا؟']],
+  [['كَيْفَ عَرَفَ طَارِقٌ عَلَمَ الْمَمْلَكَةِ؟','بِلَوْنِهِ الْأَخْضَرِ',['بِحَجْمِهِ الْكَبِيرِ','بِشَكْلِهِ الْمُدَوَّرِ'],4,'كَيْفَ؟'],['عَلَى مَاذَا يَدُلُّ السَّيْفُ فِي الْعَلَمِ؟','الْعَدْلِ وَالْقُوَّةِ',['الْحَرْبِ وَالْخَوْفِ','الطَّعَامِ'],5,'عَلَى مَاذَا؟']],
+  [['مَتَى نَحْتَفِلُ بِيَوْمِ الْعَلَمِ السُّعُودِيِّ؟','فِي الْحَادِي عَشَرَ مِنْ مَارِسَ',['فِي أَوَّلِ يَنَايِرَ','فِي الْعِيدِ'],6,'مَتَى؟'],['مَاذَا قَالَ طَارِقٌ فِي النِّهَايَةِ؟','أُحِبُّ عَلَمَ بِلَادِي وَأَعْتَزُّ بِهِ',['أُرِيدُ عَلَمًا أَصْفَرَ','لَا أُحِبُّ الرَّسْمَ'],7,'مَاذَا؟']]],
+ big:[['لِمَاذَا لَا نُغَيِّرُ لَوْنَ الْعَلَمِ؟','لِأَنَّ الْعَلَمَ رَمْزُ الْوَطَنِ لَا يَتَغَيَّرُ',['لِأَنَّ اللَّوْنَ الْأَصْفَرَ قَبِيحٌ','لِأَنَّ الْأَلْوَانَ غَالِيَةٌ']],['مَا الْكَلِمَةُ الْمَكْتُوبَةُ عَلَى عَلَمِ الْمَمْلَكَةِ؟','كَلِمَةُ التَّوْحِيدِ',['اسْمُ الْمَدِينَةِ','رَقْمُ الْعَامِ']],['كَيْفَ نَحْتَرِمُ عَلَمَ بِلَادِنَا؟','لَا نَرْمِيهِ وَلَا نُهِينُهُ',['نَرْمِيهِ عَلَى الْأَرْضِ','نَكْتُبُ عَلَيْهِ']]],
+ vocab:[['أَشَارَ إِلَيْهِ','دَلَّ عَلَيْهِ',['شَاهَدَهُ','رَمَاهُ']],['أَعْتَزُّ','أَفْتَخِرُ',['أَخَافُ','أَنْسَى']],['مَعْرِضٌ','مَكَانٌ تُعْرَضُ فِيهِ الْأَعْمَالُ',['مَلْعَبٌ','مَطْعَمٌ']],['يَدُلُّ','يُشِيرُ',['يَأْكُلُ','يَجْرِي']]],
+ opp:[['أُغَيِّرُ','أُحَافِظُ',['أُبَدِّلُ','أَرْسُمُ']],['ابْتَسَمَ','عَبَسَ',['ضَحِكَ','قَالَ']],['بِسُرْعَةٍ','بِبُطْءٍ',['فَوْرًا','بِقُوَّةٍ']],['أُحِبُّ','أَكْرَهُ',['أَعْتَزُّ','أُرِيدُ']]],
+ order:['عَلَمُ بِلَادِي لَوْنُهُ أَخْضَرُ','أَنَا أُحِبُّ عَلَمَ بِلَادِي','يَرْسُمُ فَوَّازٌ عَلَمَ الْمَمْلَكَةِ','لَا تَرْمِ عَلَمَ بِلَادِكَ'],
+ madd:[['طَارِقٌ','ا'],['يَنْظُرَانِ','ا'],['التَّوْحِيدِ','ي'],['بِلَادِي','ا'],['صُوَرًا','ا'],['الْحَادِي','ا']],
+ style:['nahy','pluralv'],play:r=>arPlay(r,'a32')});
+
+AL.push({id:'a41',unit:4,code:'٤-١',title:'رِحْلَةُ حَبَّةِ قَمْحٍ',short:'رحلة حبة قمح',color:'#F2862B',ic:'🌾',blurb:'من الحقل إلى الخبز.',
+ sents:['أَنَا حَبَّةُ قَمْحٍ صَفْرَاءُ نَاعِمَةُ الْمَلْمَسِ، يَبْذُرُنِي الْفَلَّاحُ فِي الْأَرْضِ، وَيُغَطِّينِي بِالتُّرَابِ.','يَسْقِينِي بِالْمَاءِ فَتَنْمُو جُذُورِي، ثُمَّ يَنْمُو سَاقِي، فَيَشُقُّ طَرِيقَهُ إِلَى سَطْحِ الْأَرْضِ.',
+  'يَزْدَادُ طُولِي، وَتَتَفَرَّعُ أَوْرَاقِي الْخَضْرَاءُ، وَأَكْبَرُ يَوْمًا بَعْدَ يَوْمٍ.','تَمْتَلِئُ الْحُقُولُ بِسَنَابِلِي، وَتَبْقَى تَحْتَ أَشِعَّةِ الشَّمْسِ لِتَجِفَّ وَتَصِيرَ صَفْرَاءَ ذَهَبِيَّةً.',
+  'ثُمَّ يَأْتِي الْفَلَّاحُونَ فَيَحْصُدُونَ السَّنَابِلَ، وَيَحْمِلُونَ حَبَّاتِهَا إِلَى الْمِطْحَنَةِ.','وَفِي الْمِطْحَنَةِ تُطْحَنُ الْحَبَّاتُ فَتُصْبِحُ دَقِيقًا.',
+  'يَأْخُذُ الْخَبَّازُ الدَّقِيقَ، فَيَصْنَعُ مِنْهُ الْعَجِينَ.','ثُمَّ يُدْخِلُ الْعَجِينَ الْفُرْنَ، فَيَصِيرُ خُبْزًا أَوْ كَعْكًا شَهِيًّا.'],
+ chunks:[[['مَا صِفَةُ حَبَّةِ الْقَمْحِ؟','صَفْرَاءُ نَاعِمَةُ الْمَلْمَسِ',['حَمْرَاءُ خَشِنَةٌ','خَضْرَاءُ كَبِيرَةٌ'],0,'مَا؟'],['مَاذَا يَنْمُو أَوَّلًا بَعْدَ السَّقْيِ؟','الْجُذُورُ',['السَّنَابِلُ','الْخُبْزُ'],1,'مَاذَا؟']],
+  [['مَا لَوْنُ أَوْرَاقِ الْقَمْحِ؟','خَضْرَاءُ',['زَرْقَاءُ','سَوْدَاءُ'],2,'مَا؟'],['لِمَاذَا تَبْقَى السَّنَابِلُ تَحْتَ أَشِعَّةِ الشَّمْسِ؟','لِتَجِفَّ وَتَصِيرَ ذَهَبِيَّةً',['لِتَتَبَلَّلَ','لِتَنَامَ'],3,'لِمَاذَا؟']],
+  [['إِلَى أَيْنَ تُحْمَلُ حَبَّاتُ الْقَمْحِ بَعْدَ الْحَصَادِ؟','إِلَى الْمِطْحَنَةِ',['إِلَى الْبَحْرِ','إِلَى الْمَدْرَسَةِ'],4,'إِلَى أَيْنَ؟'],['مَاذَا تُصْبِحُ الْحَبَّاتُ بَعْدَ الطَّحْنِ؟','دَقِيقًا',['مَاءً','بُذُورًا'],5,'مَاذَا؟']],
+  [['مَاذَا يَصْنَعُ الْخَبَّازُ مِنَ الدَّقِيقِ؟','الْعَجِينَ',['الْعَصِيرَ','الْحَلِيبَ'],6,'مَاذَا؟'],['أَيْنَ يُدْخِلُ الْخَبَّازُ الْعَجِينَ؟','الْفُرْنَ',['الثَّلَّاجَةَ','الْحَقْلَ'],7,'أَيْنَ؟']]],
+ big:[['مَنِ الَّذِي يَحْكِي الْقِصَّةَ؟','حَبَّةُ الْقَمْحِ',['الْخَبَّازُ','الْفَلَّاحُ']],['كَيْفَ نَسْتَفِيدُ مِنْ بَقَايَا الْخُبْزِ؟','نُطْعِمُهَا الطُّيُورَ وَلَا نَرْمِيهَا',['نَرْمِيهَا فِي الشَّارِعِ','نَحْرِقُهَا']],['مَا الَّذِي قَدْ يُتْلِفُ الْمَزْرُوعَاتِ؟','قِلَّةُ الْمَاءِ وَالْحَشَرَاتُ الضَّارَّةُ',['ضَوْءُ الشَّمْسِ الْمُعْتَدِلُ','الْفَلَّاحُ النَّشِيطُ']]],
+ vocab:[['يَبْذُرُنِي','يَزْرَعُنِي',['يَحْصُدُنِي','يَأْكُلُنِي']],['تَجِفُّ','تُصْبِحُ يَابِسَةً',['تُصْبِحُ لَيِّنَةً','تُصْبِحُ مُبْتَلَّةً']],['يَشُقُّ طَرِيقَهُ','يَظْهَرُ فَوْقَ الْأَرْضِ',['يَخْتَفِي تَحْتَ الْأَرْضِ','يَنَامُ']],['الْمِطْحَنَةُ','مَكَانُ طَحْنِ الْحُبُوبِ',['مَكَانُ بَيْعِ الْمَلَابِسِ','مَكَانُ اللَّعِبِ']],['شَهِيًّا','لَذِيذًا',['حَامِضًا','بَارِدًا']]],
+ opp:[['نَاعِمَةٌ','خَشِنَةٌ',['لَيِّنَةٌ','صَفْرَاءُ']],['يَشُقُّ طَرِيقَهُ إِلَى سَطْحِ الْأَرْضِ','يَخْتَفِي تَحْتَ الْأَرْضِ',['يَظْهَرُ فَوْقَ الْأَرْضِ','يَكْبَرُ']],['يَزْدَادُ','يَنْقُصُ',['يَكْبَرُ','يَطُولُ']],['تَمْتَلِئُ','تَفْرُغُ',['تَكْثُرُ','تَكْبَرُ']]],
+ order:['يَزْرَعُ الْفَلَّاحُ الْقَمْحَ','يَصْنَعُ الْخَبَّازُ الْخُبْزَ','تُطْحَنُ الْحَبَّاتُ فَتُصْبِحُ دَقِيقًا','مَحَاصِيلُ بِلَادِي كَثِيرَةٌ'],
+ madd:[['صَفْرَاءُ','ا'],['سَاقِي','ا'],['جُذُورِي','و'],['الْفَلَّاحُونَ','و'],['تَصِيرَ','ي'],['الْعَجِينَ','ي']],
+ style:['atf','madd'],play:r=>arPlay(r,'a41')});
+
+AL.push({id:'a42',unit:4,code:'٤-٢',title:'مَنْ أَنَا؟',short:'من أنا؟',color:'#F2862B',ic:'🌴',blurb:'شجرة مباركة تتحدّث عن نفسها.',
+ sents:['فِي أُسْبُوعِ الشَّجَرَةِ، طَلَبَتِ الْمُعَلِّمَةُ مِنْ كُلِّ تِلْمِيذَةٍ أَنْ تَخْتَارَ شَجَرَةً وَتَتَحَدَّثَ عَنْهَا.','ذَهَبَتْ نُورَةُ إِلَى الْمَكْتَبَةِ، وَقَرَأَتِ الْكُتُبَ لِتَجْمَعَ مَعْلُومَاتٍ عَنْ شَجَرَتِهَا.',
+  'فِي الصَّبَاحِ وَقَفَتْ نُورَةُ أَمَامَ زَمِيلَاتِهَا، وَهِيَ تَلْبَسُ ثَوْبًا أَخْضَرَ.','وَقَالَتْ: أَنَا شَجَرَةٌ مُبَارَكَةٌ، ذُكِرَ اسْمِي فِي الْقُرْآنِ الْكَرِيمِ.',
+  'رَأْسِي يَعْلُوهُ تَاجٌ مِنَ السَّعَفِ الْأَخْضَرِ، وَجِذْعِي سَمِيكٌ، وَجُذُورِي قَوِيَّةٌ مُمْتَدَّةٌ فِي الْأَرْضِ.','صَنَعَ النَّاسُ قَدِيمًا مِنْ جِذْعِي الْقَوَارِبَ، وَبَنَوْا بِهِ الْبُيُوتَ، وَصَنَعُوا مِنْ سَعَفِي السِّلَالَ.',
+  'ثِمَارِي لَذِيذَةُ الطَّعْمِ، مُفِيدَةٌ لِلْجِسْمِ، يُحِبُّهَا الصِّغَارُ وَالْكِبَارُ.','أَنَا نِعْمَةٌ مِنْ نِعَمِ اللَّهِ تَعَالَى، فَمَنْ أَكُونُ؟'],
+ chunks:[[['بِمُنَاسَبَةِ مَاذَا طَلَبَتِ الْمُعَلِّمَةُ ذَلِكَ؟','أُسْبُوعِ الشَّجَرَةِ',['الْيَوْمِ الْوَطَنِيِّ','الْعِيدِ'],0,'مَاذَا؟'],['أَيْنَ جَمَعَتْ نُورَةُ الْمَعْلُومَاتِ؟','فِي الْمَكْتَبَةِ',['فِي الْحَدِيقَةِ','فِي السُّوقِ'],1,'أَيْنَ؟']],
+  [['مَاذَا لَبِسَتْ نُورَةُ؟','ثَوْبًا أَخْضَرَ',['ثَوْبًا أَحْمَرَ','قُبَّعَةً'],2,'مَاذَا؟'],['لِمَاذَا لَبِسَتْ ثَوْبًا أَخْضَرَ؟','لِأَنَّ لَوْنَ الشَّجَرَةِ أَخْضَرُ',['لِأَنَّ الْجَوَّ بَارِدٌ','لِأَنَّهُ ثَوْبُ الْعِيدِ'],2,'لِمَاذَا؟']],
+  [['مَاذَا يَعْلُو رَأْسَ الشَّجَرَةِ؟','تَاجٌ مِنَ السَّعَفِ الْأَخْضَرِ',['تَاجٌ مِنَ الذَّهَبِ','عُشُّ عُصْفُورٍ'],4,'مَاذَا؟'],['مِمَّ صَنَعَ النَّاسُ السِّلَالَ؟','مِنَ السَّعَفِ',['مِنَ الْحَجَرِ','مِنَ الْحَدِيدِ'],5,'مِمَّ؟']],
+  [['مَا صِفَةُ ثِمَارِهَا؟','لَذِيذَةٌ مُفِيدَةٌ',['مُرَّةٌ','صَغِيرَةٌ جِدًّا'],6,'مَا؟'],['مَنِ الشَّجَرَةُ الَّتِي تَحَدَّثَتْ عَنْهَا نُورَةُ؟','النَّخْلَةُ',['التُّفَّاحَةُ','الْبُرْتُقَالَةُ'],7,'مَنْ؟']]],
+ big:[['مَاذَا يَحْدُثُ لَوْ كَانَتْ جُذُورُ النَّخْلَةِ ضَعِيفَةً؟','تَسْقُطُ النَّخْلَةُ',['تَطِيرُ النَّخْلَةُ','تَكْبَرُ أَكْثَرَ']],['مَا ثِمَارُ النَّخْلَةِ؟','التَّمْرُ',['الْعِنَبُ','الْمَوْزُ']],['لِمَاذَا خُصِّصَ أُسْبُوعٌ لِلشَّجَرَةِ؟','لِنَعْرِفَ أَهَمِّيَّتَهَا وَنَزْرَعَهَا',['لِنَقْطَعَهَا','لِنَرْسُمَ فَقَطْ']]],
+ vocab:[['السَّعَفُ','أَوْرَاقُ النَّخْلِ',['ثِمَارُ النَّخْلِ','جُذُورُ النَّخْلِ']],['جِذْعِي','سَاقِي',['جُذُورِي','ثِمَارِي']],['مُمْتَدَّةٌ','طَوِيلَةٌ مُنْتَشِرَةٌ',['قَصِيرَةٌ','مَكْسُورَةٌ']],['مُبَارَكَةٌ','فِيهَا خَيْرٌ كَثِيرٌ',['صَغِيرَةٌ','بَعِيدَةٌ']]],
+ opp:[['سَمِيكٌ','رَقِيقٌ',['غَلِيظٌ','طَوِيلٌ']],['قَوِيَّةٌ','ضَعِيفَةٌ',['مُمْتَدَّةٌ','كَبِيرَةٌ']],['الصِّغَارُ','الْكِبَارُ',['الْأَطْفَالُ','النَّاسُ']],['لَذِيذَةٌ','كَرِيهَةٌ',['شَهِيَّةٌ','حُلْوَةٌ']]],
+ order:['النَّخْلَةُ شَجَرَةٌ مُبَارَكَةٌ','ثِمَارُ النَّخْلَةِ لَذِيذَةٌ','ذَهَبَتْ نُورَةُ إِلَى الْمَكْتَبَةِ','جُذُورُ النَّخْلَةِ قَوِيَّةٌ'],
+ madd:[['تَاجٌ','ا'],['جُذُورِي','و'],['الْكَرِيمِ','ي'],['ثِمَارِي','ا'],['الْبُيُوتَ','و'],['سَمِيكٌ','ي']],
+ style:['count','madd'],play:r=>arPlay(r,'a42')});
+
+/* ---------- extra reading: «أنا أقرأ» ---------- */
+const ALIB=[
+{id:'r1',title:'الْحَمَامَتَانِ',ic:'🕊️',color:'#8B5CF6',sents:['كَانَتْ يَمَامَةُ حَمَامَةً بَيْضَاءَ لَطِيفَةً، تُسَبِّحُ اللَّهَ كَثِيرًا وَهِيَ تَطِيرُ.','وَذَاتَ يَوْمٍ وَجَدَتْ حَبَّةَ قَمْحٍ ذَهَبِيَّةً، فَحَمَلَتْهَا بِمِنْقَارِهَا وَطَارَتْ إِلَى عُشِّهَا.','فِي الطَّرِيقِ رَأَتْ صَدِيقَتَهَا سَلَامَةَ، فَفَتَحَتْ فَمَهَا لِتُحَيِّيَهَا، فَسَقَطَتِ الْحَبَّةُ فِي النَّهْرِ!','قَالَتْ سَلَامَةُ: لَا تَحْزَنِي، سَنُلْقِي عَصًا فِي النَّهْرِ، وَتَقِفِينَ عَلَيْهَا لِتَلْتَقِطِي الْحَبَّةَ.','تَعَاوَنَتِ الْحَمَامَتَانِ عَلَى حَمْلِ الْعَصَا، حَتَّى الْتَقَطَتْ يَمَامَةُ حَبَّةَ الْقَمْحِ.','شَكَرَتْ يَمَامَةُ صَدِيقَتَهَا، وَقَالَتْ: أَنْتِ صَدِيقَتِي الْمُخْلِصَةُ الَّتِي تُسَاعِدُنِي دَائِمًا.'],
+ chunks:[[['مَا لَوْنُ الْحَمَامَةِ يَمَامَةَ؟','بَيْضَاءُ',['سَوْدَاءُ','زَرْقَاءُ'],0,'مَا؟'],['مَاذَا وَجَدَتْ يَمَامَةُ؟','حَبَّةَ قَمْحٍ ذَهَبِيَّةً',['حَبَّةَ عِنَبٍ','قِطْعَةَ خُبْزٍ'],1,'مَاذَا؟']],[['لِمَاذَا فَتَحَتْ يَمَامَةُ فَمَهَا؟','لِتُحَيِّيَ صَدِيقَتَهَا',['لِتَأْكُلَ','لِتُغَنِّيَ'],2,'لِمَاذَا؟'],['مَا الْفِكْرَةُ الَّتِي قَالَتْهَا سَلَامَةُ؟','نُلْقِي عَصًا فِي النَّهْرِ',['نَتْرُكُ الْحَبَّةَ','نَسْبَحُ فِي النَّهْرِ'],3,'مَا؟']],[['كَيْفَ أَخْرَجَتَا الْحَبَّةَ؟','بِالتَّعَاوُنِ عَلَى حَمْلِ الْعَصَا',['بِالسِّبَاحَةِ','بِالصُّرَاخِ'],4,'كَيْفَ؟'],['بِمَ وَصَفَتْ يَمَامَةُ صَدِيقَتَهَا؟','الْمُخْلِصَةُ',['الْكَسُولُ','الْغَاضِبَةُ'],5,'بِمَ؟']]],
+ big:[['مَاذَا تَعَلَّمْتَ مِنَ الْقِصَّةِ؟','التَّعَاوُنُ يَحُلُّ الْمُشْكِلَاتِ',['الْبُكَاءُ يَحُلُّ الْمُشْكِلَاتِ','لَا نُسَاعِدُ أَحَدًا']]]},
+{id:'r2',title:'آدَابُ الِاسْتِئْذَانِ',ic:'🖍️',color:'#1C8FD0',sents:['طَلَبَ الْمُعَلِّمُ مِنَ التَّلَامِيذِ تَلْوِينَ الرُّسُومَاتِ.','لَمْ يَجِدْ بَدْرٌ اللَّوْنَ الْأَخْضَرَ، فَأَخَذَهُ مِنْ عُلْبَةِ زَمِيلِهِ حَازِمٍ دُونَ إِذْنٍ.','بَحَثَ حَازِمٌ عَنْ لَوْنِهِ فَرَآهُ فِي يَدِ بَدْرٍ، فَغَضِبَ وَأَخْبَرَ الْمُعَلِّمَ.','سَأَلَ الْمُعَلِّمُ: هَلِ اسْتَأْذَنْتَ زَمِيلَكَ يَا بَدْرُ؟ قَالَ بَدْرٌ: لَا، وَهَذَا خَطَأٌ مِنِّي.','قَالَ بَدْرٌ: سَأَعْتَذِرُ إِلَيْهِ، فَقَالَ الْمُعَلِّمُ: هَذَا هُوَ التَّصَرُّفُ السَّلِيمُ.','شَكَرَ بَدْرٌ مُعَلِّمَهُ، وَقَالَ: تَعَلَّمْتُ الْيَوْمَ أَدَبًا مِنْ آدَابِ الْإِسْلَامِ.'],
+ chunks:[[['مَاذَا طَلَبَ الْمُعَلِّمُ مِنَ التَّلَامِيذِ؟','تَلْوِينَ الرُّسُومَاتِ',['كِتَابَةَ قِصَّةٍ','اللَّعِبَ بِالْكُرَةِ'],0,'مَاذَا؟'],['مَا الْخَطَأُ الَّذِي فَعَلَهُ بَدْرٌ؟','أَخَذَ اللَّوْنَ دُونَ إِذْنٍ',['كَسَرَ اللَّوْنَ','نَسِيَ كِتَابَهُ'],1,'مَا؟']],[['لِمَنْ أَخْبَرَ حَازِمٌ؟','الْمُعَلِّمَ',['أُمَّهُ','بَدْرًا'],2,'لِمَنْ؟'],['هَلِ اعْتَرَفَ بَدْرٌ بِخَطَئِهِ؟','نَعَمْ، قَالَ: هَذَا خَطَأٌ مِنِّي',['لَا، أَنْكَرَ','لَا، سَكَتَ'],3,'هَلْ؟']],[['كَيْفَ أَصْلَحَ بَدْرٌ خَطَأَهُ؟','اعْتَذَرَ إِلَى زَمِيلِهِ',['أَخَذَ لَوْنًا آخَرَ','خَرَجَ مِنَ الْفَصْلِ'],4,'كَيْفَ؟'],['مَاذَا تَعَلَّمَ بَدْرٌ؟','أَدَبَ الِاسْتِئْذَانِ',['الرَّسْمَ','الْحِسَابَ'],5,'مَاذَا؟']]],
+ big:[['مَاذَا تَقُولُ قَبْلَ أَنْ تَأْخُذَ شَيْئًا مِنْ زَمِيلِكَ؟','هَلْ تَأْذَنُ لِي؟',['هَذَا لِي','أَعْطِنِي الْآنَ']]]},
+{id:'r3',title:'الْفَتَى الشُّجَاعُ',ic:'🏰',color:'#2E9E5B',sents:['زَارَتْ غَادَةُ وَوَالِدَاهَا أُسْرَةَ عَمِّهَا لِيُهَنِّئُوهُمْ بِمَوْلُودٍ جَدِيدٍ اسْمُهُ عَبْدُ الْعَزِيزِ.','سَأَلَتْ غَادَةُ أَبَاهَا: لِمَاذَا سَمَّوْهُ عَبْدَ الْعَزِيزِ؟ قَالَ: لِأَنَّهُ اسْمُ مُوَحِّدِ الْمَمْلَكَةِ.','قَالَتْ غَادَةُ: عَرَفْتُ أَنَّ الْمَلِكَ عَبْدَ الْعَزِيزِ كَانَ شُجَاعًا ذَكِيًّا عَادِلًا وَفِيًّا.','قَالَ الْأَبُ: عَاشَ طُفُولَتَهُ فِي الرِّيَاضِ، وَكَانَ يُحِبُّ مُرَافَقَةَ أَبِيهِ فِي مَجَالِسِ الْكِبَارِ.','وَلَمَّا كَبِرَ عَادَ إِلَى الرِّيَاضِ مَعَ رِجَالِهِ، مُتَوَكِّلًا عَلَى اللَّهِ، فَاسْتَقْبَلَهُ النَّاسُ فَرِحِينَ.','ثُمَّ وَحَّدَ الْبِلَادَ تَحْتَ رَايَةِ التَّوْحِيدِ، فَصَارَ اسْمُهَا الْمَمْلَكَةَ الْعَرَبِيَّةَ السُّعُودِيَّةَ.'],
+ chunks:[[['لِمَاذَا زَارَتْ غَادَةُ أُسْرَةَ عَمِّهَا؟','لِلتَّهْنِئَةِ بِالْمَوْلُودِ',['لِلْعِلَاجِ','لِلدِّرَاسَةِ'],0,'لِمَاذَا؟'],['لِمَاذَا سُمِّيَ الْمَوْلُودُ عَبْدَ الْعَزِيزِ؟','لِأَنَّهُ اسْمُ مُوَحِّدِ الْمَمْلَكَةِ',['لِأَنَّهُ اسْمُ الْجَدِّ فَقَطْ','بِلَا سَبَبٍ'],1,'لِمَاذَا؟']],[['مِنْ صِفَاتِ الْمَلِكِ عَبْدِ الْعَزِيزِ:','الشَّجَاعَةُ وَالذَّكَاءُ',['الْخَوْفُ','الْكَسَلُ'],2,'مَا؟'],['أَيْنَ عَاشَ طُفُولَتَهُ؟','فِي الرِّيَاضِ',['فِي جُدَّةَ','فِي أَبْهَا'],3,'أَيْنَ؟']],[['كَيْفَ اسْتَقْبَلَهُ النَّاسُ؟','فَرِحِينَ',['خَائِفِينَ','حَزِينِينَ'],4,'كَيْفَ؟'],['مَا اسْمُ الْبِلَادِ بَعْدَ تَوْحِيدِهَا؟','الْمَمْلَكَةُ الْعَرَبِيَّةُ السُّعُودِيَّةُ',['الْجَزِيرَةُ الْخَضْرَاءُ','بِلَادُ الْبَحْرِ'],5,'مَا؟']]],
+ big:[['لِمَاذَا نُحِبُّ الْمَلِكَ عَبْدَ الْعَزِيزِ؟','لِأَنَّهُ وَحَّدَ بِلَادَنَا',['لِأَنَّهُ كَانَ يَلْعَبُ كَثِيرًا','لِأَنَّهُ سَافَرَ بَعِيدًا']]]},
+{id:'r4',title:'الْيَوْمُ الْوَطَنِيُّ',ic:'🎉',color:'#F2862B',sents:['احْتَفَلَتِ الْمَدْرَسَةُ بِالْيَوْمِ الْوَطَنِيِّ لِلْمَمْلَكَةِ الْعَرَبِيَّةِ السُّعُودِيَّةِ.','أَقَامَتْ حَفْلًا وَمَعْرِضًا، فِيهِ صُوَرٌ لِمَعَالِمِ الْوَطَنِ، وَلَوْحَاتٌ كَتَبَ عَلَيْهَا التَّلَامِيذُ عِبَارَاتِ حُبٍّ لِلْوَطَنِ.','بَدَأَ الْحَفْلُ بِآيَاتٍ مِنَ الْقُرْآنِ الْكَرِيمِ، ثُمَّ أَنْشَدَ التَّلَامِيذُ نَشِيدَ الْوَطَنِ.','وَحَثَّ الْمُدِيرُ التَّلَامِيذَ عَلَى حُبِّ الْوَطَنِ وَالْعَمَلِ بِجِدٍّ لِيَبْقَى زِينَةَ الْأَوْطَانِ.','ثُمَّ أَلْقَى فَوَّازٌ كَلِمَةً قَالَ فِيهَا: وَطَنُنَا وَطَنُ الْخَيْرِ وَالْعَطَاءِ، وُلِدْنَا فِيهِ وَتَرَبَّيْنَا عَلَى أَرْضِهِ.','وَمِنْ حَقِّهِ عَلَيْنَا أَنْ نَبْنِيَهُ بِسَوَاعِدِنَا، لِيَبْقَى حُرًّا قَوِيًّا.'],
+ chunks:[[['بِمَاذَا احْتَفَلَتِ الْمَدْرَسَةُ؟','بِالْيَوْمِ الْوَطَنِيِّ',['بِيَوْمِ الشَّجَرَةِ','بِنِهَايَةِ الْعَامِ'],0,'بِمَاذَا؟'],['مَاذَا كَتَبَ التَّلَامِيذُ عَلَى اللَّوْحَاتِ؟','عِبَارَاتِ حُبٍّ لِلْوَطَنِ',['أَسْمَاءَهُمْ فَقَطْ','أَرْقَامًا'],1,'مَاذَا؟']],[['بِمَ بَدَأَ الْحَفْلُ؟','بِآيَاتٍ مِنَ الْقُرْآنِ الْكَرِيمِ',['بِمُبَارَاةٍ','بِالْغِنَاءِ'],2,'بِمَ؟'],['عَلَى مَاذَا حَثَّ الْمُدِيرُ التَّلَامِيذَ؟','حُبِّ الْوَطَنِ وَالْعَمَلِ بِجِدٍّ',['النَّوْمِ مُبَكِّرًا','اللَّعِبِ'],3,'عَلَى مَاذَا؟']],[['مَنْ أَلْقَى كَلِمَةً عَنْ حُبِّ الْوَطَنِ؟','فَوَّازٌ',['الْمُدِيرُ','نُورَةُ'],4,'مَنْ؟'],['كَيْفَ نَبْنِي الْوَطَنَ؟','بِسَوَاعِدِنَا وَعَمَلِنَا',['بِالْكَلَامِ فَقَطْ','بِالنَّوْمِ'],5,'كَيْفَ؟']]],
+ big:[['كَيْفَ تُعَبِّرُ عَنْ حُبِّكَ لِوَطَنِكَ؟','أَجْتَهِدُ فِي دِرَاسَتِي وَأُحَافِظُ عَلَيْهِ',['أَرْمِي النِّفَايَاتِ','أُهْمِلُ دُرُوسِي']]]}];
+
+/* =================================================================
+   reading competition — after every two sentences, a quiz
+   ================================================================= */
+if(!store.arq)store.arq={};if(!store.arf)store.arf={};
+function arPassage(S,upto,cur,ev){return `<div class="arpass" dir="rtl">${S.slice(0,upto).map((s,i)=>`<p class="sent${cur[0]<0?'':i>=cur[0]&&i<cur[1]?' now':' old'}${ev===i?' ev':''}" data-i="${i}">${wsp(s)}</p>`).join('')}</div>`;}
+function arRead(root,L,o={}){const S=L.sents,C=L.chunks,n=C.length;let ci=0,qi=0,pts=0,max=0,phase='read',streak=0,right=0,total=0,bigI=0;const id0=++runId;
+ const Q=()=>phase==='big'?L.big[bigI]:C[ci][qi];
+ const top=()=>`<div class="artop"><div class="chunkdots">${C.map((_,k)=>`<i class="${k<ci||phase==='done'?'on':k===ci?'cur':''}"></i>`).join('')}<i class="big${phase==='big'?' cur':''}${phase==='done'?' on':''}">؟</i></div><span class="arpts">🏆 <b class="num" id="apt">${ar(pts)}</b> نقطة${streak>=2?` · 🔥 ${ar(streak)}`:''}</span></div>`;
+ const draw=(ev)=>{if(!root.isConnected)return;const upto=phase==='big'||phase==='done'?S.length:(ci+1)*2,cur=phase==='big'||phase==='done'?[-1,-1]:[ci*2,ci*2+2];
+  let ctl='';
+  if(phase==='read')ctl=`<div class="arctl"><p class="artip">${ci===0?'اقرأ الجملتين بصوت عالٍ. اضغط أي كلمة لتسمعها.':'أحسنت! اقرأ الجملتين الجديدتين.'}</p><div class="ctrl">${voiceOK()?'<button class="btn alt" id="rd">🔊 اقرأ لي</button>':''}<button class="btn go" id="ready">قرأتها ✓ ابدأ المسابقة 🏁</button></div></div>`;
+  else if(phase==='quiz'||phase==='big'){const q=Q();const opts=o.fixed?[q[1],...q[2]]:shuffle([q[1],...q[2]]);window.__arq=q[1];window.__arqOpts=opts;
+   ctl=`<div class="arq pop"><div class="qhead"><span class="qtype">${phase==='big'?'🧠 سؤال التفكير':'سؤال '+(q[4]||'')}</span><span class="qno">${phase==='big'?ar(bigI+1)+' / '+ar(L.big.length):ar(qi+1)+' / ٢'}</span></div><div class="timer"><i></i></div><div class="arqq">${arT(q[0])}${voiceOK()?' <button class="say-btn" id="sq">🔊</button>':''}</div><div class="opts aropts">${opts.map((x,k)=>`<button class="opt" data-k="${k}">${arT(x)}</button>`).join('')}</div><div class="msg" id="am"></div></div>`;}
+  root.innerHTML=`<div class="panel arread" style="--c:${L.color}">${top()}${arPassage(S,upto,cur,ev)}${ctl}</div>`;
+  root.querySelectorAll('.w').forEach(w=>w.onclick=()=>{w.classList.add('said');speakAr(w.textContent);setTimeout(()=>w.classList.remove('said'),900);});
+  const q=s=>root.querySelector(s);
+  if(phase==='read'){const nowS=[...root.querySelectorAll('.sent.now')];nowS.forEach((p,k)=>{p.style.animationDelay=k*.35+'s';});
+   if(q('#rd'))q('#rd').onclick=async()=>{for(const p of nowS){if(runId!==id0)return;p.classList.add('reading');await speakAr(p.textContent);p.classList.remove('reading');}};
+   if(readOn&&voiceOK())setTimeout(()=>{if(q('#rd'))q('#rd').click();},400);
+   q('#ready').onclick=()=>{phase='quiz';qi=0;sTap();draw();};}
+  else{const q0=Q();let tries=0;const t0=Date.now();if(q('#sq'))q('#sq').onclick=()=>speakAr(q0[0]);if(readOn&&voiceOK())setTimeout(()=>speakAr(q0[0]),300);
+   root.querySelectorAll('.aropts .opt').forEach(b=>b.onclick=()=>{if(b.disabled)return;const v=window.__arqOpts[+b.dataset.k],m=q('#am');total+=tries===0?1:0;
+    if(v===q0[1]){const fast=Date.now()-t0<15000;const g=tries?5:10+(fast?5:0);pts+=g;if(!tries){right++;streak++;}max+=15;sGood();b.classList.add('right');root.querySelectorAll('.aropts .opt').forEach(x=>x.disabled=true);
+     m.className='msg ok pop';m.innerHTML=`${tries?'صحيح! أحسنت المحاولة.':pick(['ممتاز!','رائع!','أحسنت يا بطل!','إجابة ذكية!'])} <b>+${ar(g)}</b>${!tries&&fast?' ⚡ سريع':''}`;const pe=q('#apt');if(pe){pe.textContent=ar(pts);pe.parentElement.classList.remove('bump');void pe.offsetWidth;pe.parentElement.classList.add('bump');}
+     setTimeout(next,1300);}
+    else{sBad();b.classList.add('wrong');b.disabled=true;streak=0;if(!tries){tries=1;const ev=q0[3];m.className='msg bad pop';m.innerHTML=phase==='big'?'فكّر مرة أخرى في النص كله.':'ارجع إلى النص 🔎 ابحث في الجملة المضيئة، ثم حاول مرة أخرى.';
+      if(ev!=null&&phase!=='big'){const p=root.querySelector(`.sent[data-i="${ev}"]`);if(p){p.classList.add('ev');p.scrollIntoView({block:'nearest',behavior:'smooth'});}}}
+     else{max+=15;root.querySelectorAll('.aropts .opt').forEach(x=>{x.disabled=true;if(window.__arqOpts[+x.dataset.k]===q0[1])x.classList.add('right');});m.className='msg bad pop';m.innerHTML=`الإجابة: ${arT(q0[1])}`;setTimeout(next,2200);}}});}};
+ const next=()=>{if(runId!==id0)return;if(phase==='quiz'){qi++;if(qi<2){draw();return;}ci++;if(ci<n){phase='read';draw();window.scrollTo({top:0,behavior:'smooth'});return;}phase='big';bigI=0;draw();return;}
+  if(phase==='big'){bigI++;if(bigI<L.big.length){draw();return;}finish();}};
+ const finish=()=>{phase='done';const pct=max?pts/max:0,medalI=pct>=.85?0:pct>=.65?1:2,M=[['🥇','ذهبية'],['🥈','فضية'],['🥉','برونزية']][medalI];
+  const prev=store.arq[L.id]||{};store.arq[L.id]={best:Math.max(prev.best||0,pts),m:Math.min(prev.m??3,medalI),d:Date.now()};if(!o.lib)store.story[L.id]=1;store.arRead=today();save();sWin();confetti();
+  root.innerHTML=`<div class="panel arread" style="--c:${L.color}">${top()}<div class="result pop"><div class="armedal">${M[0]}</div><h2>ميدالية ${M[1]}!</h2><div class="score num">${ar(pts)}</div><p>نقطة في مسابقة الفهم. أجبت عن ${ar(right)} ${right>2&&right<11?'أسئلة':'سؤالًا'} إجابةً صحيحة من أول محاولة.</p>
+   <div class="ctrl">${voiceOK()?'<button class="btn alt" id="all">🔊 اقرأ لي القطعة كاملة</button>':''}${o.lib?'':'<button class="btn go" id="toplay">إلى الألعاب ←</button>'}<button class="btn alt" id="again">أعد المسابقة</button></div></div>${arPassage(S,S.length,[-1,-1])}</div>`;
+  const q=s=>root.querySelector(s);root.querySelectorAll('.w').forEach(w=>w.onclick=()=>speakAr(w.textContent));
+  if(q('#all'))q('#all').onclick=async()=>{for(const p of root.querySelectorAll('.arpass .sent')){if(runId!==id0)return;p.classList.add('reading');await speakAr(p.textContent);p.classList.remove('reading');}};
+  if(q('#toplay'))q('#toplay').onclick=()=>{view.tab='play';render();};q('#again').onclick=()=>arRead(root,L,o);if(o.onDone)o.onDone();};
+ draw();}
+
+/* ---------- fluency: child reads, parent judges ---------- */
+function arSay(root,L){const S=L.sents;let i=0;const res=[];const last=store.arf[L.id];
+ const intro=()=>{root.innerHTML=`${last?`<div class="panel plast"><b>آخر قراءة:</b> <span class="num">${ar(last.ok)}</span> من <span class="num">${ar(last.t)}</span> جمل قرأها صحيحة من أول مرة.</div>`:''}<div class="panel parentp" style="--c:${L.color}"><span class="ptag">👨‍👦 مع ولي الأمر</span><h2>أقرأ لأبي: «${L.short}»</h2><ol class="psteps"><li>محمد يقرأ الجملة بصوت عالٍ، مع ضبط الحركات.</li><li>أنت تحكم: <b class="okc">✅ قرأها صحيحة</b> أو <b class="badc">🔁 ليس بعد</b>.</li><li>إذا أخطأ: يسمع القراءة الصحيحة ويحاول مرة ثانية.</li></ol><p class="pnote">انتبه للحروف المتشابهة، وللحركات في آخر الكلمة، وللتنوين، وللحرف المشدّد.</p><div class="ctrl"><button class="btn go" id="pgo">📖 ابدأ</button></div></div>`;root.querySelector('#pgo').onclick=card;};
+ const card=()=>{runId++;hush();const id=runId;if(i>=S.length)return report();let tries=0;
+  root.innerHTML=`<div class="panel pcard" style="--c:${L.color}"><div class="sp-top"><div class="sbar"><i style="width:${(i+1)/S.length*100}%"></i></div><span>${ar(i+1)} / ${ar(S.length)}</span></div><div class="pstage pop"><p class="arbig">${wsp(S[i])}</p><div class="psay" id="ps">🗣️ اقرأ الجملة بصوت عالٍ!</div></div>
+   <div class="pjudge"><span class="ptag">👨 ولي الأمر: كيف كانت القراءة؟</span><div class="pbtns" id="pb"><button class="pbtn ok" id="pok">✅ قرأها صحيحة</button><button class="pbtn no" id="pno">🔁 ليس بعد</button></div></div></div>`;
+  const q=s=>root.querySelector(s);root.querySelectorAll('.w').forEach(w=>w.onclick=()=>speakAr(w.textContent));
+  const mark=st=>{res.push(st);q('#pb').innerHTML=st==='ok'?'<span class="pstamp">⭐ ممتاز!</span>':st==='help'?'<span class="pstamp help">👍 أحسنت!</span>':'<span class="pstamp bad">💪 سنتدرّب عليها</span>';st==='ok'?sGood():sPop();i++;setTimeout(()=>{if(id===runId)card();},900);};
+  q('#pok').onclick=()=>mark(tries?'help':'ok');
+  q('#pno').onclick=async()=>{if(tries){mark('bad');return;}tries=1;q('#ps').className='psay again';q('#ps').textContent='👂 استمع جيدًا… ثم اقرأ مرة ثانية';q('#pok').textContent='✅ صحيحة هذه المرة';q('#pno').textContent='❌ تحتاج تدريب';
+   if(voiceOK()){const p=root.querySelector('.arbig');p.classList.add('reading');await speakAr(S[i]);p.classList.remove('reading');if(id===runId)q('#ps').textContent='🗣️ دورك! اقرأها مرة أخرى';}};};
+ const report=()=>{const c={ok:0,help:0,bad:0};res.forEach(r=>c[r]++);store.arf[L.id]={ok:c.ok,help:c.help,bad:c.bad,t:res.length,d:Date.now()};save();if(c.ok>=res.length*.8){sWin();confetti();}
+  root.innerHTML=`<div class="panel result pop" style="--c:${L.color}">${face(c.bad?'think':'wow')}<h2>${c.ok===res.length?'قراءة ممتازة!':c.bad?'نحتاج تدريبًا قليلًا':'أحسنت!'}</h2><div class="score num">${ar(c.ok)} / ${ar(res.length)}</div><p>✅ ${ar(c.ok)} من أول مرة · 🔁 ${ar(c.help)} بعد المساعدة · ❌ ${ar(c.bad)} تحتاج تدريب</p><div class="ctrl"><button class="btn" id="ag">اقرأ مرة أخرى</button></div></div>`;root.querySelector('#ag').onclick=()=>{i=0;res.length=0;intro();};};
+ intro();}
+
+/* =================================================================
+   language generators (levels)
+   ================================================================= */
+const excerpt=(L,a,b)=>`<div class="pcardx">${L.sents.slice(a,b).map(s=>`<p>${s}</p>`).join('')}</div>`;
+function gComp(L){const all=[];L.chunks.forEach((c,ci)=>c.forEach(q=>all.push([q,ci])));return G2('أفهم المقروء',0,()=>{const[q,ci]=pick(all);return choice(`اقرأ، ثم أجب:<br>${arT(q[0])}`,[q[1],...q[2]],q[1],'ارجع إلى الجملتين وابحث عن الجواب.',`${arT(q[1])}`,{visual:excerpt(L,ci*2,ci*2+2),say:q[0]});});}
+function gBig(L){return G2('أستنتج وأفكّر',0,()=>{const q=pick(L.big);return choice(arT(q[0]),[q[1],...q[2]],q[1],'فكّر في النص كله.',arT(q[1]),{say:q[0]});});}
+function gVocab(L){return G2('معاني الكلمات',0,()=>{const v=pick(L.vocab);return choice(`مَا مَعْنَى ${arT('«'+v[0]+'»')}؟`,[v[1],...v[2]],v[1],'اقرأ الجملة التي وردت فيها الكلمة.',`${arT(v[0])} = ${arT(v[1])}`,{say:v[0]});});}
+function gOpp(L){return G2('الأضداد',0,()=>{const v=pick(L.opp);return choice(`مَا ضِدُّ ${arT('«'+v[0]+'»')}؟`,[v[1],...v[2]],v[1],'الضد عكس المعنى.',`${arT(v[0])} ✕ ${arT(v[1])}`,{say:v[0]});});}
+function gOrder(L){return G2('أرتّب الكلمات',0,()=>{const s=pick(L.order),t=s.split(' ');return{prompt:'رتّب الكلمات لتكوّن جملة مفيدة',kind:'tiles',tiles:t,joiner:' ',answer:s,hint:`أول كلمة: ${t[0]}`,explain:arT(s)+'.',say:s};});}
+function gShams(L){const ws=arWords(L).filter(w=>{const b=bare(w);return b.startsWith('ال')&&b.length>3&&!AREX.has(b);});return G2('ال الشمسية والقمرية',0,()=>{const w=pick(ws),sh=SUNL.includes(bare(w)[2]);return choice(`اللَّامُ فِي ${arT('«'+w.replace(/[،.؟!]/g,'')+'»')}:`,['شمسية ☀️ (لا تُنطق)','قمرية 🌙 (تُنطق)'],sh?'شمسية ☀️ (لا تُنطق)':'قمرية 🌙 (تُنطق)','هل تسمع صوت اللام؟ هل الحرف بعدها مشدّد؟',sh?'اللام شمسية: تُكتب ولا تُنطق، والحرف بعدها مشدّد.':'اللام قمرية: تُكتب وتُنطق ساكنة.',{say:w});});}
+function gTa(L){const ws=arWords(L).map(w=>w.replace(/[،.؟!:]/g,'')).filter(w=>/[ةت]$/.test(bare(w))&&bare(w).length>2);return G2('التاء المربوطة والمفتوحة',0,()=>{const w=pick(ws),m=bare(w).endsWith('ة');return choice(`كَيْفَ تَنْتَهِي كَلِمَةُ ${arT('«'+w+'»')}؟`,['بتاء مربوطة (ة)','بتاء مفتوحة (ت)'],m?'بتاء مربوطة (ة)':'بتاء مفتوحة (ت)','المربوطة تُنطق هاءً عند الوقف.',m?'تاء مربوطة: تُنطق هاءً عند الوقف.':'تاء مفتوحة: تُنطق تاءً دائمًا.',{say:w});});}
+function gTanween(L){const ws=arWords(L).map(w=>w.replace(/[،.؟!:]/g,'')).filter(w=>/[ً-ٍ]/.test(w)&&!/^\d/.test(w));return G2('التنوين',0,()=>{const w=pick(ws),t=w.includes('ٌ')?'تنوين ضم ٌ':w.includes('ً')?'تنوين فتح ً':'تنوين كسر ٍ';return choice(`مَا نَوْعُ التَّنْوِينِ فِي ${arT('«'+w+'»')}؟`,['تنوين ضم ٌ','تنوين فتح ً','تنوين كسر ٍ'],t,'انظر إلى الحركتين فوق آخر حرف أو تحته.',`${arT(w)}: ${t}`,{say:w});});}
+function gShadda(L){const ws=arWords(L).map(w=>w.replace(/[،.؟!:]/g,'')).filter(w=>w.includes('ّ')&&!AREX.has(bare(w))),pl=arWords(L).map(w=>w.replace(/[،.؟!:]/g,'')).filter(w=>!w.includes('ّ')&&bare(w).length>2);return G2('الحرف المشدد',1,()=>{const w=pick(ws),o=[w,...shuffle(pl).slice(0,2)];return choice('أَيُّ كَلِمَةٍ فِيهَا حَرْفٌ مُشَدَّدٌ ( ّ )؟',o,w,'الشدّة: حرفان، الأول ساكن والثاني متحرك.',`${arT(w)} فيها شدّة.`);});}
+function gMadd(L){return G2('حروف المد',1,()=>{const[w,t]=pick(L.madd);return choice(`مَا حَرْفُ الْمَدِّ فِي ${arT('«'+w+'»')}؟`,['الألف (ا)','الواو (و)','الياء (ي)'],t==='ا'?'الألف (ا)':t==='و'?'الواو (و)':'الياء (ي)','المد: ا بعد الفتحة، و بعد الضمة، ي بعد الكسرة.',`حرف المد في ${arT(w)}: ${t}`,{say:w});});}
+function gImla(L){const prs=X=>arWords(X).map(w=>w.replace(/[،.؟!:]/g,'')).filter(w=>/ة[\u064B-\u0652]*$/.test(w)).map(w=>[w,X.sents.find(x=>x.includes(w))]).filter(x=>x[1]);return G2('أكتب بالإملاء الصحيح',2,()=>{let P=prs(L);if(!P.length)P=AL.flatMap(prs);const[w,s]=pick(P);const v1=w.replace(/ة([ً-ْ]*)$/,'ت$1'),v2=w.replace(/ة([ً-ْ]*)$/,'ه');return choice(`أَكْمِلْ بِالْكِتَابَةِ الصَّحِيحَةِ:<br>${arT(s.replace(w,'……'))}`,[w,v1,v2],w,'التاء المربوطة تُكتب ة، وتُنطق هاءً عند الوقف.',arT(w),{say:s});});}
+const STYLE={
+ dua:B('أسلوب الدعاء',3,[['أَدْعُو اللَّهَ أَنْ يَشْفِيَ أُمِّي. أَيُّ دُعَاءٍ صَحِيحٌ؟','اللَّهُمَّ اشْفِ أُمِّي',['أُمِّي تَشْفِي','اللَّهُمَّ أُمِّي']],['أَدْعُو اللَّهَ أَنْ يَحْفَظَ أَبِي. أَيُّ دُعَاءٍ صَحِيحٌ؟','اللَّهُمَّ احْفَظْ أَبِي',['أَبِي يَحْفَظُ','احْفَظِ اللَّهُمَّ']],['أَدْعُو اللَّهَ أَنْ يَحْرُسَ وَطَنِي. أَيُّ دُعَاءٍ صَحِيحٌ؟','اللَّهُمَّ احْرُسْ وَطَنِي',['وَطَنِي يَحْرُسُ','اللَّهُمَّ وَطَنِي']],['أَدْعُو اللَّهَ أَنْ يُوَفِّقَنِي. أَيُّ دُعَاءٍ صَحِيحٌ؟','اللَّهُمَّ وَفِّقْنِي',['أَنَا أُوَفِّقُ','وَفِّقْ أَنَا']]]),
+ gender:B('المذكر والمؤنث',3,[['الْوَالِدُ يَعْطِفُ عَلَى الْأَبْنَاءِ. الْوَالِدَةُ … عَلَى الْأَبْنَاءِ.','تَعْطِفُ',['يَعْطِفُ','عَطَفُوا']],['الْجَدُّ يَحْكِي حِكَايَاتٍ. الْجَدَّةُ … حِكَايَاتٍ.','تَحْكِي',['يَحْكِي','حَكَوْا']],['الْخَالُ يُسَاعِدُ الْأُسْرَةَ. الْخَالَةُ … الْأُسْرَةَ.','تُسَاعِدُ',['يُسَاعِدُ','سَاعَدُوا']],['الْعَمَّةُ تَحْنُو عَلَيْنَا. الْعَمُّ … عَلَيْنَا.','يَحْنُو',['تَحْنُو','حَنَتْ']]]),
+ inna:B('أسلوب التوكيد بـ «إنّ»',3,[['الْجَدُّ عَطُوفٌ. أَكِّدِ الْجُمْلَةَ بِـ «إِنَّ»:','إِنَّ الْجَدَّ عَطُوفٌ',['إِنَّ الْجَدُّ عَطُوفٌ','إِنَّ الْجَدِّ عَطُوفٍ']],['الصَّلَاةُ وَاجِبَةٌ. أَكِّدِ الْجُمْلَةَ بِـ «إِنَّ»:','إِنَّ الصَّلَاةَ وَاجِبَةٌ',['إِنَّ الصَّلَاةُ وَاجِبَةٌ','إِنَّ الصَّلَاةَ وَاجِبَةً']],['الْأَبُ رَحِيمٌ. أَكِّدِ الْجُمْلَةَ بِـ «إِنَّ»:','إِنَّ الْأَبَ رَحِيمٌ',['إِنَّ الْأَبُ رَحِيمٌ','إِنَّ الْأَبِ رَحِيمٍ']],['طَاعَةُ الْجَدِّ وَاجِبَةٌ. أَكِّدِ الْجُمْلَةَ بِـ «إِنَّ»:','إِنَّ طَاعَةَ الْجَدِّ وَاجِبَةٌ',['إِنَّ طَاعَةُ الْجَدِّ وَاجِبَةٌ','إِنَّ طَاعَةِ الْجَدِّ وَاجِبَةٍ']]]),
+ gender2:B('الفعل مع المذكر والمؤنث',3,[['يَجْلِسُ فَوَّازٌ حَزِينًا. … نُورَةُ حَزِينَةً.','تَجْلِسُ',['يَجْلِسُ','جَلَسُوا']],['تَسْتَمِعُ نُورَةُ إِلَى نُصْحِ جَدَّتِهَا. … فَوَّازٌ إِلَى نُصْحِ جَدِّهِ.','يَسْتَمِعُ',['تَسْتَمِعُ','اسْتَمَعْنَ']],['تَقْبَلُ جَدَّتِي اعْتِذَارِي. … جَدِّي اعْتِذَارِي.','يَقْبَلُ',['تَقْبَلُ','قَبِلْنَ']]]),
+ ask:B('أسلوب الاستفهام',3,[['سَأَلَتِ الْأُمُّ عَنْ سَبَبِ الصُّرَاخِ: … تَصْرُخُ يَا عَمَّارُ؟','لِمَاذَا',['مَتَى','كَمْ']],['أَسْأَلُ عَنْ مَوْعِدِ حُضُورِ أَبِي: … سَيَحْضُرُ أَبِي؟','مَتَى',['لِمَاذَا','مَنْ']],['أَسْأَلُ عَنِ الطَّرِيقَةِ: … تَكَسَّرَ الْقِطَارُ؟','كَيْفَ',['مَتَى','مَنْ']],['أَسْأَلُ وَالْجَوَابُ نَعَمْ أَوْ لَا: … تُحِبُّ الْقِرَاءَةَ؟','هَلْ',['أَيْنَ','كَيْفَ']],['أَيُّ كَلِمَةٍ أَدَاةُ اسْتِفْهَامٍ؟','كَيْفَ',['قِطَارٌ','لَعِبَ']]]),
+ ask2:B('أسلوب الاستفهام',3,[['شَاهَدَ فَوَّازٌ دُخَانًا. … شَاهَدَ فَوَّازٌ؟','مَاذَا',['مَتَى','كَمْ']],['أَخْمَدَ رِجَالُ الْإِطْفَاءِ الْحَرِيقَ. … أَخْمَدَ الْحَرِيقَ؟','مَنْ',['كَيْفَ','مَتَى']],['اتَّصَلَ فَوَّازٌ لِيُخْبِرَهُمْ. … اتَّصَلَ فَوَّازٌ؟','لِمَاذَا',['مَنْ','أَيْنَ']],['نَعَمْ، شَكَرَ الْجَارُ فَوَّازًا. … شَكَرَ الْجَارُ فَوَّازًا؟','هَلْ',['مَاذَا','لِمَاذَا']]]),
+ plural:B('المفرد والجمع',3,[['جَمْعُ «تِلْمِيذَةٍ»:','تِلْمِيذَاتٌ',['تِلْمِيذٌ','تِلْمِيذَتَانِ']],['جَمْعُ «قِصَّةٍ»:','قِصَصٌ',['قِصَّتَانِ','قَصَّاصٌ']],['جَمْعُ «بَيْتٍ»:','بُيُوتٌ',['بَيْتَانِ','بَيْتِي']],['أَيُّ كَلِمَةٍ مُخْتَلِفَةٌ (لَيْسَتْ جَمْعًا)؟','قِطَارٌ',['أَلْعَابٌ','أَسْوَاقٌ']],['أَيُّ كَلِمَةٍ مُخْتَلِفَةٌ (لَيْسَتْ مُثَنًّى)؟','إِخْوَةٌ',['صَدِيقَانِ','وَلَدَانِ']]]),
+ single:B('المفرد والجمع',3,[['مُفْرَدُ «مَنَازِلَ»:','مَنْزِلٌ',['نُزُولٌ','مَنْزِلَانِ']],['مُفْرَدُ «حَرَائِقَ»:','حَرِيقٌ',['حَرْقٌ','مُحْتَرِقٌ']],['مُفْرَدُ «أَصْدِقَاءَ»:','صَدِيقٌ',['صِدْقٌ','صَدِيقَانِ']],['مُفْرَدُ «رِجَالٍ»:','رَجُلٌ',['رِجْلٌ','رَاجِلٌ']],['مُفْرَدُ «جِيرَانٍ»:','جَارٌ',['جِيرَةٌ','مُجَاوِرٌ']]]),
+ dual:B('المثنى والجمع',3,[['الْحَاجُّ يَفِدُ، وَالْحَاجَّانِ يَفِدَانِ، وَالْحُجَّاجُ …','يَفِدُونَ',['يَفِدُ','يَفِدَانِ']],['الْمُسْلِمَانِ … فِي سَاحَةِ الْحَرَمِ.','يُصَلِّيَانِ',['يُصَلِّي','يُصَلُّونَ']],['الْمُسْلِمُونَ … فِي سَاحَةِ الْحَرَمِ.','يُصَلُّونَ',['يُصَلِّي','يُصَلِّيَانِ']],['التِّلْمِيذَتَانِ … فِي صَحِيفَةِ الْحَائِطِ.','تُشَارِكَانِ',['يُشَارِكُونَ','تُشَارِكُ']],['التَّلَامِيذُ … فِي صَحِيفَةِ الْحَائِطِ.','يُشَارِكُونَ',['يُشَارِكَانِ','تُشَارِكُ']]]),
+ tanween:B('التنوين',0,[['نَوِّنِ «الْمَدِينَةُ» تَنْوِينَ ضَمٍّ بَعْدَ حَذْفِ «ال»:','مَدِينَةٌ',['مَدِينَةً','الْمَدِينَةٌ']],['أَيُّ كَلِمَةٍ مُنَوَّنَةٌ تَنْوِينَ كَسْرٍ؟','عَامٍ',['عَامٌ','عَامًا']],['أَيُّ كَلِمَةٍ مُنَوَّنَةٌ تَنْوِينَ فَتْحٍ؟','مَوْضُوعًا',['مَوْضُوعٌ','مَوْضُوعٍ']]]),
+ nahy:B('«لا» الناهية',3,[['انْهَ صَدِيقَكَ عَنْ قَطْفِ زُهُورِ الْحَدَائِقِ:','لَا تَقْطِفْ زُهُورَ الْحَدَائِقِ',['لَا يَقْطِفُ زُهُورًا','أَقْطِفُ الزُّهُورَ']],['انْهَ صَدِيقَكَ عَنْ رَمْيِ الْعَلَمِ:','لَا تَرْمِ عَلَمَ بِلَادِكَ',['لَا يَرْمِي الْعَلَمَ','أَرْمِي الْعَلَمَ']],['انْهَ أَخَاكَ عَنِ الْإِسْرَافِ فِي الْمَاءِ:','لَا تُسْرِفْ فِي الْمَاءِ',['أُسْرِفُ فِي الْمَاءِ','لَا يُسْرِفُونَ']],['«لَا» النَّاهِيَةُ نَسْتَعْمِلُهَا لِـ:','طَلَبِ تَرْكِ الْفِعْلِ',['السُّؤَالِ','الدُّعَاءِ']]]),
+ pluralv:B('الفعل مع الجمع',3,[['يَرْسُمُ التَّلَامِيذُ عَلَمَ الْمَمْلَكَةِ ← التَّلَامِيذُ … عَلَمَ الْمَمْلَكَةِ.','يَرْسُمُونَ',['يَرْسُمُ','يَرْسُمَانِ']],['يَرْفَعُ التَّلَامِيذُ الْعَلَمَ ← التَّلَامِيذُ … الْعَلَمَ.','يَرْفَعُونَ',['يَرْفَعُ','تَرْفَعُ']],['يُنْشِدُ التَّلَامِيذُ النَّشِيدَ ← التَّلَامِيذُ … النَّشِيدَ.','يُنْشِدُونَ',['يُنْشِدُ','نُنْشِدُ']]]),
+ atf:B('حروف العطف',3,[['يَزْرَعُ الْفَلَّاحُ الْبُذُورَ، … يَحْصُدُ الْقَمْحَ بَعْدَ شُهُورٍ.','ثُمَّ',['لَا','هَلْ']],['أَيُّ جُمْلَةٍ فِيهَا حَرْفُ الْعَطْفِ «ثُمَّ»؟','يَبْذُرُنِي الْفَلَّاحُ ثُمَّ يَسْقِينِي',['أَنَا حَبَّةُ قَمْحٍ','الْخُبْزُ شَهِيٌّ']],['تُطْحَنُ الْحَبَّاتُ … تُصْبِحُ دَقِيقًا. (بَعْدَهَا مُبَاشَرَةً)','فَـ',['هَلْ','لَا']],['يُحِبُّ الصِّغَارُ … الْكِبَارُ التَّمْرَ.','وَ',['ثُمَّ','لَا']]]),
+ madd:B('حروف المد',1,[['أَيُّ كَلِمَةٍ فِيهَا مَدٌّ بِالْوَاوِ؟','جُذُورِي',['سَاقِي','الْعَجِينَ']],['أَيُّ كَلِمَةٍ فِيهَا مَدٌّ بِالْيَاءِ؟','كَرِيمٌ',['تَاجٌ','نُورَةُ']],['أَيُّ كَلِمَةٍ فِيهَا مَدٌّ بِالْأَلِفِ؟','سَاقٌ',['حَبٌّ','قَمْحٌ']]]),
+ count:B('العدد والمعدود',3,[['أَنَا حَبَّةُ قَمْحٍ …','وَاحِدَةٌ',['وَاحِدٌ','سَبْعٌ']],['لِي سَاقٌ …','وَاحِدَةٌ',['ثَلَاثٌ','سَبْعٌ']],['فِي الصُّورَةِ ٣ نَخَلَاتٍ. كَمْ نَخْلَةً فِي الصُّورَةِ؟','ثَلَاثُ نَخَلَاتٍ',['نَخْلَةٌ وَاحِدَةٌ','سَبْعُ نَخَلَاتٍ'],null,'ثَلَاثُ نَخَلَاتٍ','<span class="pic xl">🌴🌴🌴</span>']])};
+AL.forEach(L=>{const st=L.style.map(k=>STYLE[k]);const ph=[gShams(L),gTa(L),gTanween(L)];
+ L.levels=[[gComp(L),gComp(L),gVocab(L),ph[0],ph[1]],[gComp(L),gVocab(L),gOpp(L),ph[2],gShadda(L),gMadd(L),st[0]],[gBig(L),gComp(L),gOrder(L),gImla(L),st[0],st[1],gOpp(L)]];
+ L.skills=skillsOf(L);L.lvn=ALVN;L.ch=100+L.unit;});
+
+/* =================================================================
+   GAMES (one or two special games per lesson)
+   ================================================================= */
+function gwrap(root,html){root.innerHTML=html;return s=>root.querySelector(s);}
+function arShams(root,L){const ws=shuffle(arWords(L).filter(w=>{const b=bare(w);return b.startsWith('ال')&&b.length>3&&!AREX.has(b);}).map(w=>w.replace(/[،.؟!:]/g,''))).slice(0,8);let i=0,sc=0,miss=false;
+ const q=gwrap(root,`<div class="panel act"><h2>☀️🌙 الشمس والقمر</h2><div>اقرأ الكلمة: هل تسمع اللام؟ إذا لم تسمعها فهي <b>شمسية</b>، وإذا سمعتها فهي <b>قمرية</b>.</div><div class="skyw"><button class="sky2 sun" data-v="1"><span>☀️</span><b>شمسية</b><small>لا تُنطق</small><i class="bk" id="b1"></i></button><div class="cloudw" id="cw"></div><button class="sky2 moon" data-v="0"><span>🌙</span><b>قمرية</b><small>تُنطق</small><i class="bk" id="b0"></i></button></div><div class="msg" id="sm"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=ws.length){q('#cw').innerHTML=`<span class="pic xl">🏆</span>`;q('#sm').className='msg ok pop';q('#sm').textContent=`${ar(sc)} من ${ar(ws.length)} من أول محاولة!`;sWin();confetti();return;}miss=false;q('#cw').innerHTML=`<div class="cloudw2 pop">${arT(ws[i])}${voiceOK()?' <button class="say-btn" id="cs">🔊</button>':''}</div>`;if(q('#cs'))q('#cs').onclick=()=>speakAr(ws[i]);};
+ root.querySelectorAll('.sky2').forEach(b=>b.onclick=()=>{const w=ws[i];if(!w)return;const sh=SUNL.includes(bare(w)[2]);if((b.dataset.v==='1')===sh){if(!miss)sc++;sGood();q('#b'+b.dataset.v).insertAdjacentHTML('beforeend',`<em class="pop">${w}</em>`);q('#sm').className='msg ok pop';q('#sm').textContent=sh?'شمسية: نكتب اللام ولا ننطقها، والحرف بعدها مشدّد.':'قمرية: ننطق اللام ساكنة.';i++;setTimeout(next,700);}else{miss=true;sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);}});
+ next();}
+function arTaGame(root,L){const ws=shuffle(arWords(L).map(w=>w.replace(/[،.؟!:]/g,'')).filter(w=>/[ةت][ً-ْ]*$/.test(w)&&bare(w).length>2)).slice(0,8);let i=0,sc=0,miss=false;
+ const q=gwrap(root,`<div class="panel act"><h2>🎈 بالون التاء</h2><div>أكمل الكلمة: هل تنتهي بـ <b>ة</b> (مربوطة) أم <b>ت</b> (مفتوحة)؟</div><div class="tword" id="tw"></div><div class="ctrl"><button class="balloon b1" data-v="ة">ة</button><button class="balloon b2" data-v="ت">ت</button></div><div class="msg" id="tm"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=ws.length){q('#tw').innerHTML='<span class="pic xl">🎉</span>';q('#tm').className='msg ok pop';q('#tm').textContent=`${ar(sc)} من ${ar(ws.length)} من أول محاولة!`;sWin();confetti();return;}miss=false;const w=ws[i];q('#tw').innerHTML=`${arT(w.replace(/[ةت]([ً-ْ]*)$/,'<span class="blank">؟</span>$1'))}${voiceOK()?' <button class="say-btn" id="ts">🔊</button>':''}`;if(q('#ts'))q('#ts').onclick=()=>speakAr(w);};
+ root.querySelectorAll('.balloon').forEach(b=>b.onclick=()=>{const w=ws[i];if(!w)return;const right=bare(w).slice(-1);if(b.dataset.v===right){if(!miss)sc++;sGood();b.classList.add('popb');setTimeout(()=>b.classList.remove('popb'),500);q('#tw').innerHTML=arT(w);q('#tm').className='msg ok pop';q('#tm').textContent=right==='ة'?'تاء مربوطة: نقف عليها بالهاء.':'تاء مفتوحة: نقف عليها بالتاء.';i++;setTimeout(next,900);}else{miss=true;sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);}});
+ next();}
+function arDua(root){const D=[['🤒','أَدْعُو اللَّهَ أَنْ يَشْفِيَ أُمِّي','اشْفِ','أُمِّي'],['🛡️','أَدْعُو اللَّهَ أَنْ يَحْفَظَ أَبِي','احْفَظْ','أَبِي'],['🇸🇦','أَدْعُو اللَّهَ أَنْ يَحْرُسَ وَطَنِي','احْرُسْ','وَطَنِي'],['📚','أَدْعُو اللَّهَ أَنْ يُوَفِّقَنِي','وَفِّقْ','نِي'],['👴','أَدْعُو اللَّهَ أَنْ يَرْحَمَ جَدِّي','ارْحَمْ','جَدِّي']];let i=0;
+ const q=gwrap(root,`<div class="panel act"><h2>🤲 أدعو الله</h2><div>حوّل الجملة إلى دعاء يبدأ بـ «اللَّهُمَّ».</div><div class="duac" id="dc"></div><div class="opts" id="do"></div><div class="msg" id="dm"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=D.length){q('#dc').innerHTML='<span class="pic xl">🤲</span>';q('#do').innerHTML='';q('#dm').className='msg ok pop';q('#dm').textContent='أحسنت! تعلّمت أسلوب الدعاء.';sWin();confetti();return;}const d=D[i];const right=`اللَّهُمَّ ${d[2]}${d[3]==='نِي'?'نِي':' '+d[3]}`;const wrong=[`${d[3]==='نِي'?'أَنَا':d[3]} ${d[2]}`,`اللَّهُمَّ ${d[3]==='نِي'?'أَنَا':d[3]}`];const o=shuffle([right,...wrong]);
+  q('#dc').innerHTML=`<span class="pic big">${d[0]}</span>${arT(d[1])}`;q('#do').innerHTML=o.map((x,k)=>`<button class="opt" data-k="${k}">${arT(x)}</button>`).join('');q('#dm').textContent='';
+  root.querySelectorAll('#do .opt').forEach(b=>b.onclick=()=>{if(o[+b.dataset.k]===right){sGood();b.classList.add('right');q('#dm').className='msg ok pop';q('#dm').innerHTML=`${arT(right)} 🤲`;speakAr(right);i++;setTimeout(next,1500);}else{sBad();b.classList.add('wrong');b.disabled=true;}});};
+ next();}
+function arInna(root){const S=[['الْجَدُّ عَطُوفٌ','الْجَدَّ'],['الصَّلَاةُ وَاجِبَةٌ','الصَّلَاةَ'],['الْأَبُ رَحِيمٌ','الْأَبَ'],['الْإِسْلَامُ رَحْمَةٌ','الْإِسْلَامَ'],['الرَّأْيُ جَمِيلٌ','الرَّأْيَ']];let i=0;
+ const q=gwrap(root,`<div class="panel act"><h2>💪 قوّة «إِنَّ»</h2><div>عندما نضع «إِنَّ» أول الجملة نؤكّد الكلام، وتتغيّر حركة الكلمة الأولى: الضمّة تصبح فتحة!</div><div class="inna" id="in"></div><div class="opts" id="io"></div><div class="msg" id="im"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=S.length){q('#in').innerHTML='<span class="pic xl">💪</span>';q('#io').innerHTML='';q('#im').className='msg ok pop';q('#im').textContent='ممتاز! «إنّ» تُؤكّد، وتنصب الاسم بعدها.';sWin();confetti();return;}const[s,acc]=S[i];const rest=s.split(' ').slice(1).join(' ');const first=s.split(' ')[0];const right=`إِنَّ ${acc} ${rest}`,w1=`إِنَّ ${first} ${rest}`,w2=`إِنَّ ${acc.replace(/َ$/,'ِ')} ${rest}`;const o=shuffle([right,w1,w2]);
+  q('#in').innerHTML=`<div class="innab">${arT(s)}</div><span class="innaplus">+ إِنَّ</span>`;q('#io').innerHTML=o.map((x,k)=>`<button class="opt" data-k="${k}">${arT(x)}</button>`).join('');q('#im').textContent='';
+  root.querySelectorAll('#io .opt').forEach(b=>b.onclick=()=>{if(o[+b.dataset.k]===right){sGood();b.classList.add('right');q('#in').innerHTML=`<div class="innab done pop">${arT('إِنَّ '+'<u>'+acc+'</u> '+rest)}</div>`;q('#im').className='msg ok pop';q('#im').textContent='انظر: صارت الحركة فتحة بعد «إنّ».';speakAr(right);i++;setTimeout(next,1800);}else{sBad();b.classList.add('wrong');b.disabled=true;q('#im').className='msg bad pop';q('#im').textContent='انظر إلى آخر الكلمة بعد «إنّ»: تأخذ فتحة.';}});};
+ next();}
+function arShaddaGame(root){const W=[['تَكَسَّرَ','س','تَكَسْسَرَ'],['عَمَّارٌ','م','عَمْمَارٌ'],['تَفَكَّكَتْ','ك','تَفَكْكَكَتْ'],['تَسَرُّعِهِ','ر','تَسَرْرُعِهِ'],['الْأُمُّ','م','الْأُمْمُ']];let i=0;
+ const q=gwrap(root,`<div class="panel act"><h2>🧲 مغناطيس الشدّة</h2><div>الحرف المشدّد = حرفان: الأول ساكن ( ْ ) والثاني متحرّك. اضغط المغناطيس ليجمعهما!</div><div class="mag" id="mg"></div><button class="btn" id="mb">🧲 اجمع الحرفين</button><div class="msg" id="mm"></div></div>`);
+ const show=()=>{if(!root.isConnected)return;if(i>=W.length){q('#mg').innerHTML='<span class="pic xl">🏆</span>';q('#mb').style.display='none';q('#mm').className='msg ok pop';q('#mm').textContent='أحسنت! عرفت سرّ الشدّة.';sWin();confetti();return;}const w=W[i];q('#mg').innerHTML=`<div class="split">${arT(w[2])}</div><div class="lets"><span class="l1">${w[1]}ْ</span><span class="plus">+</span><span class="l2">${w[1]}َ</span></div>`;q('#mb').style.display='';q('#mm').textContent='';};
+ q('#mb').onclick=()=>{const w=W[i];if(!w)return;sGood();q('#mg').classList.add('join');setTimeout(()=>{if(!root.isConnected)return;q('#mg').classList.remove('join');q('#mg').innerHTML=`<div class="split done pop">${arT(w[0])}</div><div class="lets"><span class="l3">${w[1]}ّ</span></div>`;q('#mm').className='msg ok pop';q('#mm').innerHTML=`${arT(w[0])}: حرف ${w[1]} مشدّد`;speakAr(w[0]);i++;q('#mb').style.display='none';setTimeout(()=>{show();},1600);},500);};
+ show();}
+function arAskGame(root,items){let i=0,sc=0;const T=shuffle(items);
+ const q=gwrap(root,`<div class="panel act"><h2>❓ المذيع الصغير</h2><div>أنت مذيع! اختر أداة الاستفهام المناسبة لتسأل عن الجملة.</div><div class="mic" id="mc"></div><div class="opts" id="mo"></div><div class="msg" id="mm2"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=T.length){q('#mc').innerHTML=`<span class="pic xl">🎙️</span>`;q('#mo').innerHTML='';q('#mm2').className='msg ok pop';q('#mm2').textContent=`مذيع ممتاز! ${ar(sc)} من ${ar(T.length)}.`;sWin();confetti();return;}const t=T[i];let miss=false;const o=shuffle(['مَنْ','مَاذَا','أَيْنَ','مَتَى','كَيْفَ','لِمَاذَا','هَلْ'].filter(x=>x!==t[1])).slice(0,2).concat([t[1]]);const oo=shuffle(o);
+  q('#mc').innerHTML=`<div class="anchor">🎙️ ${arT(t[0])}</div><div class="qline">${arT(t[2].replace('…','<b class="blank">؟؟</b>'))}</div>`;q('#mo').innerHTML=oo.map(x=>`<button class="opt" data-v="${x}">${arT(x)}</button>`).join('');q('#mm2').textContent='';
+  root.querySelectorAll('#mo .opt').forEach(b=>b.onclick=()=>{if(b.dataset.v===t[1]){if(!miss)sc++;sGood();b.classList.add('right');const full=t[2].replace('…',t[1]);q('#mc').querySelector('.qline').innerHTML=arT(full);speakAr(full);i++;setTimeout(next,1500);}else{miss=true;sBad();b.classList.add('wrong');b.disabled=true;}});};
+ next();}
+const ASK1=[['عَمَّارٌ يَلْعَبُ بِالْقِطَارِ.','مَاذَا','… يَلْعَبُ عَمَّارٌ؟'],['دَعَا عَمَّارٌ صَدِيقَهُ خَالِدًا.','مَنْ','… دَعَا عَمَّارٌ؟'],['صَرَخَ عَمَّارٌ لِأَنَّهُ غَضِبَ.','لِمَاذَا','… صَرَخَ عَمَّارٌ؟'],['تَكَسَّرَ الْقِطَارُ بِسُقُوطِهِ مِنَ الْيَدِ.','كَيْفَ','… تَكَسَّرَ الْقِطَارُ؟'],['يَلْعَبَانِ فِي الْغُرْفَةِ.','أَيْنَ','… يَلْعَبَانِ؟'],['سَيَحْضُرُ أَبِي فِي الْمَسَاءِ.','مَتَى','… سَيَحْضُرُ أَبِي؟'],['نَعَمْ، اعْتَذَرَ عَمَّارٌ.','هَلْ','… اعْتَذَرَ عَمَّارٌ؟']];
+function arFire(root){let num='',stage=0;
+ const q=gwrap(root,`<div class="panel act"><h2>🚒 اتصل بالدفاع المدني</h2><div>رأيت دخانًا يخرج من بيت الجيران! أخبر الكبار، ثم اتصل بالرقم الصحيح.</div><div class="fireh"><span class="house">🏠</span><span class="smoke s1">💨</span><span class="smoke s2">💨</span><span class="flame">🔥</span><span class="truck" id="tr">🚒</span></div><div class="phone"><div class="pscr num" id="ps">${'&nbsp;'}</div><div class="pkeys">${[1,2,3,4,5,6,7,8,9,'⌫',0,'📞'].map(k=>`<button data-k="${k}">${typeof k==='number'?ar(k):k}</button>`).join('')}</div></div><div class="msg" id="fm"></div></div>`);
+ const upd=()=>{q('#ps').innerHTML=num?ar(num):'&nbsp;';};
+ root.querySelectorAll('.pkeys button').forEach(b=>b.onclick=()=>{if(stage)return;const k=b.dataset.k;if(k==='⌫'){num=num.slice(0,-1);upd();return;}if(k==='📞'){if(num==='998'){stage=1;sGood();q('#fm').className='msg ok pop';q('#fm').innerHTML='📞 «الدفاع المدني، تفضّل» — صِف لهم المكان: «بيت جارنا بجانب بيتنا، فيه حريق».';q('#tr').classList.add('go');setTimeout(()=>{if(!root.isConnected)return;q('.fireh').classList.add('out');q('#fm').innerHTML='أُخمد الحريق! شكرك الجار: «بارك الله فيك يا جاري الصغير». 🎉';sWin();confetti();const r=document.createElement('button');r.className='btn alt';r.textContent='العب مرة أخرى';r.onclick=()=>arFire(root);q('#fm').after(r);},2600);}else{sBad();q('#fm').className='msg bad pop';q('#fm').textContent='الرقم غير صحيح. رقم الدفاع المدني في القصة: ٩٩٨.';num='';upd();}return;}if(num.length<3){num+=k;sTap();upd();}});
+ upd();}
+function arCities(root){const F=[['وُلِدَ فِيهَا الرَّسُولُ ﷺ','m'],['فِيهَا الْكَعْبَةُ الْمُشَرَّفَةُ','m'],['فِيهَا عَرَفَاتٌ وَمِنًى وَمُزْدَلِفَةُ','m'],['يَفِدُ إِلَيْهَا الْحُجَّاجُ لِأَدَاءِ الْحَجِّ','m'],['هَاجَرَ إِلَيْهَا الرَّسُولُ ﷺ','d'],['اسْمُهَا أَيْضًا طَيْبَةُ','d'],['فِيهَا الْمَسْجِدُ النَّبَوِيُّ','d'],['انْتَشَرَ مِنْهَا الْإِسْلَامُ بِالْعَدْلِ وَالْإِحْسَانِ','d']];const T=shuffle(F);let i=0,sc=0,miss=false;
+ const q=gwrap(root,`<div class="panel act"><h2>🕋 مدينتان مقدّستان</h2><div>اقرأ البطاقة، وضعها في المدينة الصحيحة.</div><div class="fcard" id="fc"></div><div class="tfzones"><button class="tfz mk" data-v="m"><span>🕋</span><small>مَكَّةُ الْمُكَرَّمَةُ</small><i class="cn" id="cm">٠</i></button><button class="tfz md" data-v="d"><span>🕌</span><small>الْمَدِينَةُ الْمُنَوَّرَةُ</small><i class="cn" id="cd">٠</i></button></div><div class="msg" id="cmm"></div></div>`);let cm=0,cd=0;
+ const next=()=>{if(!root.isConnected)return;if(i>=T.length){q('#fc').innerHTML='<span class="pic xl">🏆</span>';q('#cmm').className='msg ok pop';q('#cmm').textContent=`${ar(sc)} من ${ar(T.length)} من أول محاولة!`;sWin();confetti();return;}miss=false;q('#fc').innerHTML=`<div class="pop">${arT(T[i][0])}</div>`;};
+ root.querySelectorAll('.tfz').forEach(b=>b.onclick=()=>{const t=T[i];if(!t)return;if(b.dataset.v===t[1]){if(!miss)sc++;sGood();if(t[1]==='m')q('#cm').textContent=ar(++cm);else q('#cd').textContent=ar(++cd);i++;setTimeout(next,500);}else{miss=true;sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);}});
+ next();}
+function arFlag(root){const steps=[['اختر لون العلم',['#1E9E63','#FFC531','#E2475A'],'#1E9E63','العلم السعودي لونه أخضر.'],['ماذا نكتب على العلم؟',['كلمة التوحيد','اسم المدرسة','لا شيء'],'كلمة التوحيد','نكتب: لا إله إلا الله محمد رسول الله.'],['ماذا نرسم تحت الكتابة؟',['السيف','الشمس','النخلة'],'السيف','السيف يدل على العدل والقوة.']];let st=0;const got={};
+ const q=gwrap(root,`<div class="panel act"><h2>🇸🇦 أرسم علم بلادي</h2><div class="flagbox" id="fb"></div><div class="target" id="ft"></div><div class="opts" id="fo"></div><div class="msg" id="fm"></div></div>`);
+ const draw=()=>{q('#fb').innerHTML=`<svg viewBox="0 0 300 200" width="100%"><rect width="300" height="200" rx="8" fill="${got.c||'#FFFFFF'}" stroke="var(--ink)" stroke-width="3"/>${got.t?'<text x="150" y="88" text-anchor="middle" fill="#fff" font-size="22" textLength="250" lengthAdjust="spacingAndGlyphs" font-family="Amiri,Noto Naskh Arabic,serif" class="pop">لا إله إلا الله محمد رسول الله</text>':''}${got.s?'<g class="pop"><path d="M60 130 H230" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M230 130 l14 -6 v12z" fill="#fff"/><path d="M60 122 v16" stroke="#fff" stroke-width="5"/></g>':''}</svg>`;
+  if(st>=steps.length){q('#ft').textContent='علم المملكة العربية السعودية جاهز!';q('#fo').innerHTML='<button class="btn" id="fa">ارسم من جديد</button>';q('#fa').onclick=()=>arFlag(root);q('#fm').className='msg ok pop';q('#fm').innerHTML=arT('أَنَا أُحِبُّ عَلَمَ بِلَادِي وَأَعْتَزُّ بِهِ');sWin();confetti();return;}
+  const S=steps[st];q('#ft').textContent=S[0];q('#fo').innerHTML=S[1].map((x,k)=>x.startsWith('#')?`<button class="sw" data-k="${k}" style="background:${x};width:60px;height:60px"></button>`:`<button class="opt" data-k="${k}">${x}</button>`).join('');
+  root.querySelectorAll('#fo [data-k]').forEach(b=>b.onclick=()=>{const v=S[1][+b.dataset.k];if(v===S[2]){sGood();if(st===0)got.c=v;if(st===1)got.t=1;if(st===2)got.s=1;q('#fm').className='msg ok pop';q('#fm').textContent=S[3];st++;draw();}else{sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);q('#fm').className='msg bad pop';q('#fm').textContent=st===0?'لا يمكن أن نغيّر لون العلم!':'فكّر في علم بلادي.';}});};
+ draw();}
+function arNahy(root){const A=[['🌷','صَدِيقٌ يَقْطِفُ زُهُورَ الْحَدِيقَةِ الْعَامَّةِ','لَا تَقْطِفْ زُهُورَ الْحَدِيقَةِ'],['🇸🇦','طِفْلٌ يَرْمِي الْعَلَمَ عَلَى الْأَرْضِ','لَا تَرْمِ الْعَلَمَ'],['🚰','أَخٌ يَتْرُكُ الْمَاءَ مَفْتُوحًا','لَا تُسْرِفْ فِي الْمَاءِ'],['🗑️','وَلَدٌ يَرْمِي النِّفَايَاتِ فِي الشَّارِعِ','لَا تَرْمِ النِّفَايَاتِ فِي الشَّارِعِ']];let i=0;
+ const q=gwrap(root,`<div class="panel act"><h2>✋ انصح صديقك</h2><div>انهَ صديقك عن الخطأ باستعمال «لا» الناهية.</div><div class="duac" id="nc"></div><div class="opts" id="no"></div><div class="msg" id="nm"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=A.length){q('#nc').innerHTML='<span class="pic xl">👍</span>';q('#no').innerHTML='';q('#nm').className='msg ok pop';q('#nm').textContent='أحسنت النصيحة!';sWin();confetti();return;}const a=A[i];const o=shuffle([a[2],...shuffle(A.filter(x=>x!==a)).slice(0,2).map(x=>x[2])]);q('#nc').innerHTML=`<span class="pic big">${a[0]}</span>${arT(a[1])}`;q('#no').innerHTML=o.map((x,k)=>`<button class="opt" data-k="${k}">${arT(x)}</button>`).join('');q('#nm').textContent='';
+  root.querySelectorAll('#no .opt').forEach(b=>b.onclick=()=>{if(o[+b.dataset.k]===a[2]){sGood();b.classList.add('right');speakAr(a[2]);i++;setTimeout(next,1300);}else{sBad();b.classList.add('wrong');b.disabled=true;}});};
+ next();}
+function arWheat(root){const S=[['🌰','يَبْذُرُ الْفَلَّاحُ الْحَبَّةَ'],['💧','يَسْقِيهَا بِالْمَاءِ'],['🌱','تَنْمُو الْجُذُورُ وَالسَّاقُ'],['🌾','تَمْتَلِئُ الْحُقُولُ بِالسَّنَابِلِ'],['🚜','يَحْصُدُ الْفَلَّاحُونَ السَّنَابِلَ'],['⚙️','تُطْحَنُ الْحَبَّاتُ فَتُصْبِحُ دَقِيقًا'],['🥣','يَصْنَعُ الْخَبَّازُ الْعَجِينَ'],['🍞','يَخْرُجُ الْخُبْزُ مِنَ الْفُرْنِ']];let got=0;
+ const q=gwrap(root,`<div class="panel act"><h2>🌾 رحلة حبّة القمح</h2><div>رتّب الرحلة من الحقل إلى الخبز. استعمل «ثُمَّ» عندما تحكيها!</div><div class="journey" id="jr"></div><div class="cards" id="jc"></div><div class="msg" id="jm"></div></div>`);
+ const draw=()=>{q('#jr').innerHTML=S.map((s,k)=>`<div class="jst${k<got?' on pop':''}"><span>${k<got?s[0]:'❔'}</span>${k<got?`<small>${s[1]}</small>`:''}</div>`).join('<i class="jarr">⬅</i>');
+  if(got>=S.length){q('#jc').innerHTML='';q('#jm').className='msg ok pop';q('#jm').innerHTML=arT('يَبْذُرُ الْفَلَّاحُ الْحَبَّةَ، ثُمَّ يَسْقِيهَا، ثُمَّ يَحْصُدُهَا، ثُمَّ تُطْحَنُ، ثُمَّ يَصِيرُ الدَّقِيقُ خُبْزًا.');sWin();confetti();return;}
+  const o=shuffle(S.map((_,k)=>k).filter(k=>k>=got)).slice(0,3);if(!o.includes(got))o[0]=got;q('#jc').innerHTML=shuffle(o).map(k=>`<button class="opt stack" data-k="${k}"><span class="pic mini">${S[k][0]}</span>${arT(S[k][1])}</button>`).join('');
+  root.querySelectorAll('#jc .opt').forEach(b=>b.onclick=()=>{if(+b.dataset.k===got){got++;sGood();speakAr(S[got-1][1]);draw();}else{sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);q('#jm').className='msg bad pop';q('#jm').textContent='ليست هذه الخطوة التالية. ماذا يحدث بعد ذلك؟';}});};
+ draw();}
+function arRiddle(root){const R=[['النَّخْلَةُ','🌴',['لِي جِذْعٌ سَمِيكٌ','رَأْسِي تَاجٌ مِنَ السَّعَفِ','ثِمَارِي التَّمْرُ']],['الْقَمْحُ','🌾',['أَنَا حَبَّةٌ صَفْرَاءُ','أَنْمُو فِي الْحُقُولِ سَنَابِلَ','يُصْنَعُ مِنِّي الْخُبْزُ']],['الْجَمَلُ','🐪',['أَعِيشُ فِي الصَّحْرَاءِ','أَتَحَمَّلُ الْعَطَشَ','لِي سَنَامٌ']],['الْبُرْتُقَالُ','🍊',['أَنَا فَاكِهَةٌ','لَوْنِي يُشْبِهُ اسْمِي','عَصِيرِي لَذِيذٌ']],['النَّحْلَةُ','🐝',['أَطِيرُ مِنْ زَهْرَةٍ إِلَى زَهْرَةٍ','أَنْقُلُ حُبُوبَ اللِّقَاحِ','أَصْنَعُ الْعَسَلَ']]];const T=shuffle(R);let i=0,sc=0;
+ const q=gwrap(root,`<div class="panel act"><h2>🕵️ مَنْ أَنَا؟</h2><div>اقرأ الأدلّة واحدًا واحدًا. كلّما عرفت الجواب بأدلّة أقل ربحت نقاطًا أكثر!</div><div class="clues" id="cl"></div><div class="ctrl"><button class="btn alt" id="mc">🔎 دليل آخر</button></div><div class="opts picopts" id="ro"></div><div class="msg" id="rm"></div><div class="arpts">النقاط: <b class="num" id="rp">٠</b></div></div>`);let k=1;
+ const show=()=>{if(!root.isConnected)return;if(i>=T.length){q('#cl').innerHTML='<span class="pic xl">🏆</span>';q('#ro').innerHTML='';q('#mc').style.display='none';q('#rm').className='msg ok pop';q('#rm').textContent=`محقّق ذكي! ${ar(sc)} نقطة.`;sWin();confetti();return;}const t=T[i];
+  q('#cl').innerHTML=t[2].slice(0,k).map((c,j)=>`<div class="clue pop">${ar(j+1)}. ${arT(c)}</div>`).join('');q('#mc').style.display=k<3?'':'none';
+  const o=shuffle([t,...shuffle(R.filter(x=>x!==t)).slice(0,3)]);q('#ro').innerHTML=o.map(x=>`<button class="opt pic stack" data-v="${x[0]}"><span class="pic opt-pic">${x[1]}</span>${arT(x[0])}</button>`).join('');
+  root.querySelectorAll('#ro .opt').forEach(b=>b.onclick=()=>{if(b.dataset.v===t[0]){const g=[30,20,10][k-1];sc+=g;q('#rp').textContent=ar(sc);sGood();b.classList.add('right');q('#rm').className='msg ok pop';q('#rm').innerHTML=`أَنَا ${arT(t[0])}! +${ar(g)}`;speakAr('أَنَا '+t[0]);i++;k=1;setTimeout(show,1500);}else{sBad();b.classList.add('wrong');b.disabled=true;if(k<3){k++;show();}}});};
+ q('#mc').onclick=()=>{if(k<3){k++;sTap();show();}};show();}
+function arMaddSort(root,L){const W=shuffle(AL.flatMap(x=>x.madd)).slice(0,9);let i=0,sc=0,miss=false;const got={'ا':[],'و':[],'ي':[]};
+ const q=gwrap(root,`<div class="panel act"><h2>🧺 سلال المد</h2><div>اقرأ الكلمة وامدد صوتك. في أيّ سلة تضعها؟</div><div class="sortcard" id="mw"></div><div class="bins" id="mb"></div><div class="msg" id="mm"></div></div>`);
+ const bins=()=>{q('#mb').innerHTML=[['ا','آآآ'],['و','أوووو'],['ي','إييي']].map(([b,s])=>`<button class="bin" data-b="${b}"><span class="bl">${b}</span><small>${s}</small><span class="bi">${got[b].map(w=>`<em>${w}</em>`).join(' ')}</span></button>`).join('');
+  root.querySelectorAll('#mb .bin').forEach(x=>x.onclick=()=>{const w=W[i];if(!w)return;if(x.dataset.b===w[1]){if(!miss)sc++;sGood();got[w[1]].push(w[0]);i++;bins();next();}else{miss=true;sBad();x.classList.add('shake');setTimeout(()=>x.classList.remove('shake'),400);}});};
+ const next=()=>{if(!root.isConnected)return;miss=false;if(i>=W.length){q('#mw').innerHTML='<span class="pic xl">🏆</span>';q('#mm').className='msg ok pop';q('#mm').textContent=`${ar(sc)} من ${ar(W.length)} من أول محاولة!`;sWin();confetti();return;}q('#mw').innerHTML=`<div class="enword pop">${arT(W[i][0])}</div>${voiceOK()?'<button class="say-btn" id="ms">🔊</button>':''}`;if(q('#ms'))q('#ms').onclick=()=>speakAr(W[i][0]);};
+ bins();next();}
+function arPlural(root,pairs,title){const T=shuffle(pairs);let i=0,sc=0,miss=false;
+ const q=gwrap(root,`<div class="panel act"><h2>${title}</h2><div class="sortcard" id="pw"></div><div class="opts" id="po"></div><div class="msg" id="pm"></div></div>`);
+ const next=()=>{if(!root.isConnected)return;if(i>=T.length){q('#pw').innerHTML='<span class="pic xl">🏆</span>';q('#po').innerHTML='';q('#pm').className='msg ok pop';q('#pm').textContent=`${ar(sc)} من ${ar(T.length)} من أول محاولة!`;sWin();confetti();return;}miss=false;const t=T[i];const o=shuffle([t[1],...t[2]]);q('#pw').innerHTML=`<span class="pic big">${t[3]||''}</span><div class="enword pop">${arT(t[0])}</div>`;q('#po').innerHTML=o.map((x,k)=>`<button class="opt" data-k="${k}">${arT(x)}</button>`).join('');q('#pm').textContent='';
+  root.querySelectorAll('#po .opt').forEach(b=>b.onclick=()=>{if(o[+b.dataset.k]===t[1]){if(!miss)sc++;sGood();b.classList.add('right');i++;setTimeout(next,900);}else{miss=true;sBad();b.classList.add('wrong');b.disabled=true;}});};
+ next();}
+const PL1=[['مَنَازِلُ','مَنْزِلٌ',['نُزُولٌ','مَنْزِلَانِ'],'🏘️'],['حَرَائِقُ','حَرِيقٌ',['حَرْقٌ','حَرِيقَانِ'],'🔥'],['أَصْدِقَاءُ','صَدِيقٌ',['صِدْقٌ','صَدِيقَانِ'],'🧑‍🤝‍🧑'],['رِجَالٌ','رَجُلٌ',['رِجْلٌ','رَجُلَانِ'],'👷'],['جِيرَانٌ','جَارٌ',['جِيرَةٌ','جَارَانِ'],'🏡']];
+const PL2=[['يَفِدُ (الْحُجَّاجُ)','يَفِدُونَ',['يَفِدُ','يَفِدَانِ'],'🕋'],['يَزُورُ (الْمُسْلِمُونَ)','يَزُورُونَ',['يَزُورُ','يَزُورَانِ'],'🕌'],['يُهَاجِرُ (الْمُسْلِمَانِ)','يُهَاجِرَانِ',['يُهَاجِرُونَ','يُهَاجِرُ'],'👣'],['يُصَلِّي (الْمُسْلِمَانِ)','يُصَلِّيَانِ',['يُصَلُّونَ','يُصَلِّي'],'🤲']];
+function arTwo(a,b){return root=>{root.innerHTML='<div id="ag1"></div><div id="ag2" style="margin-top:18px"></div>';a(root.querySelector('#ag1'));b(root.querySelector('#ag2'));};}
+function arPlay(root,id){const L=AL.find(x=>x.id===id);({
+ a11:arTwo(r=>arShams(r,L),arDua),a12:arTwo(arInna,r=>arTaGame(r,L)),a21:arTwo(arShaddaGame,r=>arAskGame(r,ASK1)),a22:arTwo(arFire,r=>arPlural(r,PL1,'🏘️ ما مفرد الكلمة؟')),
+ a31:arTwo(arCities,r=>arPlural(r,PL2,'👥 الفعل مع المثنى والجمع: اختر الفعل المناسب')),a32:arTwo(arFlag,arNahy),a41:arTwo(arWheat,r=>arMaddSort(r,L)),a42:arTwo(arRiddle,r=>arShams(r,L))})[id](root);}
+
+/* =================================================================
+   VIEWS
+   ================================================================= */
+const arUnitPassed=u=>(store.tb['arU'+u]??0)>=16;
+function arItems(ls,n){const per=Math.floor(n/ls.length);return ls.flatMap(l=>{const sk=l.skills,ord=shuffle(sk.map((_,i)=>i)),out=[];for(let k=0;k<per;k++){const s=sk[ord[k%sk.length]];out.push({g:pick(s.g),grp:l.code+' '+l.short,skill:s.n,rev:{name:'arl',id:l.id,tab:'read'},train:s.g,color:l.color});}return out;});}
+function openAr(id){const tab=!store.story[id]?'read':lvCount(id)<3?'drill':'test';go({name:'arl',id,tab});}
+function renderAr(){const next=AL.find(l=>!passedTest(l.id)),lab=l=>!store.story[l.id]?'ابدأ بالقراءة والمسابقة':lvCount(l.id)<3?'المستوى '+ar(lvCount(l.id)+1):passedTest(l.id)?'أتقنته ✓':'جاهز للاختبار';const openU=next?next.unit:4;
+ app.innerHTML=topbar()+`<div style="--c:${ARC}"><div class="lhead"><button class="back" id="bk">→ المواد</button><h1>📖 لغتي</h1></div>
+ <section class="hero ar-hero"><div><h1>لغتي <span>الجميلة</span></h1><p>كتاب لغتي كاملًا: أربع وحدات وثمانية نصوص. نقرأ كل نصّ جملتين جملتين، وبعد كل جملتين <b>مسابقة فهم</b>! ثم ألعاب لغوية وتدريب واختبار، و«أقرأ لأبي».</p>
+  <div class="medals sm">${AUS.map(u=>`<div class="medal" title="${AU[u].s}">${medal(ar(u),ARC,arUnitPassed(u))}<span>${AU[u].s}</span></div>`).join('')}</div></div><div class="arhero"><div class="openbook"><span class="pg l">${wsp('أَنَا أَقْرَأُ')}</span><span class="pg r">${wsp('وَأَفْهَمُ')}</span></div></div></section>
+ ${next?`<div class="panel nextp" style="--c:${next.color}">${face('happy')}<div><b>خطوتك التالية</b><div>${next.code} ${next.short}: ${lab(next)}</div></div><button class="btn" id="cont">أكمل ←</button></div>`:''}
+ ${AUS.map(u=>{const ls=AL.filter(l=>l.unit===u),cur=ls.find(l=>!passedTest(l.id));const nodes=ls.map(l=>({key:'l'+l.id,code:l.code,label:l.short,color:l.color,state:passedTest(l.id)?'done':l===cur?'cur':'todo',sub:(store.arq[l.id]?['🥇','🥈','🥉'][store.arq[l.id].m]+' ':'')+starsTxt(lvCount(l.id))}));
+  nodes.push({key:'u'+u,icon:'🏆',label:'التقويم التجميعي',color:'#FFC531',state:arUnitPassed(u)?'done':!cur?'cur':'todo',sub:store.tb['arU'+u]!=null?ar(store.tb['arU'+u])+' / ٢٠':''});
+  return `<details class="chap" ${u===openU?'open':''}><summary><span class="code" style="--c:${AU[u].c}">${AU[u].ic}</span><span class="ct">${AU[u].t}: ${AU[u].s}</span><span class="cp">${ar(ls.filter(l=>passedTest(l.id)).length)} / ${ar(ls.length)} ${arUnitPassed(u)?'· 🏅':''}</span></summary><div class="mapwrap">${advMap(nodes)}</div></details>`;}).join('')}
+ <div class="panel"><h2>📚 مكتبتي: أنا أقرأ</h2><p style="margin:0 0 10px;color:var(--muted)">قصص إضافية للقراءة، وفي كل قصة مسابقة فهم.</p><div class="shelf">${ALIB.map(b=>{const r=store.arq[b.id];return `<button class="bookc" data-b="${b.id}" style="--c:${b.color}"><span class="bic">${b.ic}</span><b>${arT(b.title)}</b><small>${r?['🥇','🥈','🥉'][r.m]+' '+ar(r.best)+' نقطة':'لم تُقرأ بعد'}</small></button>`;}).join('')}</div></div>
+ <button class="ghost" id="par">صفحة ولي الأمر</button></div>`;
+ bindTop();$('#bk').onclick=()=>go({name:'home'});$('#par').onclick=()=>go({name:'parents'});if($('#cont'))$('#cont').onclick=()=>openAr(next.id);
+ bindMap(app,k=>k[0]==='l'?openAr(k.slice(1)):go({name:'aru',unit:+k.slice(1)}));
+ app.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>go({name:'arlib',id:b.dataset.b}));}
+function renderArLib(){const B=ALIB.find(x=>x.id===view.id);app.innerHTML=topbar()+`<div class="arv" style="--c:${B.color}"><div class="lhead"><button class="back" id="bk">→ لغتي</button><span class="code">${B.ic}</span><h1>${arT(B.title)}</h1></div><div id="body"></div></div>`;bindTop();$('#bk').onclick=()=>go({name:'ar'});arRead($('#body'),B,{lib:true});}
+function renderArLesson(){const L=AL.find(x=>x.id===view.id),tab=view.tab||'read';
+ app.innerHTML=topbar()+`<div class="arv" style="--c:${L.color}"><div class="lhead"><button class="back" id="bk">→ لغتي</button><span class="code">${L.code}</span><h1>${arT(L.title)}</h1></div>
+  <div class="tabs tabs5" role="tablist">${[['read','١ أقرأ وأفهم 🏁'],['play','٢ ألعب'],['drill','٣ أتدرّب'],['test','٤ الاختبار'],['say','🎤 أقرأ لأبي']].map(([k,n])=>`<button class="tab" role="tab" aria-selected="${tab===k}" data-t="${k}">${n}${k==='read'&&store.arq[L.id]?' <small>'+['🥇','🥈','🥉'][store.arq[L.id].m]+'</small>':''}${k==='drill'?` <small>${ar(lvCount(L.id))}/٣</small>`:''}${k==='test'&&passedTest(L.id)?' <small>✓</small>':''}</button>`).join('')}</div><div id="body"></div></div>`;
+ bindTop();$('#bk').onclick=()=>go({name:'ar'});app.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{view.tab=b.dataset.t;render();});
+ const body=$('#body');({read:arRead,play:(r,l)=>l.play(r),drill:levelPicker,test:testIntro,say:arSay})[tab](body,L);}
+function renderArUnit(){const u=view.unit,U=AU[u],ls=AL.filter(l=>l.unit===u),key='arU'+u;
+ app.innerHTML=topbar()+`<div class="arv" style="--c:${U.c}"><div class="lhead"><button class="back" id="bk">→ لغتي</button><h1>التقويم التجميعي: ${U.s}</h1></div><div id="body"></div></div>`;bindTop();$('#bk').onclick=()=>go({name:'ar'});
+ const body=$('#body'),ready=ls.filter(l=>passedTest(l.id)).length;
+ body.innerHTML=`<div class="panel result">${face(ready===ls.length?'happy':'think')}<h2>${U.ic} ${U.s}: ٢٠ سؤالًا</h2><p style="max-width:54ch">فهم المقروء، ومعاني الكلمات، والأضداد، والظواهر اللغوية، والأساليب من دَرْسَي الوحدة. لا مساعدة أثناء الاختبار، وفي النهاية تقرير بكل مهارة. النجاح: ١٦ من ٢٠.</p>
+  ${ready<ls.length?`<div class="tip" style="--c:var(--berry)">نجحت في ${ar(ready)} من ${ar(ls.length)} اختبارات دروس. ننصح أن تنجح فيها أولًا.</div>`:''}${store.tb[key]!=null?`<div>أفضل نتيجة: <b class="num">${ar(store.tb[key])}</b> / ٢٠</div>`:''}<button class="btn" id="go">ابدأ الاختبار</button></div>`;
+ $('#go').onclick=()=>runTest(body,{key,title:'التقويم: '+U.s,make:()=>shuffle(arItems(ls,20)),pass:16,byGroup:true,passMsg:`نجحت في تقويم وحدة «${U.s}» وحصلت على وسامها!`,color:U.c,onBack:()=>go({name:'ar'})});}
+function arParentsHTML(){const cell=(id,lv)=>{const b=store.best[id+'-'+lv];return b!=null?`${ar(b)}/١٠`:'—';};const date=d=>{try{return new Date(d).toLocaleDateString('ar-SA',{day:'numeric',month:'long'});}catch(e){return '';}};
+ return `<div class="panel"><h2>📖 لغتي</h2><div class="tablewrap"><table class="prog"><thead><tr><th>الدرس</th><th>مسابقة الفهم</th><th>سهل</th><th>متوسط</th><th>صعب</th><th>اختبار</th><th>أقرأ لأبي</th></tr></thead><tbody>
+ ${AUS.map(u=>`<tr><th colspan="7" style="background:var(--soft)">${AU[u].t}: ${AU[u].s}</th></tr>`+AL.filter(l=>l.unit===u).map(l=>{const r=store.arq[l.id],f=store.arf[l.id];return `<tr><td><b>${l.code}</b> ${l.short}</td><td class="num">${r?['🥇','🥈','🥉'][r.m]+' '+ar(r.best):'—'}</td>${[1,2,3].map(v=>`<td class="num" style="color:${lvCount(l.id)>=v?'var(--leaf)':'inherit'}">${cell(l.id,v)}</td>`).join('')}<td class="num" style="color:${passedTest(l.id)?'var(--leaf)':'inherit'}">${store.tb[l.id]!=null?ar(store.tb[l.id])+'/١٠':'—'}</td><td class="num">${f?`${ar(f.ok)}/${ar(f.t)} <small style="color:var(--muted)">${date(f.d)}</small>`:'—'}</td></tr>`;}).join('')+`<tr><td><b>التقويم التجميعي</b></td><td colspan="4"></td><td class="num" style="color:${arUnitPassed(u)?'var(--leaf)':'inherit'}">${store.tb['arU'+u]!=null?ar(store.tb['arU'+u])+'/٢٠':'—'}</td><td></td></tr>`).join('')}</tbody></table></div>
+ <div class="tip">في «أقرأ وأفهم» يقرأ محمد جملتين ثم يجيب عن سؤالين (مَنْ؟ أين؟ لماذا؟ كيف؟)، وإذا أخطأ تضيء الجملة التي فيها الجواب ليعود إلى النص: هذه أهم مهارة في الفهم القرائي. وفي «أقرأ لأبي» يقرأ لك النص جملة جملة وأنت تحكم. اسأله في البيت بعد أي قصة: «من؟ أين؟ ماذا حدث؟ لماذا؟».</div></div>`;}
+
+/* ---------- daily plan & activity tracking ---------- */
+const curSubj=()=>{const v=view||{};if(v.name==='lesson')return typeof v.id==='string'?'sci':'math';if(v.name==='ch'||v.name==='sprint')return 'math';if(v.name==='sch')return 'sci';if(v.name==='enl'||v.name==='ent')return 'en';if(v.name==='arl'||v.name==='aru')return 'ar';return null;};
+function bumpDay(){const t=today();const d=store.day&&store.day.date===t?store.day:{date:t,n:0};d.n++;store.day=d;const s=curSubj();if(s){if(!store.act||store.act.d!==t)store.act={d:t};store.act[s]=(store.act[s]||0)+1;}}
+const PSUB=[['math','الرياضيات','١٢٣',()=>{const n=L.find(l=>!passedTest(l.id));return n?()=>openLesson(n.id):()=>go({name:'math'});}],['en','الإنجليزي','ABC',()=>{const n=EN.find(l=>!enDone(l));return n?()=>openEn(n.id):()=>go({name:'en'});}],['sci','العلوم','🔬',()=>{const n=SL.find(l=>!passedTest(l.id));return n?()=>openLesson(n.id):()=>go({name:'sci'});}]];
+function planHTML(){const t=today(),act=store.act&&store.act.d===t?store.act:{},dn=Math.floor(Date.now()/864e5)%3,S=PSUB[dn];
+ const nextA=AL.find(l=>!store.story[l.id])||AL.find(l=>!passedTest(l.id));
+ const M=[['📖','قطعة لغتي ومسابقتها',store.arRead===t,'pa'],[S[2],`١٠ أسئلة في ${S[1]}`,(act[S[0]]||0)>=10,'pb'],['🔥','مراجعة اليوم',(store.daily||{}).last===t,'pc']];const n=M.filter(m=>m[2]).length;
+ if(n===3&&store.planBonus!==t){store.planBonus=t;save();setTimeout(()=>{addXP(15);sWin();confetti();},400);}
+ return `<div class="panel plan"><div class="planh"><h2>🗺️ خطة اليوم</h2><span class="pill">${ar(n)} / ٣ ${n===3?'· أنجزتها! ⭐ +١٥':''}</span></div><div class="missions">${M.map((m,k)=>`<button class="mission${m[2]?' done':''}" id="${m[3]}"><span class="mi">${m[2]?'✅':m[0]}</span><span><b>${m[1]}</b><small>${m[2]?'أنجزتها!':k===1?`${ar(Math.min(10,act[S[0]]||0))} من ١٠`:'ابدأ ←'}</small></span></button>`).join('')}</div></div>`;}
+function bindPlan(){const t=$('#pa'),dn=Math.floor(Date.now()/864e5)%3;const nextA=AL.find(l=>!store.story[l.id])||AL.find(l=>!passedTest(l.id));
+ if(t)t.onclick=()=>nextA?go({name:'arl',id:nextA.id,tab:'read'}):go({name:'arlib',id:pick(ALIB).id});if($('#pb'))$('#pb').onclick=PSUB[dn][3]();if($('#pc'))$('#pc').onclick=()=>go({name:'daily'});}
+function dailyPool(){const weak=weakSet(),pool=[];let lessons=0,weakN=0;
+ [...L,...SL,...AL].forEach(l=>{if(!store.story[l.id])return;lessons++;const grp=l.code+' '+(l.short||l.title);l.skills.forEach(s=>{const w=weak.has(grp+'|'+s.n)?3:1;if(w>1)weakN++;for(let i=0;i<w;i++)pool.push(...s.g);});});
+ EN.forEach(e=>{if(!store.story[e.key])return;lessons++;const grp=`${e.code} ${e.ar}`;e.levels[1].forEach(g=>{const w=weak.has(grp+'|'+g.skill)?3:1;if(w>1)weakN++;for(let i=0;i<w;i++)pool.push(g);});});
+ return {pool,lessons,weakN};}
+function testItems(l,n){const sk=l.skills,order=shuffle(sk.map((_,i)=>i)),out=[],isA=typeof l.id==='string'&&l.id[0]==='a';for(let k=0;k<n;k++){const s=sk[order[k%sk.length]];out.push({g:pick(s.g),grp:l.code+' '+(l.short||l.title),skill:s.n,rev:isA?{name:'arl',id:l.id,tab:'read'}:{name:'lesson',id:l.id,tab:'learn',step:s.step},train:s.g,color:l.color});}return shuffle(out);}
+
+/* =================================================================
    LEGEND LAYER — stars, ranks, mascot wardrobe, motion
    (function declarations here replace the earlier versions)
    ================================================================= */
 const RANKS=[['مبتدئ','🌱',0],['مستكشف','🧭',60],['نجم','⭐',180],['بطل','🦸',400],['عبقري','🧠',750],['أسطورة','👑',1200]];
 const WEAR=[['','بلا شيء',0],['cap','قبعة المستكشف',1],['glasses','نظارة النجم',2],['cape','عباءة البطل',3],['grad','قبعة العبقري',4],['crown','تاج الأسطورة',5]];
-const CHS=Object.keys(CH).map(Number),UNITS=[1,2,3,4,5],MEDALS_N=CHS.length+UNITS.length+1+SCHS.length;
+const CHS=Object.keys(CH).map(Number),UNITS=[1,2,3,4,5],MEDALS_N=CHS.length+UNITS.length+1+SCHS.length+AUS.length;
 const rankOf=x=>{let r=0;RANKS.forEach((R,i)=>{if(x>=R[2])r=i;});return r;};
 if(store.xp==null){const lv=Object.values(store.lv||{}).reduce((a,b)=>a+(+b||0),0);store.xp=(store.correct||0)+lv*5;store.rank=rankOf(store.xp);save();}
 if(store.rank==null)store.rank=rankOf(store.xp);
@@ -3311,14 +3800,14 @@ document.addEventListener('pointermove',e=>{if(lookRAF||reduceMo())return;lookRA
  b.innerHTML=sy.map((s,i)=>`<span style="left:${(i*53)%96+2}%;top:${(i*37)%90+4}%;color:${cols[i%cols.length]};--t:${14+(i*7)%13}s;--d:-${(i*3)%11}s;font-size:${26+(i*11)%30}px">${s}</span>`).join('');document.body.prepend(b);})();
 
 /* ---------- medals and top bar ---------- */
-function totalMedals(){return CHS.filter(chPassed).length+UNITS.filter(unitPassed).length+(finalPassed()?1:0)+SCHS.filter(sciPassed).length;}
+function totalMedals(){return CHS.filter(chPassed).length+UNITS.filter(unitPassed).length+(finalPassed()?1:0)+SCHS.filter(sciPassed).length+AUS.filter(arUnitPassed).length;}
 function topbar(){const R=RANKS[rankOf(store.xp||0)];return `<div class="top"><button class="brand" id="home" aria-label="الرئيسية"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="2" y="2" width="30" height="30" rx="8" fill="var(--ones)" stroke="var(--ink)" stroke-width="3"/><path d="M12 9v16M22 9v16M9 17h16" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/></svg><b>مدرسة محمد</b></button>
  <div class="tools"><span class="pill xp" id="xp" title="نجومي · رتبة ${R[0]}">${R[1]} <span class="num" id="xpn">${ar(store.xp||0)}</span> ⭐</span><span class="pill" title="أوسمتي">🏅 <span class="num">${ar(totalMedals())}</span> / ${ar(MEDALS_N)}</span>${voiceOK()?`<button class="toggle" id="rd" aria-pressed="${readOn}">اقرأ لي: ${readOn?'نعم':'لا'}</button>`:''}<button class="toggle" id="snd" aria-pressed="${soundOn}">الصوت: ${soundOn?'نعم':'لا'}</button></div></div>`;}
 
 /* ---------- router with motion ---------- */
 function render(keep){hush();runId++;
- if(keep&&(view.name==='ch'||view.name==='ent'||view.name==='sprint'||view.name==='daily'||view.name==='pron'||view.name==='sch'||((view.name==='lesson'||view.name==='enl')&&view.tab!=='learn'))){const t=$('.top');if(t){t.outerHTML=topbar();bindTop();return;}}
- ({home:renderHome,math:renderMath,lesson:renderLesson,ch:renderChapter,en:renderEn,enl:renderEnLesson,ent:renderEnTest,daily:renderDaily,sprint:renderSprint,parents:renderParents,pron:renderPron,sci:renderSci,sch:renderSciChapter})[view.name]();
+ if(keep&&(view.name==='ch'||view.name==='ent'||view.name==='sprint'||view.name==='daily'||view.name==='pron'||view.name==='sch'||view.name==='arl'||view.name==='aru'||view.name==='arlib'||((view.name==='lesson'||view.name==='enl')&&view.tab!=='learn'))){const t=$('.top');if(t){t.outerHTML=topbar();bindTop();return;}}
+ ({home:renderHome,math:renderMath,lesson:renderLesson,ch:renderChapter,en:renderEn,enl:renderEnLesson,ent:renderEnTest,daily:renderDaily,sprint:renderSprint,parents:renderParents,pron:renderPron,sci:renderSci,sch:renderSciChapter,ar:renderAr,arl:renderArLesson,aru:renderArUnit,arlib:renderArLib})[view.name]();
  document.body.dataset.view=view.name;
  app.classList.remove('vin');void app.offsetWidth;app.classList.add('vin');}
 
@@ -3328,11 +3817,13 @@ function rankCard(){const x=store.xp||0,i=rankOf(x),R=RANKS[i],N=RANKS[i+1];cons
 function wardrobeHTML(){const r=rankOf(store.xp||0);return `<div class="panel wardp"><h2>👕 خزانة المكعّب</h2><p style="margin:0 0 10px;color:var(--muted)">اجمع النجوم ⭐ من التدريب والألعاب لترتفع رتبتك، وكل رتبة تفتح لباسًا جديدًا لصديقك.</p><div class="wear">${WEAR.map(w=>{const open=r>=w[2],on=(store.wear||'')===w[0];return `<button class="wbtn${on?' on':''}${open?'':' locked'}" data-w="${w[0]}" ${open?'':'aria-disabled="true"'}>${mascot('mini',w[0])}<b>${w[1]}</b><small>${open?(on?'يلبسها الآن ✓':'ألبِسه'):`🔒 رتبة ${RANKS[w[2]][0]} ${RANKS[w[2]][1]}`}</small></button>`;}).join('')}</div></div>`;}
 function renderHome(){const mMed=CHS.filter(chPassed).length,eMed=UNITS.filter(unitPassed).length+(finalPassed()?1:0),d=store.daily||{},done=d.last===today(),h=new Date().getHours(),n=dayN();
  const hello=h<12?'صباح الخير':h<17?'نهارك سعيد':'مساء الخير';
- const nextM=L.find(l=>!passedTest(l.id)),nextE=EN.find(l=>!enDone(l)),nextS=SL.find(l=>!passedTest(l.id)),weakN=pronWeak().length;
+ const nextM=L.find(l=>!passedTest(l.id)),nextE=EN.find(l=>!enDone(l)),nextS=SL.find(l=>!passedTest(l.id)),nextA=AL.find(l=>!passedTest(l.id)),weakN=pronWeak().length;
  app.innerHTML=topbar()+`<section class="hero home-hero"><div><h1>${hello} يا <span>محمد</span></h1><p>${n>=DAY_GOAL?'أكملت هدف اليوم! أنت بطل.':n?`أحسنت! بقي ${ar(DAY_GOAL-n)} ${DAY_GOAL-n>2&&DAY_GOAL-n<11?'أسئلة':'سؤالًا'} لتكمل هدف اليوم.`:'هدف اليوم: ٢٠ سؤالًا. ابدأ بمراجعة اليوم أو بدرس جديد.'}</p>${rankCard()}
-  <div class="mgroups" aria-label="أوسمتي"><div class="mgroup"><small>أوسمة الرياضيات</small><div class="medals sm">${CHS.map(c=>`<div class="medal" title="${CH[c].s}">${medal(ar(c),'#F2862B',chPassed(c))}</div>`).join('')}</div></div><div class="mgroup"><small>أوسمة English</small><div class="medals sm">${UNITS.map(u=>`<div class="medal" title="${ENU[u].ar}">${medal('U'+u,'#0EA5A4',unitPassed(u))}</div>`).join('')}<div class="medal" title="المنهج كاملًا">${medal('A+','#0EA5A4',finalPassed())}</div></div></div><div class="mgroup"><small>أوسمة العلوم</small><div class="medals sm">${SCHS.map(c=>`<div class="medal" title="${SCH[c].s}">${medal(ar(c),'#1E9E63',sciPassed(c))}</div>`).join('')}</div></div></div></div>
+  <div class="mgroups" aria-label="أوسمتي"><div class="mgroup"><small>📖 أوسمة لغتي ${ar(AUS.filter(arUnitPassed).length)}/${ar(AUS.length)}</small><div class="medals sm">${AUS.map(u=>`<div class="medal" title="${AU[u].s}">${medal(ar(u),ARC,arUnitPassed(u))}</div>`).join('')}</div></div><div class="mgroup"><small>١٢٣ أوسمة الرياضيات ${ar(CHS.filter(chPassed).length)}/${ar(CHS.length)}</small><div class="medals sm">${CHS.map(c=>`<div class="medal" title="${CH[c].s}">${medal(ar(c),'#F2862B',chPassed(c))}</div>`).join('')}</div></div><div class="mgroup"><small>ABC أوسمة English ${ar(UNITS.filter(unitPassed).length+(finalPassed()?1:0))}/${ar(UNITS.length+1)}</small><div class="medals sm">${UNITS.map(u=>`<div class="medal" title="${ENU[u].ar}">${medal('U'+u,'#0EA5A4',unitPassed(u))}</div>`).join('')}<div class="medal" title="المنهج كاملًا">${medal('A+','#0EA5A4',finalPassed())}</div></div></div><div class="mgroup"><small>🔬 أوسمة العلوم ${ar(SCHS.filter(sciPassed).length)}/${ar(SCHS.length)}</small><div class="medals sm">${SCHS.map(c=>`<div class="medal" title="${SCH[c].s}">${medal(ar(c),'#1E9E63',sciPassed(c))}</div>`).join('')}</div></div></div></div>
   <div class="goal">${ring(n,DAY_GOAL)}<b>هدف اليوم</b></div>${mascot()}</section>
- <div class="subjects"><button class="subj math-subj" id="sm" style="--c:var(--ones)"><span class="sic">١٢٣</span><h2>الرياضيات</h2><p>${nextM?`التالي: ${nextM.code} ${nextM.short||nextM.title}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${L.map(l=>`<i class="${passedTest(l.id)?'on':lvCount(l.id)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(mMed)}/${ar(CHS.length)}</span></div><span class="deco">${cubes(3,2,{c1:'#1C8FD0',c2:'#F2862B',scale:.9})}</span></button>
+ ${planHTML()}
+ <div class="subjects"><button class="subj ar-subj" id="sa" style="--c:${ARC}"><span class="sic">أ ب</span><h2>لغتي</h2><p>${nextA?`التالي: ${nextA.code} ${nextA.short}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${AL.map(l=>`<i class="${passedTest(l.id)?'on':store.story[l.id]?'half':''}"></i>`).join('')}<span>أوسمة ${ar(AUS.filter(arUnitPassed).length)}/${ar(AUS.length)}</span></div><span class="deco">📖</span></button>
+ <button class="subj math-subj" id="sm" style="--c:var(--ones)"><span class="sic">١٢٣</span><h2>الرياضيات</h2><p>${nextM?`التالي: ${nextM.code} ${nextM.short||nextM.title}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${L.map(l=>`<i class="${passedTest(l.id)?'on':lvCount(l.id)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(mMed)}/${ar(CHS.length)}</span></div><span class="deco">${cubes(3,2,{c1:'#1C8FD0',c2:'#F2862B',scale:.9})}</span></button>
  <button class="subj en-subj" id="se" style="--c:#0EA5A4"><span class="sic en">ABC</span><h2>English · الإنجليزي</h2><p>${nextE?`التالي: <span class="en">${nextE.code}</span> ${nextE.ar}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${EN.map(l=>`<i class="${enDone(l)?'on':lvCount(l.key)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(eMed)}/${ar(UNITS.length+1)}</span></div></button>
  <button class="subj sci-subj" id="ss" style="--c:#1E9E63"><span class="sic">🔬</span><h2>العلوم</h2><p>${nextS?`التالي: ${nextS.code} ${nextS.short||nextS.title}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${SL.map(l=>`<i class="${passedTest(l.id)?'on':lvCount(l.id)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(SCHS.filter(sciPassed).length)}/${ar(SCHS.length)}</span></div><span class="deco">🌱🦋</span></button></div>
  <div class="home-row"><button class="mini-card" id="daily"><span class="ic">${done?'✅':'🔥'}</span><span><b>مراجعة اليوم</b><small>${done?'راجعت اليوم. أحسنت!':'١٠ أسئلة منوّعة من دروسك'} · ${ar(d.streak||0)} ${(d.streak||0)===1?'يوم':'أيام'} متتالية</small></span></button>
@@ -3340,7 +3831,7 @@ function renderHome(){const mMed=CHS.filter(chPassed).length,eMed=UNITS.filter(u
  <button class="mini-card" id="spr"><span class="ic">⚡</span><span><b>سباق الحقائق</b><small>كم حقيقة تحل في دقيقة؟</small></span></button></div>
  ${wardrobeHTML()}
  <button class="ghost" id="par">صفحة ولي الأمر</button>`;
- bindTop();$('#sm').onclick=()=>go({name:'math'});$('#se').onclick=()=>go({name:'en'});$('#ss').onclick=()=>go({name:'sci'});$('#par').onclick=()=>go({name:'parents'});$('#daily').onclick=()=>go({name:'daily'});$('#spr').onclick=()=>go({name:'sprint'});$('#pron').onclick=()=>go({name:'pron'});
+ bindTop();$('#sm').onclick=()=>go({name:'math'});$('#se').onclick=()=>go({name:'en'});$('#ss').onclick=()=>go({name:'sci'});$('#sa').onclick=()=>go({name:'ar'});bindPlan();$('#par').onclick=()=>go({name:'parents'});$('#daily').onclick=()=>go({name:'daily'});$('#spr').onclick=()=>go({name:'sprint'});$('#pron').onclick=()=>go({name:'pron'});
  app.querySelectorAll('.wbtn').forEach(b=>b.onclick=()=>{if(b.classList.contains('locked')){b.classList.add('shake');sBad();setTimeout(()=>b.classList.remove('shake'),400);return;}store.wear=b.dataset.w;save();sPop();const y=scrollY;renderHome();scrollTo(0,y);react('yay');});}
 
 /* ---------- math page ---------- */
@@ -3410,6 +3901,7 @@ function renderParents(){const tips={1:'استعمل أعواد الأسنان �
  ${[...UNITS,'full'].map(u=>{const k=u==='full'?'en-full':'en-u'+u,t=lastT(k),nn=u==='full'?'٢٥':'١٢';return `<tr><td><b>${u==='full'?'اختبار المنهج كاملًا':'اختبار الوحدة '+ar(u)}</b></td><td colspan="2">${t?`آخر: <span class="num">${ar(t.s)}/${nn}</span> <small style="color:var(--muted)">${date(t.d)}</small>`:'—'}</td><td colspan="3">${store.tb[k]!=null?`أفضل: <span class="num">${ar(store.tb[k])}/${nn}</span>`:''}</td></tr>`;}).join('')}</tbody></table></div>
  <h3 style="margin-top:14px">مهارات تحتاج متابعة</h3>${eWeak.length?`<ul class="summary">${[...new Set(eWeak.map(w=>w.n))].map(nm=>{const ws=eWeak.filter(w=>w.n===nm);return `<li>${nm} <span style="color:var(--muted);font-weight:500">(${ws.map(w=>w.g).join('، ')})</span>${enTips[nm]?`<div style="font-weight:500;font-size:16px;margin-top:4px">في البيت: ${enTips[nm]}</div>`:''}</li>`;}).join('')}</ul>`:`<p style="margin:0">${eKeys.some(k=>lastT(k))?'لا توجد مهارات ضعيفة في آخر الاختبارات.':'ستظهر هنا بعد أول اختبار وحدة.'}</p>`}
  <div class="tip">محمد ضعيف في الإنجليزي، لذلك لكل كلمة صورة وصوت ونطق بطيء ومعنى عربي ونطق تقريبي بالحروف العربية (يمكن إخفاؤه من صفحة English). وفي كل درس تبويب «أنطق لأبي»: محمد يقول الكلمة بصوت عالٍ وأنت تحكم.</div></div>
+ ${arParentsHTML()}
  ${sciParentsHTML()}
  ${pronParentsHTML()}
  <div class="panel"><h2>العادات والتحفيز</h2><div class="row" style="justify-content:flex-start"><div class="box"><span class="eq">${R[1]} ${ar(x)} ⭐</span><b>النجوم · رتبة ${R[0]}</b><small>نجمة لكل إجابة صحيحة، و٥ لكل مستوى أو لعبة مكتملة</small></div><div class="box"><span class="eq">🔥 ${ar((store.daily||{}).streak||0)}</span><b>أيام مراجعة متتالية</b><small>أطول سلسلة: ${ar((store.daily||{}).best||0)}</small></div>${Object.entries(SPM).map(([k,[nm]])=>`<div class="box"><span class="eq">⚡ ${ar((store.sprint||{})[k]||0)}</span><b>${nm}</b><small>رقم قياسي في دقيقة</small></div>`).join('')}</div></div>
