@@ -443,6 +443,207 @@ details.chap .lessons{margin-top:10px}
 .pop{animation:pop .25s ease-out} .shake{animation:shake .35s}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ===== chapters 4–6 ===== */
+.dtab{border-collapse:separate;border-spacing:0;margin:6px auto;background:var(--card);border:3px solid var(--ink);border-radius:16px;overflow:hidden;min-width:min(320px,100%);font-weight:700}
+.dtab caption{font-family:var(--f-display);font-weight:800;font-size:20px;padding-bottom:4px}
+.dtab th{background:var(--soft);padding:6px 12px;font-size:17px;border-bottom:2px solid var(--line)}
+.dtab td{padding:4px 12px;border-top:2px solid var(--line);text-align:center;min-height:40px;height:42px}
+.dtab td:first-child{text-align:start;white-space:nowrap}
+.dtab tr.trow{cursor:pointer} .dtab tr.trow:hover td{background:var(--soft)}
+.qvis .dtab,.qvis .pgraph,.qvis .hbar,.qvis .vbar{margin-inline:auto}
+.pgraph,.hbar,.vbar{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;width:100%;max-width:520px;margin:6px auto}
+.pcap{font-family:var(--f-display);font-weight:800;font-size:19px;text-align:center}
+.prow{display:flex;align-items:center;gap:8px}
+.plab{flex:0 0 auto;min-width:76px;font-weight:800;font-size:16px;text-align:start;white-space:nowrap}
+.pcells,.hcells{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:3px;flex:1;min-width:0}
+.hcells.six{grid-template-columns:repeat(6,minmax(0,1fr))}
+.pcells i{font-style:normal;aspect-ratio:1;border:2px dashed var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:clamp(14px,3.6vw,22px);line-height:1}
+.hcells i{aspect-ratio:1;border:2px solid var(--line);border-radius:6px;background:var(--soft);transition:background .15s}
+.pcells i.tap,.hcells i.tap{cursor:pointer}
+.pcells i.tap:hover,.hcells i.tap:hover{border-color:var(--ink)}
+.hcells.axis b{font-family:var(--f-display);font-size:14px;text-align:center;color:var(--muted)}
+.pkey{font-size:15px;font-weight:700;color:var(--muted);text-align:center}
+.pkey.big{font-size:22px;color:var(--ink);background:var(--soft);border-radius:14px;padding:8px 16px}
+.vgrid{display:flex;gap:10px;justify-content:center;align-items:flex-start}
+.vcol{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:14px;font-weight:800;text-align:center;line-height:1.2}
+.vcol>span{font-size:13px}
+.vcells{display:grid;grid-template-rows:repeat(10,22px);gap:3px;width:40px}
+.vcells i{border:2px solid var(--line);border-radius:5px;background:var(--soft)}
+.vaxis{display:grid;grid-template-rows:repeat(10,22px);gap:3px}
+.vaxis b{font-family:var(--f-display);font-size:13px;color:var(--muted);line-height:22px}
+.bag{position:relative;width:170px;margin:8px auto 4px;display:flex;flex-direction:column;align-items:center}
+.bagtop{width:90px;height:26px;border:4px solid var(--ink);border-bottom:0;border-radius:40px 40px 0 0;margin-bottom:-4px}
+.bagin{width:170px;min-height:96px;background:#C8925A;border:4px solid var(--ink);border-radius:18px 18px 40px 40px;padding:12px 10px;display:flex;flex-wrap:wrap;gap:3px;justify-content:center;align-content:center}
+.bagin i{font-style:normal;font-size:22px;line-height:1;animation:pop .25s}
+.cubebtn{display:inline-flex;gap:4px;border:2px solid var(--line);border-radius:14px;padding:4px}
+.btn.alt.on{background:var(--c);color:#fff}
+.draws{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;min-height:30px;font-size:26px} .draws i{font-style:normal}
+.colop{direction:ltr;display:grid;grid-template-columns:42px 64px 64px;justify-content:center;align-items:center;gap:2px 4px;margin:6px auto;font-family:var(--f-display);font-weight:800}
+.colop .ch{font-family:var(--f-body);font-size:14px;text-align:center}
+.colop .carry{text-align:center;color:var(--berry);font-size:24px;min-height:28px;line-height:28px}
+.colop .cd{text-align:center;font-size:40px;line-height:1.15;border-radius:10px}
+.colop .cd.T{color:var(--tens);background:color-mix(in srgb,var(--tens) 10%,transparent)} .colop .cd.O{color:var(--ones);background:color-mix(in srgb,var(--ones) 10%,transparent)}
+.colop .cd s{font-size:26px;color:var(--muted)} .colop .cd b{font-size:32px;color:var(--berry)}
+.colop .cop{text-align:center;font-size:38px}
+.colop .cline{grid-column:1/-1;height:4px;background:var(--ink);border-radius:2px}
+.colop .res{min-height:46px}
+.h100{direction:ltr;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:2px;width:100%;max-width:440px;margin:4px auto;font-family:var(--f-display);font-weight:700}
+.h100 i{font-style:normal;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:clamp(11px,2.8vw,16px);background:var(--card);border:1.5px solid var(--line);border-radius:5px;transition:background .2s,transform .2s}
+.h100 i.on{background:color-mix(in srgb,var(--sun) 70%,var(--card));color:var(--on-sun);border-color:var(--ink)}
+.h100 i.st{box-shadow:inset 0 0 0 3px var(--tens)}
+.h100 i.cur{background:var(--berry);color:#fff;transform:scale(1.18);z-index:1;border-color:var(--ink)}
+.mat{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:560px}
+.mcol{border:3px solid var(--ink);border-radius:16px;overflow:hidden;background:var(--card);display:flex;flex-direction:column}
+.mcol>b{padding:4px;background:var(--soft);font-size:17px}
+.mbox{min-height:170px;display:flex;align-items:flex-end;justify-content:center;padding:8px;overflow-x:auto}
+.vote{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;min-height:92px}
+.voter{font-size:54px;animation:floaty 1.6s ease-in-out infinite}
+.vote .sbub{font-size:20px} .vote .sbub::before{display:none}
+.spin{display:flex;justify-content:center} .spin svg{max-width:60vw;height:auto}
+.dcard.wide{width:auto;min-width:96px;padding:0 10px;font-size:40px}
+
+/* ===== legend layer ===== */
+.wrap{position:relative;z-index:1}
+#confetti{z-index:60}
+.vin{animation:vin .38s cubic-bezier(.2,.8,.2,1)}
+@keyframes vin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;display:none}
+body[data-view="home"] .bgfx,body[data-view="math"] .bgfx,body[data-view="en"] .bgfx,body[data-view="pron"] .bgfx{display:block}
+.bgfx span{position:absolute;font-family:var(--f-display);font-weight:800;opacity:.13;animation:drift var(--t) ease-in-out var(--d) infinite alternate}
+@keyframes drift{0%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(18px,-26px) rotate(6deg)}100%{transform:translate(-14px,10px) rotate(-3deg)}}
+.pill.xp{border-color:var(--sun);background:color-mix(in srgb,var(--sun) 18%,var(--card))}
+.pill.bump{animation:bump .45s}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}
+.flystar{position:fixed;z-index:70;pointer-events:none;font-family:var(--f-display);font-weight:800;font-size:22px;color:#B07800;background:#FFF6D6;border:2px solid var(--sun);border-radius:999px;padding:0 10px;translate:-50% -50%;transition:transform .7s cubic-bezier(.5,-0.3,.4,1),opacity .7s;white-space:nowrap}
+.mascot .look{transition:transform .25s ease-out}
+.mascot.yay{animation:yay .65s ease-out}
+.mascot.oops{animation:oops .5s ease-in-out}
+.face.yay{animation:yay .6s ease-out}.face.oops{animation:oops .45s}
+@keyframes yay{0%{transform:translateY(0) rotate(0)}30%{transform:translateY(-18px) rotate(-6deg) scale(1.06)}60%{transform:translateY(0) rotate(4deg)}100%{transform:none}}
+@keyframes oops{0%,100%{transform:rotate(0)}25%{transform:rotate(-7deg)}75%{transform:rotate(7deg)}}
+.mascot.mini{width:72px!important;animation:none;grid-row:auto;justify-self:auto}
+.rankcard{display:flex;align-items:center;gap:12px;margin-top:12px;background:var(--soft);border:2px solid var(--line);border-radius:18px;padding:8px 14px;max-width:420px}
+.rankcard .rk{font-size:40px;line-height:1;animation:floaty 3s ease-in-out infinite}
+.rinfo{flex:1;min-width:0} .rinfo b{font-family:var(--f-display);font-size:19px} .rinfo small{color:var(--muted);font-weight:700}
+.rbar{height:12px;border-radius:999px;background:var(--card);border:2px solid var(--ink);overflow:hidden;margin:3px 0}
+.rbar i{display:block;height:100%;background:linear-gradient(90deg,var(--sun),var(--ones));border-radius:999px;transition:width .6s}
+.medals.sm .medal svg{width:42px;height:52px} .medals.sm{gap:4px} .medals.sm .medal{font-size:11px}
+.home-row{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.wardp{margin-top:20px}
+.wear{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.wbtn{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:transform .15s}
+.wbtn:hover{transform:translateY(-3px)} .wbtn b{font-size:15px} .wbtn small{font-size:13px;color:var(--muted);font-weight:700}
+.wbtn.on{border-color:var(--leaf);box-shadow:0 0 0 3px color-mix(in srgb,var(--leaf) 35%,transparent)}
+.wbtn.locked .mascot{filter:grayscale(1) opacity(.45)}
+.lvup{position:fixed;inset:0;z-index:80;background:rgba(10,18,40,.55);display:flex;align-items:center;justify-content:center;padding:16px;animation:fadein .25s}
+.lvup.out{opacity:0;transition:opacity .25s}
+@keyframes fadein{from{opacity:0}}
+.lvcard{background:var(--card);border:4px solid var(--ink);border-radius:28px;box-shadow:8px 8px 0 var(--ink);padding:22px;max-width:420px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;animation:lvin .6s cubic-bezier(.2,1.4,.4,1)}
+@keyframes lvin{from{transform:scale(.4) rotate(-8deg);opacity:0}}
+.lvicon{font-size:80px;line-height:1;animation:spinin 1s ease-out}
+@keyframes spinin{from{transform:rotate(-360deg) scale(.2)}}
+.lvsmall{font-weight:800;color:var(--ones);letter-spacing:1px}
+.lvmas .mascot{width:120px}
+.tabs5{flex-wrap:wrap}
+@media (prefers-reduced-motion: reduce){.vin,.bgfx span,.mascot,.mascot.yay,.mascot.oops,.lvcard,.lvicon,.rankcard .rk,.pitem,.gear,.ga{animation:none!important}.sky,.swheel,.sun{transition:none!important}}
+
+/* ===== pronunciation with parent ===== */
+.parentp{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.ptag{display:inline-block;background:var(--ink);color:var(--card);border-radius:999px;padding:2px 14px;font-weight:800;font-size:15px}
+.psteps{margin:0;padding-inline-start:22px;font-weight:600;display:flex;flex-direction:column;gap:4px}
+.okc{color:var(--leaf)} .badc{color:var(--berry)}
+.pmode{display:flex;gap:8px;flex-wrap:wrap}
+.pnote{margin:0;color:var(--muted);font-size:16px}
+.pmenu{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;width:100%}
+.pcard{display:flex;flex-direction:column;gap:12px}
+.pstage{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.pword{font-size:clamp(34px,8vw,54px)}
+.phide{background:var(--soft);border:2px dashed var(--muted);border-radius:14px;padding:6px 16px;font-weight:700;color:var(--muted)}
+.psay{font-family:var(--f-display);font-size:24px;font-weight:800;color:var(--c);animation:pulsep 1.6s ease-in-out infinite}
+.psay.again{color:var(--ones)}
+@keyframes pulsep{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.ptr{color:var(--muted);font-weight:700}
+.pjudge{border-top:3px dashed var(--line);padding-top:12px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.pbtns{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:520px;min-height:70px}
+.pbtn{border:3px solid var(--ink);border-radius:18px;padding:12px 8px;font-family:var(--f-display);font-size:22px;font-weight:800;box-shadow:4px 4px 0 var(--ink);color:#fff}
+.pbtn.ok{background:var(--leaf)} .pbtn.no{background:var(--ones)}
+.pbtn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.pstamp{grid-column:1/-1;justify-self:center;align-self:center;font-family:var(--f-display);font-size:30px;font-weight:800;color:var(--leaf);animation:stamp .5s cubic-bezier(.2,1.6,.4,1)}
+.pstamp.help{color:var(--tens)} .pstamp.bad{color:var(--ones)}
+@keyframes stamp{from{transform:scale(2.2) rotate(-12deg);opacity:0}}
+.pres{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:12px}
+.pcol{border:2px solid var(--line);border-radius:16px;padding:10px}
+.pcol.ok{border-color:var(--leaf)} .pcol.bad{border-color:var(--berry)}
+.pchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.pchip{background:var(--soft);border:2px solid var(--line);border-radius:999px;padding:2px 12px;font-weight:700;font-size:17px}
+.plast{margin-bottom:12px;padding:12px 16px}
+.pronbanner{width:100%;display:flex;align-items:center;gap:14px;text-align:start;background:linear-gradient(90deg,color-mix(in srgb,var(--berry) 16%,var(--card)),var(--card));border:3px solid var(--ink);border-radius:22px;padding:12px 16px;box-shadow:5px 5px 0 var(--ink);margin:6px 0 10px}
+.pronbanner .pbic{font-size:40px;animation:floaty 2.4s ease-in-out infinite} .pronbanner b{font-family:var(--f-display);font-size:21px;display:block} .pronbanner small{color:var(--muted);font-weight:700}
+.pronbanner .pgo{margin-inline-start:auto;font-size:26px;font-weight:800}
+
+/* ===== unit 4–5 games ===== */
+.park{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;max-width:460px;background:linear-gradient(#CDEBFF 0 45%,#BDE8B0 45%);border:3px solid var(--ink);border-radius:22px;padding:12px;transition:background .6s}
+.park.clean{background:linear-gradient(#BFE3FF 0 45%,#9BE08A 45%)}
+.pitem{font-size:clamp(34px,9vw,48px);background:rgba(255,255,255,.55);border:2px solid rgba(22,38,74,.25);border-radius:16px;padding:4px;animation:bob 2.6s ease-in-out var(--d) infinite;transition:transform .5s,opacity .5s}
+.pitem.trash span{filter:saturate(.35) brightness(.85);display:inline-block;transform:rotate(-12deg)}
+.pitem.gone{transform:translateY(60px) scale(.1) rotate(200deg);opacity:0;pointer-events:none}
+.pitem.shine{background:#FFF6D6;border-color:var(--sun);box-shadow:0 0 18px var(--sun);animation:none}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.parkbin{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px}
+.parkbin .binic{font-size:40px;display:inline-block}
+.parkbin.gulp .binic{animation:gulp .5s}
+@keyframes gulp{40%{transform:scale(1.35) rotate(-8deg)}}
+.swheel{position:relative;width:200px;height:200px;border-radius:50%;border:4px solid var(--ink);overflow:hidden;transition:transform 1.1s cubic-bezier(.2,.8,.2,1);display:grid;grid-template-columns:1fr 1fr;box-shadow:4px 4px 0 var(--ink)}
+.swheel .sq{background:color-mix(in srgb,var(--k) 55%,var(--card));display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.swheel .sq b{font-size:34px} .swheel .sq small{font-weight:800;font-size:15px}
+.swheel .hub{position:absolute;inset:50% auto auto 50%;translate:-50% -50%;background:var(--card);border:3px solid var(--ink);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.machine{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;width:100%;max-width:480px;background:var(--soft);border:3px solid var(--ink);border-radius:22px;padding:12px}
+.min,.mout{min-height:120px;background:var(--card);border:3px dashed var(--line);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:40px;font-weight:800}
+.min .en,.mout .en{font-size:22px}
+.gears{display:flex;flex-direction:column;font-size:34px;line-height:1}
+.machine.run .gear{animation:spin .9s linear infinite} .machine.run .g2{animation-direction:reverse}
+.machine.run{animation:oops .3s 3}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wslots{display:flex;gap:6px;justify-content:center;direction:ltr}
+.wsl{width:52px;height:60px;border:3px dashed var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:34px;font-weight:800;background:var(--soft)}
+.wsl.on{border-style:solid;border-color:var(--c);background:var(--card);color:var(--c)}
+.wslots.win .wsl{animation:yay .6s}
+.wtiles{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;direction:ltr}
+.wtile{width:56px;height:62px;border:3px solid var(--ink);border-radius:14px;background:var(--sun);color:var(--on-sun);font-size:32px;font-weight:700;box-shadow:3px 3px 0 var(--ink)}
+.wtile.used{opacity:.25;transform:scale(.85)}
+.sky{position:relative;width:100%;max-width:520px;height:190px;border:3px solid var(--ink);border-radius:22px;overflow:hidden;transition:background 1.2s;background:linear-gradient(#FFD8A8,#BFE6FF)}
+.sky.afternoon{background:linear-gradient(#5BB8F5,#BFE6FF)} .sky.evening{background:linear-gradient(#7C4DBA,#F59A47)} .sky.night{background:linear-gradient(#0B1530,#1E2F5C)}
+.sky .sun{position:absolute;font-size:52px;left:8%;top:62%;transition:left 1.2s ease-in-out,top 1.2s ease-in-out,opacity 1s}
+.sky.afternoon .sun{left:44%;top:6%} .sky.evening .sun{left:80%;top:56%} .sky.night .sun{left:95%;top:110%;opacity:0}
+.sky .moon{position:absolute;font-size:44px;right:12%;top:110%;transition:top 1.2s,opacity 1s;opacity:0} .sky.night .moon{top:12%;opacity:1}
+.sky .stars{position:absolute;inset:14px auto auto 18%;color:#FFF6D6;font-size:22px;letter-spacing:22px;opacity:0;transition:opacity 1s} .sky.night .stars{opacity:1}
+.sky .clock{position:absolute;top:10px;right:12px;background:var(--card);border:3px solid var(--ink);border-radius:12px;padding:0 10px;font-size:22px;color:var(--ink)}
+.sky .house{position:absolute;bottom:4px;left:50%;translate:-50% 0;font-size:56px}
+.ground{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px;width:100%;max-width:560px;background:linear-gradient(#DFF3FF 0 40%,#D4F0C4 40%);border:3px solid var(--ink);border-radius:22px;padding:10px}
+.gkid{background:rgba(255,255,255,.7);border:3px solid transparent;border-radius:16px;padding:6px 2px;display:flex;flex-direction:column;align-items:center;gap:0;color:#16264A}
+.gkid.ring{border-color:var(--berry);box-shadow:0 0 0 4px color-mix(in srgb,var(--berry) 30%,transparent)}
+.gk{font-size:38px;line-height:1.1} .ga{font-size:30px;display:inline-block} .gkid b{font-size:14px}
+.a-jumping{animation:ajump .8s ease-in-out infinite} .a-cycling{animation:acycle 1.6s ease-in-out infinite} .a-laughing{animation:oops .6s infinite} .a-walking{animation:awalk 1.2s ease-in-out infinite} .a-talking{animation:pulsep .7s infinite} .a-playing{animation:spin 2s linear infinite}
+@keyframes ajump{50%{transform:translateY(-12px)}} @keyframes acycle{50%{transform:translateX(-14px)}} @keyframes awalk{25%{transform:translateX(-5px) rotate(-4deg)}75%{transform:translateX(5px) rotate(4deg)}}
+.mbox3{font-size:72px;line-height:1;animation:floaty 2s ease-in-out infinite}
+.mbox3.open{animation:stamp .5s}
+.chatq{display:flex;flex-direction:column;gap:6px;width:100%;max-width:520px}
+.chatq:empty{display:none}
+.chatq .bubble.r{background:var(--ok-bg);border-color:var(--leaf)}
+.lunch{display:flex;align-items:center;gap:10px;justify-content:center}
+.lunchkid{font-size:56px} .lunch.big .lunchkid{font-size:70px}
+.lunchbox{display:flex;gap:6px;background:#FFE08A;border:4px solid var(--ink);border-radius:16px;padding:10px 14px;min-width:120px;min-height:64px;align-items:center;justify-content:center;transition:transform .4s}
+.lunchbox i{font-style:normal;font-size:36px;transition:opacity .4s,transform .4s}
+.lunchbox.closed{background:#E2475A}
+.lunchbox.closed i{opacity:0;transform:scale(.2)}
+.lunchbox.closed::after{content:'🎒';font-size:36px;position:absolute}
+.lunchbox{position:relative}
+
+.subj .lvbar{gap:2px;flex-wrap:nowrap}.subj .lvbar i{flex:1 1 0;min-width:0;width:auto}.subj .lvbar span{flex:0 0 auto;margin-inline-start:6px}
+.mgroups{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:10px}.mgroup small{display:block;font-weight:800;color:var(--muted);font-size:13px}.mgroup .medals{margin-top:2px}
+
+.opt.stack{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;line-height:1.2}
+
 </style>
 
 <canvas id="confetti"></canvas>
@@ -478,7 +679,7 @@ const pvn=(n,cls='')=>{const s=ar(n);if(n<10||n>99)return `<span class="pvn ${cl
 
 /* ================= storage ================= */
 const KEY='mohammed-math-ch1-v2';
-let store={lv:{},best:{},rounds:{},story:{},rep:{},correct:0,mix:0,tb:{},tests:{},daily:{},sprint:{},day:{}};
+let store={lv:{},best:{},rounds:{},story:{},rep:{},correct:0,mix:0,tb:{},tests:{},daily:{},sprint:{},day:{},pron:{},pw:{}};
 try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s)store=Object.assign(store,s);}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}};
 const pref=(k,d)=>{try{const v=localStorage.getItem(KEY+'-'+k);return v==null?d:v==='1';}catch(e){return d;}};
@@ -488,7 +689,7 @@ let soundOn=pref('snd',true), readOn=pref('read',false);
 /* ================= sound & speech ================= */
 let actx=null;
 function tone(fs,d=.12,type='sine'){if(!soundOn)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();fs.forEach((f,i)=>{const o=actx.createOscillator(),g=actx.createGain();o.type=type;o.frequency.value=f;const t=actx.currentTime+i*d;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+d+.02);});}catch(e){}}
-const sGood=()=>tone([660,880,1100],.1), sBad=()=>tone([300,220],.16,'triangle'), sTap=()=>tone([520],.05), sWin=()=>tone([523,659,784,1046,1318],.12), sPop=()=>tone([700],.06);
+const sGood=()=>{tone([660,880,1100],.1);onGood();}, sBad=()=>{tone([300,220],.16,'triangle');onBad();}, sTap=()=>tone([520],.05), sWin=()=>{tone([523,659,784,1046,1318],.12);onWin();}, sPop=()=>tone([700],.06);
 const canSpeak=(()=>{try{return 'speechSynthesis' in window;}catch(e){return false;}})();
 function speak(html){if(!canSpeak)return;try{const d=document.createElement('div');d.innerHTML=html;const text=d.textContent.replace(/\s+/g,' ').trim();speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ar-SA';u.rate=.82;const v=speechSynthesis.getVoices().find(v=>/^ar/i.test(v.lang));if(v)u.voice=v;speechSynthesis.speak(u);}catch(e){}}
 const hush=()=>{try{if(canSpeak)speechSynthesis.cancel();}catch(e){}};
@@ -1110,7 +1311,7 @@ function renderMath(){const next=L.find(l=>!passedTest(l.id));const openCh=next?
  app.innerHTML=topbar()+`<div class="lhead"><button class="back" id="bkm">→ المواد</button><h1>الرياضيات</h1></div><section class="hero"><div><h1>رياضيات <span>محمد</span></h1>
   <p>ثلاثة فصول من الكتاب. كل درس فيه أربع خطوات، وفي آخر كل فصل اختبار ووسام.</p>
   <div class="howto" style="--c:var(--tens)"><div><b>١ الشرح</b>أفهم الفكرة خطوة خطوة</div><div><b>٢ ألعب</b>أجرّب بيدي</div><div><b>٣ أتدرّب</b>سهل، متوسط، صعب</div><div><b>٤ الاختبار</b>أثبت أنني أتقنت</div></div>
-  <div class="medals">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>${CH[c].s}</span></div>`).join('')}<button class="btn go" id="sprint" style="align-self:center">⚡ سباق الحقائق</button></div></div>${MASCOT}</section>
+  <div class="medals">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>${CH[c].s}</span></div>`).join('')}<button class="btn go" id="sprint" style="align-self:center">⚡ سباق الحقائق</button></div></div>${mascot()}</section>
  ${next?`<div class="panel" style="--c:${next.color};margin-bottom:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between"><div style="display:flex;gap:12px;align-items:center">${face('happy')}<div><b style="font-family:var(--f-display);font-size:22px">خطوتك التالية</b><div>${next.code} ${next.title}: ${nextLabel(next)}</div></div></div><button class="btn" id="cont">أكمل ←</button></div>`:`<div class="panel" style="--c:var(--leaf);margin-bottom:20px;display:flex;gap:12px;align-items:center">${face('wow')}<div><b style="font-family:var(--f-display);font-size:22px">أتقنت كل الدروس!</b><div>جرّب اختبارات الفصول وسباق الحقائق.</div></div></div>`}
  ${[1,2,3].map(c=>{const ls=L.filter(l=>l.ch===c),k=CH[c].key,m=ls.filter(l=>passedTest(l.id)).length;return `<details class="chap" ${c===openCh?'open':''}><summary><span class="code" style="--c:var(--ones)">${ar(c)}</span><span class="ct">${CH[c].t}: ${CH[c].s}</span><span class="cp">${ar(m)} / ${ar(ls.length)} ${chPassed(c)?'· 🏅':''}</span></summary>
   <div class="lessons">${ls.map(card).join('')}<button class="lcard dark" style="--c:var(--sun)" data-ch="${c}"><span class="code" style="color:var(--on-sun)">اختبار</span><h3>اختبار ${CH[c].t}</h3><p>٢٠ سؤالًا من كل دروس الفصل، مع تقرير بالمهارات. النجاح ١٦.</p><div class="lvbar"><span style="color:var(--line)">${store.tb[k]!=null?'أفضل نتيجة '+ar(store.tb[k])+' / ٢٠':'لم يُختبر بعد'}</span></div></button></div></details>`;}).join('')}
@@ -1178,7 +1379,7 @@ function storyPlayer(root,l){const steps=l.story,n=steps.length;let i=view.step|
   root.innerHTML=`<div class="panel"><div class="sp-top"><div class="sbar"><i style="width:${(i+1)/n*100}%"></i></div><span>${ar(i+1)} / ${ar(n)}</span></div>
    <h2 class="sp-title">${s.t}</h2><p class="sp-say">${s.say}</p>
    <div class="sp-body pop">${s.body()}</div>
-   ${s.check?`<div class="check"><span class="ql">سؤال سريع</span><div class="qq">${s.check.q}</div>${s.check.visual?`<div style="max-width:100%;overflow-x:auto">${s.check.visual()}</div>`:''}<div class="opts">${s.check.opts.map(o=>`<button class="opt ${/^\d+$/.test(o)?'n':''}" data-v="${o}">${/^\d+$/.test(o)?ar(o):o}</button>`).join('')}</div><div id="cf" style="width:100%"></div></div>`:''}
+   ${s.check?`<div class="check"><span class="ql">سؤال سريع</span><div class="qq">${s.check.q}</div>${s.check.visual?`<div style="max-width:100%;overflow-x:auto">${s.check.visual()}</div>`:''}<div class="opts">${shuffle(s.check.opts).map(o=>`<button class="opt ${/^\d+$/.test(o)?'n':''}" data-v="${o}">${/^\d+$/.test(o)?ar(o):o}</button>`).join('')}</div><div id="cf" style="width:100%"></div></div>`:''}
    <div class="sp-nav"><button class="btn alt" id="prev" ${i===0?'disabled':''}>→ السابق</button>${voiceOK()?'<button class="say-btn" id="lis">🔊 اسمع الشرح</button>':''}<button class="btn ${last?'go':''}" id="next" ${s.check?'disabled':''}>${last?'انتهيت! إلى النشاط':'التالي ←'}</button></div></div>`;
   const q=x=>root.querySelector(x);
   if(s.mount)s.mount(q('.sp-body'),id);
@@ -1295,7 +1496,7 @@ function runTest(body,cfg){runId++;hush();
   const st={},grps=[];items.forEach((it,i)=>{if(!grps.includes(it.grp))grps.push(it.grp);const k=it.grp+'|'+it.skill;const o=st[k]||(st[k]={grp:it.grp,n:it.skill,rev:it.rev,train:it.train,color:it.color,c:0,t:0});o.t++;if(answers[i].ok)o.c++;});
   const rows=Object.values(st);
   const hist=store.tests[cfg.key]||[];hist.push({d:Date.now(),s:sc,t:n,sk:rows.map(r=>[r.grp,r.n,r.c,r.t])});store.tests[cfg.key]=hist.slice(-10);
-  store.tb[cfg.key]=Math.max(store.tb[cfg.key]??0,sc);if(cfg.key==='ch')store.mix=Math.max(store.mix||0,sc>=18?3:sc>=16?2:sc>=12?1:0);save();
+  store.tb[cfg.key]=Math.max(store.tb[cfg.key]??0,sc);addXP(sc);if(cfg.key==='ch')store.mix=Math.max(store.mix||0,sc>=18?3:sc>=16?2:sc>=12?1:0);save();
   if(passed){sWin();confetti();}
   const msg=passed?(cfg.passMsg||'نجحت وحصلت على الوسام!'):`تحتاج ${ar(cfg.pass)} إجابات صحيحة للنجاح. راجع المهارات الحمراء ثم أعد الاختبار.`;
   const wrong=items.map((it,i)=>({it,a:answers[i]})).filter(x=>!x.a.ok);
@@ -1489,14 +1690,14 @@ EN.forEach(L=>{L.levels=buildLevels(L);L.key='en-'+L.id;});
 const enDone=L=>lvCount(L.key)>=3;
 function enStepLabel(L){return !store.story[L.key]?'ابدأ بـ «أتعلّم»':!store.rep[L.id]?'أسمع وأردّد':lvCount(L.key)<3?'المستوى '+ar(lvCount(L.key)+1):'أتقنته ✓';}
 const unitPassed=u=>store.tb['en-u'+u]!=null&&store.tb['en-u'+u]>=10;
-const finalPassed=()=>store.tb['en-final']!=null&&store.tb['en-final']>=16;
+const finalPassed=()=>store.tb['en-full']!=null&&store.tb['en-full']>=20;
 function noVoiceNote(){return `<div class="tip" style="--c:var(--berry)">جهازك لا يحتوي صوتًا إنجليزيًا الآن، لذلك ستظهر الكلمات مكتوبة بدل الاستماع. يمكن تفعيل الصوت الإنجليزي من إعدادات الجهاز (اللغة والكلام).</div>`;}
 
 function renderEn(){const next=EN.find(L=>!enDone(L));
  app.innerHTML=topbar()+`<div style="--c:#0EA5A4"><div class="lhead"><button class="back" id="bk">→ المواد</button><h1><span class="en">English</span> · الإنجليزي</h1></div>
  <section class="hero en-hero"><div><h1 class="en" style="direction:ltr;text-align:right">Hello, <span>Mohammed!</span></h1><p>كتاب <span class="en">We Can! 2</span>: المقدمة والوحدات الثلاث الأولى. كل درس فيه أربع خطوات، ومع كل كلمة صوت إنجليزي ونطق بطيء ومساعدة بالعربي.</p>
   <div class="howto" style="--c:#0EA5A4"><div><b>١ أتعلّم</b>صورة + كلمة + صوت</div><div><b>٢ أسمع وأردّد</b>أقلّد النطق بصوت عالٍ</div><div><b>٣ ألعب</b>ذاكرة والتقاط</div><div><b>٤ أتدرّب</b>سهل، متوسط، صعب</div></div>
-  <div class="ctrl" style="justify-content:flex-start;margin-top:12px"><button class="toggle" id="trt" aria-pressed="${trOn}">النطق بالحروف العربية: ${trOn?'ظاهر':'مخفي'}</button>${enOK()?'<button class="toggle" id="vt">🔊 جرّب الصوت</button>':''}</div>${enOK()?'':noVoiceNote()}</div>${MASCOT}</section>
+  <div class="ctrl" style="justify-content:flex-start;margin-top:12px"><button class="toggle" id="trt" aria-pressed="${trOn}">النطق بالحروف العربية: ${trOn?'ظاهر':'مخفي'}</button>${enOK()?'<button class="toggle" id="vt">🔊 جرّب الصوت</button>':''}</div>${enOK()?'':noVoiceNote()}</div>${mascot()}</section>
  ${next?`<div class="panel" style="--c:${next.color};margin-bottom:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between"><div style="display:flex;gap:12px;align-items:center">${face('happy')}<div><b style="font-family:var(--f-display);font-size:22px">خطوتك التالية</b><div><span class="en">${next.code}</span> ${next.ar}: ${enStepLabel(next)}</div></div></div><button class="btn" id="cont">أكمل ←</button></div>`:''}
  ${[0,1,2,3].map(u=>`<div class="section-title" style="margin-top:22px"><h2>${ENU[u].ar} <small class="en" style="font-size:16px;color:var(--muted)">${ENU[u].t}</small></h2>${u?`<button class="btn small ${unitPassed(u)?'go':''}" data-ut="${u}">${unitPassed(u)?'✓ ':''}اختبار الوحدة ${ar(u)}${store.tb['en-u'+u]!=null?' · '+ar(store.tb['en-u'+u])+'/١٢':''}</button>`:''}</div>
   <div class="lessons">${EN.filter(L=>L.unit===u).map(L=>`<button class="lcard" style="--c:${L.color}" data-el="${L.id}"><span class="code en">${L.code}</span><h3>${L.ar}</h3><p class="en" style="direction:ltr;text-align:right">${L.title}</p><div class="chipsen sm">${L.items.slice(0,5).map(w=>`<span>${w.pic&&!w.pic.startsWith('txt:')&&!w.pic.startsWith('col:')?picHTML(w,'mini'):''}</span>`).join('')}</div>
@@ -1601,7 +1802,7 @@ function renderEnTest(){const u=view.unit,isF=u==='final',key=isF?'en-final':'en
 
 function renderHome(){const mMed=[1,2,3].filter(chPassed).length,eMed=[1,2,3].filter(unitPassed).length+(finalPassed()?1:0),d=store.daily||{},done=d.last===today();
  app.innerHTML=topbar()+`<section class="hero"><div><h1>أهلًا يا <span>محمد</span></h1><p>اختر المادة التي تريد أن تتعلّمها اليوم. كل وسام تحصل عليه يظهر هنا.</p>
-  <div class="medals" aria-label="أوسمتي">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>رياضيات ${ar(c)}</span></div>`).join('')}${[1,2,3].map(u=>`<div class="medal">${medal('U'+u,'#0EA5A4',unitPassed(u))}<span>English U${u}</span></div>`).join('')}<div class="medal">${medal('A+','#0EA5A4',finalPassed())}<span>نصف المنهج</span></div></div></div>${MASCOT}</section>
+  <div class="medals" aria-label="أوسمتي">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>رياضيات ${ar(c)}</span></div>`).join('')}${[1,2,3].map(u=>`<div class="medal">${medal('U'+u,'#0EA5A4',unitPassed(u))}<span>English U${u}</span></div>`).join('')}<div class="medal">${medal('A+','#0EA5A4',finalPassed())}<span>نصف المنهج</span></div></div></div>${mascot()}</section>
  <div class="subjects"><button class="subj" id="sm" style="--c:var(--ones)"><span class="sic">١٢٣</span><h2>الرياضيات</h2><p>ثلاثة فصول: القيمة المنزلية، طرائق الجمع، طرائق الطرح. ${ar(L.length)} درسًا</p><div class="lvbar">${L.map(l=>`<i class="${lvCount(l.id)>=3?'on':''}"></i>`).join('')}<span>أوسمة ${ar(mMed)}/٣</span></div></button>
  <button class="subj" id="se" style="--c:#0EA5A4"><span class="sic en">ABC</span><h2>English · الإنجليزي</h2><p>كتاب <span class="en">We Can! 2</span>: المقدمة وثلاث وحدات، ${ar(EN.length)} درسًا بالصوت</p><div class="lvbar">${EN.map(l=>`<i class="${enDone(l)?'on':''}"></i>`).join('')}<span>أوسمة ${ar(eMed)}/٤</span></div></button></div>
  <div class="home-row"><button class="mini-card" id="daily" style="--c:var(--leaf)"><span class="ic">${done?'✅':'🔥'}</span><span><b>مراجعة اليوم</b><small>${done?'راجعت اليوم. أحسنت!':'١٠ أسئلة منوّعة من دروسك'} · ${ar(d.streak||0)} ${(d.streak||0)===1?'يوم':'أيام'} متتالية</small></span></button>
@@ -1668,7 +1869,7 @@ function renderHome(){const mMed=[1,2,3].filter(chPassed).length,eMed=[1,2,3].fi
  const nextM=L.find(l=>!passedTest(l.id)),nextE=EN.find(l=>!enDone(l));
  app.innerHTML=topbar()+`<section class="hero home-hero"><div><h1>${hello} يا <span>محمد</span></h1><p>${n>=DAY_GOAL?'أكملت هدف اليوم! أنت بطل.':n?`أحسنت! بقي ${ar(DAY_GOAL-n)} ${DAY_GOAL-n>2&&DAY_GOAL-n<11?'أسئلة':'سؤالًا'} لتكمل هدف اليوم.`:'هدف اليوم: ٢٠ سؤالًا. ابدأ بمراجعة اليوم أو بدرس جديد.'}</p>
   <div class="medals" aria-label="أوسمتي">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>رياضيات ${ar(c)}</span></div>`).join('')}${[1,2,3].map(u=>`<div class="medal">${medal('U'+u,'#0EA5A4',unitPassed(u))}<span>English U${u}</span></div>`).join('')}<div class="medal">${medal('A+','#0EA5A4',finalPassed())}<span>نصف المنهج</span></div></div></div>
-  <div class="goal">${ring(n,DAY_GOAL)}<b>هدف اليوم</b></div>${MASCOT}</section>
+  <div class="goal">${ring(n,DAY_GOAL)}<b>هدف اليوم</b></div>${mascot()}</section>
  <div class="subjects"><button class="subj math-subj" id="sm" style="--c:var(--ones)"><span class="sic">١٢٣</span><h2>الرياضيات</h2><p>${nextM?`التالي: ${nextM.code} ${nextM.title}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${L.map(l=>`<i class="${passedTest(l.id)?'on':lvCount(l.id)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(mMed)}/٣</span></div><span class="deco">${cubes(3,2,{c1:'#1C8FD0',c2:'#F2862B',scale:.9})}</span></button>
  <button class="subj en-subj" id="se" style="--c:#0EA5A4"><span class="sic en">ABC</span><h2>English · الإنجليزي</h2><p>${nextE?`التالي: <span class="en">${nextE.code}</span> ${nextE.ar}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${EN.map(l=>`<i class="${enDone(l)?'on':lvCount(l.key)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(eMed)}/٤</span></div></button></div>
  <div class="home-row"><button class="mini-card" id="daily"><span class="ic">${done?'✅':'🔥'}</span><span><b>مراجعة اليوم</b><small>${done?'راجعت اليوم. أحسنت!':'١٠ أسئلة منوّعة من دروسك'} · ${ar(d.streak||0)} ${(d.streak||0)===1?'يوم':'أيام'} متتالية</small></span></button>
@@ -1681,7 +1882,7 @@ function renderMath(){const next=L.find(l=>!passedTest(l.id));const openCh=next?
  const nextLabel=l=>!store.story[l.id]?'ابدأ بالشرح':lvCount(l.id)<3?'المستوى '+ar(lvCount(l.id)+1):passedTest(l.id)?'أتقنته ✓':'جاهز للاختبار';
  app.innerHTML=topbar()+`<div class="lhead"><button class="back" id="bkm">→ المواد</button><h1>الرياضيات</h1></div>
  <section class="hero"><div><h1>رياضيات <span>محمد</span></h1><p>اتبع الطريق في كل فصل: كل محطة درس، وفي آخر الطريق اختبار الفصل ووسامه.</p>
-  <div class="medals">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>${CH[c].s}</span></div>`).join('')}<button class="btn go" id="sprint" style="align-self:center">⚡ سباق الحقائق</button></div></div>${MASCOT}</section>
+  <div class="medals">${[1,2,3].map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>${CH[c].s}</span></div>`).join('')}<button class="btn go" id="sprint" style="align-self:center">⚡ سباق الحقائق</button></div></div>${mascot()}</section>
  ${next?`<div class="panel nextp" style="--c:${next.color}">${face('happy')}<div><b>خطوتك التالية</b><div>${next.code} ${next.title}: ${nextLabel(next)}</div></div><button class="btn" id="cont">أكمل ←</button></div>`:''}
  ${[1,2,3].map(c=>{const ls=L.filter(l=>l.ch===c),m=ls.filter(l=>passedTest(l.id)).length,cur=ls.find(l=>!passedTest(l.id));
   const nodes=ls.map(l=>({key:'l'+l.id,code:l.code,label:l.short||l.title,color:getColHex(l),state:passedTest(l.id)?'done':l===cur?'cur':'todo',sub:starsTxt(lvCount(l.id))}));
@@ -1696,7 +1897,7 @@ function getColHex(l){return ['#F2862B','#1C8FD0','#8B5CF6','#1E9E63','#E2475A']
 function renderEn(){const next=EN.find(L=>!enDone(L));
  app.innerHTML=topbar()+`<div style="--c:#0EA5A4"><div class="lhead"><button class="back" id="bk">→ المواد</button><h1><span class="en">English</span> · الإنجليزي</h1></div>
  <section class="hero en-hero"><div><h1 class="en" style="direction:ltr;text-align:right">Hello, <span>Mohammed!</span></h1><p>كتاب <span class="en">We Can! 2</span>. كل محطة درس فيه: أتعلّم، أسمع وأردّد، لعبة خاصة بالدرس، وتدريب. وفي آخر كل وحدة اختبار ووسام.</p>
-  <div class="ctrl" style="justify-content:flex-start;margin-top:12px"><button class="toggle" id="trt" aria-pressed="${trOn}">النطق بالحروف العربية: ${trOn?'ظاهر':'مخفي'}</button>${enOK()?'<button class="toggle" id="vt">🔊 جرّب الصوت</button>':''}</div>${enOK()?'':noVoiceNote()}</div>${MASCOT}</section>
+  <div class="ctrl" style="justify-content:flex-start;margin-top:12px"><button class="toggle" id="trt" aria-pressed="${trOn}">النطق بالحروف العربية: ${trOn?'ظاهر':'مخفي'}</button>${enOK()?'<button class="toggle" id="vt">🔊 جرّب الصوت</button>':''}</div>${enOK()?'':noVoiceNote()}</div>${mascot()}</section>
  ${next?`<div class="panel nextp" style="--c:${next.color}">${face('happy')}<div><b>خطوتك التالية</b><div><span class="en">${next.code}</span> ${next.ar}: ${enStepLabel(next)}</div></div><button class="btn" id="cont">أكمل ←</button></div>`:''}
  ${[0,1,2,3].map(u=>{const ls=EN.filter(L=>L.unit===u),cur=ls.find(L=>!enDone(L));const nodes=ls.map(L=>({key:'e'+L.id,code:L.code==='Intro'?'Hi':L.code,label:L.ar,color:L.color,state:enDone(L)?'done':L===cur?'cur':'todo',sub:starsTxt(lvCount(L.key))}));
   if(u)nodes.push({key:'u'+u,icon:'🏆',label:'اختبار الوحدة',color:'#FFC531',state:unitPassed(u)?'done':!cur?'cur':'todo',sub:store.tb['en-u'+u]!=null?ar(store.tb['en-u'+u])+' / ١٢':''});
@@ -1850,6 +2051,767 @@ function memoryGame(el,L){const pool=pics(L).filter(w=>!w.pic.startsWith('txt:')
   if(open.length===2){moves++;const[[b1,c1],[b2,c2]]=open;open=[];if(c1.w.en===c2.w.en&&c1.t!==c2.t){sGood();b1.classList.add('ok');b2.classList.add('ok');if(++done===ch.length){const m=el.querySelector('#mmm');m.className='msg ok pop';m.textContent=`رائع! أنهيتها في ${ar(moves)} محاولة.`;confetti();}}else{lock=true;setTimeout(()=>{b1.classList.remove('up');b2.classList.remove('up');lock=false;},950);}}});
  el.querySelector('#mnew').onclick=()=>memoryGame(el,L);}
 function enPlay(root,L){root.innerHTML=`<div id="eg1"></div><div id="eg2" style="margin-top:18px"></div>`;(EN_GAME[L.id]||(()=>{}))(root.querySelector('#eg1'),L);memoryGame(root.querySelector('#eg2'),L);}
+
+/* =================================================================
+   MATH — Chapters 4, 5, 6
+   ================================================================= */
+CH[4]={t:'الفصل الرابع',s:'تمثيل البيانات',key:'ch4'};CH[5]={t:'الفصل الخامس',s:'جمع عددين من رقمين',key:'ch5'};CH[6]={t:'الفصل السادس',s:'طرح عددين من رقمين',key:'ch6'};
+const d2=n=>[Math.floor(n/10),n%10];
+
+/* ---------- data drawings ---------- */
+function tally(n){let s='',x=4;const g=Math.floor(n/5),r=n%5;for(let i=0;i<g;i++){for(let k=0;k<4;k++)s+=`<line x1="${x+k*6}" y1="5" x2="${x+k*6}" y2="29" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>`;s+=`<line x1="${x-3}" y1="26" x2="${x+21}" y2="8" stroke="var(--berry)" stroke-width="2.5" stroke-linecap="round"/>`;x+=34;}
+ for(let k=0;k<r;k++)s+=`<line x1="${x+k*6}" y1="5" x2="${x+k*6}" y2="29" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>`;const W=Math.max(20,x+r*6+4);return `<svg viewBox="0 0 ${W} 34" width="${W}" height="34" style="direction:ltr;vertical-align:middle" role="img" aria-label="إشارات ${ar(n)}">${s}</svg>`;}
+const CATS=[[['🍎','تفاح'],['🍌','موز'],['🍊','برتقال'],['🍇','عنب']],[['⚽','كرة القدم'],['🏀','كرة السلة'],['🏊','السباحة'],['🚴','الدراجة']],[['🐱','قطة'],['🐦','عصفور'],['🐟','سمكة'],['🐰','أرنب']],[['🥕','جزر'],['🥒','خيار'],['🍅','طماطم'],['🌽','ذرة']]];
+const TOPIC=['الفاكهة المفضّلة','الرياضة المفضّلة','الحيوان الأليف المفضّل','الخضار المفضّلة'];
+function dataset(k=4,max=9){const t=rnd(0,3),cats=shuffle(CATS[t]).slice(0,k),used=new Set();return{topic:TOPIC[t],rows:cats.map(c=>{let v;do{v=rnd(1,max);}while(used.has(v));used.add(v);return{e:c[0],n:c[1],v};})};}
+function dtable(ds,o={}){return `<table class="dtab"><caption>${ds.topic}</caption><tr><th>النوع</th><th>${o.mode==='count'?'العدد':'الإشارات'}</th>${o.count?'<th>العدد</th>':''}</tr>${ds.rows.map(r=>`<tr><td>${r.e} ${r.n}</td><td>${o.mode==='count'?`<b class="num">${ar(r.v)}</b>`:tally(r.v)}</td>${o.count?`<td class="num">${o.hideCount===r.n?'؟':ar(r.v)}</td>`:''}</tr>`).join('')}</table>`;}
+function pictograph(ds){return `<div class="pgraph"><div class="pcap">${ds.topic}</div>${ds.rows.map(r=>`<div class="prow"><span class="plab">${r.n}</span><span class="pcells">${Array.from({length:10},(_,i)=>`<i>${i<r.v?r.e:''}</i>`).join('')}</span></div>`).join('')}<div class="pkey">المفتاح: كل صورة = طالب واحد</div></div>`;}
+const BARC=['#F2862B','#1C8FD0','#1E9E63','#8B5CF6','#E2475A'];
+function barGraph(ds,o={}){if(o.vertical)return `<div class="vbar"><div class="pcap">${ds.topic}</div><div class="vgrid">${ds.rows.map((r,i)=>`<div class="vcol"><div class="vcells">${Array.from({length:10},(_,k)=>`<i style="${9-k<r.v?`background:${BARC[i]}`:''}"></i>`).join('')}</div><span>${r.e}<br>${r.n}</span></div>`).join('')}<div class="vaxis">${[10,9,8,7,6,5,4,3,2,1].map(n=>`<b>${ar(n)}</b>`).join('')}</div></div></div>`;
+ return `<div class="hbar"><div class="pcap">${ds.topic}</div>${ds.rows.map((r,i)=>`<div class="prow"><span class="plab">${r.e} ${r.n}</span><span class="hcells">${Array.from({length:10},(_,k)=>`<i style="${k<r.v?`background:${BARC[i]}`:''}"></i>`).join('')}</span></div>`).join('')}<div class="prow"><span class="plab"></span><span class="hcells axis">${[1,2,3,4,5,6,7,8,9,10].map(n=>`<b>${ar(n)}</b>`).join('')}</span></div><div class="pkey">عدد الطلاب</div></div>`;}
+function dataQ(skill,step,rep,o={}){return G2(skill,step,()=>{const ds=dataset(o.k||4,o.max||9),vis=rep(ds),r=pick(ds.rows),r2=pick(ds.rows.filter(x=>x!==r)),t=pick(o.types||['count','most','least','diff','total']);
+ const most=ds.rows.reduce((a,b)=>b.v>a.v?b:a),least=ds.rows.reduce((a,b)=>b.v<a.v?b:a),names=ds.rows.map(x=>x.n);
+ if(t==='count')return input(`كم طالبًا اختار <b>${r.e} ${r.n}</b>؟`,r.v,'عُدّ الإشارات أو الصور في هذا الصف.',`${r.n}: ${ar(r.v)}`,{visual:vis});
+ if(t==='most')return choice('ما النوع الذي اختاره أكبر عدد من الطلاب؟',names,most.n,'ابحث عن الصف الأطول.',`${most.n}: ${ar(most.v)}`,{visual:vis});
+ if(t==='least')return choice('ما النوع الذي اختاره أقل عدد من الطلاب؟',names,least.n,'ابحث عن الصف الأقصر.',`${least.n}: ${ar(least.v)}`,{visual:vis});
+ if(t==='diff'){const[a,b]=r.v>r2.v?[r,r2]:[r2,r];return input(`كم طالبًا يزيد <b>${a.n}</b> على <b>${b.n}</b>؟`,a.v-b.v,`اطرح: ${ar(a.v)} − ${ar(b.v)}`,`${ar(a.v)} − ${ar(b.v)} = ${ar(a.v-b.v)}`,{visual:vis});}
+ const tot=ds.rows.reduce((s,x)=>s+x.v,0);return input('كم طالبًا شارك في جمع البيانات كلهم؟',tot,'اجمع أعداد كل الصفوف.',`${ds.rows.map(x=>ar(x.v)).join(' + ')} = ${ar(tot)}`,{visual:vis});});}
+const CUBE={red:['🟥','الأحمر'],blue:['🟦','الأزرق'],green:['🟩','الأخضر'],yellow:['🟨','الأصفر']};
+const bagHTML=c=>`<div class="bag"><span class="bagtop"></span><div class="bagin">${Object.entries(c).flatMap(([k,n])=>Array.from({length:n},()=>CUBE[k][0])).map(x=>`<i>${x}</i>`).join('')}</div></div>`;
+
+/* ---------- two-digit drawings ---------- */
+function colOp(a,b,op,o={}){const[at,au]=d2(a),[bt,bu]=d2(b),r=op==='+'?a+b:a-b,[rt,ru]=d2(r);
+ const top=o.borrow?[`<s>${ar(at)}</s> <b>${ar(at-1)}</b>`,`<s>${ar(au)}</s> <b>${ar(au+10)}</b>`]:[at?ar(at):'',ar(au)];
+ return `<div class="colop"><span></span><span class="ch T">عشرات</span><span class="ch O">آحاد</span><span></span><span class="carry">${o.carry?ar(1):''}</span><span></span><span></span><span class="cd T">${top[0]}</span><span class="cd O">${top[1]}</span><span class="cop">${op==='+'?'+':'−'}</span><span class="cd T">${bt?ar(bt):''}</span><span class="cd O">${ar(bu)}</span><span class="cline"></span><span></span><span class="cd T res">${o.show?(rt?ar(rt):''):o.ones!=null&&o.show!==false&&o.tens!=null?ar(o.tens):'؟'}</span><span class="cd O res">${o.show?ar(ru):o.ones!=null?ar(o.ones):'؟'}</span></div>`;}
+const twoBlocks=(a,b)=>`<div class="row">${blocks(...d2(a),{scale:.8})}<span class="arrow">${'+'}</span>${blocks(...d2(b),{scale:.8})}</div>`;
+function hundred(o={}){let s='<div class="h100">';for(let n=1;n<=100;n++){const c=o.path&&o.path.includes(n)?'on':'';s+=`<i class="${c}${o.start===n?' st':''}${o.cur===n?' cur':''}">${ar(n)}</i>`;}return s+'</div>';}
+function genAdd(kind){let a,b;for(;;){if(kind==='tens'){const x=rnd(1,8),y=rnd(1,9-x);return[x*10,y*10];}
+ a=rnd(11,89);b=kind==='one'||kind==='one-r'?rnd(2,9):rnd(11,89);const[,au]=d2(a),[,bu]=d2(b);if(a+b>99)continue;const rg=au+bu>=10;if((kind==='plain'||kind==='one')&&!rg)return[a,b];if((kind==='regroup'||kind==='one-r')&&rg)return[a,b];if(kind==='any')return[a,b];}}
+function genSub(kind){let a,b;for(;;){if(kind==='tens'){const x=rnd(2,9),y=rnd(1,x-1);return[x*10,y*10];}
+ a=rnd(20,99);b=kind==='one'||kind==='one-r'?rnd(2,9):rnd(11,a-1);if(b>=a)continue;const[,au]=d2(a),[,bu]=d2(b);const rg=au<bu;if((kind==='plain'||kind==='one')&&!rg)return[a,b];if((kind==='regroup'||kind==='one-r')&&rg)return[a,b];if(kind==='any')return[a,b];}}
+const round10=n=>Math.round(n/10)*10;
+function genRound(){let n;do{n=rnd(11,89);}while(n%10===5||n%10===0);return n;}
+
+/* ---------- activities ---------- */
+function playTally(root){const ds=dataset(3,7);let queue=shuffle(ds.rows.flatMap(r=>Array.from({length:r.v},()=>r))),i=0;const got={};ds.rows.forEach(r=>got[r.n]=0);
+ root.innerHTML=`<div class="panel act"><h2>✏️ اجمع البيانات بالإشارات</h2><div>سألنا الطلاب عن «${ds.topic}». اضغط على الصف المناسب لتضع إشارة لكل إجابة.</div><div class="vote" id="vt"></div><div id="tt" style="width:100%;max-width:520px"></div><div class="msg" id="tm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#tt').innerHTML=`<table class="dtab"><tr><th>النوع</th><th>الإشارات</th></tr>${ds.rows.map(r=>`<tr class="trow" data-n="${r.n}"><td>${r.e} ${r.n}</td><td>${tally(got[r.n])||''}</td></tr>`).join('')}</table>`;
+  root.querySelectorAll('.trow').forEach(tr=>tr.onclick=()=>{if(i>=queue.length)return;const cur=queue[i];if(tr.dataset.n===cur.n){got[cur.n]++;i++;sPop();draw();next();}else{sBad();tr.classList.add('shake');setTimeout(()=>tr.classList.remove('shake'),400);}});};
+ const next=()=>{if(i>=queue.length){const most=ds.rows.reduce((a,b)=>b.v>a.v?b:a);q('#vt').innerHTML=`<span class="pic xl">🏁</span>`;q('#tm').className='msg ok pop';q('#tm').textContent=`انتهى جمع البيانات! أكثر نوع: ${most.n} (${ar(most.v)}). والإشارة المائلة تعني ٥.`;sGood();confetti();return;}const c=queue[i];q('#vt').innerHTML=`<span class="voter">🙋</span><span class="sbub"><b>أنا أحب ${c.n}!</b> <span class="pic big">${c.e}</span></span><span class="num" style="color:var(--muted)">${ar(i+1)} / ${ar(queue.length)}</span>`;};
+ draw();next();}
+function playPicto(root){const ds=dataset(3,7);const got={};ds.rows.forEach(r=>got[r.n]=0);
+ root.innerHTML=`<div class="panel act"><h2>🖼️ ابنِ التمثيل بالصور</h2><div>انظر إلى جدول الإشارات، ثم أضف صورة لكل طالب.</div>${dtable(ds)}<div id="pg" style="width:100%;max-width:560px"></div><div class="ctrl"><button class="btn go" id="ck">تحقّق</button></div><div class="msg" id="pm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#pg').innerHTML=`<div class="pgraph">${ds.rows.map(r=>`<div class="prow"><span class="plab">${r.n}</span><span class="pcells">${Array.from({length:10},(_,i)=>`<i class="tap" data-r="${r.n}" data-k="${i}">${i<got[r.n]?r.e:''}</i>`).join('')}</span></div>`).join('')}<div class="pkey">المفتاح: كل صورة = طالب واحد · اضغط على المربع لتضع الصور حتى يصل إليه</div></div>`;
+  root.querySelectorAll('#pg i.tap').forEach(c=>c.onclick=()=>{const k=+c.dataset.k+1;got[c.dataset.r]=got[c.dataset.r]===k?k-1:k;sPop();draw();});};
+ q('#ck').onclick=()=>{const bad=ds.rows.filter(r=>got[r.n]!==r.v);const m=q('#pm');if(!bad.length){sGood();confetti();m.className='msg ok pop';m.textContent='تمثيل صحيح! كل صورة تمثّل طالبًا واحدًا.';}else{sBad();m.className='msg bad pop';m.textContent=`راجع صف ${bad[0].n}: الإشارات تقول ${ar(bad[0].v)}.`;}};draw();}
+function playDetective(root,rep){let n=0,sc=0;root.innerHTML=`<div class="panel act"><h2>🔍 محقّق البيانات</h2><div>خمسة أسئلة سريعة عن التمثيل. كل إجابة صحيحة = شارة محقّق!</div><div id="dq" style="width:100%"></div><div class="msg" id="dm"></div></div>`;
+ const q=s=>root.querySelector(s);const next=()=>{if(!root.isConnected)return;if(n>=5){q('#dq').innerHTML=`<div class="result"><span class="pic xl">🕵️</span><div class="score num" style="font-size:44px">${ar(sc)} / ٥</div><button class="btn" id="da">تحقيق جديد</button></div>`;if(sc>=4){sWin();confetti();}q('#da').onclick=()=>playDetective(root,rep);return;}
+  const cur=dataQ('x',0,rep,{types:['most','least','count']})();if(cur.kind!=='choice'){cur.kind='choice';cur.options=shuffle(uniq(nopts(+cur.answer,[+cur.answer+2]).map(String)));}
+  q('#dq').innerHTML=`<div class="q"><div class="prompt">${cur.prompt}</div><div class="qvis">${cur.visual}</div>${optsHTML(cur)}</div>`;q('#dm').textContent='';
+  root.querySelectorAll('#dq .opt').forEach(b=>b.onclick=()=>{const v=cur.options[+b.dataset.k];n++;if(v===cur.answer){sc++;sGood();b.classList.add('right');}else{sBad();b.classList.add('wrong');q('#dm').className='msg bad pop';q('#dm').textContent=cur.explain;}setTimeout(next,900);});};next();}
+function playTableFill(root){let k,n,rows;root.innerHTML=`<div class="panel act"><h2>📋 أنشئ جدولًا</h2><div class="story" id="ts"></div><div id="tb" style="width:100%;max-width:420px"></div><div class="ctrl"><button class="btn" id="ad">+ أضف شخصًا</button><button class="btn alt" id="nw">مسألة جديدة</button></div><div class="msg" id="tm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#tb').innerHTML=`<table class="dtab"><tr><th>عدد الأشخاص</th><th>عدد الأرغفة</th></tr>${Array.from({length:rows},(_,i)=>`<tr class="pop"><td class="num">${ar(i+1)}</td><td class="num">${ar((i+1)*k)} <small>${'🫓'.repeat(Math.min(k,5))}</small></td></tr>`).join('')}</table>`;};
+ const fresh=()=>{k=rnd(2,5);n=rnd(3,5);rows=1;q('#ts').innerHTML=`يقدّم المطعم <b>${ar(k)}</b> أرغفة لكل شخص. إذا طلب <b>${ar(n)}</b> أشخاص، كم رغيفًا يقدّم؟ أضف صفًا لكل شخص.`;q('#tm').textContent='';draw();};
+ q('#ad').onclick=()=>{if(rows<n){rows++;sPop();draw();if(rows===n){sGood();confetti();q('#tm').className='msg ok pop';q('#tm').textContent=`الجدول يقول: ${ar(n)} أشخاص ← ${ar(n*k)} رغيفًا. نزيد ${ar(k)} في كل صف.`;}}};q('#nw').onclick=fresh;fresh();}
+function playBars(root){const ds=dataset(3,8);const got={};ds.rows.forEach(r=>got[r.n]=0);
+ root.innerHTML=`<div class="panel act"><h2>📊 ابنِ التمثيل بالأعمدة</h2><div>لوّن المربعات حتى يصبح طول كل عمود مثل عدد الإشارات.</div>${dtable(ds)}<div id="bg" style="width:100%;max-width:560px"></div><div class="ctrl"><button class="btn go" id="ck">تحقّق</button></div><div class="msg" id="bm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#bg').innerHTML=`<div class="hbar">${ds.rows.map((r,i)=>`<div class="prow"><span class="plab">${r.e} ${r.n}</span><span class="hcells">${Array.from({length:10},(_,k)=>`<i class="tap" data-r="${r.n}" data-k="${k}" style="${k<got[r.n]?`background:${BARC[i]}`:''}"></i>`).join('')}</span></div>`).join('')}<div class="prow"><span class="plab"></span><span class="hcells axis">${[1,2,3,4,5,6,7,8,9,10].map(n=>`<b>${ar(n)}</b>`).join('')}</span></div></div>`;
+  root.querySelectorAll('i.tap').forEach(c=>c.onclick=()=>{const k=+c.dataset.k+1;got[c.dataset.r]=got[c.dataset.r]===k?k-1:k;sPop();draw();});};
+ q('#ck').onclick=()=>{const bad=ds.rows.filter(r=>got[r.n]!==r.v);const m=q('#bm');if(!bad.length){sGood();confetti();m.className='msg ok pop';m.textContent='أعمدة صحيحة! العمود الأطول هو الأكثر.';}else{sBad();m.className='msg bad pop';m.textContent=`عمود ${bad[0].n} يجب أن يصل إلى ${ar(bad[0].v)}.`;}};draw();}
+function playRace(root){const C=[['#E2475A','أحمر'],['#FFC531','أصفر'],['#1C8FD0','أزرق']];let got=[0,0,0],ang=0,busy=false;
+ root.innerHTML=`<div class="panel act"><h2>🏁 سباق الألوان</h2><div>أدر الدوّارة. اللون الذي يصل إلى ٦ أولًا يفوز! من تتوقع أن يفوز؟</div><div class="spin"><svg viewBox="-60 -60 120 120" width="180"><g id="sp"><path d="M0 0 L0 -56 A56 56 0 0 1 48.5 28 Z" fill="${C[0][0]}"/><path d="M0 0 L48.5 28 A56 56 0 0 1 -48.5 28 Z" fill="${C[1][0]}"/><path d="M0 0 L-48.5 28 A56 56 0 0 1 0 -56 Z" fill="${C[2][0]}"/></g><circle r="56" fill="none" stroke="var(--ink)" stroke-width="3"/><path d="M0 -64 L-7 -50 H7 Z" fill="var(--ink)"/><circle r="6" fill="var(--ink)"/></svg></div><button class="btn" id="go">🌀 أدر</button><div id="rb" style="width:100%;max-width:520px"></div><div class="msg" id="rm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#rb').innerHTML=`<div class="hbar">${C.map((c,i)=>`<div class="prow"><span class="plab">${c[1]}</span><span class="hcells six">${Array.from({length:6},(_,k)=>`<i style="${k<got[i]?`background:${c[0]}`:''}"></i>`).join('')}</span></div>`).join('')}</div>`;};
+ q('#go').onclick=()=>{if(busy)return;if(got.some(g=>g>=6)){got=[0,0,0];q('#rm').textContent='';draw();}busy=true;const pickI=rnd(0,2);const target=360*4+[300,180,60][pickI]+rnd(-40,40);ang=Math.floor(ang/360)*360+target;const sp=q('#sp');sp.style.transition='transform 1.4s cubic-bezier(.2,.8,.2,1)';sp.style.transform=`rotate(${-ang}deg)`;sPop();
+  setTimeout(()=>{if(!root.isConnected)return;busy=false;got[pickI]++;draw();sTap();if(got[pickI]>=6){sWin();confetti();q('#rm').className='msg ok pop';q('#rm').textContent=`فاز ${C[pickI][1]}! انظر إلى الأعمدة: أيها الأطول؟ أيها الأقصر؟ أدر مرة أخرى لسباق جديد.`;}},1450);};draw();}
+function playBag(root){let bag,goal;root.innerHTML=`<div class="panel act"><h2>👜 اصنع الحدث</h2><div class="target" id="bq"></div><div id="bg"></div><div class="ctrl" id="bc"></div><div class="ctrl"><button class="btn go" id="ck">تحقّق</button><button class="btn alt" id="nw">تحدٍّ جديد</button></div><div class="msg" id="bm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#bg').innerHTML=bagHTML(bag);q('#bc').innerHTML=Object.keys(CUBE).map(k=>`<span class="cubebtn"><button class="btn small alt" data-a="${k}">+ ${CUBE[k][0]}</button><button class="btn small alt" data-r="${k}">− ${CUBE[k][0]}</button></span>`).join('');
+  root.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{const tot=Object.values(bag).reduce((a,b)=>a+b,0);if(tot<10){bag[b.dataset.a]=(bag[b.dataset.a]||0)+1;sPop();draw();}});root.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{if(bag[b.dataset.r]){bag[b.dataset.r]--;if(!bag[b.dataset.r])delete bag[b.dataset.r];draw();}});};
+ const fresh=()=>{bag={red:2,blue:2};const c=pick(Object.keys(CUBE)),t=pick(['أكيدًا','مستحيلًا']);goal=[c,t];q('#bq').innerHTML=`اجعل سحب مكعب <b>${CUBE[c][1]}</b> ${t==='أكيدًا'?'<b style="color:var(--leaf)">أكيدًا</b>':'<b style="color:var(--berry)">مستحيلًا</b>'}. أضف أو أزل مكعبات.`;q('#bm').textContent='';draw();};
+ q('#ck').onclick=()=>{const[c,t]=goal,tot=Object.values(bag).reduce((a,b)=>a+b,0),has=bag[c]||0,m=q('#bm');const ok=tot>0&&(t==='أكيدًا'?has===tot:has===0);if(ok){sGood();confetti();m.className='msg ok pop';m.textContent=t==='أكيدًا'?'صحيح! كل المكعبات من هذا اللون، فالسحب أكيد.':'صحيح! لا يوجد أي مكعب من هذا اللون، فالسحب مستحيل.';}else{sBad();m.className='msg bad pop';m.textContent=t==='أكيدًا'?'ليكون أكيدًا: يجب أن تكون كل المكعبات من هذا اللون.':'ليكون مستحيلًا: لا يجب أن يبقى أي مكعب من هذا اللون.';}};q('#nw').onclick=fresh;fresh();}
+function playDraw(root){let bag,res,pred;root.innerHTML=`<div class="panel act"><h2>🎲 اسحب وسجّل</h2><div id="db"></div><div class="target" id="dq"></div><div class="ctrl" id="dp"></div><div class="ctrl"><button class="btn" id="dr" disabled>اسحب ١٠ مرات</button><button class="btn alt" id="nw">كيس جديد</button></div><div class="draws" id="dd"></div><div id="dt"></div><div class="msg" id="dm"></div></div>`;
+ const q=s=>root.querySelector(s);const fresh=()=>{const a=rnd(6,8);bag={red:a,blue:10-a};if(Math.random()<.5)bag={red:10-a,blue:a};res={red:0,blue:0};pred=null;q('#db').innerHTML=bagHTML(bag);q('#dq').textContent='قبل السحب: أي لون تتوقع أن يظهر أكثر؟';q('#dp').innerHTML=`<button class="btn alt" data-p="red">${CUBE.red[0]} الأحمر</button><button class="btn alt" data-p="blue">${CUBE.blue[0]} الأزرق</button>`;q('#dd').innerHTML='';q('#dt').innerHTML='';q('#dm').textContent='';q('#dr').disabled=true;
+  root.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{pred=b.dataset.p;root.querySelectorAll('[data-p]').forEach(x=>x.classList.toggle('on',x===b));q('#dr').disabled=false;sTap();});};
+ q('#dr').onclick=async()=>{q('#dr').disabled=true;const id0=runId;for(let i=0;i<10;i++){if(runId!==id0||!root.isConnected)return;const c=Math.random()<bag.red/10?'red':'blue';res[c]++;q('#dd').insertAdjacentHTML('beforeend',`<i class="pop">${CUBE[c][0]}</i>`);sPop();await sleep(260);}
+  q('#dt').innerHTML=`<table class="dtab"><tr><th>اللون</th><th>الإشارات</th></tr><tr><td>${CUBE.red[0]} أحمر</td><td>${tally(res.red)}</td></tr><tr><td>${CUBE.blue[0]} أزرق</td><td>${tally(res.blue)}</td></tr></table>`;
+  const more=bag.red>bag.blue?'red':'blue',m=q('#dm');m.className='msg ok pop';m.textContent=`في الكيس ${ar(bag[more])} من ${CUBE[more][1]}، لذلك سحبه أكثر إمكانية. ${pred===more?'وتوقّعك صحيح! 🎯':''}`;if(pred===more){sGood();confetti();}};
+ q('#nw').onclick=fresh;fresh();}
+function playHundred(root,dir){let a,b,cur,path;root.innerHTML=`<div class="panel act"><h2>🔟 لوحة المئة</h2><div class="target" id="hq"></div><div id="hc" style="width:100%;max-width:440px"></div><div class="ctrl"><button class="btn" id="t10">${dir>0?'+ ١٠ (إلى الأسفل)':'− ١٠ (إلى الأعلى)'}</button><button class="btn alt" id="t1">${dir>0?'+ ١ (إلى اليمين)':'− ١ (إلى اليسار)'}</button><button class="btn alt" id="nw">مسألة جديدة</button></div><div class="msg" id="hm"></div></div>`;
+ const q=s=>root.querySelector(s);const draw=()=>{q('#hc').innerHTML=hundred({start:a,cur,path});};
+ const fresh=()=>{if(dir>0){a=rnd(11,59);b=rnd(1,3)*10+rnd(0,3);}else{a=rnd(40,99);b=rnd(1,3)*10+rnd(0,3);}cur=a;path=[a];q('#hq').innerHTML=`<span class="big-eq">${ar(a)} ${dir>0?'+':'−'} ${ar(b)} = ؟</span>`;q('#hm').className='msg';q('#hm').textContent=`ابدأ من ${ar(a)}. عُدّ العشرات أولًا ثم الآحاد.`;draw();};
+ const step=s=>{const n=cur+dir*s;if(n<1||n>100)return;cur=n;path.push(n);sPop();draw();const m=q('#hm');const target=a+dir*b;if(cur===target){sGood();confetti();m.className='msg ok pop';m.textContent=`وصلت! ${ar(a)} ${dir>0?'+':'−'} ${ar(b)} = ${ar(target)}`;}else if(dir>0?cur>target:cur<target){sBad();m.className='msg bad pop';m.textContent='تجاوزت الهدف! اضغط «مسألة جديدة» أو حاول بهدوء.';}};
+ q('#t10').onclick=()=>step(10);q('#t1').onclick=()=>step(1);q('#nw').onclick=fresh;fresh();}
+function playMat(root,op,kind){let a,b,T,U,phase;root.innerHTML=`<div class="panel act"><h2>🧮 لوحة المنازل</h2><div class="target" id="mq"></div><div class="mat" id="mt"></div><div class="ctrl" id="mc"></div><div class="msg" id="mm"></div><button class="btn alt" id="nw">مسألة جديدة</button></div>`;
+ const q=s=>root.querySelector(s);
+ const draw=()=>{q('#mt').innerHTML=`<div class="mcol"><b class="T">العشرات: ${ar(T)}</b><div class="mbox">${T?blocks(T,0,{scale:.8}):''}</div></div><div class="mcol"><b class="O">الآحاد: ${ar(U)}</b><div class="mbox">${U?blocks(0,U,{scale:1}):''}</div></div>`;
+  const[bt,bu]=d2(b),c=q('#mc'),m=q('#mm');let h='';
+  if(op==='+'){if(phase===0)h=`<button class="btn" id="b1">أضف ${ar(b)}</button>`;else if(U>=10)h=`<button class="btn go" id="b2">اجمع ١٠ آحاد في عشرة</button>`;}
+  else{if(phase===0)h=`${U<bu?'<button class="btn go" id="b3">فكّ عشرة إلى ١٠ آحاد</button>':''}<button class="btn" id="b4" ${U<bu?'disabled':''}>أزل ${ar(bu)} آحاد</button>`;else if(phase===1)h=`<button class="btn" id="b5">أزل ${ar(bt)} عشرات</button>`;}
+  c.innerHTML=h;
+  const done=op==='+'?phase===1&&U<10:phase===2;if(done){m.className='msg ok pop';m.textContent=`${ar(a)} ${op} ${ar(b)} = ${ar(T*10+U)}`;sGood();confetti();}
+  else if(op==='+'&&phase===1&&U>=10){m.className='msg';m.textContent=`عندك ${ar(U)} آحاد! كل ١٠ آحاد تصبح عشرة.`;}
+  else if(op==='−'&&phase===0&&U<bu){m.className='msg';m.textContent=`لا تستطيع أخذ ${ar(bu)} من ${ar(U)} آحاد. فكّ عشرة أولًا!`;}else if(!done)m.textContent='';
+  const e=s=>q(s);if(e('#b1'))e('#b1').onclick=()=>{T+=bt;U+=bu;phase=1;sPop();draw();};if(e('#b2'))e('#b2').onclick=()=>{U-=10;T++;sPop();draw();};
+  if(e('#b3'))e('#b3').onclick=()=>{T--;U+=10;sPop();draw();};if(e('#b4'))e('#b4').onclick=()=>{U-=bu;phase=1;sPop();draw();};if(e('#b5'))e('#b5').onclick=()=>{T-=bt;phase=2;sPop();draw();};};
+ const fresh=()=>{[a,b]=op==='+'?genAdd(kind):genSub(kind);[T,U]=d2(a);phase=0;q('#mq').innerHTML=`<span class="big-eq">${ar(a)} ${op} ${ar(b)} = ؟</span>`;draw();};q('#nw').onclick=fresh;fresh();}
+function playColumn(root,op,kind){let a,b,st;root.innerHTML=`<div class="panel act"><h2>${op==='+'?'➕':'➖'} المدرّب العمودي</h2><div class="target" id="cq"></div><div id="cv"></div><div class="target" id="cs"></div><div class="opts" id="co"></div><div class="msg" id="cm"></div><button class="btn alt" id="nw">مسألة جديدة</button></div>`;
+ const q=s=>root.querySelector(s);
+ const ask=(text,ans,cands,after)=>{q('#cs').innerHTML=text;const o=shuffle(nopts(ans,cands));q('#co').innerHTML=o.map(x=>`<button class="opt n" data-v="${x}">${ar(x)}</button>`).join('');root.querySelectorAll('#co .opt').forEach(x=>x.onclick=()=>{if(+x.dataset.v===ans){sGood();q('#cm').textContent='';after();}else{sBad();x.classList.add('wrong');q('#cm').className='msg bad pop';q('#cm').textContent='فكّر مرة أخرى.';}});};
+ const fresh=()=>{[a,b]=op==='+'?genAdd(kind):genSub(kind);const[at,au]=d2(a),[bt,bu]=d2(b);q('#cq').innerHTML=`<span class="big-eq">${ar(a)} ${op==='+'?'+':'−'} ${ar(b)}</span>`;q('#cm').textContent='';
+  if(op==='+'){q('#cv').innerHTML=colOp(a,b,'+');ask(`١) اجمع الآحاد: ${ar(au)} + ${ar(bu)} = ؟`,au+bu,[au+bu-10,Math.abs(au-bu)],()=>{const s=au+bu,c=s>=10;q('#cv').innerHTML=colOp(a,b,'+',{carry:c,ones:s%10});q('#cs').innerHTML=c?`${ar(s)} = عشرة و ${ar(s-10)}. نكتب ${ar(s-10)} وننقل ١ إلى العشرات.`:'';
+    setTimeout(()=>ask(`٢) اجمع العشرات${c?' مع ١ المنقول':''}: ${c?'١ + ':''}${ar(at)} + ${ar(bt)} = ؟`,at+bt+(c?1:0),[at+bt+(c?0:1),at+bt+2],()=>{q('#cv').innerHTML=colOp(a,b,'+',{carry:c,show:true});q('#cs').innerHTML='';q('#co').innerHTML='';q('#cm').className='msg ok pop';q('#cm').textContent=`${ar(a)} + ${ar(b)} = ${ar(a+b)} 🎉`;confetti();}),c?900:0);});}
+  else{q('#cv').innerHTML=colOp(a,b,'−');const need=au<bu;ask(`١) هل تستطيع أن تطرح ${ar(bu)} من ${ar(au)} في الآحاد؟ (١ = نعم، ٠ = لا)`,need?0:1,[need?1:0],()=>{if(need){q('#cv').innerHTML=colOp(a,b,'−',{borrow:true});q('#cs').innerHTML=`نفكّ عشرة: ${ar(at)} عشرات و ${ar(au)} آحاد ← ${ar(at-1)} عشرات و ${ar(au+10)} آحاد.`;}
+    const u2=need?au+10:au,t2=need?at-1:at;setTimeout(()=>ask(`٢) اطرح الآحاد: ${ar(u2)} − ${ar(bu)} = ؟`,u2-bu,[u2-bu+1,Math.abs(bu-au)],()=>ask(`٣) اطرح العشرات: ${ar(t2)} − ${ar(bt)} = ؟`,t2-bt,[t2-bt+1,at-bt],()=>{q('#cv').innerHTML=colOp(a,b,'−',{borrow:need,show:true});q('#cs').innerHTML='';q('#co').innerHTML='';q('#cm').className='msg ok pop';q('#cm').textContent=`${ar(a)} − ${ar(b)} = ${ar(a-b)} 🎉`;confetti();})),need?1100:0);});}};
+ q('#nw').onclick=fresh;fresh();}
+function playRound(root,op){root.innerHTML=`<div class="panel act"><h2>🎯 أقرب عشرة</h2><div>حرّك المؤشر واختر عددًا، وشاهد إلى أي عشرة هو أقرب.</div><input type="range" id="rr" min="11" max="89" value="27" aria-label="اختر عددًا" style="width:min(460px,90%);accent-color:var(--c)"><div id="rl" style="width:100%;overflow-x:auto"></div><div class="big-eq" id="re"></div><hr style="width:100%;border:0;border-top:2px dashed var(--line)"><div class="target" id="pq"></div><div class="opts" id="po"></div><div class="msg" id="pm"></div></div>`;
+ const q=s=>root.querySelector(s);const upd=()=>{let n=+q('#rr').value;if(n%10===5)n++;const lo=Math.floor(n/10)*10;q('#rl').innerHTML=numberLine(lo,lo+10,{dot:n,ring:round10(n)});q('#re').textContent=`${ar(n)} ← ${ar(round10(n))} تقريبًا`;};q('#rr').oninput=upd;upd();
+ const prob=()=>{const a=genRound(),b=genRound();const[x,y]=op==='+'?[a,b]:[Math.max(a,b),Math.min(a,b)];const est=op==='+'?round10(x)+round10(y):round10(x)-round10(y);q('#pq').innerHTML=`قدّر: <b>${ar(x)} ${op==='+'?'+':'−'} ${ar(y)}</b>`;const o=shuffle(uniq([est,est+10,Math.max(0,est-10)]).map(Number));
+  q('#po').innerHTML=o.map(v=>`<button class="opt n" data-v="${v}">${ar(v)}</button>`).join('');q('#pm').textContent='';root.querySelectorAll('#po .opt').forEach(b=>b.onclick=()=>{if(+b.dataset.v===est){sGood();b.classList.add('right');q('#pm').className='msg ok pop';q('#pm').textContent=`${ar(x)} ← ${ar(round10(x))} و ${ar(y)} ← ${ar(round10(y))}، إذن ${ar(est)} تقريبًا.`;setTimeout(()=>{if(root.isConnected)prob();},1800);}else{sBad();b.classList.add('wrong');}});};prob();}
+function playUndo(root){let steps,start,stage;root.innerHTML=`<div class="panel act"><h2>⏪ أحلّ عكسيًا</h2><div class="story" id="us"></div><div class="big-eq" id="ue"></div><div class="ctrl" id="uc"></div><div class="msg" id="um"></div><button class="btn alt" id="nw">قصة جديدة</button></div>`;
+ const q=s=>root.querySelector(s);const fresh=()=>{const g=rnd(2,6),s=rnd(2,6),left=rnd(10,30);start=g+s+left;steps=[['أعطى أخاه',g],['أعطى أخته',s]];stage=0;let cur=left;
+  q('#us').innerHTML=`كان مع إبراهيم كتب. أعطى أخاه <b>${ar(g)}</b>، ثم أعطى أخته <b>${ar(s)}</b>، فبقي معه <b>${ar(left)}</b>. كم كتابًا كان معه في البداية؟ <b>ابدأ من النهاية وارجع!</b>`;
+  const draw=()=>{q('#ue').textContent=`معه الآن: ${ar(cur)} 📚`;const st=steps[steps.length-1-stage];q('#uc').innerHTML=st?`<button class="btn">⏪ أرجع ما ${st[0]} (+ ${ar(st[1])})</button>`:'';const bt=q('#uc button');if(bt)bt.onclick=()=>{cur+=st[1];stage++;sPop();draw();if(stage===steps.length){sGood();confetti();q('#um').className='msg ok pop';q('#um').textContent=`كان معه ${ar(cur)} كتابًا في البداية. تحقّق: ${ar(cur)} − ${ar(g)} − ${ar(s)} = ${ar(left)} ✓`;}};};q('#um').textContent='';draw();};q('#nw').onclick=fresh;fresh();}
+function playThree2(root){let v;root.innerHTML=`<div class="panel act"><h2>🔢 ثلاثة أعداد</h2><div>اجمع الآحاد أولًا: ابحث عن رقمين في منزلة الآحاد مجموعهما ١٠.</div><div class="cards" id="tc"></div><div class="big-eq" id="te"></div><div class="msg" id="tm"></div><button class="btn alt" id="nw">أعداد جديدة</button></div>`;
+ const q=s=>root.querySelector(s);let sel=[];const draw=()=>{q('#tc').innerHTML=v.map((x,i)=>`<button class="dcard wide${sel.includes(i)?' used':''}" data-i="${i}">${pvn(x)}</button>`).join('');
+  root.querySelectorAll('#tc .dcard').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(sel.includes(i)||sel.length>=2)return;sel.push(i);sTap();draw();if(sel.length===2){const[x,y]=sel.map(k=>v[k]%10),ok=x+y===10;const tot=v.reduce((a,b)=>a+b,0);q('#te').textContent=`الآحاد: ${v.map(n=>ar(n%10)).join(' + ')} = ${ar(v.reduce((a,b)=>a+b%10,0))} ← المجموع ${ar(tot)}`;q('#tm').className='msg pop '+(ok?'ok':'');q('#tm').textContent=ok?'ممتاز! كوّنت عشرة من الآحاد، فصار الجمع سهلًا.':'جرّب عددين آحادهما مجموعه ١٠.';if(ok){sGood();}}});};
+ q('#nw').onclick=()=>{let a,b,c;do{const x=rnd(1,9);a=rnd(1,2)*10+x;b=rnd(1,2)*10+(10-x);c=rnd(1,3)*10+rnd(1,9);}while(a+b+c>99);v=shuffle([a,b,c]);sel=[];q('#te').textContent='';q('#tm').textContent='';draw();};q('#nw').onclick();}
+function playBuilder2(root,op){root.innerHTML=`<div class="panel act"><h2>🔢 اكتب جملة عددية</h2><div class="story" id="bs"></div><div class="eqslots" id="sl"></div><div class="cards" id="tl"></div><div class="ctrl"><button class="btn go" id="ck">تحقّق</button><button class="btn alt" id="cl">امسح</button><button class="btn alt" id="nw">مسألة جديدة</button></div><div class="msg" id="bm"></div></div>`;
+ let a,b,r,tiles,pk=[];const q=s=>root.querySelector(s);
+ const draw=()=>{q('#sl').innerHTML=[0,1,2,3,4].map(i=>`<span class="eqs${pk[i]!=null?' on':''}">${pk[i]!=null?tiles[pk[i]]:''}</span>`).join('');q('#tl').innerHTML=tiles.map((t,i)=>`<button class="dcard sm${pk.includes(i)?' used':''}" data-i="${i}" ${pk.includes(i)?'disabled':''}>${t}</button>`).join('');root.querySelectorAll('#tl .dcard').forEach(x=>x.onclick=()=>{if(pk.length<5){pk.push(+x.dataset.i);sTap();draw();}});};
+ const fresh=()=>{if(op==='+'){[a,b]=genAdd('any');r=a+b;q('#bs').innerHTML=`في المكتبة ${ar(a)} قصة، ووصلت ${ar(b)} قصة جديدة. كم قصة في المكتبة الآن؟`;}else{[a,b]=genSub('any');r=a-b;q('#bs').innerHTML=`وقفت ${ar(a)} نحلة على زهرة، ثم طارت ${ar(b)} منها. كم نحلة بقيت؟`;}
+  tiles=shuffle([ar(a),ar(b),ar(r),'+','−','=']);pk=[];q('#bm').textContent='';draw();};
+ q('#ck').onclick=()=>{const v=pk.map(i=>tiles[i]),m=q('#bm');const ok=v.length===5&&v[3]==='='&&v[4]===ar(r)&&(op==='+'?v[1]==='+'&&((v[0]===ar(a)&&v[2]===ar(b))||(v[0]===ar(b)&&v[2]===ar(a))):v[1]==='−'&&v[0]===ar(a)&&v[2]===ar(b));
+  if(ok){sGood();confetti();m.className='msg ok pop';m.textContent='جملة عددية صحيحة!';}else{sBad();m.className='msg bad pop';m.textContent=op==='+'?'وصلت يعني زادت: نجمع.':'طارت يعني نقصت: نطرح الأكبر ناقص الأصغر.';}};
+ q('#cl').onclick=()=>{pk=[];draw();};q('#nw').onclick=fresh;fresh();}
+function playCheck(root){let a,b,r,wrong;root.innerHTML=`<div class="panel act"><h2>✅ تحقّق بالجمع</h2><div class="target" id="kq"></div><div class="target" id="ks"></div><div class="opts" id="ko"></div><div class="msg" id="km"></div><button class="btn alt" id="nw">مسألة جديدة</button></div>`;
+ const q=s=>root.querySelector(s);const fresh=()=>{[a,b]=genSub('any');wrong=Math.random()<.5;r=a-b+(wrong?pick([10,-10,1,-1]):0);if(r<0)r=a-b,wrong=false;q('#kq').innerHTML=`كتب صديقك: <span class="big-eq">${ar(a)} − ${ar(b)} = ${ar(r)}</span> هل هو صحيح؟`;q('#km').textContent='';
+  q('#ks').textContent=`١) اجمع: ${ar(r)} + ${ar(b)} = ؟`;const o=shuffle(nopts(r+b,[r+b+10]));q('#ko').innerHTML=o.map(x=>`<button class="opt n" data-v="${x}">${ar(x)}</button>`).join('');
+  root.querySelectorAll('#ko .opt').forEach(x=>x.onclick=()=>{if(+x.dataset.v!==r+b){sBad();x.classList.add('wrong');return;}sGood();q('#ks').textContent=`${ar(r)} + ${ar(b)} = ${ar(r+b)}. ٢) هل يساوي ${ar(a)}؟`;q('#ko').innerHTML='<button class="opt" data-y="1">نعم، صحيح ✓</button><button class="opt" data-y="0">لا، خطأ ✗</button>';
+   root.querySelectorAll('[data-y]').forEach(y=>y.onclick=()=>{const said=y.dataset.y==='1';if(said===!wrong){sGood();confetti();q('#km').className='msg ok pop';q('#km').textContent=wrong?`أحسنت! الصحيح: ${ar(a)} − ${ar(b)} = ${ar(a-b)}`:'أحسنت! الجمع أثبت أن الطرح صحيح.';}else{sBad();y.classList.add('wrong');}});});};q('#nw').onclick=fresh;fresh();}
+
+/* ---------- helpers for lessons ---------- */
+const addQ=(skill,step,kind,o={})=>G2(skill,step,()=>{const[a,b]=genAdd(kind);const vis=o.vis==='blocks'?twoBlocks(a,b):o.vis==='col'?colOp(a,b,'+'):null;return o.choice?choice(`${ar(a)} + ${ar(b)} = ؟`,nopts(a+b,[a+b+10,a+b-10]),a+b,o.hint||'اجمع الآحاد ثم العشرات.',`${ar(a)} + ${ar(b)} = ${ar(a+b)}`,vis?{visual:vis}:{}):input(`${ar(a)} + ${ar(b)} = ؟`,a+b,o.hint||'اجمع الآحاد أولًا، ثم العشرات.',`${ar(a)} + ${ar(b)} = ${ar(a+b)}`,vis?{visual:vis}:{});});
+const subQ=(skill,step,kind,o={})=>G2(skill,step,()=>{const[a,b]=genSub(kind);const vis=o.vis==='col'?colOp(a,b,'−'):o.vis==='blocks'?blocks(...d2(a),{scale:.8}):null;return o.choice?choice(`${ar(a)} − ${ar(b)} = ؟`,nopts(a-b,[a-b+10,Math.abs(a-b-10)]),a-b,o.hint||'اطرح الآحاد ثم العشرات.',`${ar(a)} − ${ar(b)} = ${ar(a-b)}`,vis?{visual:vis}:{}):input(`${ar(a)} − ${ar(b)} = ؟`,a-b,o.hint||'اطرح الآحاد أولًا، ثم العشرات.',`${ar(a)} − ${ar(b)} = ${ar(a-b)}`,vis?{visual:vis}:{});});
+const NAMESALL=NB.concat(NG);
+function wordAdd(skill,step,kind){return G2(skill,step,()=>{const[a,b]=genAdd(kind),t=pick(THINGS),nm=pick(NB);return input(`مع ${nm} ${ar(a)} ${t[2]}، وأخذ ${ar(b)} أخرى. كم ${t[2]} معه الآن؟`,a+b,'زاد العدد: اجمع.',`${ar(a)} + ${ar(b)} = ${ar(a+b)}`);});}
+function wordSub(skill,step,kind){return G2(skill,step,()=>{const[a,b]=genSub(kind),t=pick(THINGS),nm=pick(NB);return input(`كان مع ${nm} ${ar(a)} ${t[2]}، فأعطى صديقه ${ar(b)}. كم بقي معه؟`,a-b,'نقص العدد: اطرح.',`${ar(a)} − ${ar(b)} = ${ar(a-b)}`);});}
+const sumS=t=>`<ul class="summary">${t.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+
+/* ---------- Chapter 4 ---------- */
+L.push({id:41,ch:4,code:'٤-١',title:'جدول الإشارات',color:'var(--l1)',blurb:'أجمع البيانات وأسجلها بإشارات العدّ.',
+story:[{t:'نسأل ونجمع',say:'نسأل الطلاب سؤالًا، ونسجّل كل إجابة بإشارة صغيرة. هذا اسمه جدول الإشارات.',body:()=>dtable({topic:'الكتب المفضّلة',rows:[{e:'📕',n:'قصص',v:3},{e:'📗',n:'علوم',v:6},{e:'📘',n:'شعر',v:8}]})},
+ {t:'الإشارة المائلة',say:'نرسم أربع إشارات، ثم الخامسة مائلة فوقها. هكذا نعدّ بالخمسات بسرعة.',body:()=>`<div class="row"><div class="box">${tally(4)}<span class="eq">٤</span></div><div class="box">${tally(5)}<span class="eq">٥</span></div><div class="box">${tally(8)}<span class="eq">٨</span></div></div>`,check:{q:'كم تمثّل هذه الإشارات؟',visual:()=>tally(7),opts:[7,5,2],ans:7,hint:'المجموعة المائلة = ٥، ثم عُدّ الباقي.',why:'٥ + ٢ = ٧'}},
+ {t:'تذكّر دائمًا',say:'خطوات جمع البيانات: أكتب سؤالًا، أطرح السؤال، أسجّل كل إجابة بإشارة، أعدّ الإشارات.',body:()=>sumS(['أكتب سؤالًا.','أطرح السؤال على الطلاب.','أسجّل كل إجابة بإشارة.','أعدّ الإشارات: كل مجموعة مائلة = ٥.'])}],
+levels:[[G2('أقرأ الإشارات',1,()=>{const n=rnd(1,9);return choice('كم تمثّل هذه الإشارات؟',nopts(n,[n+5>9?n-5:n+5]),n,'كل مجموعة مائلة = ٥.',`${ar(n)}`,{visual:tally(n)});}),G2('أقرأ الإشارات',1,()=>{const n=rnd(2,9);const o=uniq([n,n===9?8:n+1,n>5?n-5:n+5]);return{prompt:`أي إشارات تمثّل العدد <b>${ar(n)}</b>؟`,kind:'choice',options:shuffle(o),optHtml:Object.fromEntries(o.map(x=>[x,tally(+x)])),answer:String(n),hint:'عُدّ كل خيار.',explain:`${ar(n)} = ${n>=5?'مجموعة مائلة و '+ar(n-5):ar(n)+' إشارات'}`};})],
+ [dataQ('أقرأ جدول الإشارات',0,ds=>dtable(ds),{types:['count','most','least']})],
+ [dataQ('أقرأ جدول الإشارات',0,ds=>dtable(ds),{types:['diff','total','count']})]],play:playTally});
+L.push({id:42,ch:4,code:'٤-٢',title:'التمثيل بالصور',color:'var(--l2)',blurb:'أمثّل البيانات بالصور.',
+story:[{t:'من الإشارات إلى الصور',say:'نستطيع أن نعرض البيانات بالصور. كل صورة تمثّل طالبًا واحدًا.',body:()=>{const ds={topic:'الطائر المفضّل',rows:[{e:'🦜',n:'ببغاء',v:3},{e:'🕊️',n:'حمامة',v:5},{e:'🦅',n:'صقر',v:2}]};return dtable(ds)+pictograph(ds);}},
+ {t:'المفتاح',say:'تحت التمثيل بالصور يوجد المفتاح. يخبرنا كم تمثّل الصورة الواحدة.',body:()=>`<div class="pkey big">المفتاح: كل 🦜 = طالب واحد</div>`,check:{q:'إذا كان في صف الببغاء ٤ صور، فكم طالبًا اختار الببغاء؟',opts:[4,1,8],ans:4,hint:'كل صورة = طالب واحد.',why:'٤ صور = ٤ طلاب'}},
+ {t:'تذكّر دائمًا',say:'التمثيل بالصور: كل صورة في الصف تمثّل إجابة واحدة.',body:()=>sumS(['أرسم صورة لكل إجابة.','أضع الصور في صف مستقيم.','أكتب المفتاح.'])}],
+levels:[[dataQ('أقرأ التمثيل بالصور',0,ds=>pictograph(ds),{types:['count','most'],k:3,max:6})],[dataQ('أقرأ التمثيل بالصور',0,ds=>pictograph(ds),{types:['count','least','most']})],[dataQ('أقرأ التمثيل بالصور',0,ds=>pictograph(ds),{types:['diff','total']})]],play:playPicto});
+L.push({id:43,ch:4,code:'٤-٣',title:'قراءة البيانات الممثّلة بالصور',short:'أقرأ الصور',color:'var(--l3)',blurb:'أجيب عن أسئلة من التمثيل بالصور.',
+story:[{t:'نسأل التمثيل',say:'من التمثيل بالصور نعرف: كم اختار كل نوع؟ ما الأكثر؟ ما الأقل؟ وكم الفرق؟',body:()=>pictograph({topic:'الخضار المفضّلة',rows:[{e:'🥕',n:'جزر',v:6},{e:'🥒',n:'خيار',v:3},{e:'🌽',n:'ذرة',v:8}]})},
+ {t:'الفرق',say:'كم يزيد الذرة على الخيار؟ ٨ − ٣ = ٥.',body:()=>`<div class="big-eq">٨ − ٣ = ٥</div>`,check:{q:'كم طالبًا اختار الجزر والخيار معًا؟',opts:[9,3,11],ans:9,hint:'اجمع ٦ + ٣.',why:'٦ + ٣ = ٩'}},
+ {t:'تذكّر دائمًا',say:'الصف الأطول هو الأكثر، والأقصر هو الأقل. للمقارنة نطرح، وللمجموع نجمع.',body:()=>sumS(['الأطول = الأكثر.','الأقصر = الأقل.','كم يزيد؟ ← نطرح.','كم معًا؟ ← نجمع.'])}],
+levels:[[dataQ('أقرأ التمثيل بالصور',0,ds=>pictograph(ds),{types:['most','least'],k:3})],[dataQ('أقارن البيانات',1,ds=>pictograph(ds),{types:['diff','count']})],[dataQ('أقارن البيانات',1,ds=>pictograph(ds),{types:['total','diff']})]],play:r=>playDetective(r,ds=>pictograph(ds))});
+L.push({id:44,ch:4,code:'٤-٤',title:'أحل المسألة: أنشئ جدولًا',short:'أنشئ جدولًا',color:'var(--l4)',blurb:'أنظم المعلومات في جدول لأحل المسألة.',
+story:[{t:'المسألة',say:'يقدّم المطعم ٣ أرغفة لكل شخص. إذا طلب ٥ أشخاص، فكم رغيفًا يقدّم؟',body:()=>`<div class="story" style="font-size:21px">لكل شخص ٣ أرغفة 🫓. كم رغيفًا لـ ٥ أشخاص؟</div>`},
+ {t:'أنشئ جدولًا',say:'نكتب في الجدول عدد الأشخاص وعدد الأرغفة. كل صف نزيد ٣.',body:()=>`<table class="dtab"><tr><th>الأشخاص</th><th>الأرغفة</th></tr>${[1,2,3,4,5].map(n=>`<tr><td>${ar(n)}</td><td>${ar(3*n)}</td></tr>`).join('')}</table>`,check:{q:'كم رغيفًا لـ ٥ أشخاص؟',opts:[15,8,12],ans:15,hint:'آخر صف في الجدول.',why:'١٥ رغيفًا'}},
+ {t:'تذكّر دائمًا',say:'الجدول يرتّب المعلومات، فنرى النمط بسهولة.',body:()=>sumS(['أحدد ما أعرفه.','أكتب الجدول صفًا صفًا.','أبحث عن النمط: كم نزيد كل مرة؟'])}],
+levels:[[G2('أكمل الجدول',1,()=>{const k=rnd(2,5),n=rnd(2,4);return choice(`لكل طفل ${ar(k)} أقلام. أكمل: ${ar(n)} أطفال ← ؟ قلمًا`,nopts(k*n,[k+n]),k*n,`زِد ${ar(k)} في كل صف.`,`${Array.from({length:n},()=>ar(k)).join(' + ')} = ${ar(k*n)}`,{visual:`<table class="dtab"><tr><th>الأطفال</th><th>الأقلام</th></tr>${Array.from({length:n},(_,i)=>`<tr><td>${ar(i+1)}</td><td>${i<n-1?ar(k*(i+1)):'؟'}</td></tr>`).join('')}</table>`});})],
+ [G2('أكمل الجدول',1,()=>{const k=pick([2,3,4,5,10]),n=rnd(3,5);return input(`في كل علبة ${ar(k)} كرات. كم كرة في ${ar(n)} علب؟`,k*n,'اصنع جدولًا وزِد كل مرة.',`${ar(k*n)}`);})],
+ [G2('أحل بإنشاء جدول',1,()=>{const k=pick([2,5,10]),T=k*rnd(3,6);return input(`يوصل شاحنة ${ar(k)} صناديق في كل مرة. كم مرة يحتاج ليوصل ${ar(T)} صندوقًا؟`,T/k,`أنشئ جدولًا: ١ ← ${ar(k)}، ٢ ← ${ar(2*k)}…`,`${ar(T/k)} مرات`);})]],play:playTableFill});
+L.push({id:45,ch:4,code:'٤-٥',title:'التمثيل بالأعمدة',color:'var(--l5)',blurb:'أمثّل البيانات بأعمدة ملوّنة.',
+story:[{t:'أعمدة بدل الإشارات',say:'في التمثيل بالأعمدة نلوّن مربعًا لكل إجابة. طول العمود يساوي العدد.',body:()=>{const ds={topic:'الحيوان المفضّل',rows:[{e:'🐱',n:'قطة',v:4},{e:'🐟',n:'سمكة',v:2},{e:'🐰',n:'أرنب',v:6}]};return dtable(ds)+barGraph(ds);}},
+ {t:'نقرأ العمود',say:'ننظر إلى آخر مربع ملوّن، ثم ننزل إلى الرقم تحته.',body:()=>barGraph({topic:'الحيوان المفضّل',rows:[{e:'🐱',n:'قطة',v:4},{e:'🐟',n:'سمكة',v:2},{e:'🐰',n:'أرنب',v:6}]}),check:{q:'كم طالبًا اختار الأرنب؟',opts:[6,4,2],ans:6,hint:'آخر مربع في عمود الأرنب.',why:'العمود يصل إلى ٦.'}},
+ {t:'تذكّر دائمًا',say:'كل مربع ملوّن = إجابة واحدة. العمود الأطول هو الأكثر.',body:()=>sumS(['ألوّن مربعًا لكل إجابة.','أكتب عنوانًا وأسماء الأعمدة.','أطول عمود = الأكثر.'])}],
+levels:[[dataQ('أقرأ التمثيل بالأعمدة',1,ds=>barGraph(ds),{types:['count','most'],k:3})],[dataQ('أقرأ التمثيل بالأعمدة',1,ds=>barGraph(ds),{types:['count','least','most']})],[dataQ('أقرأ التمثيل بالأعمدة',1,ds=>barGraph(ds),{types:['diff','total']})]],play:playBars});
+L.push({id:46,ch:4,code:'٤-٦',title:'قراءة البيانات الممثّلة بالأعمدة',short:'أقرأ الأعمدة',color:'var(--l1)',blurb:'أجيب عن أسئلة من التمثيل بالأعمدة.',
+story:[{t:'أعمدة واقفة',say:'قد تكون الأعمدة واقفة. نقرأها من الأسفل إلى الأعلى.',body:()=>barGraph({topic:'المثلجات المفضّلة',rows:[{e:'🍫',n:'شوكولاتة',v:9},{e:'🍓',n:'فراولة',v:4},{e:'🍋',n:'ليمون',v:6}]},{vertical:true})},
+ {t:'نسأل الأعمدة',say:'الشوكولاتة ٩، والفراولة ٤. الفرق ٩ − ٤ = ٥.',body:()=>`<div class="big-eq">٩ − ٤ = ٥</div>`,check:{q:'كم طالبًا اختار الفراولة والليمون معًا؟',opts:[10,2,13],ans:10,hint:'٤ + ٦',why:'٤ + ٦ = ١٠'}},
+ {t:'تذكّر دائمًا',say:'نقرأ ارتفاع العمود، ثم نقارن أو نجمع.',body:()=>sumS(['ارتفاع العمود = العدد.','للمقارنة: نطرح.','للمجموع: نجمع.'])}],
+levels:[[dataQ('أقرأ الأعمدة الواقفة',0,ds=>barGraph(ds,{vertical:true}),{types:['most','least','count'],k:3})],[dataQ('أقرأ الأعمدة الواقفة',0,ds=>barGraph(ds,{vertical:true}),{types:['diff','count']})],[dataQ('أقرأ الأعمدة الواقفة',0,ds=>barGraph(ds,{vertical:true}),{types:['total','diff']})]],play:playRace});
+L.push({id:47,ch:4,code:'٤-٧',title:'الحدث الأكيد والحدث المستحيل',short:'أكيد ومستحيل',color:'var(--l2)',blurb:'أعرف متى يكون الحدث أكيدًا أو مستحيلًا.',
+story:[{t:'كيس كله أخضر',say:'في هذا الكيس مكعبات خضراء فقط. سحب مكعب أخضر أكيد. وسحب مكعب أحمر مستحيل.',body:()=>`${bagHTML({green:5})}<div class="row"><div class="box"><b style="color:var(--leaf)">أكيد</b><span>سحب 🟩</span></div><div class="box"><b style="color:var(--berry)">مستحيل</b><span>سحب 🟥</span></div></div>`},
+ {t:'جرّب',say:'في الكيس مكعبات زرقاء فقط.',body:()=>bagHTML({blue:6}),check:{q:'سحب مكعب أصفر من هذا الكيس:',opts:['أكيد','مستحيل'],ans:'مستحيل',hint:'هل يوجد أصفر في الكيس؟',why:'لا يوجد أصفر، فهو مستحيل.'}},
+ {t:'تذكّر دائمًا',say:'أكيد: سيحدث بالتأكيد. مستحيل: لن يحدث أبدًا.',body:()=>sumS(['أكيد = سيحدث دائمًا.','مستحيل = لا يمكن أن يحدث.'])}],
+levels:[[G2('أكيد أم مستحيل',0,()=>{const[c,o]=shuffle(Object.keys(CUBE));const n=rnd(3,8),askC=Math.random()<.5?c:o;return choice(`سحب مكعب <b>${CUBE[askC][1]}</b> من هذا الكيس:`,['أكيد','مستحيل'],askC===c?'أكيد':'مستحيل','انظر: ما الألوان الموجودة؟',askC===c?'كل المكعبات من هذا اللون.':'لا يوجد مكعب من هذا اللون.',{visual:bagHTML({[c]:n})});})],
+ [G2('أكيد أم مستحيل',0,()=>{const ks=shuffle(Object.keys(CUBE)),bag={[ks[0]]:rnd(2,4),[ks[1]]:rnd(2,4)};const a=Math.random()<.5;return choice(a?`سحب مكعب <b>${CUBE[ks[2]][1]}</b>:`:'سحب مكعب أحمر أو أزرق أو أخضر أو أصفر (أي لون من الألوان الأربعة):',['أكيد','مستحيل'],a?'مستحيل':'أكيد','ما الألوان في الكيس؟',a?'هذا اللون غير موجود.':'كل المكعبات من هذه الألوان.',{visual:bagHTML(bag)});})],
+ [G2('أكوّن حدثًا',1,()=>{const c=pick(Object.keys(CUBE));const o=['🟥🟥🟥 فقط','🟦🟦🟦 فقط','🟩🟩🟩 فقط','🟨🟨🟨 فقط'];const ans={red:0,blue:1,green:2,yellow:3}[c];return choice(`أي كيس يكون فيه سحب مكعب <b>${CUBE[c][1]}</b> أكيدًا؟`,o,o[ans],'كل المكعبات يجب أن تكون من هذا اللون.',`${o[ans]}`);})]],play:playBag});
+L.push({id:48,ch:4,code:'٤-٨',title:'أكثر إمكانية وأقل إمكانية',short:'الإمكانية',color:'var(--l3)',blurb:'أقارن: أي حدث يحدث أكثر؟',
+story:[{t:'كيس مختلط',say:'في الكيس ٧ أقلام حمراء و ٣ زرقاء. سحب الأحمر أكثر إمكانية لأن عدده أكبر.',body:()=>`${bagHTML({red:7,blue:3})}<div class="row"><div class="box"><b>أكثر إمكانية</b><span>🟥 (٧)</span></div><div class="box"><b>أقل إمكانية</b><span>🟦 (٣)</span></div></div>`},
+ {t:'جرّب',say:'في الكيس ٢ أحمر و ٨ أصفر.',body:()=>bagHTML({red:2,yellow:8}),check:{q:'سحب الأصفر:',opts:['أكثر إمكانية','أقل إمكانية'],ans:'أكثر إمكانية',hint:'أي لون عدده أكبر؟',why:'الأصفر ٨، أكثر من الأحمر ٢.'}},
+ {t:'تذكّر دائمًا',say:'اللون الأكثر عددًا يُسحب أكثر، والأقل عددًا يُسحب أقل.',body:()=>sumS(['عدد أكبر = أكثر إمكانية.','عدد أصغر = أقل إمكانية.'])}],
+levels:[[G2('أكثر أم أقل إمكانية',0,()=>{let a=rnd(1,9),b=10-a;if(a===b)a++,b--;const[c1,c2]=shuffle(Object.keys(CUBE));const ask=Math.random()<.5;return choice(`سحب مكعب <b>${CUBE[ask?c1:c2][1]}</b>:`,['أكثر إمكانية','أقل إمكانية'],(ask?a>b:b>a)?'أكثر إمكانية':'أقل إمكانية','قارن العددين.',`${CUBE[c1][1]}: ${ar(a)}، ${CUBE[c2][1]}: ${ar(b)}`,{visual:bagHTML({[c1]:a,[c2]:b})});})],
+ [G2('أكثر أم أقل إمكانية',0,()=>{let a=rnd(1,9),b=10-a;if(a===b)a++,b--;const[c1,c2]=shuffle(Object.keys(CUBE));const most=a>b?c1:c2;return choice('أي لون سحبه أكثر إمكانية؟',[CUBE[c1][1],CUBE[c2][1]],CUBE[most][1],'العدد الأكبر.',`${CUBE[most][1]} أكثر عددًا.`,{visual:bagHTML({[c1]:a,[c2]:b})});})],
+ [G2('أقرأ نتائج السحب',1,()=>{let a=rnd(6,9),b=10-a;const[c1,c2]=shuffle(Object.keys(CUBE));return choice(`سحب عمر من كيس ١٠ مرات وسجّل: ${CUBE[c1][1]} ${ar(a)} مرات، ${CUBE[c2][1]} ${ar(b)} مرات. أي لون في الكيس أكثر على الأرجح؟`,[CUBE[c1][1],CUBE[c2][1]],CUBE[c1][1],'اللون الذي ظهر أكثر.',`ظهر ${CUBE[c1][1]} أكثر، فعدده في الكيس أكثر على الأرجح.`,{visual:`<table class="dtab"><tr><td>${CUBE[c1][0]}</td><td>${tally(a)}</td></tr><tr><td>${CUBE[c2][0]}</td><td>${tally(b)}</td></tr></table>`});})]],play:playDraw});
+
+/* ---------- Chapter 5 ---------- */
+L.push({id:51,ch:5,code:'٥-١',title:'جمع العشرات',color:'var(--l4)',blurb:'٣ عشرات + ٤ عشرات = ٧ عشرات.',
+story:[{t:'أعمدة فقط',say:'٣٠ يعني ٣ عشرات، و ٤٠ يعني ٤ عشرات. نجمع العشرات كما نجمع الآحاد.',body:()=>`<div class="row">${blocks(3,0)}<span class="arrow">+</span>${blocks(4,0)}</div><div class="big-eq">٣ عشرات + ٤ عشرات = ٧ عشرات</div><div class="big-eq">٣٠ + ٤٠ = ٧٠</div>`},
+ {t:'من حقيقة أعرفها',say:'أعرف ٥ + ٢ = ٧، إذن ٥٠ + ٢٠ = ٧٠.',body:()=>`<div class="big-eq">٥ + ٢ = ٧ ← ٥٠ + ٢٠ = ٧٠</div>`,check:{q:'٦٠ + ٢٠ = ؟',opts:[80,8,62],ans:80,hint:'٦ + ٢ = ٨ عشرات.',why:'٦ عشرات + ٢ عشرات = ٨ عشرات = ٨٠'}},
+ {t:'تذكّر دائمًا',say:'اجمع أرقام العشرات، ثم ضع صفرًا.',body:()=>sumS(['٤٠ + ٣٠: أجمع ٤ + ٣ = ٧','فالناتج ٧ عشرات = ٧٠'])}],
+levels:[[addQ('أجمع العشرات',0,'tens',{choice:true,vis:'blocks'})],[addQ('أجمع العشرات',0,'tens'),G2('أجمع العشرات',1,()=>{const x=rnd(1,8),y=rnd(1,9-x);return input(`${ar(x)} عشرات + ${ar(y)} عشرات = ؟ عشرات`,x+y,'اجمع الأرقام.',`${ar(x+y)} عشرات = ${ar((x+y)*10)}`);})],[wordAdd('مسائل العشرات',1,'tens'),addQ('أجمع العشرات',0,'tens')]],play:r=>playMat(r,'+','tens')});
+L.push({id:52,ch:5,code:'٥-٢',title:'الجمع بالعدّ التصاعدي',short:'العدّ بالعشرات',color:'var(--l5)',blurb:'أعدّ بالعشرات ثم بالآحاد.',
+story:[{t:'أعدّ بالعشرات',say:'لنجد ٢٦ + ٣٠، نبدأ من ٢٦ ونعدّ بالعشرات: ٣٦، ٤٦، ٥٦.',body:()=>`<div class="chips" style="direction:rtl">${['٢٦','٣٦','٤٦','٥٦'].map((x,i)=>`<span class="chip ${i?'t on':'o on'}">${x}</span>`).join('')}</div><div class="big-eq">٢٦ + ٣٠ = ٥٦</div>`},
+ {t:'على لوحة المئة',say:'في لوحة المئة: النزول صفًّا = زيادة عشرة، والانتقال خانة = زيادة واحد.',body:()=>hundred({start:26,path:[26,36,46,56]}),check:{q:'٤٢ + ٢٠ = ؟',opts:[62,44,60],ans:62,hint:'ابدأ من ٤٢: ٥٢، ٦٢.',why:'٤٢ ← ٥٢ ← ٦٢'}},
+ {t:'تذكّر دائمًا',say:'ابدأ بالعدد الأكبر، وعُدّ العشرات أولًا ثم الآحاد.',body:()=>sumS(['+ ١٠ ← أنزل صفًّا.','+ ١ ← أنتقل خانة.','٢٦ + ٣ = ٢٧، ٢٨، ٢٩'])}],
+levels:[[G2('أعدّ بالعشرات',0,()=>{const a=rnd(11,59),k=rnd(1,3);return choice(`${ar(a)} + ${ar(k*10)} = ؟`,nopts(a+k*10,[a+k]),a+k*10,'عُدّ بالعشرات.',`${Array.from({length:k+1},(_,i)=>ar(a+i*10)).join('، ')}`,{visual:hundred({start:a,path:Array.from({length:k+1},(_,i)=>a+i*10)})});})],
+ [G2('أعدّ بالعشرات',0,()=>{const a=rnd(11,69),k=rnd(1,3);return input(`${ar(a)} + ${ar(k*10)} = ؟`,a+k*10,'عُدّ بالعشرات.',`${ar(a+k*10)}`);}),G2('أعدّ بالآحاد',0,()=>{const a=rnd(11,95),k=rnd(1,3);return input(`${ar(a)} + ${ar(k)} = ؟`,a+k,'عُدّ تصاعديًا.',`${ar(a+k)}`);})],
+ [G2('أعدّ بالعشرات',0,()=>{const a=rnd(11,59),k=rnd(1,3),u=rnd(1,3);return input(`${ar(a)} + ${ar(k*10+u)} = ؟`,a+k*10+u,'عُدّ العشرات أولًا، ثم الآحاد.',`${ar(a+k*10+u)}`);})]],play:r=>playHundred(r,1)});
+L.push({id:53,ch:5,code:'٥-٣',title:'أحل المسألة: أحلّ عكسيًا',short:'أحلّ عكسيًا',color:'var(--l1)',blurb:'أبدأ من النهاية وأرجع إلى البداية.',
+story:[{t:'المسألة',say:'أعطى إبراهيم أخاه ٣ كتب، وأعطى أخته ٤ كتب، فبقي معه ٤٤ كتابًا. كم كتابًا كان معه في البداية؟',body:()=>`<div class="story" style="font-size:20px">أعطى أخاه ٣، وأخته ٤، وبقي ٤٤. كم كان معه؟</div>`},
+ {t:'أرجع إلى الخلف',say:'نبدأ من النهاية: ٤٤. نرجع ما أعطاه: ٤٤ + ٤ = ٤٨، ثم ٤٨ + ٣ = ٥١.',body:()=>`<div class="big-eq">٤٤ ← +٤ ← ٤٨ ← +٣ ← ٥١</div>`,check:{q:'كم كتابًا كان معه؟',opts:[51,37,44],ans:51,hint:'أرجع كل ما أعطاه.',why:'٤٤ + ٤ + ٣ = ٥١'}},
+ {t:'تذكّر دائمًا',say:'عندما نعرف النهاية، نرجع خطوة خطوة. ما أُعطي نضيفه.',body:()=>sumS(['أبدأ بالعدد الأخير.','أعكس كل خطوة: أعطى ← أجمع.','أتحقق من البداية إلى النهاية.'])}],
+levels:[[G2('أحلّ عكسيًا',1,()=>{const g=rnd(2,9),left=rnd(10,40);return choice(`أعطى سعد صديقه ${ar(g)} بطاقات، فبقي معه ${ar(left)}. كم كان معه؟`,nopts(left+g,[left-g]),left+g,'أرجع ما أعطاه: اجمع.',`${ar(left)} + ${ar(g)} = ${ar(left+g)}`);})],
+ [G2('أحلّ عكسيًا',1,()=>{const g=rnd(2,6),s=rnd(2,6),left=rnd(10,40);return input(`وزّع المعلم ${ar(g)} نظارات على فريق، و ${ar(s)} على فريق آخر، فبقي معه ${ar(left)}. كم كان معه؟`,left+g+s,'ابدأ من النهاية واجمع.',`${ar(left)} + ${ar(s)} + ${ar(g)} = ${ar(left+g+s)}`);})],
+ [G2('أحلّ عكسيًا',1,()=>{const a=rnd(5,15),b=rnd(5,15),left=rnd(5,20);return input(`في الصف بالونات. أخذ الطلاب ${ar(a)} بالونًا، ثم ${ar(b)} أخرى، فبقي ${ar(left)}. كم بالونًا كان في البداية؟`,left+a+b,'أرجع ما أُخذ.',`${ar(left)} + ${ar(b)} + ${ar(a)} = ${ar(left+a+b)}`);})]],play:playUndo});
+L.push({id:54,ch:5,code:'٥-٤',title:'جمع عدد من رقمين وعدد من رقم أو رقمين',short:'جمع بلا إعادة تجميع',color:'var(--l2)',blurb:'أجمع الآحاد ثم العشرات.',
+story:[{t:'خطوتان',say:'لنجد ١٥ + ٢٤: نجمع الآحاد أولًا ٥ + ٤ = ٩، ثم العشرات ١ + ٢ = ٣. الناتج ٣٩.',body:()=>`${twoBlocks(15,24)}${colOp(15,24,'+',{show:true})}`},
+ {t:'جرّب',say:'اجمع الآحاد ثم العشرات.',body:()=>colOp(32,45,'+'),check:{q:'٣٢ + ٤٥ = ؟',opts:[77,87,13],ans:77,hint:'٢ + ٥ = ٧، و ٣ + ٤ = ٧.',why:'٣٢ + ٤٥ = ٧٧'}},
+ {t:'تذكّر دائمًا',say:'الآحاد مع الآحاد، والعشرات مع العشرات.',body:()=>sumS(['أبدأ بالآحاد.','ثم العشرات.','أكتب كل رقم تحت منزلته.'])}],
+levels:[[addQ('أجمع بلا إعادة تجميع',0,'plain',{choice:true,vis:'col'}),addQ('أجمع بلا إعادة تجميع',0,'one',{choice:true,vis:'blocks'})],[addQ('أجمع بلا إعادة تجميع',0,'plain',{vis:'col'}),addQ('أجمع بلا إعادة تجميع',0,'one')],[addQ('أجمع بلا إعادة تجميع',0,'plain'),wordAdd('مسائل الجمع',1,'plain')]],play:r=>playMat(r,'+','plain')});
+L.push({id:55,ch:5,code:'٥-٥',title:'الجمع بإعادة التجميع',short:'إعادة التجميع',color:'var(--l3)',blurb:'إذا صار الآحاد ١٠ أو أكثر، أكوّن عشرة.',
+story:[{t:'آحاد كثيرة',say:'٢٧ + ٥: الآحاد ٧ + ٥ = ١٢. هذا أكثر من ٩!',body:()=>`<div class="row">${blocks(2,7,{scale:.8})}<span class="arrow">+</span>${blocks(0,5)}</div>`},
+ {t:'أعِد التجميع',say:'١٢ آحادًا = عشرة واحدة و ٢ آحاد. ننقل العشرة إلى العشرات: ٣ عشرات و ٢ آحاد = ٣٢.',body:()=>`<div class="big-eq">١٢ آحادًا = ١ عشرة + ٢ آحاد</div>${blocks(3,2)}<div class="big-eq">٢٧ + ٥ = ٣٢</div>`,check:{q:'هل تحتاج إعادة تجميع في ٣٦ + ٨؟',opts:['نعم','لا'],ans:'نعم',hint:'٦ + ٨ = ؟',why:'٦ + ٨ = ١٤، أكثر من ٩.'}},
+ {t:'تذكّر دائمًا',say:'إذا كان مجموع الآحاد ١٠ أو أكثر، نكوّن عشرة وننقلها.',body:()=>sumS(['أجمع الآحاد.','إذا صارت ١٠ أو أكثر: أكوّن عشرة.','أضيف العشرة إلى العشرات.'])}],
+levels:[[G2('أعرف متى أعيد التجميع',1,()=>{const[a,b]=genAdd(Math.random()<.5?'one':'one-r');const need=a%10+b>=10;return choice(`هل تحتاج إعادة تجميع في ${ar(a)} + ${ar(b)}؟`,['نعم','لا'],need?'نعم':'لا','اجمع الآحاد: هل الناتج ١٠ أو أكثر؟',`${ar(a%10)} + ${ar(b)} = ${ar(a%10+b)}`);})],
+ [G2('أكوّن عشرة من الآحاد',1,()=>{const u=rnd(10,18);return input(`${ar(u)} آحادًا = ١ عشرة و ؟ آحاد`,u-10,'اطرح ١٠.',`${ar(u)} = ١٠ + ${ar(u-10)}`);}),addQ('أجمع مع إعادة التجميع',1,'one-r',{vis:'blocks'})],
+ [addQ('أجمع مع إعادة التجميع',1,'one-r'),G2('أعرف متى أعيد التجميع',1,()=>{const[a,b]=genAdd(Math.random()<.5?'plain':'regroup');const need=a%10+b%10>=10;return choice(`هل تحتاج إعادة تجميع في ${ar(a)} + ${ar(b)}؟`,['نعم','لا'],need?'نعم':'لا','اجمع الآحاد.',`${ar(a%10)} + ${ar(b%10)} = ${ar(a%10+b%10)}`);})]],play:r=>playMat(r,'+','one-r')});
+L.push({id:56,ch:5,code:'٥-٦',title:'جمع عدد من رقمين وعدد من رقم بإعادة التجميع',short:'رقمان + رقم',color:'var(--l4)',blurb:'٤٧ + ٥ مع نقل العشرة.',
+story:[{t:'بالطريقة العمودية',say:'٤٧ + ٥: الآحاد ٧ + ٥ = ١٢. نكتب ٢ وننقل ١ فوق العشرات.',body:()=>colOp(47,5,'+',{carry:true,ones:2})},
+ {t:'ثم العشرات',say:'العشرات: ١ المنقول + ٤ = ٥. الناتج ٥٢.',body:()=>colOp(47,5,'+',{carry:true,show:true}),check:{q:'٣٨ + ٦ = ؟',opts:[44,34,314],ans:44,hint:'٨ + ٦ = ١٤: اكتب ٤ وانقل ١.',why:'٣٨ + ٦ = ٤٤'}},
+ {t:'تذكّر دائمًا',say:'لا تنسَ الواحد المنقول!',body:()=>sumS(['أجمع الآحاد.','أكتب الآحاد وأنقل العشرة.','أجمع العشرات مع المنقول.'])}],
+levels:[[addQ('أجمع رقمين ورقمًا',0,'one-r',{choice:true,vis:'col'})],[addQ('أجمع رقمين ورقمًا',0,'one-r',{vis:'col'})],[addQ('أجمع رقمين ورقمًا',0,'one-r'),wordAdd('مسائل الجمع',1,'one-r')]],play:r=>playColumn(r,'+','one-r')});
+L.push({id:57,ch:5,code:'٥-٧',title:'جمع عددين من رقمين بإعادة التجميع',short:'رقمان + رقمان',color:'var(--l5)',blurb:'٢٥ + ١٨ خطوة خطوة.',
+story:[{t:'الآحاد أولًا',say:'٢٥ + ١٨: الآحاد ٥ + ٨ = ١٣. نكتب ٣ وننقل ١.',body:()=>colOp(25,18,'+',{carry:true,ones:3})},
+ {t:'ثم العشرات',say:'العشرات: ١ + ٢ + ١ = ٤. الناتج ٤٣.',body:()=>colOp(25,18,'+',{carry:true,show:true}),check:{q:'٣٦ + ٢٧ = ؟',opts:[63,53,513],ans:63,hint:'٦ + ٧ = ١٣، ثم ١ + ٣ + ٢.',why:'٣٦ + ٢٧ = ٦٣'}},
+ {t:'تذكّر دائمًا',say:'الآحاد، ثم النقل، ثم العشرات.',body:()=>sumS(['الآحاد: ١٠ أو أكثر ← أنقل ١.','العشرات + ١ المنقول.'])}],
+levels:[[addQ('أجمع رقمين ورقمين',0,'regroup',{choice:true,vis:'col'})],[addQ('أجمع رقمين ورقمين',0,'regroup',{vis:'col'})],[addQ('أجمع رقمين ورقمين',0,'regroup'),wordAdd('مسائل الجمع',1,'regroup')]],play:r=>playColumn(r,'+','regroup')});
+L.push({id:58,ch:5,code:'٥-٨',title:'تقدير ناتج الجمع',short:'تقدير الجمع',color:'var(--l1)',blurb:'أقرّب إلى أقرب عشرة ثم أجمع.',
+story:[{t:'أقرّب',say:'لنقدّر ١٤ + ١٩: ١٤ أقرب إلى ١٠، و ١٩ أقرب إلى ٢٠.',body:()=>`${numberLine(10,20,{dot:14,ring:10})}${numberLine(10,20,{dot:19,ring:20})}`},
+ {t:'أجمع العشرات',say:'١٠ + ٢٠ = ٣٠. إذن ١٤ + ١٩ يساوي ٣٠ تقريبًا.',body:()=>`<div class="big-eq">١٠ + ٢٠ = ٣٠ تقريبًا</div>`,check:{q:'قدّر: ٢١ + ٣٨',opts:[60,50,70],ans:60,hint:'٢١ ← ٢٠، و ٣٨ ← ٤٠.',why:'٢٠ + ٤٠ = ٦٠'}},
+ {t:'تذكّر دائمًا',say:'التقدير يعطي جوابًا قريبًا بسرعة.',body:()=>sumS(['أقرّب كل عدد إلى أقرب عشرة.','أجمع العشرات.','أقول: تقريبًا.'])}],
+levels:[[G2('أقرّب إلى أقرب عشرة',0,()=>{const n=genRound();return choice(`${ar(n)} أقرب إلى:`,[Math.floor(n/10)*10,Math.floor(n/10)*10+10],round10(n),'انظر إلى رقم الآحاد.',`${ar(n)} ← ${ar(round10(n))}`,{visual:numberLine(Math.floor(n/10)*10,Math.floor(n/10)*10+10,{dot:n})});})],
+ [G2('أقدّر ناتج الجمع',1,()=>{let a,b;do{a=genRound();b=genRound();}while(round10(a)+round10(b)>100);const e=round10(a)+round10(b);return choice(`قدّر: ${ar(a)} + ${ar(b)}`,nopts(e,[e+10,e-10]),e,'قرّب كل عدد ثم اجمع.',`${ar(round10(a))} + ${ar(round10(b))} = ${ar(e)}`);})],
+ [G2('أقدّر ناتج الجمع',1,()=>{let a,b;do{a=genRound();b=genRound();}while(round10(a)+round10(b)>100);const e=round10(a)+round10(b);return input(`قدّر ناتج ${ar(a)} + ${ar(b)} (اكتب العشرات القريبة)`,e,'قرّب ثم اجمع.',`${ar(round10(a))} + ${ar(round10(b))} = ${ar(e)}`);})]],play:r=>playRound(r,'+')});
+L.push({id:59,ch:5,code:'٥-٩',title:'جمع ثلاثة أعداد من رقمين',short:'ثلاثة أعداد',color:'var(--l2)',blurb:'أبحث عن عشرة في الآحاد.',
+story:[{t:'ثلاثة أعداد',say:'٣٦ + ١٤ + ٢٤: في الآحاد ٦ + ٤ = ١٠! نبدأ بها.',body:()=>`<div class="big-eq">٣<span class="hlbox">٦</span> + ١<span class="hlbox">٤</span> + ٢٤</div>`},
+ {t:'الآحاد ثم العشرات',say:'الآحاد: ٦ + ٤ + ٤ = ١٤. نكتب ٤ وننقل ١. العشرات: ١ + ٣ + ١ + ٢ = ٧. الناتج ٧٤.',body:()=>`<div class="big-eq">٣٦ + ١٤ + ٢٤ = ٧٤</div>`,check:{q:'٢٥ + ١٥ + ١٠ = ؟',opts:[50,40,45],ans:50,hint:'٥ + ٥ = ١٠ في الآحاد.',why:'٢٥ + ١٥ = ٤٠، ثم + ١٠ = ٥٠'}},
+ {t:'تذكّر دائمًا',say:'ابحث عن عشرة أو عن عدد ونفسه في الآحاد.',body:()=>sumS(['أجمع الآحاد أولًا (أبحث عن ١٠).','أنقل العشرات.','أجمع العشرات.'])}],
+levels:[[G2('أجمع ثلاثة أعداد',1,()=>{const x=rnd(1,9),a=rnd(1,2)*10+x,b=rnd(1,2)*10+(10-x),c=rnd(1,3)*10;return choice(`${ar(a)} + ${ar(b)} + ${ar(c)} = ؟`,nopts(a+b+c,[a+b+c-10]),a+b+c,'الآحاد تكوّن ١٠.',`${ar(a+b+c)}`);})],
+ [G2('أجمع ثلاثة أعداد',1,()=>{let a,b,c;do{a=rnd(11,39);b=rnd(11,39);c=rnd(11,29);}while(a+b+c>99);return input(`${ar(a)} + ${ar(b)} + ${ar(c)} = ؟`,a+b+c,'الآحاد أولًا ثم العشرات.',`${ar(a+b+c)}`);})],
+ [G2('مسائل ثلاثة أعداد',1,()=>{let a,b,c;do{a=rnd(11,39);b=rnd(11,39);c=rnd(11,29);}while(a+b+c>99);return input(`صفحات قصة: قرأ أحمد ${ar(a)} صفحة يوم الأحد، و ${ar(b)} يوم الاثنين، و ${ar(c)} يوم الثلاثاء. كم صفحة قرأ؟`,a+b+c,'اجمع الثلاثة.',`${ar(a+b+c)}`);})]],play:playThree2});
+L.push({id:60,ch:5,code:'٥-١٠',title:'استقصاء حل المسألة',short:'مسائل الجمع',color:'var(--l3)',blurb:'أختار الخطة المناسبة وأحل.',
+story:[{t:'خطط الحل',say:'نختار: أحلّ عكسيًا، أو أرسم، أو أكتب جملة عددية، أو أقدّر.',body:()=>`<div class="row"><div class="box"><span style="font-size:40px">⏪</span><b>أحلّ عكسيًا</b></div><div class="box"><span style="font-size:40px">🔢</span><b>جملة عددية</b></div><div class="box"><span style="font-size:40px">🎯</span><b>أقدّر</b></div></div>`,check:{q:'في المكتبة ٣٤ قصة ووصلت ٢٨. كم قصة الآن؟',opts:[62,52,6],ans:62,hint:'٣٤ + ٢٨',why:'٣٤ + ٢٨ = ٦٢'}},
+ {t:'تذكّر دائمًا',say:'اقرأ جيدًا، واختر الخطة، وتحقّق.',body:()=>sumS(['أفهم.','أخطط.','أحل.','أتحقق.'])}],
+levels:[[wordAdd('مسائل الجمع',0,'plain')],[wordAdd('مسائل الجمع',0,'any'),G2('أكتب جملة عددية',0,()=>{const[a,b]=genAdd('any');return choice(`مع سارة ${ar(a)} ريالًا، وأعطتها أمها ${ar(b)}. أي جملة تحل المسألة؟`,[`${ar(a)} + ${ar(b)}`,`${ar(a)} − ${ar(b)}`,`${ar(b)} − ${ar(a)}`],`${ar(a)} + ${ar(b)}`,'أعطتها يعني زادت.',`${ar(a)} + ${ar(b)} = ${ar(a+b)}`);})],[wordAdd('مسائل الجمع',0,'regroup'),G2('أحلّ عكسيًا',0,()=>{const g=rnd(5,25),left=rnd(10,40);return input(`أنفق خالد ${ar(g)} ريالًا فبقي معه ${ar(left)}. كم كان معه؟`,left+g,'أرجع ما أنفقه.',`${ar(left)} + ${ar(g)} = ${ar(left+g)}`);})]],play:r=>playBuilder2(r,'+')});
+
+/* ---------- Chapter 6 ---------- */
+L.push({id:61,ch:6,code:'٦-١',title:'طرح العشرات',color:'var(--l4)',blurb:'٥٠ − ٢٠ = ٣٠.',
+story:[{t:'أزيل أعمدة',say:'٥٠ يعني ٥ عشرات. إذا أخذنا ٢ عشرات يبقى ٣ عشرات = ٣٠.',body:()=>`${blocks(5,0,{dim:''})}<div class="big-eq">٥ عشرات − ٢ عشرات = ٣ عشرات</div><div class="big-eq">٥٠ − ٢٠ = ٣٠</div>`},
+ {t:'من حقيقة أعرفها',say:'٩ − ٦ = ٣، إذن ٩٠ − ٦٠ = ٣٠.',body:()=>`<div class="big-eq">٩ − ٦ = ٣ ← ٩٠ − ٦٠ = ٣٠</div>`,check:{q:'٨٠ − ٣٠ = ؟',opts:[50,5,110],ans:50,hint:'٨ − ٣ = ٥.',why:'٥ عشرات = ٥٠'}},
+ {t:'تذكّر دائمًا',say:'اطرح أرقام العشرات، ثم ضع صفرًا.',body:()=>sumS(['٧٠ − ٤٠: ٧ − ٤ = ٣','الناتج ٣٠'])}],
+levels:[[subQ('أطرح العشرات',0,'tens',{choice:true,vis:'blocks'})],[subQ('أطرح العشرات',0,'tens'),G2('أطرح العشرات',0,()=>{const x=rnd(3,9),y=rnd(1,x-1);return input(`${ar(x)} عشرات − ${ar(y)} عشرات = ؟ عشرات`,x-y,'اطرح الأرقام.',`${ar(x-y)} عشرات`);})],[wordSub('مسائل الطرح',1,'tens'),subQ('أطرح العشرات',0,'tens')]],play:r=>playMat(r,'−','tens')});
+L.push({id:62,ch:6,code:'٦-٢',title:'الطرح بالعدّ التنازلي',short:'العدّ التنازلي بالعشرات',color:'var(--l5)',blurb:'أعدّ تنازليًا بالعشرات أو بالآحاد.',
+story:[{t:'أعدّ بالعشرات إلى الخلف',say:'٥٧ − ٣٠: نبدأ من ٥٧ ونعدّ تنازليًا بالعشرات: ٤٧، ٣٧، ٢٧.',body:()=>`<div class="chips" style="direction:rtl">${['٥٧','٤٧','٣٧','٢٧'].map((x,i)=>`<span class="chip ${i?'t on':'o on'}">${x}</span>`).join('')}</div><div class="big-eq">٥٧ − ٣٠ = ٢٧</div>`},
+ {t:'لوحة المئة',say:'في لوحة المئة: الصعود صفًّا = نقص عشرة.',body:()=>hundred({start:57,path:[57,47,37,27]}),check:{q:'٦٨ − ٢٠ = ؟',opts:[48,66,88],ans:48,hint:'٥٨، ٤٨',why:'٦٨ ← ٥٨ ← ٤٨'}},
+ {t:'تذكّر دائمًا',say:'− ١٠ أصعد صفًّا، و − ١ أرجع خانة.',body:()=>sumS(['− ١٠ ← أصعد صفًّا.','− ١ ← أرجع خانة.'])}],
+levels:[[G2('أعدّ تنازليًا بالعشرات',0,()=>{const a=rnd(41,99),k=rnd(1,3);return choice(`${ar(a)} − ${ar(k*10)} = ؟`,nopts(a-k*10,[a-k]),a-k*10,'عُدّ بالعشرات إلى الخلف.',`${Array.from({length:k+1},(_,i)=>ar(a-i*10)).join('، ')}`,{visual:hundred({start:a,path:Array.from({length:k+1},(_,i)=>a-i*10)})});})],
+ [G2('أعدّ تنازليًا بالعشرات',0,()=>{const a=rnd(41,99),k=rnd(1,3);return input(`${ar(a)} − ${ar(k*10)} = ؟`,a-k*10,'عُدّ بالعشرات إلى الخلف.',`${ar(a-k*10)}`);}),G2('أعدّ تنازليًا بالآحاد',0,()=>{const a=rnd(15,99),k=rnd(1,3);return input(`${ar(a)} − ${ar(k)} = ؟`,a-k,'عُدّ تنازليًا.',`${ar(a-k)}`);})],
+ [wordSub('مسائل الطرح',0,'tens')]],play:r=>playHundred(r,-1)});
+L.push({id:63,ch:6,code:'٦-٣',title:'الطرح بدون إعادة التجميع',short:'طرح بلا تجميع',color:'var(--l1)',blurb:'أطرح الآحاد ثم العشرات.',
+story:[{t:'خطوتان',say:'٧٤ − ٥١: الآحاد ٤ − ١ = ٣، والعشرات ٧ − ٥ = ٢. الناتج ٢٣.',body:()=>`${blocks(7,4,{scale:.8})}${colOp(74,51,'−',{show:true})}`},
+ {t:'جرّب',say:'اطرح الآحاد ثم العشرات.',body:()=>colOp(86,23,'−'),check:{q:'٨٦ − ٢٣ = ؟',opts:[63,109,53],ans:63,hint:'٦ − ٣ و ٨ − ٢',why:'٨٦ − ٢٣ = ٦٣'}},
+ {t:'تذكّر دائمًا',say:'الآحاد من الآحاد، والعشرات من العشرات.',body:()=>sumS(['أبدأ بالآحاد.','ثم العشرات.'])}],
+levels:[[subQ('أطرح بلا إعادة تجميع',0,'plain',{choice:true,vis:'col'})],[subQ('أطرح بلا إعادة تجميع',0,'plain',{vis:'col'}),subQ('أطرح بلا إعادة تجميع',0,'one')],[subQ('أطرح بلا إعادة تجميع',0,'plain'),wordSub('مسائل الطرح',1,'plain')]],play:r=>playMat(r,'−','plain')});
+L.push({id:64,ch:6,code:'٦-٤',title:'الطرح بإعادة التجميع',short:'فكّ عشرة',color:'var(--l2)',blurb:'إذا لم تكفِ الآحاد، أفكّ عشرة.',
+story:[{t:'الآحاد لا تكفي',say:'٢٤ − ٨: لا أستطيع أن آخذ ٨ من ٤ آحاد!',body:()=>blocks(2,4)},
+ {t:'أفكّ عشرة',say:'أفكّ عشرة إلى ١٠ آحاد: ٢٤ = عشرة واحدة و ١٤ آحادًا. الآن ١٤ − ٨ = ٦. الناتج ١٦.',body:()=>`${blocks(1,14)}<div class="big-eq">٢٤ − ٨ = ١٦</div>`,check:{q:'هل تحتاج إعادة تجميع في ٤٣ − ٧؟',opts:['نعم','لا'],ans:'نعم',hint:'هل ٣ أصغر من ٧؟',why:'٣ أصغر من ٧، فنفكّ عشرة.'}},
+ {t:'تذكّر دائمًا',say:'إذا كان رقم الآحاد في الأعلى أصغر، نفكّ عشرة.',body:()=>sumS(['أقارن الآحاد.','إذا كانت لا تكفي: أفكّ عشرة إلى ١٠ آحاد.','ثم أطرح.'])}],
+levels:[[G2('أعرف متى أفكّ عشرة',1,()=>{const[a,b]=genSub(Math.random()<.5?'one':'one-r');const need=a%10<b;return choice(`هل تحتاج إعادة تجميع في ${ar(a)} − ${ar(b)}؟`,['نعم','لا'],need?'نعم':'لا','هل رقم الآحاد في الأعلى يكفي؟',`${ar(a%10)} ${need?'أصغر من':'لا يقل عن'} ${ar(b)}`);})],
+ [G2('أفكّ عشرة',1,()=>{const t=rnd(2,9),u=rnd(0,8);return input(`${ar(t*10+u)} = ${ar(t-1)} عشرات و ؟ آحاد`,u+10,'أضف ١٠ إلى الآحاد.',`${ar(u)} + ١٠ = ${ar(u+10)}`);}),subQ('أطرح مع إعادة التجميع',1,'one-r',{vis:'blocks'})],
+ [subQ('أطرح مع إعادة التجميع',1,'one-r'),G2('أعرف متى أفكّ عشرة',1,()=>{const[a,b]=genSub(Math.random()<.5?'plain':'regroup');const need=a%10<b%10;return choice(`هل تحتاج إعادة تجميع في ${ar(a)} − ${ar(b)}؟`,['نعم','لا'],need?'نعم':'لا','قارن الآحاد.',`${ar(a%10)} و ${ar(b%10)}`);})]],play:r=>playMat(r,'−','one-r')});
+L.push({id:65,ch:6,code:'٦-٥',title:'أحل المسألة: أكتب جملة عددية',short:'جملة عددية',color:'var(--l3)',blurb:'أحوّل القصة إلى جملة عددية.',
+story:[{t:'المسألة',say:'وقفت ٤٠ نحلة على زهرة، طار منها ٥. كم نحلة بقيت؟',body:()=>`<div class="story" style="font-size:21px">٤٠ نحلة 🐝، طار منها ٥. كم بقي؟</div>`},
+ {t:'أكتب الجملة',say:'طار يعني نقص، فنطرح: ٤٠ − ٥ = ٣٥.',body:()=>`<div class="big-eq">٤٠ − ٥ = ٣٥</div>`,check:{q:'أي جملة تحل: «في الساحة ١٨ أسدًا، دخل ٤ إلى أقفاصها. كم بقي في الساحة؟»',opts:['١٨ − ٤','١٨ + ٤','٤ − ١٨'],ans:'١٨ − ٤',hint:'دخل إلى الأقفاص = خرج من الساحة.',why:'١٨ − ٤ = ١٤'}},
+ {t:'تذكّر دائمًا',say:'كلمات النقص: طار، أعطى، أكل، خرج. كلمات الزيادة: جاء، أضاف، اشترى.',body:()=>sumS(['نقص ← طرح.','زيادة ← جمع.','أكتب الجملة ثم أحلها.'])}],
+levels:[[G2('أختار الجملة العددية',0,()=>{const[a,b]=genSub('any');return choice(`وقف ${ar(a)} طائرًا على شجرة، ثم طار ${ar(b)}. أي جملة تحل المسألة؟`,[`${ar(a)} − ${ar(b)}`,`${ar(a)} + ${ar(b)}`,`${ar(b)} − ${ar(a)}`],`${ar(a)} − ${ar(b)}`,'طار يعني نقص.',`${ar(a)} − ${ar(b)} = ${ar(a-b)}`);})],[wordSub('أحل بجملة عددية',0,'plain'),G2('أختار الجملة العددية',0,()=>{const[a,b]=genAdd('any');return choice(`التقط سنجاب ${ar(a)} ثمرة، ثم التقط ${ar(b)} أخرى. أي جملة تحل المسألة؟`,[`${ar(a)} + ${ar(b)}`,`${ar(a)} − ${ar(b)}`],`${ar(a)} + ${ar(b)}`,'التقط أخرى = زيادة.',`${ar(a)} + ${ar(b)} = ${ar(a+b)}`);})],[wordSub('أحل بجملة عددية',0,'any'),wordAdd('أحل بجملة عددية',0,'any')]],play:r=>playBuilder2(r,'−')});
+L.push({id:66,ch:6,code:'٦-٦',title:'طرح عدد من رقم من عدد من رقمين',short:'رقمان − رقم',color:'var(--l4)',blurb:'٣٤ − ٦ مع فكّ عشرة.',
+story:[{t:'بالطريقة العمودية',say:'٣٤ − ٦: الآحاد ٤ لا تكفي. نفكّ عشرة: ٢ عشرات و ١٤ آحادًا.',body:()=>colOp(34,6,'−',{borrow:true})},
+ {t:'أطرح',say:'١٤ − ٦ = ٨، و ٢ عشرات تبقى. الناتج ٢٨.',body:()=>colOp(34,6,'−',{borrow:true,show:true}),check:{q:'٥٢ − ٧ = ؟',opts:[45,55,35],ans:45,hint:'١٢ − ٧ = ٥، والعشرات ٤.',why:'٥٢ − ٧ = ٤٥'}},
+ {t:'تذكّر دائمًا',say:'فكّ عشرة، ثم اطرح الآحاد، ثم انزل العشرات.',body:()=>sumS(['أفكّ عشرة إذا لزم.','أطرح الآحاد.','أكتب العشرات الباقية.'])}],
+levels:[[subQ('أطرح رقمًا من رقمين',0,'one-r',{choice:true,vis:'col'})],[subQ('أطرح رقمًا من رقمين',0,'one-r',{vis:'col'})],[subQ('أطرح رقمًا من رقمين',0,'one-r'),wordSub('مسائل الطرح',1,'one-r')]],play:r=>playColumn(r,'−','one-r')});
+L.push({id:67,ch:6,code:'٦-٧',title:'طرح عددين من رقمين',short:'رقمان − رقمان',color:'var(--l5)',blurb:'٥٢ − ١٧ خطوة خطوة.',
+story:[{t:'فكّ عشرة',say:'٥٢ − ١٧: الآحاد ٢ لا تكفي لـ ٧. نفكّ عشرة: ٤ عشرات و ١٢ آحادًا.',body:()=>colOp(52,17,'−',{borrow:true})},
+ {t:'أطرح',say:'١٢ − ٧ = ٥، و ٤ − ١ = ٣. الناتج ٣٥.',body:()=>colOp(52,17,'−',{borrow:true,show:true}),check:{q:'٦٣ − ٢٨ = ؟',opts:[35,45,25],ans:35,hint:'١٣ − ٨ = ٥، و ٥ − ٢ = ٣.',why:'٦٣ − ٢٨ = ٣٥'}},
+ {t:'تذكّر دائمًا',say:'أفكّ عشرة، أطرح الآحاد، أطرح العشرات.',body:()=>sumS(['أقارن الآحاد.','أفكّ عشرة إذا لزم.','أطرح الآحاد ثم العشرات.'])}],
+levels:[[subQ('أطرح رقمين من رقمين',0,'regroup',{choice:true,vis:'col'})],[subQ('أطرح رقمين من رقمين',0,'regroup',{vis:'col'}),subQ('أطرح رقمين من رقمين',0,'any')],[subQ('أطرح رقمين من رقمين',0,'regroup'),wordSub('مسائل الطرح',1,'regroup')]],play:r=>playColumn(r,'−','regroup')});
+L.push({id:68,ch:6,code:'٦-٨',title:'التحقق من صحة ناتج الطرح',short:'أتحقق بالجمع',color:'var(--l1)',blurb:'أجمع الناتج مع المطروح لأتأكد.',
+story:[{t:'الجمع يتحقق',say:'٢٥ − ١٠ = ١٥. للتحقق: ١٥ + ١٠ = ٢٥. رجعنا إلى العدد الأول، فالإجابة صحيحة!',body:()=>`<div class="row"><div class="box"><span class="eq">٢٥ − ١٠ = ١٥</span></div><div class="arrow">↔</div><div class="box"><span class="eq">١٥ + ١٠ = ٢٥ ✓</span></div></div>`},
+ {t:'جرّب',say:'كتب صديقك ٤٢ − ١٧ = ٣٥. هل هو صحيح؟',body:()=>`<div class="big-eq">٤٢ − ١٧ = ٣٥ ؟</div>`,check:{q:'٣٥ + ١٧ = ٥٢. هل ٤٢ − ١٧ = ٣٥ صحيحة؟',opts:['صحيحة','خاطئة'],ans:'خاطئة',hint:'هل ٥٢ يساوي ٤٢؟',why:'٣٥ + ١٧ = ٥٢ وليس ٤٢. الصحيح: ٢٥'}},
+ {t:'تذكّر دائمًا',say:'ناتج الطرح + المطروح = العدد الأول.',body:()=>sumS(['أجمع الناتج مع العدد المطروح.','إذا حصلت على العدد الأول، فالإجابة صحيحة.'])}],
+levels:[[G2('أختار جملة التحقق',0,()=>{const[a,b]=genSub('any');const r=a-b;return choice(`${ar(a)} − ${ar(b)} = ${ar(r)}. أي جملة جمع نتحقق بها؟`,[`${ar(r)} + ${ar(b)} = ${ar(a)}`,`${ar(a)} + ${ar(b)} = ${ar(a+b)}`,`${ar(r)} + ${ar(a)} = ${ar(r+a)}`],`${ar(r)} + ${ar(b)} = ${ar(a)}`,'الناتج + المطروح.',`${ar(r)} + ${ar(b)} = ${ar(a)}`);})],
+ [G2('أتحقق من الناتج',1,()=>{const[a,b]=genSub('any');const wrong=Math.random()<.5;let r=a-b+(wrong?pick([10,-10]):0);if(r<0){r=a-b;}const ok=r===a-b;return choice(`هل هذه صحيحة؟ ${ar(a)} − ${ar(b)} = ${ar(r)}`,['صحيحة','خاطئة'],ok?'صحيحة':'خاطئة',`تحقّق: ${ar(r)} + ${ar(b)} = ؟`,ok?`${ar(r)} + ${ar(b)} = ${ar(a)} ✓`:`${ar(r)} + ${ar(b)} = ${ar(r+b)}، الصحيح ${ar(a-b)}`);}),subQ('أطرح ثم أتحقق',0,'any')],
+ [G2('أتحقق من الناتج',1,()=>{const[a,b]=genSub('regroup');return input(`${ar(a)} − ${ar(b)} = ؟ (ثم تحقّق بالجمع)`,a-b,'اطرح، ثم اجمع الناتج مع المطروح.',`${ar(a-b)} + ${ar(b)} = ${ar(a)} ✓`);})]],play:playCheck});
+L.push({id:69,ch:6,code:'٦-٩',title:'تقدير ناتج الطرح',short:'تقدير الطرح',color:'var(--l2)',blurb:'أقرّب ثم أطرح.',
+story:[{t:'أقرّب',say:'لنقدّر ٣٩ − ٣١: ٣٩ أقرب إلى ٤٠، و ٣١ أقرب إلى ٣٠.',body:()=>`${numberLine(30,40,{dot:39,ring:40})}${numberLine(30,40,{dot:31,ring:30})}`},
+ {t:'أطرح العشرات',say:'٤٠ − ٣٠ = ١٠. إذن ٣٩ − ٣١ يساوي ١٠ تقريبًا.',body:()=>`<div class="big-eq">٤٠ − ٣٠ = ١٠ تقريبًا</div>`,check:{q:'قدّر: ٧٨ − ٢٢',opts:[60,50,70],ans:60,hint:'٧٨ ← ٨٠، و ٢٢ ← ٢٠.',why:'٨٠ − ٢٠ = ٦٠'}},
+ {t:'تذكّر دائمًا',say:'أقرّب العددين ثم أطرح.',body:()=>sumS(['أقرّب كل عدد إلى أقرب عشرة.','أطرح العشرات.','أقول: تقريبًا.'])}],
+levels:[[G2('أقرّب إلى أقرب عشرة',0,()=>{const n=genRound();return choice(`${ar(n)} أقرب إلى:`,[Math.floor(n/10)*10,Math.floor(n/10)*10+10],round10(n),'رقم الآحاد.',`${ar(n)} ← ${ar(round10(n))}`,{visual:numberLine(Math.floor(n/10)*10,Math.floor(n/10)*10+10,{dot:n})});})],
+ [G2('أقدّر ناتج الطرح',1,()=>{let a,b;do{a=genRound();b=genRound();}while(round10(a)<=round10(b));const e=round10(a)-round10(b);return choice(`قدّر: ${ar(a)} − ${ar(b)}`,nopts(e,[e+10]),e,'قرّب ثم اطرح.',`${ar(round10(a))} − ${ar(round10(b))} = ${ar(e)}`);})],
+ [G2('أقدّر ناتج الطرح',1,()=>{let a,b;do{a=genRound();b=genRound();}while(round10(a)<=round10(b));const e=round10(a)-round10(b);return input(`قدّر ناتج ${ar(a)} − ${ar(b)}`,e,'قرّب ثم اطرح.',`${ar(round10(a))} − ${ar(round10(b))} = ${ar(e)}`);})]],play:r=>playRound(r,'−')});
+
+L.filter(l=>l.ch>=4).forEach(l=>{const m={};l.levels.flat().forEach(g=>{(m[g.skill]=m[g.skill]||{n:g.skill,step:g.step||0,g:[]}).g.push(g);});l.skills=Object.values(m);});
+
+/* =================================================================
+   ENGLISH — We Can! 2, Units 4 and 5 (completes the term book)
+   ================================================================= */
+ESVG.longp=`<svg viewBox="0 0 64 64"><g transform="rotate(-35 32 32)"><rect x="-2" y="27" width="54" height="10" rx="2" fill="#FFC531" stroke="#16264A" stroke-width="2.5"/><path d="M52 27l12 5-12 5z" fill="#F6D2B5" stroke="#16264A" stroke-width="2.5" stroke-linejoin="round"/><path d="M60 30.4l4 1.6-4 1.6z" fill="#16264A"/><rect x="-6" y="27" width="6" height="10" rx="2" fill="#E2475A" stroke="#16264A" stroke-width="2.5"/></g></svg>`;
+ESVG.shortp=`<svg viewBox="0 0 64 64"><rect x="18" y="27" width="16" height="10" rx="2" fill="#FFC531" stroke="#16264A" stroke-width="2.5"/><path d="M34 27l12 5-12 5z" fill="#F6D2B5" stroke="#16264A" stroke-width="2.5" stroke-linejoin="round"/><path d="M42 30.4l4 1.6-4 1.6z" fill="#16264A"/><rect x="12" y="27" width="6" height="10" rx="2" fill="#E2475A" stroke="#16264A" stroke-width="2.5"/></svg>`;
+
+const U4='#8B5CF6',U5='#F2862B';
+EN.push(
+{id:'u4a',unit:4,code:'4-1',title:'Talk Time',ar:'انظر إلى الطبيعة',type:'phrases',color:U4,
+ items:[I('Look!','انظر!','لوك','👀'),I("It's a snake!",'إنها أفعى!','إتس أ سنيك','🐍'),I("It's long!",'إنها طويلة!','إتس لونق','svg:longp'),I("It's short!",'إنه قصير!','إتس شورت','svg:shortp'),I("It's a plastic bag!",'إنه كيس بلاستيك!','إتس أ بلاستِك باق','🛍️'),I("It's beautiful!",'إنه جميل!','إتس بيوتِفُل','🌸'),I("It's ugly!",'إنه قبيح!','إتس أقلي','🗑️'),I('Look at the beautiful flower.','انظر إلى الزهرة الجميلة','لوك آت ذَ بيوتِفُل فلاوَر','🌺'),I('Yes, it is!','نعم، هو كذلك!','يِس، إت إز','👍'),I("No, it's not!",'لا، ليس كذلك!','نو، إتس نوت','👎')],
+ dialog:[['a',"Look! It's a snake!",'انظري! إنها أفعى!'],['b',"It's short!",'إنها قصيرة!'],['a',"No, it's long!",'لا، إنها طويلة!'],['b',"Look! It's a plastic bag!",'انظر! إنه كيس بلاستيك!'],['a',"It's beautiful!",'إنه جميل!'],['b',"No, it's ugly!",'لا، إنه قبيح!'],['a','Look at the beautiful flower.','انظري إلى الزهرة الجميلة.'],['b','Yes, it is!','نعم، إنها كذلك!']],
+ people:{a:'سعد',b:'ريم'},
+ rules:[{t:'نقول عن الشيء الجميل beautiful، وعن الشيء القبيح ugly. ونصيحة الوحدة: الطبيعة بيتك، فحافظ عليها!',ex:["It's beautiful!","It's ugly!",'Nature is your home; look after it.']},{t:'الحرفان sn: صوت «س» ثم «ن». والحرفان sh معًا يُنطقان «ش»:',ex:['snake','shake','snow','show','Show me the snake!']}],
+ replies:[["Look! It's a snake!","It's long!"],["Look! It's a plastic bag!","It's ugly!"],['Look at the beautiful flower.','Yes, it is!']],
+ build:["Look! It's a snake!","It's a plastic bag!",'Look at the beautiful flower.',"No, it's not!"]},
+
+{id:'u4b',unit:4,code:'4-2',title:'I Love the Mountains',ar:'الجبال والفصول',type:'words',color:U4,
+ items:[I('mountains','جبال','ماونتِنز','⛰️',{ex:'I love the mountains.'}),I('hills','تلال','هِلز','🏞️',{ex:'I love the rolling hills.'}),I('flowers','أزهار','فلاوَرز','💐',{ex:'I love the flowers.'}),I('daffodils','أزهار النرجس','دافَدِلز','🌼',{ex:'I love the daffodils.'}),I('campfire','نار المخيّم','كامب فاير','🔥',{ex:'I love the campfire.'}),I('stars','نجوم','ستارز','✨',{ex:'All the stars are out.'}),I('sky','سماء','سكاي','🌌',{ex:"I'm happy to be under this sky."}),
+  I('fall','الخريف','فول','🍂',{set:'s',ex:"Back to school, it's fall."}),I('winter','الشتاء','وِنتَر','❄️',{set:'s',ex:"Getting cooler, winter's here."}),I('spring','الربيع','سبرِنق','🌷',{set:'s',ex:"Flowers are out, it's spring."}),I('summer','الصيف','سَمَر','☀️',{set:'s',ex:"Yummy, summer's here."})],
+ chant:{title:'I Love the Mountains',lines:['I love the mountains,','I love the rolling hills,','I love the flowers,','I love the daffodils,','I love the campfire when all the stars are out.','I sit and look, I look and smile,',"I'm happy to be under this sky."]},
+ rules:[{t:'أنشودة الشهور والفصول: الخريف ثم الشتاء ثم الربيع ثم الصيف، ولكل فصل ثلاثة شهور:',ex:["Back to school, it's fall.",'September, October, November.','December, January, February.','March, April, May.','June, July, August.']},{t:'عندما نتكلم عن أكثر من شيء نضيف s في آخر الكلمة:',ex:['mountains','flowers','hills','stars']}],
+ build:['I love the mountains.','I love the flowers.','All the stars are out.',"Flowers are out, it's spring."]},
+
+{id:'u4c',unit:4,code:'4-3',title:'Words in Action',ar:'الأضداد',type:'words',color:U4,
+ items:[I('long','طويل','لونق','svg:longp',{ex:'The pencil is long.'}),I('short','قصير','شورت','svg:shortp',{ex:'The pencil is short.'}),I('big','كبير','بِق','🐘',{ex:'An elephant is big.'}),I('small','صغير','سمول','🐭',{ex:'A mouse is small.'}),I('quiet','هادئ','كوايِت','🤫',{ex:'Shh! Be quiet.'}),I('noisy','صاخب (مُزعج)','نويزي','📢',{ex:"It's noisy!"}),I('weak','ضعيف','ويك','dual:😩|🏋️',{ex:"I'm weak."}),I('strong','قوي','سترونق','💪',{ex:"I'm strong!"})],
+ pairs:[['long','short'],['big','small'],['quiet','noisy'],['weak','strong']],
+ rules:[{t:'لكل كلمة ضدّ. العبوا في مجموعتين: الأولى تقول الكلمة، والثانية تصرخ بضدّها وتمثّله!',ex:['long','short','big','small','quiet','noisy','weak','strong']},{t:'لعبة «خمّن ما هو»: صِف الشيء، وصديقك يخمّن:',ex:["It's big! It's gray.",'What is it?',"It's an elephant.",'A mouse is small.']}],
+ build:['An elephant is big.','A mouse is small.',"It's big! It's gray.",'What is it?']},
+
+{id:'u4d',unit:4,code:'4-4',title:'Phonics: c / g · gr cr gl cl · sn / sh',ar:'أصوات C و G',type:'phonics',color:U4,
+ items:[I('cat','قطة','كات','🐱',{snd:'c',g:1}),I('cake','كعكة','كيك','🎂',{snd:'c',g:1}),I('cap','قبعة','كاب','🧢',{snd:'c',g:1}),I('goat','ماعز','قوت','🐐',{snd:'g',g:1}),I('gorilla','غوريلا','قوريلا','🦍',{snd:'g',g:1}),I('girl','بنت','قيرل','👧',{snd:'g',g:1}),
+  I('grass','عشب','قراس','🌱',{snd:'gr',g:2}),I('crab','سلطعون','كراب','🦀',{snd:'cr',g:2}),I('glass','كأس','قلاس','🥛',{snd:'gl',g:2}),I('class','فصل دراسي','كلاس','🏫',{snd:'cl',g:2}),
+  I('snake','أفعى','سنيك','🐍',{snd:'sn',g:3}),I('snow','ثلج','سنو','❄️',{snd:'sn',g:3}),I('shake','يصافح','شيك','🤝',{snd:'sh',g:3}),I('show','عرض','شو','🎭',{snd:'sh',g:3})],
+ groups:{1:['c','g'],2:['gr','cr','gl','cl'],3:['sn','sh']},
+ rules:[{t:'أنشودة C و G: الحرف C يقول «ك»، والحرف G يقول «ق» مثل الجيم المصرية:',ex:['C says c, c, cat.','C says c, c, cake.','G says g, g, goat.','G says g, g, girl.']},{t:'عندما يأتي r أو l بعد c أو g نسمع الصوتين معًا:',ex:['grass','crab','glass','class']},{t:'sn = «س» ثم «ن»، و sh = «ش»:',ex:['snake','snow','shake','show']}]},
+
+{id:'u5a',unit:5,code:'5-1',title:'Talk Time',ar:'هذا صديقي',type:'phrases',color:U5,
+ items:[I('Good morning!','صباح الخير!','قود مورنينق','🌅'),I('Good afternoon!','طاب يومك (بعد الظهر)!','قود آفتَرنون','🌤️'),I('Good evening!','مساء الخير!','قود إيفنينق','🌆'),I('Goodnight!','تصبح على خير!','قود نايت','🌙'),I("Where's Jake?",'أين جيك؟','ويرز جيك','dual:🧒|❓'),I("He can't come.",'لا يستطيع أن يأتي','هي كانت كَم','🙅‍♂️'),I('This is my friend, Omar.','هذا صديقي عمر','ذِس إز ماي فرِند، عُمَر','👬'),I('Nice to meet you!','سعيد بلقائك!','نايس تو ميت يو','🤝'),I('Nice to meet you, too!','وأنا أيضًا سعيد بلقائك!','نايس تو ميت يو، تو','😊'),
+  I("Let's go to school!",'هيا نذهب إلى المدرسة!','ليتس قو تو سكول','🏫',{set:'l'}),I("Let's have lunch!",'هيا نتناول الغداء!','ليتس هاف لَنش','🍽️',{set:'l'}),I("Let's watch TV!",'هيا نشاهد التلفاز!','ليتس واتش تي في','📺',{set:'l'}),I("Let's go to bed!",'هيا ننام!','ليتس قو تو بِد','🛏️',{set:'l'})],
+ dialog:[['b','Hello, Hashim.','أهلًا يا هاشم.'],['a',"Good morning, Ali. Where's Jake?",'صباح الخير يا علي. أين جيك؟'],['b',"He can't come. He's helping his brother.",'لا يستطيع أن يأتي. إنه يساعد أخاه.'],['a','This is my friend, Omar.','هذا صديقي عمر.'],['b','Nice to meet you, Omar!','سعيد بلقائك يا عمر!'],['c','Nice to meet you, too!','وأنا أيضًا سعيد بلقائك!'],['a',"Ready? Let's go to the new computer store!",'مستعدون؟ هيا نذهب إلى متجر الكمبيوتر الجديد!']],
+ people:{a:'هاشم',b:'علي',c:'عمر'},
+ chant:{title:'Good morning!',lines:["It's morning. Good morning! Good morning to you!",'How are you? How are you?',"It's so nice to see you.","It's afternoon. Good afternoon! Good afternoon to you!","Here's homework, more homework for you!","It's evening. Good evening! Good evening to you!","It's playtime and bath time and bedtime for you!",'Goodnight! Goodnight! Goodnight to you!']},
+ rules:[{t:'نعرّف صديقنا بقولنا «هذا صديقي…»، ونقترح شيئًا بقولنا «هيا…» Let\'s:',ex:['This is my friend, Omar.','Nice to meet you!',"Let's go to school!","Let's have lunch!"]},{t:'التحية تتغير مع الوقت: الصباح، بعد الظهر، المساء، وعند النوم:',ex:['Good morning!','Good afternoon!','Good evening!','Goodnight!']}],
+ replies:[['Good morning!','Good morning!'],["Where's Jake?","He can't come."],['This is my friend, Omar.','Nice to meet you!'],['Nice to meet you!','Nice to meet you, too!'],['Goodnight!','Goodnight!']],
+ build:['This is my friend, Omar.',"Let's go to school!","Where's Jake?","Let's have lunch!"]},
+
+{id:'u5b',unit:5,code:'5-2',title:"We're Playing, We're Cycling",ar:'ماذا يفعلون الآن؟',type:'words',color:U5,
+ items:[I('playing','يلعب','بلايينق','🤾',{ex:"We're playing."}),I('cycling','يركب الدراجة','سايكلينق','🚴',{ex:"They're cycling."}),I('laughing','يضحك','لافينق','😂',{ex:"Our friends are laughing."}),I('jumping','يقفز','جَمبينق','🤸',{ex:"They're jumping."}),I('walking','يمشي','ووكينق','🚶',{ex:"He's walking."}),I('talking','يتحدّث','توكينق','🗣️',{ex:"His friend is talking."}),I('sitting','يجلس','سِتينق','🪑',{ex:"She's sitting."})],
+ chant:{title:"We're Playing, We're Cycling",lines:["We're playing, we're cycling","Our friends are here and laughing","They're jumping; they're cycling",'As happy as can be!',"There's Omar, he's walking",'His friend, Ali, is talking',"He's laughing; he's not cycling",'As happy as can be!','Are you playing? Are they cycling?',"We're not playing; they're not cycling","We're talking; we're walking",'As happy as can be!']},
+ rules:[{t:'هو He\'s، هي She\'s، نحن We\'re، أنتم You\'re، هم They\'re، ثم الفعل مع ing:',ex:["He's playing.","She's playing.","We're playing.","They're playing."]},{t:'وللنفي نضيف not:',ex:["He's not cycling.","We're not playing.","They're not cycling."]},{t:'نسأل ونجيب بنعم أو لا:',ex:['Where is he?',"He's at home.",'Is he sitting?','Yes, he is.','Is he playing?',"No, he isn't."]},{t:'نصيحة الوحدة: ساعد صديقك عندما يحتاجك.',ex:['Help a friend in need.']}],
+ build:["We're playing.","They're cycling.","He's not cycling.",'Is he sitting?']},
+
+{id:'u5c',unit:5,code:'5-3',title:'Words in Action',ar:'حلو وحامض',type:'words',color:U5,
+ items:[I('sweet','حلو','سويت','🍒',{ex:'Cherries are sweet!'}),I('sour','حامض','ساوَر','🍋',{ex:'Lemons are sour!'}),I('hot','ساخن','هوت','🍲',{ex:'My soup is hot!'}),I('cold','بارد','كولد','🍦',{ex:'Ice cream is cold.'}),I('salty','مالح','سولتي','🍟',{ex:'Chips are salty!'}),I('tasty','لذيذ','تيستي','😋',{ex:"They're tasty!"}),
+  I("That's right!",'هذا صحيح!','ذاتس رايت','✅',{set:'q'}),I('Do you want one?','هل تريد واحدة؟','دو يو وونت وَن','🤲',{set:'q'}),I('No, thanks.','لا، شكرًا','نو، ثانكس','🙅',{set:'q'})],
+ chant:{title:'Lemons Are Sour',lines:['Lemons are sour,','Apples are sweet!','Lemons are sour,','Cherries are sweet!',"They're not sour.",'My soup is hot!','Ice-cream is cold,','Rice is hot,',"It's not cold.",'Chips are salty,',"And they're tasty!","Let's eat!"]},
+ rules:[{t:'لعبة الأسئلة الثلاثة: نسأل بكلمة or (أم):',ex:['Is it cold or hot?','What color is it?','Is it sweet or sour?',"I know! It's a lemon!"]},{t:'نقول ما نحب وما لا نحب:',ex:['I like oranges.',"I don't like lemons.",'No, thanks.']}],
+ build:['Lemons are sour!','Apples are sweet!','Is it sweet or sour?',"I don't like lemons."]},
+
+{id:'u5d',unit:5,code:'5-4',title:'Phonics: -s = /s/ /z/ /iz/',ar:'أصوات الجمع s',type:'phonics',color:U5,endSnd:true,
+ items:[I('cats','قطط','كاتس','🐱🐱',{snd:'/s/'}),I('ducks','بطّات','دَكس','🦆🦆',{snd:'/s/'}),I('books','كتب','بُكس','📚',{snd:'/s/'}),I('chips','بطاطس مقلية','تشِبس','🍟🍟',{snd:'/s/'}),
+  I('apples','تفاح','آبِلز','🍎🍎',{snd:'/z/'}),I('pens','أقلام','بِنز','🖊️🖊️',{snd:'/z/'}),I('flowers','أزهار','فلاوَرز','💐',{snd:'/z/'}),I('onions','بصل','أنيَنز','🧅🧅',{snd:'/z/'}),
+  I('oranges','برتقال','أورِنجِز','🍊🍊',{snd:'/iz/'}),I('sandwiches','شطائر','ساندوِتشِز','🥪🥪',{snd:'/iz/'}),I('dresses','فساتين','درِسِز','👗👗',{snd:'/iz/'}),I('noses','أنوف','نوزِز','👃👃',{snd:'/iz/'})],
+ dialog:[['a','Do you have apples?','هل معكِ تفاح؟'],['b',"No, I don't.",'لا، ليس معي.'],['a','Do you have sandwiches?','هل معكِ شطائر؟'],['b','Yes, I do.','نعم، معي.'],['a','Do you have orange juice?','هل معكِ عصير برتقال؟'],['b','Yes, I do.','نعم، معي.'],['a','Whose hat is that?','لمن تلك القبعة؟'],['b',"Maybe it's Noura's. Let's ask her!",'ربما هي لنورة. هيا نسألها!']],
+ people:{a:'سارة',b:'ريم'},
+ rules:[{t:'حرف s في آخر الجمع له ثلاثة أصوات. الأول /s/ «س» بعد t و k و p:',ex:['cats','ducks','books','chips']},{t:'الثاني /z/ «ز» بعد أغلب الحروف:',ex:['apples','pens','flowers','onions']},{t:'الثالث /iz/ «إز» بعد ge و ch و ss و se:',ex:['oranges','sandwiches','dresses','noses']},{t:'نصل بكلمة and (و)، ونستدرك بكلمة but (لكن):',ex:['She has sandwiches and orange juice.',"She has orange juice but she doesn't have apples."]}]}
+);
+ENU[4]={t:'Unit 4 · Beautiful Nature',ar:'الوحدة ٤: الطبيعة الجميلة'};ENU[5]={t:'Unit 5 · Friends, Actions, Things',ar:'الوحدة ٥: أصدقاء وأفعال وأشياء'};
+const EN45=EN.filter(L=>L.unit>=4);
+EN45.forEach(L=>(L.replies||[]).forEach(r=>{if(!REPLY_POOL.includes(r[1]))REPLY_POOL.push(r[1]);}));
+
+/* ---------- extra data ---------- */
+const MONTHS=[['January','يناير',1],['February','فبراير',1],['March','مارس',2],['April','أبريل',2],['May','مايو',2],['June','يونيو',3],['July','يوليو',3],['August','أغسطس',3],['September','سبتمبر',0],['October','أكتوبر',0],['November','نوفمبر',0],['December','ديسمبر',1]];
+const SEAS=[['fall','🍂','الخريف','#F2862B'],['winter','❄️','الشتاء','#1C8FD0'],['spring','🌷','الربيع','#1E9E63'],['summer','☀️','الصيف','#E0A400']];
+const RIDDLES=[["It's big! It's gray.",'🐘',"It's an elephant!",'elephant'],["It's small! It's gray.",'🐭',"It's a mouse!",'mouse'],["It's long! It's green.",'🐍',"It's a snake!",'snake'],["It's small! It's yellow.",'🐤',"It's a chick!",'chick'],["It's big! It's brown.",'🐻',"It's a bear!",'bear'],["It's noisy! It's red.",'🚒',"It's a fire truck!",'truck']];
+const DAYT=[['morning','Good morning!','🌅',"Let's go to school!",'🏫','الصباح','٧:٠٠'],['afternoon','Good afternoon!','🌤️',"Let's have lunch!",'🍽️','بعد الظهر','١:٠٠'],['evening','Good evening!','🌆',"Let's watch TV!",'📺','المساء','٦:٠٠'],['night','Goodnight!','🌙',"Let's go to bed!",'🛏️','وقت النوم','٩:٠٠']];
+const LUNCH=[['🍎','apples','تفاح'],['🥪','sandwiches','شطائر'],['🧃','orange juice','عصير برتقال'],['🥕','carrots','جزر'],['🍊','oranges','برتقال'],['🍟','chips','بطاطس']];
+const TASTE=[['🍦','ice cream','cold','hot'],['🍲','soup','hot','cold'],['🍋','a lemon','sour','sweet'],['🍒','cherries','sweet','sour'],['🍟','chips','salty','sweet'],['☕','tea','hot','cold'],['🍬','candy','sweet','salty'],['🧊','ice','cold','hot'],['🥨','a pretzel','salty','sweet']];
+const WHO3=[['👦','he','He'],['👧','she','She'],['👧👦','they','They']];
+
+/* ---------- extra question generators ---------- */
+const emo=e=>`<span class="pic opt-pic">${e}</span>`;
+function gEndSound(L){return G('الأصوات',()=>{const w=pick(L.items.filter(x=>x.snd)),o=['/s/','/z/','/iz/'],audio=enOK();return{prompt:audio?'استمع: بأي صوت تنتهي الكلمة؟':`بأي صوت تنتهي الكلمة ${enB(w.en)}؟`,visual:picHTML(w,'big'),sayEn:w.en,autoSay:audio,kind:'choice',options:o.slice(),optHtml:enOpts(o),answer:w.snd,hint:`قلها ببطء وركّز على آخرها: ${w.tr}`,explain:`${enS(w.en)} تنتهي بصوت ${enS(w.snd)}`};});}
+function gOpp(L){return G('المفردات',()=>{const pr=pick(L.pairs),i=rnd(0,1),w=pr[i],op=pr[1-i],it=L.items.find(x=>x.en===w),oi=L.items.find(x=>x.en===op);const ds=shuffle(L.items.filter(x=>x.en!==w&&x.en!==op)).slice(0,2).map(x=>x.en);const o=[op,...ds];
+ return{prompt:`ما ضدّ ${enB(w)}؟`,visual:picHTML(it,'big'),sayEn:w,kind:'choice',options:shuffle(o),optHtml:enOpts(o),answer:op,hint:`${enS(w)} = ${it.ar}. ابحث عن الكلمة التي تعني العكس.`,explain:`${enS(w)} (${it.ar}) ↔ ${enS(op)} (${oi.ar})`};});}
+function gRiddle(){return G('القراءة',()=>{const r=pick(RIDDLES),o=[r,...shuffle(RIDDLES.filter(x=>x!==r)).slice(0,2)];return{prompt:`${enB(r[0])}<br>${enB('What is it?')}`,sayEn:r[0]+' What is it?',kind:'choice',options:shuffle(o.map(x=>x[3])),optHtml:Object.fromEntries(o.map(x=>[x[3],emo(x[1])])),answer:r[3],hint:'اقرأ الكلمتين: الحجم واللون.',explain:`${enS(r[2])}`};});}
+function gSeasonQ(){return G('المفردات',()=>{const m=pick(MONTHS),s=SEAS[m[2]],o=SEAS.map(x=>x[0]);return{prompt:`في أي فصل يأتي شهر ${enB(m[0])}؟`,sayEn:m[0],kind:'choice',options:shuffle(o.slice()),optHtml:Object.fromEntries(SEAS.map(x=>[x[0],`${emo(x[1])}<span class="en">${x[0]}</span>`])),answer:s[0],hint:`${enS(m[0])} = ${m[1]}. تذكّر أنشودة الشهور.`,explain:`${enS(m[0])} (${m[1]}) ← ${enS(s[0])} (${s[2]})`};});}
+function gTimeGreet(){return G('المحادثة',()=>{const d=pick(DAYT),o=[d,...shuffle(DAYT.filter(x=>x!==d)).slice(0,2)].map(x=>x[1]);const say=d[0]==='night'?"It's bedtime.":`It's ${d[0]}.`;return{prompt:`${enB(say)} ماذا تقول؟`,visual:`<span class="pic xl">${d[2]}</span><div class="num" style="font-size:22px">${d[6]} · ${d[5]}</div>`,sayEn:say,kind:'choice',options:shuffle(o),optHtml:enOpts(o),answer:d[1],hint:`الوقت: ${d[5]}.`,explain:`${enS(say)} ← ${enS(d[1])}`};});}
+function gYesNo(L){return G('المحادثة',()=>{const w=pick(L.items),who=pick(WHO3),tr=Math.random()<.5,ask=tr?w:pick(L.items.filter(x=>x!==w));const q=who[1]==='they'?`Are they ${ask.en}?`:`Is ${who[1]} ${ask.en}?`;
+ const o=who[1]==='they'?['Yes, they are.',"No, they aren't."]:[`Yes, ${who[1]} is.`,`No, ${who[1]} isn't.`];return{prompt:`انظر إلى الصورة وأجب: ${enB(q)}`,visual:`<span class="pic xl">${who[0]}</span>${picHTML(w,'xl')}`,sayEn:q,kind:'choice',options:o.slice(),optHtml:enOpts(o),answer:tr?o[0]:o[1],hint:`الصورة: ${w.ar}. والسؤال عن: ${ask.ar}.`,explain:`${enS(tr?o[0]:o[1])}`};});}
+function gWe(L){const WHO=[['👦',"He's",'هو'],['👧',"She's",'هي'],['👧👦',"They're",'هم'],['🙋‍♂️🙋',"We're",'نحن']];return G('القراءة',()=>{const w=pick(L.items),who=pick(WHO),ow=pick(L.items.filter(x=>x!==w)),op=pick(WHO.filter(x=>x!==who));const right=`${who[1]} ${w.en}.`;const o=uniq([right,`${op[1]} ${w.en}.`,`${who[1]} ${ow.en}.`]);
+ return{prompt:'اختر الجملة المناسبة للصورة',visual:`<span class="pic xl">${who[0]}</span>${picHTML(w,'xl')}<div style="font-weight:800">${who[2]}</div>`,kind:'choice',options:shuffle(o),optHtml:enOpts(o),answer:right,sayEn:right,hint:`${who[2]} = ${enS(who[1])}، و ${picHTML(w,'mini')} = ${w.ar}`,explain:`${enS(right)}`};});}
+function gTaste(){return G('المحادثة',()=>{const t=pick(TASTE),ab=shuffle([t[2],t[3]]),q=`Is it ${ab[0]} or ${ab[1]}?`,o=[`It's ${t[2]}.`,`It's ${t[3]}.`];return{prompt:`${enB(q)}`,visual:`<span class="pic xl">${t[0]}</span>`,sayEn:q,kind:'choice',options:shuffle(o.slice()),optHtml:enOpts(o),answer:o[0],hint:`فكّر: ما طعم ${t[0]}؟`,explain:`${enS(o[0])}`};});}
+const bagVis=items=>`<div class="lunch"><span class="lunchkid">👧</span><span class="lunchbox">${items.map(x=>`<i>${x[0]}</i>`).join('')}</span></div>`;
+function gHave(){return G('المحادثة',()=>{const sh=shuffle(LUNCH),bag=sh.slice(0,3),has=Math.random()<.5,f=has?pick(bag):pick(sh.slice(3));const q=`Do you have ${f[1]}?`,o=['Yes, I do.',"No, I don't."];
+ return{prompt:`هذه حقيبتك. صديقك يسألك: ${enB(q)}`,visual:bagVis(bag),sayEn:q,kind:'choice',options:o.slice(),optHtml:enOpts(o),answer:has?o[0]:o[1],hint:`${enS(f[1])} = ${f[2]} ${f[0]}. هل هي في حقيبتك؟`,explain:`${enS(has?o[0]:o[1])}`};});}
+function gAndBut(){return G('القراءة',()=>{const sh=shuffle(LUNCH),[A,B]=sh,C=sh[3];const useAnd=Math.random()<.5;const right=useAnd?`She has ${A[1]} and ${B[1]}.`:`She has ${A[1]} but she doesn't have ${C[1]}.`;
+ const wrong=useAnd?[`She has ${A[1]} and ${C[1]}.`,`She has ${C[1]} but she doesn't have ${A[1]}.`]:[`She has ${C[1]} but she doesn't have ${A[1]}.`,`She has ${A[1]} and ${C[1]}.`];const o=[right,...wrong];
+ return{prompt:'انظر إلى حقيبة ريم، واختر الجملة الصحيحة',visual:bagVis([A,B]),kind:'choice',options:shuffle(o),optHtml:enOpts(o),answer:right,sayEn:right,hint:`في الحقيبة: ${A[2]} و${B[2]}. لا يوجد ${C[2]}.`,explain:`${enS(right)}`};});}
+
+/* ---------- levels ---------- */
+EN45.forEach(L=>{L.levels=buildLevels(L);L.key='en-'+L.id;});
+(()=>{const E=id=>EN.find(x=>x.id===id).levels;
+ E('u4b')[1].push(gSeasonQ());E('u4b')[2].push(gSeasonQ());
+ E('u4c')[0].push(gOpp(EN.find(x=>x.id==='u4c')));E('u4c')[1].push(gOpp(EN.find(x=>x.id==='u4c')),gRiddle());E('u4c')[2].push(gOpp(EN.find(x=>x.id==='u4c')),gRiddle());
+ E('u5a')[1].push(gTimeGreet());E('u5a')[2].push(gTimeGreet());
+ const b=EN.find(x=>x.id==='u5b');E('u5b')[1].push(gYesNo(b),gWe(b));E('u5b')[2].push(gYesNo(b),gWe(b));
+ E('u5c')[0].push(gTaste());E('u5c')[1].push(gTaste());E('u5c')[2].push(gTaste());
+ const d=EN.find(x=>x.id==='u5d');d.levels=[[gListenPic(d),gMeaning(d),gEndSound(d)],[gPicWord(d),gEndSound(d),gMissing(d),gHave()],[gSpell(d),gListenWord(d),gEndSound(d),gAndBut()]];})();
+
+/* =================================================================
+   GAMES for units 4 and 5
+   ================================================================= */
+const sayBtn=(id,s)=>enOK()?` <button class="say-btn" id="${id}" aria-label="استمع">🔊</button>`:'';
+function bindSayBtn(root,id,s){const b=root.querySelector('#'+id);if(b)b.onclick=()=>speakEn(s);}
+function gNature(root){const GOODN=[['🌸','flower'],['🌈','rainbow'],['🦋','butterfly'],['🌳','tree'],['🐦','bird']],BADN=[['🛍️','a plastic bag'],['🥫','an old can'],['🥤','a cup'],['📰','an old newspaper']];
+ const items=shuffle([...GOODN.map(x=>({e:x[0],n:x[1],g:1})),...BADN.map(x=>({e:x[0],n:x[1],g:0}))]);let phase=0,cleaned=0,found=0,miss=0;
+ root.innerHTML=`<div class="panel act"><h2>🌳 نظّف الحديقة</h2><div>الطبيعة بيتنا! استمع واضغط على الشيء المناسب.</div><div class="target" id="nq"></div><div class="park" id="pk"></div><div class="parkbin" id="pb"><span class="binic">🗑️</span><span class="num" id="pbn">٠ / ${ar(BADN.length)}</span></div><div class="msg" id="nm"></div></div>`;
+ const q=s=>root.querySelector(s);
+ const ask=()=>{const s=phase===0?'Find something ugly!':'Find something beautiful!';q('#nq').innerHTML=`<span class="en enq" style="font-size:24px">${s}</span>${sayBtn('nr')}<div style="font-size:16px;color:var(--muted)">${phase===0?'ابحث عن شيء قبيح (قمامة) وضعه في السلة':'ابحث عن شيء جميل في الحديقة'}</div>`;bindSayBtn(root,'nr',s);speakEn(s);};
+ q('#pk').innerHTML=items.map((it,k)=>`<button class="pitem${it.g?'':' trash'}" data-k="${k}" style="--d:${(k%4)*.35}s" aria-label="${it.n}"><span>${it.e}</span></button>`).join('');
+ root.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>{const it=items[+b.dataset.k],m=q('#nm');if(b.classList.contains('gone')||b.classList.contains('shine'))return;
+  if(phase===0){if(!it.g){sGood();b.classList.add('gone');cleaned++;q('#pbn').textContent=`${ar(cleaned)} / ${ar(BADN.length)}`;q('#pb').classList.remove('gulp');void q('#pb').offsetWidth;q('#pb').classList.add('gulp');const s=`Look! It's ${it.n}! It's ugly.`;m.className='msg ok pop';m.innerHTML=`<span class="en">${s}</span>`;speakEn(s);
+    if(cleaned===BADN.length){phase=1;setTimeout(()=>{if(!root.isConnected)return;q('#pk').classList.add('clean');m.className='msg ok pop';m.textContent='الحديقة نظيفة! 🌟';ask();},1500);}}
+   else{miss++;sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);m.className='msg bad pop';m.innerHTML=`هذا جميل! <span class="en">It's beautiful!</span> ابحث عن القمامة.`;}}
+  else{if(it.g){sGood();b.classList.add('shine');found++;const s=`Look at the beautiful ${it.n}.`;m.className='msg ok pop';m.innerHTML=`<span class="en">${s}</span>`;speakEn(s);
+    if(found===3){setTimeout(()=>{if(!root.isConnected)return;sWin();confetti();q('#nq').innerHTML=`<span class="en enq" style="font-size:22px">Nature is your home; look after it.</span><div>الطبيعة بيتك، فحافظ عليها. ${miss?`(${ar(miss)} أخطاء)`:'بلا أي خطأ! 🏆'}</div><button class="btn" id="na" style="margin-top:8px">العب مرة أخرى</button>`;speakEn('Nature is your home; look after it.');q('#na').onclick=()=>gNature(root);},1400);}}}});
+ ask();}
+function gSeasons(root){let r=0,sc=0,miss=false,cur,rot=0;const order=shuffle(MONTHS).slice(0,8);
+ root.innerHTML=`<div class="panel act"><h2>🎡 عجلة الفصول</h2><div>اسمع الشهر، ثم اضغط على الفصل الذي يأتي فيه. العجلة تدور معك!</div><div class="swheel" id="sw">${SEAS.map((s,i)=>`<span class="sq q${i}" style="--k:${s[3]}"><b>${s[1]}</b><small class="en">${s[0]}</small></span>`).join('')}<span class="hub">🗓️</span></div><div class="target" id="sm"></div><div class="opts" id="so"></div><div class="msg" id="sg"></div></div>`;
+ const q=s=>root.querySelector(s);
+ const round=()=>{if(!root.isConnected)return;if(r>=order.length){q('#sm').innerHTML=`<span class="big-eq">${ar(sc)} من ${ar(order.length)} 🏅</span>`;q('#so').innerHTML='<button class="btn" id="sa">العب مرة أخرى</button>';q('#sa').onclick=()=>gSeasons(root);if(sc>=6){sWin();confetti();}return;}
+  cur=order[r];miss=false;q('#sm').innerHTML=`<span class="en enq" style="font-size:30px">${cur[0]}</span>${sayBtn('sr')}<div style="color:var(--muted);font-size:16px">${cur[1]}</div>`;bindSayBtn(root,'sr',cur[0]);speakEn(cur[0]);q('#sg').textContent='';
+  q('#so').innerHTML=SEAS.map((s,i)=>`<button class="opt stack" data-i="${i}" style="border-color:${s[3]}"><span class="pic opt-pic">${s[1]}</span><span class="en">${s[0]}</span></button>`).join('');
+  root.querySelectorAll('#so .opt').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i===cur[2]){if(!miss)sc++;sGood();b.classList.add('right');rot=Math.ceil(rot/360)*360+360-i*90;q('#sw').style.transform=`rotate(${rot}deg)`;const s=`${cur[0]}. It's ${SEAS[i][0]}!`;q('#sg').className='msg ok pop';q('#sg').innerHTML=`<span class="en">${s}</span>`;speakEn(s);r++;root.querySelectorAll('#so .opt').forEach(x=>x.disabled=true);setTimeout(round,1600);}
+   else{miss=true;sBad();b.classList.add('wrong');b.disabled=true;q('#sg').className='msg bad pop';q('#sg').textContent=`${cur[1]} ليس في ${SEAS[i][2]}. تذكّر الأنشودة!`;}});};
+ round();}
+function gOppMachine(root,L){const rounds=shuffle([...shuffle(L.items).slice(0,5).map(w=>({t:'o',w})),...shuffle(RIDDLES).slice(0,3).map(x=>({t:'r',x}))]);let r=0,sc=0,miss=false;
+ root.innerHTML=`<div class="panel act"><h2>⚙️ آلة الأضداد</h2><div>ضع الكلمة في الآلة، واختر ضدّها. وأحيانًا تعطيك الآلة لغزًا!</div><div class="machine" id="mc"><div class="min" id="mi"></div><div class="gears"><span class="gear">⚙️</span><span class="gear g2">⚙️</span></div><div class="mout" id="mo">؟</div></div><div class="target" id="mq"></div><div class="opts picopts" id="mp"></div><div class="msg" id="mm"></div></div>`;
+ const q=s=>root.querySelector(s);const opp=en=>{const p=L.pairs.find(x=>x.includes(en));return p[0]===en?p[1]:p[0];};
+ const done=(ok,b,say,outHTML)=>{if(ok){if(!miss)sc++;sGood();b.classList.add('right');q('#mc').classList.add('run');setTimeout(()=>{if(!root.isConnected)return;q('#mc').classList.remove('run');q('#mo').innerHTML=outHTML;q('#mo').classList.add('pop');},900);speakEn(say);q('#mm').className='msg ok pop';q('#mm').innerHTML=`<span class="en">${esc(say)}</span>`;r++;root.querySelectorAll('#mp .opt').forEach(x=>x.disabled=true);setTimeout(round,2200);}
+  else{miss=true;sBad();b.classList.add('wrong');b.disabled=true;}};
+ const round=()=>{if(!root.isConnected)return;q('#mo').classList.remove('pop');q('#mo').textContent='؟';q('#mm').textContent='';
+  if(r>=rounds.length){q('#mi').innerHTML='🏆';q('#mq').innerHTML=`<span class="big-eq">${ar(sc)} من ${ar(rounds.length)}</span>`;q('#mp').innerHTML='<button class="btn" id="ma">العب مرة أخرى</button>';q('#ma').onclick=()=>gOppMachine(root,L);if(sc>=6){sWin();confetti();}return;}
+  const R=rounds[r];miss=false;
+  if(R.t==='o'){const w=R.w,o=L.items.find(x=>x.en===opp(w.en)),ch=shuffle([o,...shuffle(L.items.filter(x=>x!==w&&x!==o)).slice(0,2)]);q('#mi').innerHTML=`${picHTML(w,'big')}<span class="en">${esc(w.en)}</span>`;q('#mq').innerHTML=`ما ضدّ <b class="en">${esc(w.en)}</b>؟${sayBtn('ms')}`;bindSayBtn(root,'ms',w.en);speakEn(w.en);
+   q('#mp').innerHTML=ch.map(x=>`<button class="opt pic stack" data-e="${esc(x.en)}">${picHTML(x,'opt-pic')}<span class="en" style="font-size:18px">${esc(x.en)}</span></button>`).join('');
+   root.querySelectorAll('#mp .opt').forEach(b=>b.onclick=()=>done(b.dataset.e===o.en,b,`${w.en}, ${o.en}!`,`${picHTML(o,'big')}<span class="en">${esc(o.en)}</span>`));}
+  else{const x=R.x,ch=shuffle([x,...shuffle(RIDDLES.filter(y=>y!==x)).slice(0,2)]);q('#mi').innerHTML='🧩';q('#mq').innerHTML=`<span class="en enq">${esc(x[0])} What is it?</span>${sayBtn('ms')}`;bindSayBtn(root,'ms',x[0]+' What is it?');speakEn(x[0]+' What is it?');
+   q('#mp').innerHTML=ch.map(y=>`<button class="opt pic" data-e="${y[3]}"><span class="pic opt-pic">${y[1]}</span></button>`).join('');
+   root.querySelectorAll('#mp .opt').forEach(b=>b.onclick=()=>done(b.dataset.e===x[3],b,x[2],`<span class="pic big">${x[1]}</span>`));}};
+ round();}
+function gWordMaker(root,L){const words=shuffle(L.items.filter(x=>x.en.length<=5)).slice(0,6);let r=0,sc=0;
+ root.innerHTML=`<div class="panel act"><h2>🔤 لعبة صنع الكلمات</h2><div>استمع للكلمة، ثم اضغط الحروف بالترتيب لتصنعها. قل صوت كل حرف وأنت تضغطه!</div><div id="wp"></div><div class="wslots" id="ws"></div><div class="wtiles" id="wt"></div><div class="msg" id="wm"></div></div>`;
+ const q=s=>root.querySelector(s);
+ const round=()=>{if(!root.isConnected)return;if(r>=words.length){q('#wp').innerHTML=`<span class="pic xl">🎉</span><div class="big-eq">${ar(sc)} من ${ar(words.length)} بلا خطأ</div>`;q('#ws').innerHTML='';q('#wt').innerHTML='<button class="btn" id="wa">العب مرة أخرى</button>';q('#wa').onclick=()=>gWordMaker(root,L);q('#wm').textContent='';sWin();confetti();return;}
+  const w=words[r],letters=w.en.split('');let k=0,miss=false;const extra=shuffle('bdgklmnprst'.split('').filter(c=>!letters.includes(c))).slice(0,2);const tiles=shuffle([...letters,...extra]);
+  q('#wp').innerHTML=`${picHTML(w,'xl')}${sayBtn('wr')}`;bindSayBtn(root,'wr',w.en);speakEn(w.en);q('#wm').textContent='';
+  q('#ws').innerHTML=letters.map(()=>'<span class="wsl"></span>').join('');q('#wt').innerHTML=tiles.map((c,i)=>`<button class="wtile en" data-i="${i}">${c}</button>`).join('');
+  root.querySelectorAll('.wtile').forEach(b=>b.onclick=()=>{if(b.disabled)return;const c=tiles[+b.dataset.i];if(c===letters[k]){sPop();b.disabled=true;b.classList.add('used');const sl=q('#ws').children[k];sl.textContent=c;sl.classList.add('on','pop');k++;
+    if(k===letters.length){if(!miss)sc++;sGood();q('#ws').classList.add('win');q('#wm').className='msg ok pop';q('#wm').innerHTML=`<span class="en">${esc(w.en)}! We got it!</span> (${w.ar})`;speakEn(`${w.en}! We got it!`);r++;setTimeout(()=>{q('#ws').classList.remove('win');round();},1700);}}
+   else{miss=true;sBad();b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);q('#wm').className='msg bad pop';q('#wm').textContent=`استمع مرة أخرى: ${w.tr}`;if(enOK())speakEn(w.en,true);}});};
+ round();}
+function gDay(root){let s=0,step=0;
+ root.innerHTML=`<div class="panel act"><h2>🕰️ يوم كامل</h2><div>الشمس تتحرك في السماء. حيِّ في كل وقت، ثم اقترح ماذا نفعل!</div><div class="sky" id="sk"><span class="sun" id="su">☀️</span><span class="moon">🌙</span><span class="stars">✨ ✦ ✨</span><span class="clock num" id="ck"></span><span class="house">🏠</span></div><div class="target" id="dq"></div><div class="opts" id="do"></div><div class="msg" id="dm"></div></div>`;
+ const q=x=>root.querySelector(x);
+ const show=()=>{if(!root.isConnected)return;if(s>=DAYT.length){q('#dq').innerHTML='<span class="en enq">Goodnight! Goodnight! Goodnight to you!</span>';q('#do').innerHTML='<button class="btn" id="da">يوم جديد ☀️</button>';q('#da').onclick=()=>gDay(root);sWin();confetti();speakEn('Goodnight! Goodnight! Goodnight to you!');return;}
+  const d=DAYT[s];q('#sk').className='sky '+d[0];q('#ck').textContent=d[6];q('#dm').textContent='';
+  const opts=step===0?shuffle(DAYT.map(x=>[x[1],x[2]])):shuffle(DAYT.map(x=>[x[3],x[4]]));const ans=step===0?d[1]:d[3];const say=step===0?(d[0]==='night'?"It's bedtime.":`It's ${d[0]}.`):"What do we do now?";
+  q('#dq').innerHTML=`<span class="en enq">${say}</span>${sayBtn('dr')}<div style="font-size:16px;color:var(--muted)">${step===0?`الوقت: ${d[5]}. ماذا تقول؟`:'اقترح على صديقك: هيا…'}</div>`;bindSayBtn(root,'dr',say);speakEn(say);
+  q('#do').innerHTML=opts.map(([t,e],k)=>`<button class="opt stack" data-k="${k}"><span class="pic mini">${e}</span><span class="en">${esc(t)}</span></button>`).join('');
+  root.querySelectorAll('#do .opt').forEach(b=>b.onclick=()=>{const t=opts[+b.dataset.k][0];if(t===ans){sGood();b.classList.add('right');root.querySelectorAll('#do .opt').forEach(x=>x.disabled=true);speakEn(ans);q('#dm').className='msg ok pop';q('#dm').innerHTML=`<span class="en">${esc(ans)}</span>`;if(step===0)step=1;else{step=0;s++;}setTimeout(show,1500);}
+   else{sBad();b.classList.add('wrong');b.disabled=true;q('#dm').className='msg bad pop';q('#dm').textContent=step===0?`انظر إلى الساعة والسماء: ${d[5]}.`:`في ${d[5]} نقول: ${trAr(d[3])}`;}});};
+ show();}
+function gPlayground(root,L){const kids=[['👦','Omar','he'],['👧','Noura','she'],['🧒','Ali','he'],['👧🏽','Sabah','she'],['👦🏻👦🏽','Jim and Ken','they']];const acts=shuffle(L.items).slice(0,5);const P=kids.map((k,i)=>({k,a:acts[i]}));
+ const subj=p=>p.k[2]==='they'?"They're":p.k[2]==='she'?"She's":"He's";let r=0,sc=0,miss=false;const R=8;
+ root.innerHTML=`<div class="panel act"><h2>🛝 في الملعب</h2><div>أصدقاؤنا يلعبون! استمع، ثم اضغط أو أجب.</div><div class="ground" id="gd">${P.map((p,i)=>`<button class="gkid" data-i="${i}"><span class="gk">${p.k[0]}</span><span class="ga a-${p.a.en}">${p.a.pic}</span><b class="en">${p.k[1]}</b></button>`).join('')}</div><div class="target" id="gq"></div><div class="opts" id="go"></div><div class="msg" id="gm"></div></div>`;
+ const q=s=>root.querySelector(s);let target=null,mode='find',truth=false,pq=null;
+ const finish=(ok,b)=>{if(ok){if(!miss)sc++;sGood();r++;root.querySelectorAll('.gkid').forEach(x=>x.classList.remove('ring'));setTimeout(round,1200);}else{miss=true;sBad();if(b){b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),400);}}};
+ root.querySelectorAll('.gkid').forEach(b=>b.onclick=()=>{if(mode!=='find'||target==null)return;const i=+b.dataset.i;if(i===target){q('#gm').className='msg ok pop';q('#gm').innerHTML=`<span class="en">${subj(P[i])} ${P[i].a.en}.</span>`;target=null;finish(true);}else finish(false,b);});
+ const round=()=>{if(!root.isConnected)return;q('#go').innerHTML='';q('#gm').textContent='';
+  if(r>=R){q('#gq').innerHTML=`<span class="big-eq">${ar(sc)} من ${ar(R)} من أول محاولة</span>`;q('#go').innerHTML='<button class="btn" id="ga">العب مرة أخرى</button>';q('#ga').onclick=()=>gPlayground(root,L);if(sc>=6){sWin();confetti();}return;}
+  miss=false;mode=r%2?'yn':'find';const i=rnd(0,P.length-1),p=P[i];
+  if(mode==='find'){target=i;const s=`${subj(p)} ${p.a.en}.`;q('#gq').innerHTML=`<span class="en enq" style="font-size:24px">${s}</span>${sayBtn('gr')}<div style="font-size:16px;color:var(--muted)">اضغط على الصديق الصحيح.</div>`;bindSayBtn(root,'gr',s);speakEn(s);}
+  else{truth=Math.random()<.5;const a=truth?p.a:pick(L.items.filter(x=>x!==p.a));const pr=p.k[2];const s=pr==='they'?`Are they ${a.en}?`:`Is ${pr} ${a.en}?`;root.querySelectorAll('.gkid').forEach((x,k)=>x.classList.toggle('ring',k===i));
+   const o=pr==='they'?['Yes, they are.',"No, they aren't."]:[`Yes, ${pr} is.`,`No, ${pr} isn't.`];q('#gq').innerHTML=`انظر إلى <b class="en">${p.k[1]}</b> (في الدائرة): <span class="en enq">${s}</span>${sayBtn('gr')}`;bindSayBtn(root,'gr',s);speakEn(s);
+   q('#go').innerHTML=o.map((t,k)=>`<button class="opt" data-k="${k}"><span class="en">${t}</span></button>`).join('');
+   root.querySelectorAll('#go .opt').forEach(b=>b.onclick=()=>{const ok=(+b.dataset.k===0)===truth;if(ok){b.classList.add('right');speakEn(o[+b.dataset.k]);q('#gm').className='msg ok pop';q('#gm').innerHTML=`<span class="en">${o[+b.dataset.k]}</span> ${truth?'':` <span class="en">${subj(p)} ${p.a.en}.</span>`}`;root.querySelectorAll('#go .opt').forEach(x=>x.disabled=true);}else{b.classList.add('wrong');b.disabled=true;}finish(ok);});}};
+ round();}
+function gThreeQ(root){const F=[['🍋','lemon','lemons','yellow','sour','small'],['🍍','pineapple','pineapples','yellow','sweet','big'],['🍎','apple','apples','red','sweet','big'],['🍒','cherry','cherries','red','sweet','small'],['🍉','watermelon','watermelons','green','sweet','big'],['🍇','grape','grapes','purple','sweet','small']];
+ const QS=[['What color is it?',f=>`It's ${f[3]}.`],['Is it sweet or sour?',f=>`It's ${f[4]}.`],['Is it big or small?',f=>`It's ${f[5]}.`]];const order=shuffle(F).slice(0,4);let r=0,sc=0;
+ root.innerHTML=`<div class="panel act"><h2>🎁 لعبة الأسئلة الثلاثة</h2><div>في الصندوق فاكهة سرّية. اسأل حتى ثلاثة أسئلة، ثم خمّن!</div><div class="mbox3" id="mb">🎁</div><div class="chatq" id="cq"></div><div class="ctrl" id="qb"></div><div class="opts picopts" id="fo"></div><div class="msg" id="fm"></div></div>`;
+ const q=s=>root.querySelector(s);
+ const round=()=>{if(!root.isConnected)return;q('#cq').innerHTML='';q('#fm').textContent='';q('#mb').className='mbox3';q('#mb').textContent='🎁';
+  if(r>=order.length){q('#mb').textContent='🧺';q('#qb').innerHTML='';q('#fo').innerHTML='<button class="btn" id="fa">العب مرة أخرى</button>';q('#fa').onclick=()=>gThreeQ(root);q('#fm').className='msg ok pop';q('#fm').textContent=`عرفت ${ar(sc)} من ${ar(order.length)} بثلاثة أسئلة أو أقل!`;sWin();confetti();return;}
+  const f=order[r];let asked=0,wrong=false;
+  const add=(who,t)=>{q('#cq').insertAdjacentHTML('beforeend',`<div class="bubble ${who==='me'?'r':'l'} pop"><small>${who==='me'?'أنت':'صديقك'}</small><span class="en">${esc(t)}</span></div>`);};
+  q('#qb').innerHTML=QS.map((x,k)=>`<button class="btn alt small" data-q="${k}"><span class="en">${x[0]}</span></button>`).join('');
+  root.querySelectorAll('#qb [data-q]').forEach(b=>b.onclick=async()=>{const x=QS[+b.dataset.q];b.disabled=true;asked++;sTap();add('me',x[0]);await speakEn(x[0]);const a=x[1](f);add('you',a);speakEn(a,false,1.2);});
+  q('#fo').innerHTML=F.map((x,k)=>`<button class="opt pic" data-k="${k}"><span class="pic opt-pic">${x[0]}</span></button>`).join('');
+  root.querySelectorAll('#fo .opt').forEach(b=>b.onclick=()=>{const x=F[+b.dataset.k];if(x===f){if(!wrong)sc++;sGood();b.classList.add('right');q('#mb').textContent=f[0];q('#mb').classList.add('open');const s=`I know! It's ${/^[aeiou]/.test(f[1])?'an':'a'} ${f[1]}!`;add('me',s);root.querySelectorAll('#fo .opt').forEach(z=>z.disabled=true);q('#qb').innerHTML='';
+    (async()=>{await speakEn(s);add('you',"That's right! Do you want one?");await speakEn("That's right! Do you want one?",false,1.2);if(!root.isConnected)return;const yes='Yes, please!',no=`No, thanks. I don't like ${f[2]}.`;q('#qb').innerHTML=`<button class="btn small" data-a="y"><span class="en">${yes}</span></button><button class="btn alt small" data-a="n"><span class="en">${esc(no)}</span></button>`;
+     root.querySelectorAll('[data-a]').forEach(z=>z.onclick=()=>{const t=z.dataset.a==='y'?yes:no;add('me',t);speakEn(t);q('#qb').innerHTML='';r++;setTimeout(round,1800);});})();}
+   else{wrong=true;sBad();b.classList.add('wrong');b.disabled=true;q('#fm').className='msg bad pop';q('#fm').innerHTML=`<span class="en">No, it isn't.</span> ${asked<3?'اسأل سؤالًا آخر!':'انظر إلى الإجابات مرة أخرى.'}`;}});};
+ round();}
+function gLunch(root){let bag,r=0,sc=0,qs;
+ root.innerHTML=`<div class="panel act"><h2>🎒 ماذا في حقيبتك؟</h2><div>هذه حقيبة ريم. افتحها، ثم أجب عن الأسئلة كأنك ريم.</div><div class="lunch big" id="lb"></div><button class="btn" id="lo">افتح الحقيبة 🎒</button><div class="target" id="lq"></div><div class="opts" id="lp"></div><div class="msg" id="lm"></div></div>`;
+ const q=s=>root.querySelector(s);
+ const fresh=()=>{const sh=shuffle(LUNCH);bag=sh.slice(0,3);qs=shuffle([...bag.slice(0,2),...sh.slice(3,5)]).map(f=>({t:'h',f}));const A=bag[0],B=bag[1],C=sh[4];qs.push({t:'s',ok:`She has ${A[1]} and ${B[1]}.`,no:[`She has ${A[1]} and ${C[1]}.`,`She has ${C[1]} but she doesn't have ${A[1]}.`]},{t:'s',ok:`She has ${B[1]} but she doesn't have ${C[1]}.`,no:[`She has ${C[1]} but she doesn't have ${B[1]}.`,`She has ${C[1]} and ${B[1]}.`]});r=0;sc=0;
+  q('#lb').innerHTML=`<span class="lunchkid">👧</span><span class="lunchbox closed">${bag.map(x=>`<i>${x[0]}</i>`).join('')}</span>`;q('#lo').style.display='';q('#lq').innerHTML='';q('#lp').innerHTML='';q('#lm').textContent='';};
+ const round=()=>{if(!root.isConnected)return;q('#lm').textContent='';if(r>=qs.length){q('#lq').innerHTML=`<span class="big-eq">${ar(sc)} من ${ar(qs.length)} 🎒</span>`;q('#lp').innerHTML='<button class="btn" id="la">حقيبة جديدة</button>';q('#la').onclick=()=>{fresh();};if(sc>=5){sWin();confetti();}return;}
+  const it=qs[r];let miss=false,o,ans,say;
+  if(it.t==='h'){say=`Do you have ${it.f[1]}?`;o=['Yes, I do.',"No, I don't."];ans=bag.includes(it.f)?o[0]:o[1];q('#lq').innerHTML=`<span class="en enq">${say}</span>${sayBtn('lr')}<div style="font-size:16px;color:var(--muted)">${it.f[2]} ${it.f[0]}؟</div>`;}
+  else{say='';o=shuffle([it.ok,...it.no]);ans=it.ok;q('#lq').innerHTML='اختر الجملة الصحيحة عن حقيبة ريم: <small>(and = و، but = لكن)</small>';}
+  if(say){bindSayBtn(root,'lr',say);speakEn(say);}
+  q('#lp').innerHTML=o.map((t,k)=>`<button class="opt" data-k="${k}"><span class="en">${esc(t)}</span></button>`).join('');
+  root.querySelectorAll('#lp .opt').forEach(b=>b.onclick=()=>{const t=o[+b.dataset.k];if(t===ans){if(!miss)sc++;sGood();b.classList.add('right');speakEn(t);root.querySelectorAll('#lp .opt').forEach(x=>x.disabled=true);r++;setTimeout(round,1400);}else{miss=true;sBad();b.classList.add('wrong');b.disabled=true;q('#lm').className='msg bad pop';q('#lm').textContent='انظر داخل الحقيبة مرة أخرى.';}});};
+ q('#lo').onclick=()=>{sPop();q('#lb .lunchbox').classList.remove('closed');q('#lo').style.display='none';round();};fresh();}
+function gEndSort(root,L){const bins=['/s/','/z/','/iz/'],cards=shuffle(L.items.filter(x=>x.snd)).slice(0,9);let i=0,sc=0,miss=false;const got={};bins.forEach(b=>got[b]=[]);
+ root.innerHTML=`<div class="panel act"><h2>🧺 سلال آخر صوت</h2><div>استمع للكلمة، وركّز على آخرها: هل تنتهي بـ «س» أم «ز» أم «إز»؟</div><div class="sortcard" id="sc"></div><div class="bins" id="bn"></div><div class="msg" id="sm2"></div></div>`;
+ const q=s=>root.querySelector(s);const lab={'/s/':'س','/z/':'ز','/iz/':'إز'};
+ const drawBins=()=>{q('#bn').innerHTML=bins.map(b=>`<button class="bin" data-b="${b}"><span class="en bl">${b}</span><small>«${lab[b]}»</small><span class="bi">${got[b].map(w=>picHTML(w,'mini')).join('')}</span><span class="basket">🧺</span></button>`).join('');
+  root.querySelectorAll('.bin').forEach(x=>x.onclick=()=>{const w=cards[i];if(!w)return;if(x.dataset.b===w.snd){if(!miss)sc++;sGood();got[w.snd].push(w);i++;drawBins();next();}else{miss=true;sBad();x.classList.add('shake');setTimeout(()=>x.classList.remove('shake'),400);q('#sm2').className='msg bad pop';q('#sm2').textContent=`قلها ببطء: ${w.tr}. بماذا تنتهي؟`;if(enOK())speakEn(w.en,true);}});};
+ const next=()=>{if(!root.isConnected)return;q('#sm2').textContent='';if(i>=cards.length){q('#sc').innerHTML='<span class="pic xl">🏆</span><button class="btn" id="ea">العب مرة أخرى</button>';q('#ea').onclick=()=>gEndSort(root,L);q('#sm2').className='msg ok pop';q('#sm2').textContent=`رتّبت كل الكلمات! ${ar(sc)} من ${ar(cards.length)} من أول محاولة.`;sWin();confetti();return;}
+  const w=cards[i];miss=false;q('#sc').innerHTML=`${picHTML(w,'xl')}<div class="enword en">${esc(w.en)}</div>${enOK()?'<button class="say-btn" id="sr">🔊 اسمع</button>':''}`;if(enOK()){speakEn(w.en);q('#sr').onclick=()=>speakEn(w.en);}};
+ drawBins();next();}
+const twoGames=(a,b)=>(r,L)=>{r.innerHTML='<div id="tg1"></div><div id="tg2" style="margin-top:18px"></div>';a(r.querySelector('#tg1'),L);b(r.querySelector('#tg2'),L);};
+Object.assign(EN_GAME,{u4a:gNature,u4b:gSeasons,u4c:gOppMachine,u4d:gWordMaker,u5a:gDay,u5b:gPlayground,u5c:gThreeQ,u5d:twoGames(gEndSort,gLunch)});
+
+/* =================================================================
+   PRONUNCIATION — the parent listens and judges (no microphone)
+   ================================================================= */
+if(!store.pron)store.pron={};if(!store.pw)store.pw={};
+const PRON_STATE={ok:['✅','نطقها صح من أول مرة'],help:['🔁','صح بعد المساعدة'],bad:['❌','تحتاج تدريب']};
+function pronLessonOf(en){return EN.find(L=>L.items.some(w=>w.en===en));}
+function pronWeak(){return Object.entries(store.pw).filter(([,v])=>v.last!=='ok').map(([en])=>en).filter(en=>pronLessonOf(en));}
+function pronSession(root,list,cfg){runId++;hush();let mode=cfg.mode||'read';
+ const hasPic=list.filter(x=>x.w.pic&&!x.w.pic.startsWith('txt:')).length;
+ const intro=()=>{runId++;hush();root.innerHTML=`<div class="panel parentp" style="--c:${cfg.color}"><span class="ptag">👨‍👦 مع ولي الأمر</span><h2>${cfg.title}</h2>
+  <ol class="psteps"><li>اجلس بجانب محمد، والجهاز أمامه.</li><li>محمد ${mode==='read'?'يقرأ الكلمة':'ينظر إلى الصورة ويقول اسمها'} <b>بصوت عالٍ</b>.</li><li>أنت تحكم: <b class="okc">✅ نطقها صح</b> أو <b class="badc">🔁 ليس بعد</b>.</li><li>إذا أخطأ: يسمع النطق الصحيح ويحاول مرة ثانية.</li></ol>
+  <div class="pmode" role="radiogroup" aria-label="طريقة الاختبار"><button class="toggle" data-m="read" aria-pressed="${mode==='read'}">📖 يقرأ الكلمة</button>${hasPic>=3?`<button class="toggle" data-m="pic" aria-pressed="${mode==='pic'}">🖼️ يسمّي الصورة (أصعب)</button>`:''}</div>
+  <p class="pnote">${ar(list.length)} ${list.length>2&&list.length<11?'كلمات':'كلمة'}. إذا ضغطتم 🔊 قبل أن يقولها، تُحسب «صح بعد المساعدة».</p>
+  <div class="ctrl"><button class="btn go" id="pgo">🎤 ابدأ</button>${cfg.onBack?'<button class="btn alt" id="pbk">رجوع</button>':''}</div></div>`;
+  root.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{mode=b.dataset.m;intro();});root.querySelector('#pgo').onclick=()=>run(mode==='pic'?list.filter(x=>x.w.pic&&!x.w.pic.startsWith('txt:')):list);if(cfg.onBack)root.querySelector('#pbk').onclick=cfg.onBack;};
+ const run=items=>{const res=[];let i=0;
+  const card=()=>{runId++;hush();const id=runId;if(i>=items.length)return report(items,res);const {w}=items[i];let tries=0,heard=false;
+   root.innerHTML=`<div class="panel pcard" style="--c:${cfg.color}"><div class="sp-top"><div class="sbar"><i style="width:${(i+1)/items.length*100}%"></i></div><span>${ar(i+1)} / ${ar(items.length)}</span></div>
+    <div class="pstage pop">${w.pic?picHTML(w,'xl'):''}${mode==='read'?`<div class="enword en pword">${esc(w.en)}</div>`:`<button class="phide" id="ph">👁️ الكلمة لولي الأمر</button>`}<div class="arm">${w.ar}</div><div class="psay" id="ps">🗣️ قل${mode==='read'?'ها':' اسم الصورة'} بصوت عالٍ!</div><div class="ptr" id="pt"></div></div>
+    <div class="pjudge"><span class="ptag">👨 ولي الأمر: كيف كان النطق؟</span><div class="pbtns" id="pb"><button class="pbtn ok" id="pok">✅ نطقها صح</button><button class="pbtn no" id="pno">🔁 ليس بعد</button></div>
+    ${enOK()?`<div class="ctrl"><button class="btn alt small" id="pl">🔊 النطق الصحيح</button><button class="btn alt small" id="psl">🐢 ببطء</button></div>`:''}</div></div>`;
+   const q=s=>root.querySelector(s);if(q('#ph'))q('#ph').onclick=()=>{q('#ph').outerHTML=`<div class="enword en pword">${esc(w.en)}</div>`;};
+   if(enOK()){q('#pl').onclick=()=>{heard=true;speakEn(w.en);};q('#psl').onclick=()=>{heard=true;speakEn(w.en,true);};}
+   const mark=st=>{res.push({w,st,L:items[i].L});const pw=store.pw[w.en]||{n:0,ok:0};pw.n++;if(st==='ok')pw.ok++;pw.last=st;pw.d=Date.now();store.pw[w.en]=pw;save();
+    if(st==='ok'){sGood();q('#pb').innerHTML='<span class="pstamp">⭐ ممتاز!</span>';}else if(st==='help'){sPop();q('#pb').innerHTML='<span class="pstamp help">👍 أحسنت!</span>';}else{q('#pb').innerHTML='<span class="pstamp bad">💪 سنتدرّب عليها</span>';}
+    i++;setTimeout(()=>{if(id===runId)card();},st==='bad'?1100:900);};
+   q('#pok').onclick=()=>mark(tries===0&&!heard?'ok':'help');
+   q('#pno').onclick=async()=>{if(tries>0){mark('bad');return;}tries=1;sTap();q('#ps').className='psay again';q('#ps').textContent='👂 استمع جيدًا… ثم حاول مرة ثانية';q('#pt').innerHTML=w.tr?`النطق تقريبًا: <b>${w.tr}</b>`:'';
+    q('#pok').textContent='✅ صح هذه المرة';q('#pno').textContent='❌ تحتاج تدريب';if(q('#ph'))q('#ph').click();
+    if(enOK()){await speakEn(w.en);if(id!==runId)return;await sleep(300);await speakEn(w.en,true);if(id!==runId)return;q('#ps').textContent='🗣️ دورك! قلها مرة أخرى';}};};
+  card();};
+ const report=(items,res)=>{const c={ok:0,help:0,bad:0};res.forEach(r=>c[r.st]++);const t=res.length;
+  if(cfg.key){store.pron[cfg.key]={d:Date.now(),t,...c,mode};save();}
+  const great=c.ok>=Math.ceil(t*.8);if(great){sWin();confetti();}
+  const list_=st=>res.filter(r=>r.st===st);
+  root.innerHTML=`<div class="panel pop" style="--c:${cfg.color}"><div class="report-head">${face(great?'wow':c.bad?'think':'happy')}<div class="result"><div class="grade">${great?'نطق ممتاز!':c.bad?'نحتاج تدريبًا قليلًا':'أحسنت!'}</div><div class="score num">${ar(c.ok)} / ${ar(t)}</div><div style="font-weight:700">من أول محاولة</div></div></div>
+   <div class="pres">${['ok','help','bad'].map(st=>`<div class="pcol ${st}"><b>${PRON_STATE[st][0]} ${PRON_STATE[st][1]} (${ar(c[st])})</b><div class="pchips">${list_(st).map(r=>`<button class="pchip en" data-sp="${esc(r.w.en)}">${esc(r.w.en)}</button>`).join('')||'<span style="color:var(--muted)">—</span>'}</div></div>`).join('')}</div>
+   <div class="tip">اضغط أي كلمة لتسمعها. ${c.bad+c.help?'رددوا الكلمات الصعبة معًا ٣ مرات، ثم أعيدوا الاختبار غدًا.':'سجّل محمد نطقًا ممتازًا. جرّبوا «يسمّي الصورة» للتحدي.'}</div>
+   <div class="ctrl">${c.bad+c.help?'<button class="btn go" id="pre">🔁 درّب الكلمات الصعبة</button>':''}<button class="btn alt" id="pag">أعد الاختبار</button>${cfg.onBack?'<button class="btn alt" id="pbk">رجوع</button>':''}</div></div>`;
+  root.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>speakEn(b.dataset.sp));
+  if(root.querySelector('#pre'))root.querySelector('#pre').onclick=()=>run(res.filter(r=>r.st!=='ok').map(r=>({w:r.w,L:r.L})));
+  root.querySelector('#pag').onclick=intro;if(cfg.onBack)root.querySelector('#pbk').onclick=cfg.onBack;if(cfg.onDone)cfg.onDone(c);};
+ intro();}
+function pronTab(root,L){const last=store.pron[L.key];
+ root.innerHTML=`${last?`<div class="panel plast"><b>آخر اختبار نطق:</b> <span class="num">${ar(last.ok)}</span> من <span class="num">${ar(last.t)}</span> من أول محاولة${last.bad?` · <span class="badc">${ar(last.bad)} تحتاج تدريب</span>`:''}</div>`:''}<div id="pbody"></div>`;
+ pronSession(root.querySelector('#pbody'),L.items.map(w=>({w,L})),{title:`أنطق كلمات «${L.ar}» لأبي`,key:L.key,color:L.color});}
+function renderPron(){const weak=pronWeak();
+ app.innerHTML=topbar()+`<div style="--c:#0EA5A4"><div class="lhead"><button class="back" id="bk">→ English</button><h1>🎤 اختبار النطق مع أبي</h1></div><div id="body"></div></div>`;bindTop();$('#bk').onclick=()=>go({name:'en'});
+ const body=$('#body');const learned=EN.filter(L=>store.story[L.key]);
+ const menu=()=>{runId++;body.innerHTML=`<div class="panel parentp"><span class="ptag">👨‍👦 مع ولي الأمر</span><h2>محمد يقول، وأنت تحكم</h2><p>الموقع لا يستعمل الميكروفون، لذلك أنت الحَكَم: تسمع محمد يقول الكلمة، ثم تضغط ✅ إذا نطقها صح، أو 🔁 ليسمع النطق الصحيح ويحاول مرة ثانية. تُحفظ النتائج في صفحة ولي الأمر.</p>
+  <div class="pmenu">${weak.length?`<button class="lcard" style="--c:var(--berry)" data-k="weak"><span class="code">🔁</span><h3>الكلمات التي تحتاج تدريب</h3><p>${ar(weak.length)} ${weak.length>2&&weak.length<11?'كلمات':'كلمة'} لم تُنطق صحيحة في آخر مرة.</p></button>`:''}
+  <button class="lcard" style="--c:#0EA5A4" data-k="mix"><span class="code">🎲</span><h3>مراجعة منوّعة</h3><p>١٠ كلمات من ${learned.length?'الدروس التي تعلّمها':'كل الدروس'}.</p></button>
+  ${[0,1,2,3,4,5].map(u=>`<button class="lcard" style="--c:${EN.find(L=>L.unit===u).color}" data-k="u${u}"><span class="code en">${u?'U'+u:'Hi'}</span><h3>${ENU[u].ar}</h3><p>${(store.pron['pron-u'+u]?`آخر نتيجة: ${ar(store.pron['pron-u'+u].ok)} / ${ar(store.pron['pron-u'+u].t)}`:'١٠ كلمات من الوحدة')}</p></button>`).join('')}</div></div>`;
+  body.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k;let list,title,key;
+   if(k==='weak'){list=weak.map(en=>{const L=pronLessonOf(en);return{w:L.items.find(x=>x.en===en),L};});title='الكلمات التي تحتاج تدريب';key='pron-weak';}
+   else if(k==='mix'){const src=(learned.length?learned:EN).flatMap(L=>L.items.map(w=>({w,L})));list=shuffle(src).slice(0,10);title='مراجعة منوّعة';key='pron-mix';}
+   else{const u=+k.slice(1);list=shuffle(EN.filter(L=>L.unit===u).flatMap(L=>L.items.map(w=>({w,L})))).slice(0,10);title=ENU[u].ar;key='pron-u'+u;}
+   pronSession(body,list,{title:'اختبار النطق: '+title,key,color:'#0EA5A4',onBack:()=>renderPron()});});};
+ menu();}
+function pronParentsHTML(){const rows=EN.filter(L=>store.pron[L.key]);const weak=pronWeak();const date=d=>{try{return new Date(d).toLocaleDateString('ar-SA',{day:'numeric',month:'long'});}catch(e){return '';}};
+ return `<div class="panel"><h2>🎤 النطق (بتقييمك أنت)</h2><p style="margin-top:0;color:var(--muted)">من تبويب «أنطق لأبي» في كل درس إنجليزي، أو من «اختبار النطق مع أبي» في صفحة English.</p>
+ ${rows.length?`<div class="tablewrap"><table class="prog"><thead><tr><th>الدرس</th><th>✅ من أول مرة</th><th>🔁 بعد المساعدة</th><th>❌ تحتاج تدريب</th><th>التاريخ</th></tr></thead><tbody>${rows.map(L=>{const p=store.pron[L.key];return `<tr><td><b class="en">${L.code}</b> ${L.ar}</td><td class="num" style="color:var(--leaf)">${ar(p.ok)} / ${ar(p.t)}</td><td class="num">${ar(p.help)}</td><td class="num" style="color:${p.bad?'var(--berry)':'inherit'}">${ar(p.bad)}</td><td><small>${date(p.d)}</small></td></tr>`;}).join('')}</tbody></table></div>`:'<p>لم يُجرَ اختبار نطق بعد. جرّبوه بعد خطوة «أسمع وأردّد» في أي درس.</p>'}
+ <h3 style="margin-top:14px">كلمات تحتاج تدريبًا على النطق</h3>${weak.length?`<div class="pchips">${weak.map(en=>`<button class="pchip en" data-psp="${esc(en)}">🔊 ${esc(en)}</button>`).join('')}</div>`:'<p style="margin:0">لا توجد كلمات صعبة الآن. 👏</p>'}
+ <div class="tip">نصيحة: لا تصحّح كل خطأ صغير. ركّز على أول صوت وآخر صوت في الكلمة (مثل p و b، أو s في آخر الجمع). امدحه على المحاولة قبل الصواب.</div></div>`;}
+
+/* =================================================================
+   LEGEND LAYER — stars, ranks, mascot wardrobe, motion
+   (function declarations here replace the earlier versions)
+   ================================================================= */
+const RANKS=[['مبتدئ','🌱',0],['مستكشف','🧭',60],['نجم','⭐',180],['بطل','🦸',400],['عبقري','🧠',750],['أسطورة','👑',1200]];
+const WEAR=[['','بلا شيء',0],['cap','قبعة المستكشف',1],['glasses','نظارة النجم',2],['cape','عباءة البطل',3],['grad','قبعة العبقري',4],['crown','تاج الأسطورة',5]];
+const CHS=Object.keys(CH).map(Number),UNITS=[1,2,3,4,5],MEDALS_N=CHS.length+UNITS.length+1;
+const rankOf=x=>{let r=0;RANKS.forEach((R,i)=>{if(x>=R[2])r=i;});return r;};
+if(store.xp==null){const lv=Object.values(store.lv||{}).reduce((a,b)=>a+(+b||0),0);store.xp=(store.correct||0)+lv*5;store.rank=rankOf(store.xp);save();}
+if(store.rank==null)store.rank=rankOf(store.xp);
+let lastPt={x:innerWidth/2,y:innerHeight/2};
+document.addEventListener('pointerdown',e=>{lastPt={x:e.clientX,y:e.clientY};},true);
+const reduceMo=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function addXP(n){if(!n)return;store.xp=(store.xp||0)+n;save();
+ const pill=$('#xp'),num=$('#xpn');if(num)num.textContent=ar(store.xp);
+ if(pill&&!reduceMo()){const r=pill.getBoundingClientRect(),s=document.createElement('span');s.className='flystar';s.textContent=`+${ar(n)} ⭐`;s.style.left=lastPt.x+'px';s.style.top=lastPt.y+'px';document.body.appendChild(s);
+  requestAnimationFrame(()=>{s.style.transform=`translate(${r.left+r.width/2-lastPt.x}px,${r.top+r.height/2-lastPt.y}px) scale(.6)`;s.style.opacity='.2';});
+  setTimeout(()=>{s.remove();pill.classList.remove('bump');void pill.offsetWidth;pill.classList.add('bump');},750);}
+ const nr=rankOf(store.xp);if(nr>store.rank){store.rank=nr;save();setTimeout(()=>rankUp(nr),900);}}
+function react(cls){document.querySelectorAll('.mascot,.face').forEach(el=>{el.classList.remove('yay','oops');void el.getBoundingClientRect();el.classList.add(cls);setTimeout(()=>el.classList.remove(cls),700);});}
+function onGood(){addXP(1);react('yay');}
+function onWin(){addXP(5);react('yay');}
+function onBad(){react('oops');}
+function rankUp(i){const R=RANKS[i],W=WEAR.find(w=>w[2]===i);sWin();confetti();const tb=$('.top');if(tb){tb.outerHTML=topbar();bindTop();}
+ const o=document.createElement('div');o.className='lvup';o.setAttribute('role','dialog');o.setAttribute('aria-label','رتبة جديدة');
+ o.innerHTML=`<div class="lvcard"><div class="lvicon">${R[1]}</div><div class="lvsmall">رتبة جديدة!</div><h2>أنت الآن: ${R[0]}</h2>${W?`<div class="lvmas">${mascot('',W[0])}</div><p>فتحت لصديقك المكعّب: <b>${W[1]}</b>. ألبِسه إياها من خزانة المكعّب في الصفحة الرئيسية.</p>`:''}<div class="ctrl"><button class="btn go" id="lvwear">${W?'ألبِسه الآن ✨':'رائع!'}</button><button class="btn alt" id="lvok">إغلاق</button></div></div>`;
+ document.body.appendChild(o);const close=()=>{o.classList.add('out');setTimeout(()=>o.remove(),250);};
+ o.querySelector('#lvok').onclick=close;const esc_=e=>{if(e.key==='Escape'){close();document.removeEventListener('keydown',esc_);}};document.addEventListener('keydown',esc_);o.querySelector('#lvwear').onclick=()=>{if(W){store.wear=W[0];save();document.querySelectorAll('.mascot').forEach(m=>m.outerHTML=mascot());}close();};o.querySelector('#lvwear').focus();}
+
+/* ---------- mascot with wardrobe ---------- */
+function mascot(cls='',wearIt){const w=wearIt!=null?wearIt:(store.wear||'');
+ const back=w==='cape'?`<path d="M34 46 L4 166 Q80 150 156 166 L126 46 Z" fill="#E2475A" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/>`:'';
+ const front={cap:`<path d="M26 44 Q26 2 80 2 Q134 2 134 44 Z" fill="#1C8FD0" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/><path d="M120 40 h36 q6 0 2 8 h-38 z" fill="#0E5F8F" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round"/><circle cx="80" cy="6" r="6" fill="#FFC531" stroke="var(--ink)" stroke-width="3"/>`,
+  glasses:`<g stroke="var(--ink)" stroke-width="4"><circle cx="60" cy="74" r="18" fill="#16264A" fill-opacity=".18"/><circle cx="100" cy="74" r="18" fill="#16264A" fill-opacity=".18"/><path d="M78 72 h4 M42 70 L24 64 M118 70 L136 64" fill="none"/></g>`,
+  cape:`<circle cx="80" cy="36" r="8" fill="#FFC531" stroke="var(--ink)" stroke-width="3"/><path d="M80 120 l5 10 11 1 -8 8 2 11 -10 -6 -10 6 2 -11 -8 -8 11 -1z" fill="#FFC531" stroke="var(--ink)" stroke-width="2"/>`,
+  grad:`<rect x="50" y="20" width="60" height="16" rx="3" fill="#16264A" stroke="var(--ink)" stroke-width="3"/><path d="M80 0 L154 18 L80 36 L6 18 Z" fill="#16264A" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"/><path d="M80 18 L148 30 V52" fill="none" stroke="#FFC531" stroke-width="3"/><circle cx="148" cy="55" r="5" fill="#FFC531" stroke="var(--ink)" stroke-width="2"/>`,
+  crown:`<path d="M34 40 L40 4 L60 24 L80 0 L100 24 L120 4 L126 40 Z" fill="#FFC531" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/><circle cx="80" cy="26" r="5" fill="#E2475A" stroke="var(--ink)" stroke-width="2"/><circle cx="54" cy="31" r="4" fill="#1C8FD0"/><circle cx="106" cy="31" r="4" fill="#1E9E63"/>`}[w]||'';
+ const tops=w==='cap'||w==='grad'||w==='crown'?'':`<rect x="58" y="6" width="16" height="16" rx="3" fill="var(--ones)" stroke="var(--ink)" stroke-width="3"/><rect x="78" y="0" width="16" height="16" rx="3" fill="var(--tens)" stroke="var(--ink)" stroke-width="3"/>`;
+ return `<svg class="mascot ${cls}" viewBox="0 0 160 170" role="img" aria-label="المكعّب صديق محمد">${back}${tops}<rect x="22" y="30" width="116" height="110" rx="20" fill="var(--ones)" stroke="var(--ink)" stroke-width="4"/><path d="M22 66h116M22 103h116M60 30v110M100 30v110" stroke="var(--ones-edge)" stroke-width="2"/><circle cx="60" cy="74" r="13" fill="#FFFFFF" stroke="var(--ink)" stroke-width="3"/><circle cx="100" cy="74" r="13" fill="#FFFFFF" stroke="var(--ink)" stroke-width="3"/><g class="look"><g class="pupils"><circle cx="63" cy="77" r="6" fill="#16264A"/><circle cx="103" cy="77" r="6" fill="#16264A"/></g></g><path class="mouth" d="M58 106q22 20 44 0" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/><rect x="44" y="138" width="18" height="24" rx="6" fill="var(--ink)"/><rect x="98" y="138" width="18" height="24" rx="6" fill="var(--ink)"/>${front}</svg>`;}
+let lookRAF=0;
+document.addEventListener('pointermove',e=>{if(lookRAF||reduceMo())return;lookRAF=requestAnimationFrame(()=>{lookRAF=0;document.querySelectorAll('.mascot .look').forEach(g=>{const r=g.ownerSVGElement.getBoundingClientRect();const dx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/300)),dy=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height*.45))/300));g.style.transform=`translate(${(-dx*4).toFixed(1)}px,${(dy*4).toFixed(1)}px)`;});});},{passive:true});
+
+/* ---------- animated background ---------- */
+(()=>{const b=document.createElement('div');b.className='bgfx';b.setAttribute('aria-hidden','true');const sy=['١','٢','٣','+','−','A','B','C','⭐','٥','=','٧','▲','●','◆','a','b','٩'],cols=['var(--ones)','var(--tens)','var(--leaf)','var(--berry)','var(--violet)','var(--sun)'];
+ b.innerHTML=sy.map((s,i)=>`<span style="left:${(i*53)%96+2}%;top:${(i*37)%90+4}%;color:${cols[i%cols.length]};--t:${14+(i*7)%13}s;--d:-${(i*3)%11}s;font-size:${26+(i*11)%30}px">${s}</span>`).join('');document.body.prepend(b);})();
+
+/* ---------- medals and top bar ---------- */
+function totalMedals(){return CHS.filter(chPassed).length+UNITS.filter(unitPassed).length+(finalPassed()?1:0);}
+function topbar(){const R=RANKS[rankOf(store.xp||0)];return `<div class="top"><button class="brand" id="home" aria-label="الرئيسية"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="2" y="2" width="30" height="30" rx="8" fill="var(--ones)" stroke="var(--ink)" stroke-width="3"/><path d="M12 9v16M22 9v16M9 17h16" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/></svg><b>مدرسة محمد</b></button>
+ <div class="tools"><span class="pill xp" id="xp" title="نجومي · رتبة ${R[0]}">${R[1]} <span class="num" id="xpn">${ar(store.xp||0)}</span> ⭐</span><span class="pill" title="أوسمتي">🏅 <span class="num">${ar(totalMedals())}</span> / ${ar(MEDALS_N)}</span>${voiceOK()?`<button class="toggle" id="rd" aria-pressed="${readOn}">اقرأ لي: ${readOn?'نعم':'لا'}</button>`:''}<button class="toggle" id="snd" aria-pressed="${soundOn}">الصوت: ${soundOn?'نعم':'لا'}</button></div></div>`;}
+
+/* ---------- router with motion ---------- */
+function render(keep){hush();runId++;
+ if(keep&&(view.name==='ch'||view.name==='ent'||view.name==='sprint'||view.name==='daily'||view.name==='pron'||((view.name==='lesson'||view.name==='enl')&&view.tab!=='learn'))){const t=$('.top');if(t){t.outerHTML=topbar();bindTop();return;}}
+ ({home:renderHome,math:renderMath,lesson:renderLesson,ch:renderChapter,en:renderEn,enl:renderEnLesson,ent:renderEnTest,daily:renderDaily,sprint:renderSprint,parents:renderParents,pron:renderPron})[view.name]();
+ document.body.dataset.view=view.name;
+ app.classList.remove('vin');void app.offsetWidth;app.classList.add('vin');}
+
+/* ---------- home ---------- */
+function rankCard(){const x=store.xp||0,i=rankOf(x),R=RANKS[i],N=RANKS[i+1];const p=N?(x-R[2])/(N[2]-R[2]):1;
+ return `<div class="rankcard"><span class="rk">${R[1]}</span><div class="rinfo"><b>رتبتك: ${R[0]}</b><div class="rbar"><i style="width:${(p*100).toFixed(0)}%"></i></div><small>${N?`بقي <span class="num">${ar(N[2]-x)}</span> ⭐ لرتبة ${N[0]} ${N[1]}`:'وصلت إلى أعلى رتبة! 👑'}</small></div></div>`;}
+function wardrobeHTML(){const r=rankOf(store.xp||0);return `<div class="panel wardp"><h2>👕 خزانة المكعّب</h2><p style="margin:0 0 10px;color:var(--muted)">اجمع النجوم ⭐ من التدريب والألعاب لترتفع رتبتك، وكل رتبة تفتح لباسًا جديدًا لصديقك.</p><div class="wear">${WEAR.map(w=>{const open=r>=w[2],on=(store.wear||'')===w[0];return `<button class="wbtn${on?' on':''}${open?'':' locked'}" data-w="${w[0]}" ${open?'':'aria-disabled="true"'}>${mascot('mini',w[0])}<b>${w[1]}</b><small>${open?(on?'يلبسها الآن ✓':'ألبِسه'):`🔒 رتبة ${RANKS[w[2]][0]} ${RANKS[w[2]][1]}`}</small></button>`;}).join('')}</div></div>`;}
+function renderHome(){const mMed=CHS.filter(chPassed).length,eMed=UNITS.filter(unitPassed).length+(finalPassed()?1:0),d=store.daily||{},done=d.last===today(),h=new Date().getHours(),n=dayN();
+ const hello=h<12?'صباح الخير':h<17?'نهارك سعيد':'مساء الخير';
+ const nextM=L.find(l=>!passedTest(l.id)),nextE=EN.find(l=>!enDone(l)),weakN=pronWeak().length;
+ app.innerHTML=topbar()+`<section class="hero home-hero"><div><h1>${hello} يا <span>محمد</span></h1><p>${n>=DAY_GOAL?'أكملت هدف اليوم! أنت بطل.':n?`أحسنت! بقي ${ar(DAY_GOAL-n)} ${DAY_GOAL-n>2&&DAY_GOAL-n<11?'أسئلة':'سؤالًا'} لتكمل هدف اليوم.`:'هدف اليوم: ٢٠ سؤالًا. ابدأ بمراجعة اليوم أو بدرس جديد.'}</p>${rankCard()}
+  <div class="mgroups" aria-label="أوسمتي"><div class="mgroup"><small>أوسمة الرياضيات</small><div class="medals sm">${CHS.map(c=>`<div class="medal" title="${CH[c].s}">${medal(ar(c),'#F2862B',chPassed(c))}</div>`).join('')}</div></div><div class="mgroup"><small>أوسمة English</small><div class="medals sm">${UNITS.map(u=>`<div class="medal" title="${ENU[u].ar}">${medal('U'+u,'#0EA5A4',unitPassed(u))}</div>`).join('')}<div class="medal" title="المنهج كاملًا">${medal('A+','#0EA5A4',finalPassed())}</div></div></div></div></div>
+  <div class="goal">${ring(n,DAY_GOAL)}<b>هدف اليوم</b></div>${mascot()}</section>
+ <div class="subjects"><button class="subj math-subj" id="sm" style="--c:var(--ones)"><span class="sic">١٢٣</span><h2>الرياضيات</h2><p>${nextM?`التالي: ${nextM.code} ${nextM.short||nextM.title}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${L.map(l=>`<i class="${passedTest(l.id)?'on':lvCount(l.id)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(mMed)}/${ar(CHS.length)}</span></div><span class="deco">${cubes(3,2,{c1:'#1C8FD0',c2:'#F2862B',scale:.9})}</span></button>
+ <button class="subj en-subj" id="se" style="--c:#0EA5A4"><span class="sic en">ABC</span><h2>English · الإنجليزي</h2><p>${nextE?`التالي: <span class="en">${nextE.code}</span> ${nextE.ar}`:'أتقنت كل الدروس!'}</p><div class="lvbar">${EN.map(l=>`<i class="${enDone(l)?'on':lvCount(l.key)?'half':''}"></i>`).join('')}<span>أوسمة ${ar(eMed)}/${ar(UNITS.length+1)}</span></div></button></div>
+ <div class="home-row"><button class="mini-card" id="daily"><span class="ic">${done?'✅':'🔥'}</span><span><b>مراجعة اليوم</b><small>${done?'راجعت اليوم. أحسنت!':'١٠ أسئلة منوّعة من دروسك'} · ${ar(d.streak||0)} ${(d.streak||0)===1?'يوم':'أيام'} متتالية</small></span></button>
+ <button class="mini-card" id="pron"><span class="ic">🎤</span><span><b>أنطق لأبي</b><small>${weakN?`${ar(weakN)} ${weakN>2&&weakN<11?'كلمات':'كلمة'} تحتاج تدريبًا`:'محمد يقول الكلمة، وأبوه يحكم'}</small></span></button>
+ <button class="mini-card" id="spr"><span class="ic">⚡</span><span><b>سباق الحقائق</b><small>كم حقيقة تحل في دقيقة؟</small></span></button></div>
+ ${wardrobeHTML()}
+ <button class="ghost" id="par">صفحة ولي الأمر</button>`;
+ bindTop();$('#sm').onclick=()=>go({name:'math'});$('#se').onclick=()=>go({name:'en'});$('#par').onclick=()=>go({name:'parents'});$('#daily').onclick=()=>go({name:'daily'});$('#spr').onclick=()=>go({name:'sprint'});$('#pron').onclick=()=>go({name:'pron'});
+ app.querySelectorAll('.wbtn').forEach(b=>b.onclick=()=>{if(b.classList.contains('locked')){b.classList.add('shake');sBad();setTimeout(()=>b.classList.remove('shake'),400);return;}store.wear=b.dataset.w;save();sPop();const y=scrollY;renderHome();scrollTo(0,y);react('yay');});}
+
+/* ---------- math page ---------- */
+function renderMath(){const next=L.find(l=>!passedTest(l.id));const openCh=next?next.ch:CHS[CHS.length-1];
+ const nextLabel=l=>!store.story[l.id]?'ابدأ بالشرح':lvCount(l.id)<3?'المستوى '+ar(lvCount(l.id)+1):passedTest(l.id)?'أتقنته ✓':'جاهز للاختبار';
+ app.innerHTML=topbar()+`<div class="lhead"><button class="back" id="bkm">→ المواد</button><h1>الرياضيات</h1></div>
+ <section class="hero"><div><h1>رياضيات <span>محمد</span></h1><p>ستة فصول، كتاب الفصل الدراسي كاملًا. اتبع الطريق في كل فصل: كل محطة درس، وفي آخر الطريق اختبار الفصل ووسامه.</p>
+  <div class="medals sm">${CHS.map(c=>`<div class="medal">${medal(ar(c),'#F2862B',chPassed(c))}<span>${CH[c].s}</span></div>`).join('')}<button class="btn go" id="sprint" style="align-self:center">⚡ سباق الحقائق</button></div></div>${mascot()}</section>
+ ${next?`<div class="panel nextp" style="--c:${next.color}">${face('happy')}<div><b>خطوتك التالية</b><div>${next.code} ${next.title}: ${nextLabel(next)}</div></div><button class="btn" id="cont">أكمل ←</button></div>`:''}
+ ${CHS.map(c=>{const ls=L.filter(l=>l.ch===c),m=ls.filter(l=>passedTest(l.id)).length,cur=ls.find(l=>!passedTest(l.id));
+  const nodes=ls.map(l=>({key:'l'+l.id,code:l.code,label:l.short||l.title,color:getColHex(l),state:passedTest(l.id)?'done':l===cur?'cur':'todo',sub:starsTxt(lvCount(l.id))}));
+  nodes.push({key:'c'+c,icon:'🏆',label:'اختبار الفصل',color:'#FFC531',state:chPassed(c)?'done':!cur?'cur':'todo',sub:store.tb[CH[c].key]!=null?ar(store.tb[CH[c].key])+' / ٢٠':''});
+  return `<details class="chap" ${c===openCh?'open':''}><summary><span class="code" style="--c:var(--ones)">${ar(c)}</span><span class="ct">${CH[c].t}: ${CH[c].s}</span><span class="cp">${ar(m)} / ${ar(ls.length)} ${chPassed(c)?'· 🏅':''}</span></summary><div class="mapwrap">${advMap(nodes)}</div></details>`;}).join('')}
+ <button class="ghost" id="par">صفحة ولي الأمر</button>`;
+ bindTop();$('#bkm').onclick=()=>go({name:'home'});bindMap(app,k=>k[0]==='l'?openLesson(+k.slice(1)):go({name:'ch',ch:+k.slice(1)}));
+ $('#par').onclick=()=>go({name:'parents'});$('#sprint').onclick=()=>go({name:'sprint'});if($('#cont'))$('#cont').onclick=()=>openLesson(next.id);}
+
+/* ---------- English page ---------- */
+function renderEn(){const next=EN.find(x=>!enDone(x)),weakN=pronWeak().length;
+ app.innerHTML=topbar()+`<div style="--c:#0EA5A4"><div class="lhead"><button class="back" id="bk">→ المواد</button><h1><span class="en">English</span> · الإنجليزي</h1></div>
+ <section class="hero en-hero"><div><h1 class="en" style="direction:ltr;text-align:right">Hello, <span>Mohammed!</span></h1><p>كتاب <span class="en">We Can! 2</span> كاملًا: المقدمة والوحدات الخمس. في كل درس: أتعلّم، أسمع وأردّد، لعبة خاصة، تدريب، و«أنطق لأبي». وفي آخر كل وحدة اختبار ووسام.</p>
+  <div class="ctrl" style="justify-content:flex-start;margin-top:12px"><button class="toggle" id="trt" aria-pressed="${trOn}">النطق بالحروف العربية: ${trOn?'ظاهر':'مخفي'}</button>${enOK()?'<button class="toggle" id="vt">🔊 جرّب الصوت</button>':''}</div>${enOK()?'':noVoiceNote()}</div>${mascot()}</section>
+ ${next?`<div class="panel nextp" style="--c:${next.color}">${face('happy')}<div><b>خطوتك التالية</b><div><span class="en">${next.code}</span> ${next.ar}: ${enStepLabel(next)}</div></div><button class="btn" id="cont">أكمل ←</button></div>`:''}
+ <button class="pronbanner" id="prn"><span class="pbic">🎤</span><span><b>اختبار النطق مع أبي</b><small>محمد يقول الكلمات بصوت عالٍ، وأنت تحكم: صح أم يحتاج تدريب. ${weakN?`(${ar(weakN)} ${weakN>2&&weakN<11?'كلمات':'كلمة'} للتدريب)`:''}</small></span><span class="pgo">←</span></button>
+ ${[0,1,2,3,4,5].map(u=>{const ls=EN.filter(x=>x.unit===u),cur=ls.find(x=>!enDone(x));const nodes=ls.map(x=>({key:'e'+x.id,code:x.code==='Intro'?'Hi':x.code,label:x.ar,color:x.color,state:enDone(x)?'done':x===cur?'cur':'todo',sub:starsTxt(lvCount(x.key))}));
+  if(u)nodes.push({key:'u'+u,icon:'🏆',label:'اختبار الوحدة',color:'#FFC531',state:unitPassed(u)?'done':!cur?'cur':'todo',sub:store.tb['en-u'+u]!=null?ar(store.tb['en-u'+u])+' / ١٢':''});
+  const open=next?next.unit===u:u===5;return `<details class="chap" ${open?'open':''}><summary><span class="code en" style="--c:${ls[0].color}">${u?'U'+u:'Hi'}</span><span class="ct">${ENU[u].ar} <small class="en" style="color:var(--muted)">${ENU[u].t}</small></span><span class="cp">${ar(ls.filter(enDone).length)} / ${ar(ls.length)} ${u&&unitPassed(u)?'· 🏅':''}</span></summary><div class="mapwrap">${advMap(nodes)}</div></details>`;}).join('')}
+ <div class="lessons" style="margin-top:22px"><button class="lcard dark" style="--c:var(--sun)" id="fin"><span class="code" style="color:var(--on-sun)">اختبار</span><h3>اختبار المنهج كاملًا</h3><p>٢٥ سؤالًا من كل الدروس: استماع، مفردات، قراءة، تهجئة، محادثة، أصوات. النجاح ٢٠.</p><div class="lvbar"><span style="color:var(--line)">${store.tb['en-full']!=null?'أفضل نتيجة '+ar(store.tb['en-full'])+' / ٢٥':'لم يُختبر بعد'}</span></div></button></div></div>`;
+ bindTop();$('#bk').onclick=()=>go({name:'home'});
+ $('#trt').onclick=()=>{trOn=!trOn;setPref('tr',trOn);renderEn();};if($('#vt'))$('#vt').onclick=()=>speakEn("Hello, Mohammed! Let's learn English.");
+ if($('#cont'))$('#cont').onclick=()=>openEn(next.id);$('#prn').onclick=()=>go({name:'pron'});
+ bindMap(app,k=>k[0]==='e'?openEn(k.slice(1)):go({name:'ent',unit:+k.slice(1)}));
+ $('#fin').onclick=()=>go({name:'ent',unit:'final'});}
+function renderEnLesson(){const L=EN.find(x=>x.id===view.id),tab=view.tab||'learn';
+ app.innerHTML=topbar()+`<div style="--c:${L.color}"><div class="lhead"><button class="back" id="bk">→ English</button><span class="code en">${L.code}</span><h1>${L.ar} <small class="en" style="font-size:18px;color:var(--muted)">${L.title}</small></h1></div>
+  <div class="tabs tabs5" role="tablist">${[['learn','١ أتعلّم'],['rep','٢ أسمع وأردّد'],['play','٣ ألعب'],['drill','٤ أتدرّب'],['say','٥ أنطق لأبي 🎤']].map(([k,n])=>`<button class="tab" role="tab" aria-selected="${tab===k}" data-t="${k}">${n}${k==='drill'?` <small>${ar(lvCount(L.key))}/٣</small>`:''}${k==='learn'&&store.story[L.key]?' <small>✓</small>':''}${k==='rep'&&store.rep[L.id]?' <small>✓</small>':''}${k==='say'&&store.pron[L.key]?` <small>${ar(store.pron[L.key].ok)}/${ar(store.pron[L.key].t)}</small>`:''}</button>`).join('')}</div><div id="body"></div></div>`;
+ bindTop();$('#bk').onclick=()=>go({name:'en'});app.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{view.tab=b.dataset.t;view.step=0;render();});
+ const body=$('#body');({learn:enLearn,rep:enRepeat,play:enPlay,drill:enLevels,say:pronTab})[tab](body,L);}
+function renderEnTest(){const u=view.unit,isF=u==='final',key=isF?'en-full':'en-u'+u,lessons=isF?EN:EN.filter(x=>x.unit===u),n=isF?25:12,pass=isF?20:10;
+ const ready=lessons.filter(enDone).length;
+ app.innerHTML=topbar()+`<div style="--c:#0EA5A4"><div class="lhead"><button class="back" id="bk">→ English</button><h1>${isF?'اختبار المنهج كاملًا':'اختبار '+ENU[u].ar}</h1></div><div id="body"></div></div>`;bindTop();$('#bk').onclick=()=>go({name:'en'});
+ const body=$('#body');const hist=store.tests[key]||[],last=hist[hist.length-1];
+ body.innerHTML=`<div class="panel result">${face(ready===lessons.length?'happy':'think')}<h2>${ar(n)} سؤالًا</h2><p style="max-width:56ch">أسئلة من ${isF?'كل دروس الكتاب':'كل دروس الوحدة'}: استماع، مفردات، قراءة، تهجئة، محادثة${isF||u?'، أصوات':''}. لا مساعدة أثناء الاختبار (لكن يمكنك الاستماع 🔊)، وفي النهاية تقرير بكل مهارة. النجاح: ${ar(pass)} من ${ar(n)}.</p>
+  ${ready<lessons.length?`<div class="tip" style="--c:var(--berry)">أتقنت ${ar(ready)} من ${ar(lessons.length)} دروس. ننصح أن تنهي المستويات الثلاثة في كل درس أولًا.</div>`:''}
+  ${last?`<div>آخر نتيجة: <b class="num">${ar(last.s)}</b> / ${ar(last.t)} · أفضل نتيجة: <b class="num">${ar(store.tb[key])}</b></div>`:''}<button class="btn" id="go">ابدأ الاختبار</button></div>`;
+ $('#go').onclick=()=>runTest(body,{key,title:isF?'اختبار المنهج':'اختبار الوحدة '+ar(u),make:()=>shuffle(isF?enTestItems(lessons,1,n-lessons.length):enTestItems(lessons,3)),pass,byGroup:true,passMsg:isF?'نجحت في اختبار المنهج كاملًا! وسام A+ لك.':'نجحت في اختبار الوحدة وحصلت على وسامها!',color:'#0EA5A4',onBack:()=>go({name:'en'})});}
+
+/* ---------- extra sprint ---------- */
+SPM.d2=['العشرات',()=>{const x=rnd(1,8),y=rnd(1,9-x);return Math.random()<.5?[`${ar(x*10)} + ${ar(y*10)}`,(x+y)*10]:[`${ar((x+y)*10)} − ${ar(y*10)}`,x*10];}];
+
+/* ---------- parents page (all chapters, units, pronunciation) ---------- */
+function renderParents(){const tips={1:'استعمل أعواد الأسنان أو أقلام التلوين: اجمع كل ١٠ في رباط مطاطي لتكوين «عشرة».',2:'اكتب عددًا من رقمين واسأله: كم عشرة فيه؟ وكم آحادًا؟',3:'صف له ترتيب ثلاثة أقلام بعبارات مثل «الأحمر قبل الأزرق، والأخضر أخيرًا»، ثم تبادلا الأدوار.',4:'اختر أعدادًا من لوحات السيارات أو أرقام الصفحات، واطلب منه قراءتها وكتابتها بالكلمات.',5:'افتح خزانة الأكواب أو علبة الأزرار، واطلب منه تقدير العدد ثم عدّه للتحقق.'};
+ const chTips={4:'اسألوا أفراد الأسرة عن فاكهتهم المفضّلة، وسجّلوا الإجابات بإشارات العدّ، ثم ارسموا أعمدة على ورقة مربعات.',5:'اجمعوا مشتريات صغيرة: «قلم بـ ٢٤ ريالًا ودفتر بـ ١٨، كم المجموع؟» واطلب منه الجمع عموديًا على ورقة.',6:'العبوا «البائع»: معه ٥٠ ريالًا واشترى بـ ٢٧، كم يبقى؟ ثم يتحقق بالجمع.'};
+ const enTips={'الاستماع':'شغّلوا «أسمع وأردّد» ٥ دقائق يوميًا، واطلب منه أن يشير إلى الصورة قبل أن يرى الكلمة.','المفردات':'الصق بطاقات صغيرة بالإنجليزية على أشياء البيت (door, bed, cap) وردّدها معه.','القراءة':'اقرأ معه «قاموس الدرس» في آخر خطوة «أتعلّم»، كلمة كلمة بإصبعه.','التهجئة':'اطلب منه كتابة ٣ كلمات من الدرس على ورقة بعد سماعها.','المحادثة':'تبادلا الأدوار في محادثة الدرس: أنت تسأل وهو يجيب، ثم العكس.','الأصوات':'العبا لعبة: قل كلمة واطلب منه أول صوت فيها (p أم b؟ c أم g؟)، أو آخر صوت في الجمع (s أم z؟).'};
+ const cell=(id,lv)=>{const b=store.best[id+'-'+lv];return b!=null?`${ar(b)}/١٠`:'—';};
+ const lastT=k=>{const h=store.tests[k]||[];return h[h.length-1];};
+ const date=d=>{try{return new Date(d).toLocaleDateString('ar-SA',{day:'numeric',month:'long'});}catch(e){return '';}};
+ const weak=(keys)=>{const out=[];keys.forEach(k=>{const t=lastT(k);if(t)t.sk.forEach(([g,n,c,tt])=>{const lab=typeof g==='number'?(L.find(x=>x.id===g)||{}).code:g;if(c<tt&&!out.some(w=>w.n===n&&w.g===lab)){const ls=L.find(x=>x.code+' '+(x.short||x.title)===g||x.id===g);out.push({g:lab,n,c,tt,lid:ls?ls.id:null,ch:ls?ls.ch:null});}});});return out;};
+ const mWeak=weak([...L.map(l=>l.id),...CHS.map(c=>CH[c].key)]),eKeys=[...UNITS.map(u=>'en-u'+u),'en-full'],eWeak=weak(eKeys);
+ const tipFor=w=>w.lid&&tips[w.lid]?tips[w.lid]:w.ch&&chTips[w.ch]?chTips[w.ch]:'';const x=store.xp||0,R=RANKS[rankOf(x)];
+ app.innerHTML=topbar()+`<div style="--c:var(--tens)"><div class="lhead"><button class="back" id="bk">→ المواد</button><h1>صفحة ولي الأمر</h1></div>
+ <div class="panel"><h2>الرياضيات</h2><div class="tablewrap"><table class="prog"><thead><tr><th>الدرس</th><th>الشرح</th><th>سهل</th><th>متوسط</th><th>صعب</th><th>آخر اختبار</th><th>أفضل اختبار</th></tr></thead><tbody>
+ ${CHS.map(c=>`<tr><th colspan="7" style="background:var(--soft)">${CH[c].t}: ${CH[c].s}</th></tr>`+L.filter(l=>l.ch===c).map(l=>{const t=lastT(l.id);return `<tr><td><b>${l.code}</b> ${l.short||l.title}</td><td>${store.story[l.id]?'✓':'—'}</td>${[1,2,3].map(v=>`<td class="num" style="color:${lvCount(l.id)>=v?'var(--leaf)':'inherit'}">${cell(l.id,v)}</td>`).join('')}<td class="num">${t?`${ar(t.s)}/١٠ <small style="color:var(--muted)">${date(t.d)}</small>`:'—'}</td><td class="num" style="color:${passedTest(l.id)?'var(--leaf)':'inherit'}">${store.tb[l.id]!=null?ar(store.tb[l.id])+'/١٠':'—'}</td></tr>`;}).join('')+`<tr><td><b>اختبار ${CH[c].t}</b></td><td colspan="4"></td><td class="num">${lastT(CH[c].key)?`${ar(lastT(CH[c].key).s)}/٢٠`:'—'}</td><td class="num" style="color:${chPassed(c)?'var(--leaf)':'inherit'}">${store.tb[CH[c].key]!=null?ar(store.tb[CH[c].key])+'/٢٠':'—'}</td></tr>`).join('')}</tbody></table></div>
+ <h3 style="margin-top:14px">مهارات تحتاج متابعة</h3>${mWeak.length?`<ul class="summary">${mWeak.map(w=>`<li>${w.n} <span style="color:var(--muted);font-weight:500">(${w.g} · ${ar(w.c)} من ${ar(w.tt)})</span>${tipFor(w)?`<div style="font-weight:500;font-size:16px;margin-top:4px">في البيت: ${tipFor(w)}</div>`:''}</li>`).join('')}</ul>`:`<p style="margin:0">${[...CHS.map(c=>CH[c].key),...L.map(l=>l.id)].some(k=>lastT(k))?'لا توجد مهارات ضعيفة في آخر الاختبارات.':'ستظهر هنا بعد أول اختبار.'}</p>`}</div>
+ <div class="panel"><h2>English · الإنجليزي</h2><div class="tablewrap"><table class="prog"><thead><tr><th>الدرس</th><th>أتعلّم</th><th>أردّد</th><th>سهل</th><th>متوسط</th><th>صعب</th></tr></thead><tbody>
+ ${EN.map(l=>`<tr><td><b class="en">${l.code}</b> ${l.ar}</td><td>${store.story[l.key]?'✓':'—'}</td><td>${store.rep[l.id]?'✓':'—'}</td>${[1,2,3].map(v=>`<td class="num" style="color:${lvCount(l.key)>=v?'var(--leaf)':'inherit'}">${cell(l.key,v)}</td>`).join('')}</tr>`).join('')}
+ ${[...UNITS,'full'].map(u=>{const k=u==='full'?'en-full':'en-u'+u,t=lastT(k),nn=u==='full'?'٢٥':'١٢';return `<tr><td><b>${u==='full'?'اختبار المنهج كاملًا':'اختبار الوحدة '+ar(u)}</b></td><td colspan="2">${t?`آخر: <span class="num">${ar(t.s)}/${nn}</span> <small style="color:var(--muted)">${date(t.d)}</small>`:'—'}</td><td colspan="3">${store.tb[k]!=null?`أفضل: <span class="num">${ar(store.tb[k])}/${nn}</span>`:''}</td></tr>`;}).join('')}</tbody></table></div>
+ <h3 style="margin-top:14px">مهارات تحتاج متابعة</h3>${eWeak.length?`<ul class="summary">${[...new Set(eWeak.map(w=>w.n))].map(nm=>{const ws=eWeak.filter(w=>w.n===nm);return `<li>${nm} <span style="color:var(--muted);font-weight:500">(${ws.map(w=>w.g).join('، ')})</span>${enTips[nm]?`<div style="font-weight:500;font-size:16px;margin-top:4px">في البيت: ${enTips[nm]}</div>`:''}</li>`;}).join('')}</ul>`:`<p style="margin:0">${eKeys.some(k=>lastT(k))?'لا توجد مهارات ضعيفة في آخر الاختبارات.':'ستظهر هنا بعد أول اختبار وحدة.'}</p>`}
+ <div class="tip">محمد ضعيف في الإنجليزي، لذلك لكل كلمة صورة وصوت ونطق بطيء ومعنى عربي ونطق تقريبي بالحروف العربية (يمكن إخفاؤه من صفحة English). وفي كل درس تبويب «أنطق لأبي»: محمد يقول الكلمة بصوت عالٍ وأنت تحكم.</div></div>
+ ${pronParentsHTML()}
+ <div class="panel"><h2>العادات والتحفيز</h2><div class="row" style="justify-content:flex-start"><div class="box"><span class="eq">${R[1]} ${ar(x)} ⭐</span><b>النجوم · رتبة ${R[0]}</b><small>نجمة لكل إجابة صحيحة، و٥ لكل مستوى أو لعبة مكتملة</small></div><div class="box"><span class="eq">🔥 ${ar((store.daily||{}).streak||0)}</span><b>أيام مراجعة متتالية</b><small>أطول سلسلة: ${ar((store.daily||{}).best||0)}</small></div>${Object.entries(SPM).map(([k,[nm]])=>`<div class="box"><span class="eq">⚡ ${ar((store.sprint||{})[k]||0)}</span><b>${nm}</b><small>رقم قياسي في دقيقة</small></div>`).join('')}</div></div>
+ <div class="panel"><h2>طريقة الاستخدام المقترحة</h2>
+  <ul class="summary"><li><b>كل يوم ٢٠ دقيقة:</b> ٥ دقائق «مراجعة اليوم»، ثم درس جديد أو مستوى تدريب. وجولة «سباق الحقائق».</li><li><b>الإنجليزي:</b> درس كل يومين: اليوم الأول «أتعلّم» و«أسمع وأردّد» و«ألعب»، واليوم الثاني المستويات الثلاثة ثم «أنطق لأبي» معك. بعد دروس الوحدة: اختبار الوحدة.</li><li><b>الرياضيات:</b> الشرح ثم النشاط، ثم المستويات، ثم اختبار الدرس.</li><li><b>كل أسبوع:</b> «اختبار النطق مع أبي» على الكلمات التي تحتاج تدريبًا.</li></ul>
+  <div class="tip">في الرياضيات: <span class="T">الأزرق = العشرات</span> و<span class="O">البرتقالي = الآحاد</span>. يُحفظ التقدّم على هذا الجهاز وهذا المتصفح فقط.</div>
+  <div class="ctrl" id="rs" style="justify-content:flex-start;margin-top:12px"><button class="ghost" style="margin:0" id="reset">تصفير التقدّم</button></div></div></div>`;
+ bindTop();$('#bk').onclick=()=>go({name:'home'});app.querySelectorAll('[data-psp]').forEach(b=>b.onclick=()=>speakEn(b.dataset.psp));
+ $('#reset').onclick=()=>{$('#rs').innerHTML='<span>حذف كل النتائج في المادتين؟</span><button class="btn small" style="--c:var(--berry)" id="yes">نعم، صفّر</button><button class="btn small alt" id="no">إلغاء</button>';$('#yes').onclick=()=>{store={lv:{},best:{},rounds:{},story:{},rep:{},correct:0,mix:0,tb:{},tests:{},daily:{},sprint:{},day:{},pron:{},pw:{},xp:0,rank:0,wear:''};save();renderParents();};$('#no').onclick=renderParents;};}
 
 render();
 })();
